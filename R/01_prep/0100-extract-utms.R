@@ -13,24 +13,27 @@ source('R/private_info.R')
 # dups <- c(4600183, 4600069, 4600367, 4605732, 4600070)
 
 dat1 <- import_pscis(workbook_name = 'pscis_phase1.xlsm') %>%
-  tibble::rownames_to_column()
+  tibble::rowid_to_column() %>%
+  mutate(rowid = rowid + 4) #our rows start at 5
   # filter(!my_crossing_reference %in% dups)
 
 dat2 <- import_pscis(workbook_name = 'pscis_phase2.xlsm') %>%
-  tibble::rownames_to_column()
+  tibble::rowid_to_column() %>%
+  mutate(rowid = rowid + 4) #our rows start at 5
 
 dat3 <- import_pscis(workbook_name = 'pscis_reassessments.xlsm') %>%
-  tibble::rownames_to_column()
+  tibble::rowid_to_column() %>%
+  mutate(rowid = rowid + 4) #our rows start at 5
+
+dat_prep <- bind_rows(
+  dat1,
+  dat2
+)
 
 dat <- bind_rows(
-  dat1,
-  dat2,
+  dat_prep,
   dat3
 )
-  # distinct(.keep_all = T)
-  # sf::st_as_sf(coords = c("easting", "northing"),
-  #              crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
-  # sf::st_transform(crs = 3005) ##convert to match the bcfishpass format
 
 
 ##get the utm info from the database
@@ -59,7 +62,7 @@ dbGetQuery(conn,
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_name='modelled_stream_crossings'")
+           WHERE table_name='crossings'")
 
 
 
@@ -73,13 +76,7 @@ id <- dat %>%
   pull(my_crossing_reference)
 
 # ##this is for phase 1
-# sql <- glue::glue_sql("SELECT * FROM bcfishpass.modelled_stream_crossings x WHERE x.modelled_crossing_id IN ({id*})",
-#                       .con = conn)
-
-
-##we need to tweak it a bit for the phase 2
-##we are using the pscis model combined layer from way back but will work for now
-sql <- glue::glue_sql("SELECT x.*, ST_X(ST_TRANSFORM(x.geom, 26909)) as utm_easting, ST_Y(ST_TRANSFORM(x.geom, 26909)) as utm_northing FROM bcfishpass.modelled_stream_crossings x WHERE x.modelled_crossing_id IN ({id*})",
+sql <- glue::glue_sql("SELECT x.*, ST_X(ST_TRANSFORM(x.geom, 26909)) as utm_easting_derived, ST_Y(ST_TRANSFORM(x.geom, 26909)) as utm_northing_derived FROM bcfishpass.crossings x WHERE x.modelled_crossing_id IN ({id*})",
                       .con = conn)
 
 
@@ -88,15 +85,16 @@ df <- DBI::dbFetch(query)
 dbClearResult(query)
 
 id_joined <- left_join(
-  dat %>% select(rowname, my_crossing_reference, source, easting, northing),
-  df %>% select(modelled_crossing_id, utm_easting, utm_northing),
+  dat %>% select(rowid, pscis_crossing_id, my_crossing_reference, source, easting, northing),
+  df %>% select(modelled_crossing_id, utm_easting_derived, utm_northing_derived),
   by = c('my_crossing_reference' = 'modelled_crossing_id')
 ) %>%
   mutate(utm_easting = case_when(!is.na(easting) ~ easting,
-         T ~ utm_easting),
+         T ~ utm_easting_derived),
          utm_northing = case_when(!is.na(northing) ~ northing,
-         T ~ utm_northing)
-  )
+         T ~ utm_northing_derived)
+  ) %>%
+  select(-utm_easting_derived, -utm_northing_derived)
 
 
 ##now export csvs for each of the sources
@@ -104,75 +102,50 @@ id_joined %>%
   filter(source %like% 'phase1') %>%
   write_csv("data/inputs_extracted/temp/utms_modelled_phase1.csv")
 
-id_joined %>%
-  filter(source %like% 'phase2') %>%
+
+#################------------------------------Phase2 and Reassessments------------------------------------------------------
+id <- dat %>%
+  # filter(is.na(easting)) %>%
+  pull(pscis_crossing_id)
+
+
+##we need to tweak it a bit for the phase 2
+##we are using the pscis model combined layer from way back but will work for now
+sql <- glue::glue_sql("SELECT x.*, ST_X(ST_TRANSFORM(x.geom, 26909)) as utm_easting_derived, ST_Y(ST_TRANSFORM(x.geom, 26909)) as utm_northing_derived FROM bcfishpass.crossings x WHERE x.stream_crossing_id IN ({id*})",
+                      .con = conn)
+
+query <- DBI::dbSendQuery(conn, sql)
+df2 <- DBI::dbFetch(query)
+dbClearResult(query)
+
+id_joined2 <- left_join(
+  id_joined,
+  df2 %>% select(stream_crossing_id, utm_easting_derived, utm_northing_derived),
+  by = c('pscis_crossing_id' = 'stream_crossing_id')
+) %>%
+  mutate(utm_easting = case_when(!is.na(utm_easting) ~ utm_easting,
+                                 T ~ utm_easting_derived),
+         utm_northing = case_when(!is.na(utm_northing) ~ utm_northing,
+                                  T ~ utm_northing_derived)
+  )%>%
+  select(-utm_easting_derived, -utm_northing_derived)
+
+
+##burn------------------------------------------------------------
+
+id_joined2 %>%
+  filter(source %like% 'phase2')  %>%
   write_csv("data/inputs_extracted/temp/utms_modelled_phase2.csv")
 
-id_joined %>%
+id_joined2 %>%
   filter(source %like% 'reassessments') %>%
   write_csv("data/inputs_extracted/temp/utms_modelled_reassessments.csv")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##now join our ids to the utm info - phase 1
-id_joined <- left_join(
-  as_tibble(id),
-  select(df,
-         crossing_id, utm_easting, utm_northing),
-  by = c('value' = 'crossing_id'))
-
-# ##now join our ids to the utm info - phase 2
-# id_joined <- left_join(
-#   as_tibble(id),
-#   select(df,
-#          pscis_stream_crossing_id, utm_easting, utm_northing),
-#   by = c('value' = 'pscis_stream_crossing_id'))
-
-##join it back to the original spreadsheet and fill in the easting northing columns where not already filled
-##burn to a csv so you can cut and paste into your spreadsheet
-utms <- left_join(
-  pscis,
-  id_joined,
-  # by = c('my_crossing_reference' = 'value') ##this is for phase 1
-  by = c('my_crossing_reference' = 'value') ##this is for phase 2
-) %>%
-  mutate(easting = case_when(is.na(easting) ~ utm_easting,
-                             T ~ easting),
-         northing = case_when(is.na(northing) ~ utm_northing,
-                              T ~ northing))  %>%
-  select(my_crossing_reference, easting, northing) %>% ##this works for both phases although my_crossing_reference is mislabeled and should be pscis_crossing_id
-  write_csv("data/utms_modelled.csv")  ##burn to a csv so you can cut and paste into your spreadsheet
 
 
 ##always disconnect from the database
 dbDisconnect(conn = conn)
 
 
-
-
-
-
-
-
-
-
-
-
-
-##burn it all to a file we can input to pscis submission spreadsheet
-# pscis_reassessmeents_rd_tenure %>% readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/pscis_reassessmeents_rd_tenure.csv'))
-##we need to qa which are our modelled crossings at least for our phase 2 crossings
 
 
 

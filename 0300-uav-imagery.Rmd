@@ -1,0 +1,234 @@
+
+```{r setup-uav-imagery, eval = T}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+# source('R/packages.R')
+# source('R/functions.R')
+
+```
+
+
+# Drone Generated Orthomosaics and 3D models
+
+## Richfield Creek {-}
+
+```{r ortho-richfield, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/fe773f4deef84939b04f5e941e35506a" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r ortho-caption-richfield, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('Orthomosaic of habitat immediately upstream and downstream of Richfield Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+
+```{r model-richfield, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/fe773f4deef84939b04f5e941e35506a" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r model-caption-richfield, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat immediately upstream and downstream of Richfield Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+<br>
+
+## Robert Hatch Creek {-}
+
+```{r ortho-robert-hatch, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/aebd400d8dbe455eb3806b1ca8a4c496" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r ortho-caption-robert-hatch, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('Orthomosaic of habitat immediately upstream and downstream of Robert Hatch Creek.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+
+```{r model-robert-hatch, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/aebd400d8dbe455eb3806b1ca8a4c496" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r model-caption-robert-hatch, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat immediately upstream and downstream of Robert Hatch Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+<br>
+
+## McBride Creek {-}
+
+```{r ortho-mbride, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/009dbfef7a924182933029a5927ceb98" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r ortho-caption-mcbride, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('Orthomosaic of habitat immediately upstream and downstream of McBride Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+
+```{r model-mcbride, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/009dbfef7a924182933029a5927ceb98" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r model-caption-mcbride, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat immediately upstream and downstream of McBride Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+## Owen Creek Confluence {-}
+<br>
+
+
+```{r ortho-owen, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/31c8631f733b41789fc2d42f2548b610" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r ortho-caption-owen, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('Orthomosaic of habitat near confluence of Owen Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+
+```{r model-owen, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/31c8631f733b41789fc2d42f2548b610" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r model-caption-owen, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat near confluence of Owen Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+<br>
+
+## Station Creek {-}
+
+
+```{r ortho-station, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r ortho-caption-station, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('Orthomosaic of habitat upstream of Station Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+
+```{r model-station, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r model-caption-station, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat upstream of Station Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+<br>
+
+## Lamprey Creek Tributary {-}
+
+```{r ortho-lamprey, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/d2d52c8ea06e4e9c8620b8f435733063" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r ortho-caption-lamprey, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('Orthomosaic of habitat immediately upstream and downstream of Tributary to Morice River near mouth of Lamprey Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+
+
+```{r model-lamprey, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/d2d52c8ea06e4e9c8620b8f435733063" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r model-caption-lamprey, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat immediately upstream and downstream of Tributary to Morice River near mouth of Lamprey Creek.To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+

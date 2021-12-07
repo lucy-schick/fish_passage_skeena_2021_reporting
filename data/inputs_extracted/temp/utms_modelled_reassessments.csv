@@ -1,3 +1,4 @@
-rowname,my_crossing_reference,source,easting,northing,utm_easting,utm_northing
-1,195289,pscis_reassessments.xlsm,NA,NA,NA,NA
-2,124456,pscis_reassessments.xlsm,NA,NA,NA,NA
+rowid,pscis_crossing_id,my_crossing_reference,source,easting,northing,utm_easting,utm_northing
+5,195289,NA,pscis_reassessments.xlsm,NA,NA,639862.4374099218,6051752.464624923
+6,124456,NA,pscis_reassessments.xlsm,NA,NA,589615.041215387,6122516.176765811
+7,123776,NA,pscis_reassessments.xlsm,NA,NA,606462.3777084199,6100156.210523012

@@ -8,6 +8,18 @@ tab:fiss-species-table
 fig:fish-gantt-morice
 fig:fish-plot-grad
 fig:fish-plot-width
+fig:ortho-caption-richfield
+fig:model-caption-richfield
+fig:ortho-caption-robert-hatch
+fig:model-caption-robert-hatch
+fig:ortho-caption-mcbride
+fig:model-caption-mcbride
+fig:ortho-caption-owen
+fig:model-caption-owen
+fig:ortho-caption-station
+fig:model-caption-station
+fig:ortho-caption-lamprey
+fig:model-caption-lamprey
 intro
 background
 wetsuweten
@@ -22,3 +34,5 @@ fish-species
 fish-passage-restoration-planning-and-implementation
 bulkley-river-2
 morice-river-2
+drone-generated-orthomosaics-and-3d-models
+kml-showing-sites-surveyed-in-2021
