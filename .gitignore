@@ -6,6 +6,28 @@ _book
 _bookdown_files
 rsconnect
 
+data/~$*
 R/private_info.R
+R/pers_*
+#data/photos/*
+*.JPG
+!crossing_all.JPG
+#!*_k*
+!*_k*
+*.gpkg-wal
+*.gpkg-shm
+#data/raw_input
+#docs/Bulkley.pdf
+#docs/Elk.tex
+docs/Bulkley.html
+*~$*
+*.sqlite
+hold
+data/watershed_reports/*
+*.Kmz
+*.kml
+maps/*
+data/streams.csv
+
 
 

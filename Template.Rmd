@@ -1,5 +1,5 @@
 --- 
-title: "Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021"
+title: "Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021 - DRAFT"
 author: |
  |
  | Prepared for
@@ -8,9 +8,7 @@ author: |
  | Canadian Wildlife Federation
  |
  |
- | Prepared by
- | Al Irvine, B.Sc., R.P.Bio.
- | New Graph Environment
+ | Prepared 
  | on behalf of
  | Society for Ecosytem Restoration in Northern British Columbia
 
@@ -36,7 +34,7 @@ nocite: |
   @rosenfeld_etal2000Habitatfactorsa
 
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib, references.bib, packages.bib]
 biblio-style: apalike
 link-citations: no
 github-repo: NewGraphEnvironment/fish_passage_skeena_2021_reporting
@@ -89,7 +87,7 @@ knitr::write_bib(c(
 # Acknowledgement {.front-matter .unnumbered}
 
 
-Modern civilization has a long journey ahead to acknowledge and address the historic and ongoing impacts of colonialism that have resulted in harm to the cultures and livelihoods of those that have lived in harmony with the land on Turtle Island for many thousands of years. That harm extends naturally to the ecosystems themselves. 
+Modern civilization has a long journey ahead to acknowledge and address the historic and ongoing impacts of colonialism that have resulted in harm to the cutures and livelihoods of those that have lived in harmony with the land on Turtle Island for many thousands of years. That harm extends naturally to the ecosystems themselves. 
 
 
 
