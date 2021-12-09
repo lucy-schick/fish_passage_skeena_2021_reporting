@@ -12,4 +12,4 @@ source('R/01_prep/0110-make-kml.R')
 ```
 
 
-Please click `r knitr::asis_output("[here](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/outgoing/bulkley_morice_progress_2021_kml.zip)")` to download a zipped version of a kml file showing 2021 field season site survey locations.  Field work was completed by Allan Irvine, Kyle Prince, Tieasha Pierre, Vern Joseph, Dallas Nikal, Alexandria Nikal, Chad Lewis, Tim Wilson and Adam Wrench.
+Please click `r knitr::asis_output("[here](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/outgoing/bulkley_morice_progress_2021_kml.zip)")` to download a zipped version of a kml file showing 2021 field season site survey locations.  Field work was completed by Allan Irvine, Kyle Prince, Tieasha Pierre, Vern Joseph, Dallas Nikal, Alexandria Nikal, Chad Lewis, Tim Wilson, Adam Wrench, Lars Reese-Hanson and Don Morgan.
