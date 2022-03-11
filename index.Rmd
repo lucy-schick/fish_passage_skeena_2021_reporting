@@ -44,18 +44,30 @@ description: "Wet-zuhn-kwa"
 ---
 
 
-```{r setup, include = TRUE, echo =T, message=FALSE, warning=FALSE}
+
+```{r switch-gitbook-html, echo=FALSE}
 gitbook_on <- TRUE
 # gitbook_on <- FALSE  ##we just need turn  this on and off to switch between gitbook and pdf via paged.js
 
+```
 
-knitr::opts_chunk$set(echo=T, message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
+
+
+```{r setup, echo=identical(gitbook_on, TRUE), include = TRUE}
+knitr::opts_chunk$set(echo=identical(gitbook_on, TRUE), message=FALSE, warning=FALSE, dpi=60, out.width = "100%")
+# knitr::knit_hooks$set(webgl = hook_webgl)
 options(scipen=999)
 options(knitr.kable.NA = '--') #'--'
 options(knitr.kable.NAN = '--')
+```
+
+```{r load-data}
 
 
-
+source('R/packages.R')
+source('R/functions.R')
+source('R/private_info.R')
+source('R/tables.R')
 ```
 
 ```{r settings-gitbook, eval= gitbook_on}
@@ -70,13 +82,6 @@ font_set <- 9
 ```
 
 
-```{r}
-source('R/packages.R')
-source('R/functions.R')
-
-```
-
-
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
@@ -87,12 +92,12 @@ knitr::write_bib(c(
 # Acknowledgement {.front-matter .unnumbered}
 
 
-Modern civilization has a long journey ahead to acknowledge and address the historic and ongoing impacts of colonialism that have resulted in harm to the cutures and livelihoods of those that have lived in harmony with the land on Turtle Island for many thousands of years. That harm extends naturally to the ecosystems themselves. 
+Modern civilization has a long journey ahead to acknowledge and address the historic and ongoing impacts of colonialism that have resulted in harm to the cutures and livelihoods of those that have lived in harmony with the land for many thousands of years. That harm extends naturally to the ecosystems themselves. 
 
 
 
 ```{js, logo-header, echo = FALSE, eval= T}
 title=document.getElementById('header');
-title.innerHTML = '<img src="fig/collaboration.jpg" alt="NewGraph">' + title.innerHTML
+title.innerHTML = '<img src="fig/logo_sern_hctf.png" alt="NewGraph">' + title.innerHTML
 ```
 
