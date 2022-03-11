@@ -4,10 +4,10 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">fish_passage_skeena_2021_reporting</a></li>
+        <li><a href="./">Fish Passage Planning Skeena 2021</a></li>
       after: |
         <li><a href="https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting" target="blank">Scripts and Data</a></li>
-    download: ["Template.pdf", "Template.html"]
+    download: ["Skeena2021.pdf", "Skeena2021.html"]
     fontsettings:
       theme: night
       family: sans
