@@ -10,7 +10,7 @@ dir.create('data')
 dir.create('scripts')
 dir.create('hold')
 dir.create('docs')
-file.create('docs/.nojekyll')
+file.create('.nojekyll')
 
 # First, set the output directory of your book to be /docs by adding the line output_dir: "docs" to the configuration file _bookdown.yml
 ##test by running the following command from the main directory
