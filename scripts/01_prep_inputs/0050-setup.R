@@ -7,6 +7,8 @@
 ##add the .nojeckyll file so you can biuld website
 
 dir.create('data')
+dir.create('scripts')
+dir.create('hold')
 dir.create('docs')
 file.create('docs/.nojekyll')
 
