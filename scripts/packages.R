@@ -34,8 +34,10 @@ package_list <- c(
   'leaflet.extras',
   'ggdark',
   'fwapgr',
-  'citr'
-  # pdftools,
+  'citr',
+  'pdftools',
+  'pacman',
+  'chron'
   # rgl,
   # geojsonsf,
   # bit64 ##to make integer column type for pg
@@ -47,10 +49,19 @@ lapply(package_list,
        require,
        character.only = TRUE)
 
+
+# for a fresh install of R
+# lapply(package_list,
+#        install.packages,
+#        character.only = TRUE)
+
 # we need the development version of pagedown as of 20200303 https://github.com/rstudio/pagedown/issues/265
 # remotes::install_github('rstudio/pagedown')
 
 
-# pacman::p_load_gh("poissonconsulting/fwapgr",
-#                   "crsh/citr")
-#                   # "poissonconsulting/subfoldr2")
+pacman::p_load_gh("poissonconsulting/fwapgr",
+                  'poissonconsulting/poisspatial',
+                  "crsh/citr",
+                  'rstudio/pagedown',
+                  "poissonconsulting/fishbc")
+                  # "poissonconsulting/subfoldr2")
