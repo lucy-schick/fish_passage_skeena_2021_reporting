@@ -29,6 +29,7 @@ package_list <- c(
   'tidyhydat',
   'elevatr',
   'rayshader',
+  'geojsonio',
   # flextable,
   'english',
   'leaflet.extras',
@@ -37,7 +38,9 @@ package_list <- c(
   'citr',
   'pdftools',
   'pacman',
-  'chron'
+  'chron',
+  'leafpop',
+  'fpr'  #personal package available on github - see below
   # rgl,
   # geojsonsf,
   # bit64 ##to make integer column type for pg
@@ -65,3 +68,8 @@ pacman::p_load_gh("poissonconsulting/fwapgr",
                   'rstudio/pagedown',
                   "poissonconsulting/fishbc")
                   # "poissonconsulting/subfoldr2")
+# custom package
+# devtools::install_github("NewGraphEnvironment/fpr"
+#                          ,ref="main"
+#                          ,auth_token = git_token
+# )
