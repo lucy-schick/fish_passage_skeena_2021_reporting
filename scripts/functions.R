@@ -233,33 +233,33 @@ fpr_make_html_tbl <- function(df) {
 openHTML <- function(x) browseURL(paste0('file://', file.path(getwd(), x)))
 
 ##function to import pscis info
-fpr_import_pscis <- function(workbook_name = 'pscis_phase1.xlsm'){ ##new template.  could change file back to .xls
-  sig_fig0 <- c('length_or_width_meters')
-  sig_fig1 <- c('culvert_slope_percent', 'stream_width_ratio')
-  sig_fig2 <- c('outlet_drop_meters')
-  readxl::read_excel(path = paste0(getwd(),"/data/", workbook_name),
-                     sheet = 'PSCIS Assessment Worksheet') %>%
-    # purrr::set_names(janitor::make_clean_names(names(.))) %>%
-    fpr_trim_xlsheet() %>% ##recently added function above and pulled the altools package as it was a week link
-    rename(date = date_of_assessment_yyyy_mm_dd) %>%
-    mutate(date = janitor::excel_numeric_to_date(as.numeric(date))) %>%
-    filter(!is.na(date)) %>%
-    readr::type_convert() %>%  ##guess the type!!
-    mutate(source = workbook_name) %>%
-    mutate(across(all_of(sig_fig0), round, 0)) %>%
-    mutate(across(all_of(sig_fig1), round, 1)) %>%
-    mutate(across(all_of(sig_fig2), round, 2)) %>%
-    tibble::rowid_to_column() %>%
-    mutate(rowid = rowid + 4,
-           pscis_crossing_id = as.numeric(pscis_crossing_id),
-           my_crossing_reference = as.numeric(my_crossing_reference)
-           ) %>%
-    mutate(
-      aggregated_crossings_id = case_when(!is.na(pscis_crossing_id) ~ pscis_crossing_id,
-                                          my_crossing_reference > 200000000 ~ my_crossing_reference,  ##date based id's are greater than this number
-                                          T ~ my_crossing_reference + 1000000000)
-    )
-}
+# fpr_import_pscis <- function(workbook_name = 'pscis_phase1.xlsm'){ ##new template.  could change file back to .xls
+#   sig_fig0 <- c('length_or_width_meters')
+#   sig_fig1 <- c('culvert_slope_percent', 'stream_width_ratio')
+#   sig_fig2 <- c('outlet_drop_meters')
+#   readxl::read_excel(path = paste0(getwd(),"/data/", workbook_name),
+#                      sheet = 'PSCIS Assessment Worksheet') %>%
+#     # purrr::set_names(janitor::make_clean_names(names(.))) %>%
+#     fpr_trim_xlsheet() %>% ##recently added function above and pulled the altools package as it was a week link
+#     rename(date = date_of_assessment_yyyy_mm_dd) %>%
+#     mutate(date = janitor::excel_numeric_to_date(as.numeric(date))) %>%
+#     filter(!is.na(date)) %>%
+#     readr::type_convert() %>%  ##guess the type!!
+#     mutate(source = workbook_name) %>%
+#     mutate(across(all_of(sig_fig0), round, 0)) %>%
+#     mutate(across(all_of(sig_fig1), round, 1)) %>%
+#     mutate(across(all_of(sig_fig2), round, 2)) %>%
+#     tibble::rowid_to_column() %>%
+#     mutate(rowid = rowid + 4,
+#            pscis_crossing_id = as.numeric(pscis_crossing_id),
+#            my_crossing_reference = as.numeric(my_crossing_reference)
+#            ) %>%
+#     mutate(
+#       aggregated_crossings_id = case_when(!is.na(pscis_crossing_id) ~ pscis_crossing_id,
+#                                           my_crossing_reference > 200000000 ~ my_crossing_reference,  ##date based id's are greater than this number
+#                                           T ~ my_crossing_reference + 1000000000)
+#     )
+# }
 
 
 # import_pscis_all <- function(){
@@ -315,33 +315,33 @@ fpr_make_photo_folders <- function(xing){
   dir.create(paste0(getwd(), '/data/photos/', xing))
 }
 
+# unexported from fpr
+# fpr_time_interval_idx <- function(date_input, intervs){
+#   which(date_input %within% intervs)
+# }
 
-fpr_time_interval_idx <- function(date_input, intervs){
-  which(date_input %within% intervs)
-}
 
-
-##get the photo sorting specific metadata from the photos in the file
-fpr_photo_sort_metadat <- function(input_file){
-  exifr::read_exif(input_file,recursive=T) %>%
-    purrr::set_names(., nm = tolower(names(.))) %>%
-    select(sourcefile, datetimeoriginal) %>%
-    mutate(datetimeoriginal = lubridate::ymd_hms(datetimeoriginal))
-}
+##get the photo sorting specific metadata from the photos in the file - moved to fpr package
+# fpr_photo_sort_metadat <- function(input_file){
+#   exifr::read_exif(input_file,recursive=T) %>%
+#     purrr::set_names(., nm = tolower(names(.))) %>%
+#     select(sourcefile, datetimeoriginal) %>%
+#     mutate(datetimeoriginal = lubridate::ymd_hms(datetimeoriginal))
+# }
 
 ##get the names of your pscis files
-fpr_pscis_wkb_paths <- function(){
-  list.files(path = 'data', pattern = "pscis", all.files = F) %>%
-    grep(pattern = '~', invert = T, value = T)
-}
+# fpr_pscis_wkb_paths <- function(){
+#   list.files(path = 'data', pattern = "pscis", all.files = F) %>%
+#     grep(pattern = '~', invert = T, value = T)
+# }
 
-fpr_import_pscis_all <- function(){
-  wkbs_paths <- fpr_pscis_wkb_paths()
-
-  pscis_list <- wkbs_paths %>%
-    map(fpr_import_pscis) %>%
-    purrr::set_names(nm = tools::file_path_sans_ext(wkbs_paths))
-}
+# fpr_import_pscis_all <- function(){
+#   wkbs_paths <- fpr_pscis_wkb_paths()
+#
+#   pscis_list <- wkbs_paths %>%
+#     map(fpr_import_pscis) %>%
+#     purrr::set_names(nm = tools::file_path_sans_ext(wkbs_paths))
+# }
 
 fpr_photo_qa <- function(site_id){
   list.files(path = paste0(getwd(), '/data/photos/', site_id), full.names = T) %>%
@@ -396,17 +396,17 @@ fpr_photo_amalg_cv <- function(site_id){
 }
 
 
-fpr_import_hab_con <- function(path = "./data/habitat_confirmations.xls"){
-  readxl::excel_sheets(path = path) %>%
-    purrr::set_names() %>%
-    purrr::map(read_excel,
-               path = path,
-               .name_repair = janitor::make_clean_names) %>%
-    purrr::set_names(janitor::make_clean_names(names(.))) %>%
-    purrr::map(fpr_trim_xlsheet) %>% #moved to functions from https://github.com/NewGraphEnvironment/altools to reduce dependencies
-    purrr::map(plyr::colwise(type.convert))
-
-}
+# fpr_import_hab_con <- function(path = "./data/habitat_confirmations.xls"){
+#   readxl::excel_sheets(path = path) %>%
+#     purrr::set_names() %>%
+#     purrr::map(read_excel,
+#                path = path,
+#                .name_repair = janitor::make_clean_names) %>%
+#     purrr::set_names(janitor::make_clean_names(names(.))) %>%
+#     purrr::map(fpr_trim_xlsheet) %>% #moved to functions from https://github.com/NewGraphEnvironment/altools to reduce dependencies
+#     purrr::map(plyr::colwise(type.convert))
+#
+# }
 
 ####---------------make the report table-----
 ##grab a df with the names of the left hand side of the table
