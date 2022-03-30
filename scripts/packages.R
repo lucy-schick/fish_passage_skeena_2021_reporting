@@ -2,7 +2,7 @@
 
 
 package_list <- c(
-  # plotKML,  #plot kml needed to go ahead of other packages for some reason and wants to reinstall everytime.... not sure why. hash out for now
+  'plotKML',
   'raster', #load this dog before dplyr yo
   'tidyverse',
   'readwritesqlite',
@@ -40,6 +40,7 @@ package_list <- c(
   'pacman',
   'chron',
   'leafpop',
+  'exifr',
   'fpr'  #personal package available on github - see below
   # rgl,
   # geojsonsf,
