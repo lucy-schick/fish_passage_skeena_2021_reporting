@@ -5,10 +5,10 @@ _publish.R
 _book
 _bookdown_files
 rsconnect
-
+data/inputs_extracted/*
 data/~$*
-R/private_info.R
-R/pers_*
+scripts/private_info.R
+scripts/pers_*
 #data/photos/*
 *.JPG
 !crossing_all.JPG
@@ -28,6 +28,7 @@ data/watershed_reports/*
 *.kml
 maps/*
 data/streams.csv
+data/photos/**/*.pdf
 
 
 
