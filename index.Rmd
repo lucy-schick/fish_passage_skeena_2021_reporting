@@ -59,15 +59,18 @@ knitr::opts_chunk$set(echo=identical(gitbook_on, TRUE), message=FALSE, warning=F
 options(scipen=999)
 options(knitr.kable.NA = '--') #'--'
 options(knitr.kable.NAN = '--')
+
+
 ```
 
 ```{r load-data}
 
 
-source('R/packages.R')
-source('R/functions.R')
-source('R/private_info.R')
-source('R/tables.R')
+source('scripts/packages.R')
+source('scripts/functions.R')
+source('scripts/private_info.R')
+# source('R/tables.R')
+
 ```
 
 ```{r settings-gitbook, eval= gitbook_on}
