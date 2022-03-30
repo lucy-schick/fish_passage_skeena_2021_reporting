@@ -196,6 +196,7 @@ pscis_all <- fpr::fpr_import_pscis_all() %>%
 test <- pscis_all %>% filter(is.na(crew_members))
 
 
+
 # ensure you have a time for every crossing for all the people you are sorting for
 # we only exported fpr_photo_time_prep for this test
 test <- fpr::fpr_photo_time_prep() %>%
@@ -211,6 +212,23 @@ test <- fpr::fpr_photo_time_prep() %>%
 ls_folders <- c("C:/Users/allan/OneDrive/New_Graph/Current/2021-034-hctf-bulkley-fish-passage/data/photos/AI",
                  "C:/Users/allan/OneDrive/New_Graph/Current/2021-034-hctf-bulkley-fish-passage/data/photos/KP"
 )
+
+
+# this should of happened already but it didn't so we need to convert jpeg to JPG to avoid issues later
+# find the jpeg files in kyle's folder
+
+# path <- "C:/Users/allan/OneDrive/New_Graph/Current/2021-034-hctf-bulkley-fish-passage/data/photos/KP"
+# jpegs_jpgs <- list.files(path, full.names = T) %>%
+#   grep(pattern = '.*\\.(jpg|jpeg)$',
+#         value = T)
+#
+# jpegs_jpgs %>%
+#   purrr::map(fpr::fpr_photo_resize_convert, path = path)
+#
+# basename(jpegs_jpgs)
+#
+# # remove the old files
+# file.remove(jpegs_jpgs)
 
 # get the photo metadata
 photo_meta <- ls_folders %>%
@@ -259,10 +277,19 @@ photos_to_transfer <- ls_surveyors %>%
   )
 
 
+# burn a csv record of the photo assignment
+photos_to_transfer %>%
+  readr::write_csv(paste0('data/inputs_extracted/photo_transfer_record_', format(now(), "%Y%m%d_%H%M"), '.csv'),
+                   na = '')
 
 
-
-
+# # since we have a record we can delete the jpeg and jpgs that were copied over before!
+# photos_to_delete <- readr::read_csv('data/inputs_extracted/photos_to_transfer_2022-03-24.csv') %>%
+#   filter(folder_to_path %like% '.jpeg|.jpg' ) %>%
+#   pull(folder_to_path)
+#
+# # # remove the old files
+# file.remove(photos_to_delete)
 
 # burn photos to files ----------------------------------------------------
 
@@ -271,8 +298,6 @@ photos_to_transfer %>%
   dplyr::distinct(site) %>%
   pull(site) %>%
   purrr::map(fpr::fpr_photo_folders)
-
-
 
 ##test a bunch first!!!!!!!
 test <- photos_to_transfer %>%
@@ -286,9 +311,9 @@ file.copy(from = test$sourcefile, to = test$folder_to_path,
 # we could move them vs. copy but we need to be sure they are backed up first!!!!
 # we should script the backup and resizing to an intermediary file then move vs. copy next time
 # !!!!!!!!!!!!!this is the command to copy over!
-# file.copy(from=photos_to_transfer$sourcefile, to=photos_to_transfer$folder_to_path,
-#                     overwrite = F, recursive = FALSE,
-#                     copy.mode = TRUE)
+file.copy(from=photos_to_transfer$sourcefile, to=photos_to_transfer$folder_to_path,
+                    overwrite = F, recursive = FALSE,
+                    copy.mode = TRUE)
 
 
 ##we also can erase the photos we said not to move since they are backed up and
@@ -299,6 +324,76 @@ file.copy(from = test$sourcefile, to = test$folder_to_path,
 #   )
 #
 # file.remove(photo_folder_targets_delete$sourcefile)
+
+
+
+# rename Lars photo directories -------------------------------------------
+
+# need to rename the directories so they match the site name
+
+path <- "C:/Users/allan/OneDrive/New_Graph/Current/2021-034-hctf-bulkley-fish-passage/data/photos/moe_flnr"
+
+folders <- list.dirs(path,
+                     recursive = F,
+                     full.names = F)
+
+folders_renamed <- folders %>%
+  stringr::str_replace('101400022_', '1014000022_') %>% # 101400022 is actually 1014000022
+  stringr::str_extract("[^FP_|^?]*$")
+
+# turned off for safety
+# file.rename(from = paste0(path, '/', folders),
+#             to = paste0(path, '/', folders_renamed)
+# )
+
+
+# flip photos -------------------------------------------------------------
+
+# needed to flip some photos.  couldn't figure out how to run over list.
+my_site <- 2021090150
+fpr::fpr_photo_flip(str_to_pull = 'KP_TC_00169')
+
+fpr::fpr_photo_flip(site_id = 14000988, rotate = 270, str_to_pull = '5587')
+fpr::fpr_photo_flip(site_id = 14000994, rotate = 270, str_to_pull = '00938')
+fpr::fpr_photo_flip(site_id = 14000997, rotate = 270, str_to_pull = '5578')
+fpr::fpr_photo_flip(site_id = 2021090399, rotate = 270, str_to_pull = '5756')
+
+# QA photo files ----------------------------------------------------------
+
+pscis_all <- fpr_import_pscis_all() %>%
+  bind_rows
+
+
+# here is a little tute on how to see the folder that need all photos to be renamed
+test <- fpr::fpr_photo_qa() %>%
+  data.table::rbindlist(fill = T)
+
+
+do_these_bud <- fpr::fpr_photo_qa()[
+  fpr::fpr_photo_qa() %>%
+    map(fpr::fpr_dat_w_rows) %>%
+    grep(pattern = F)
+] %>%
+  names(.) %>%
+  unique(.)
+
+# here is the test for missing individual photos
+test <- fpr::fpr_photo_qa() %>%
+  bind_rows() %>%
+  dplyr::filter(if_any(everything(), is.na))
+
+
+
+# build photo amalgamation for each site ------------------------------------------------
+pscis_all <- fpr::fpr_import_pscis_all() %>%
+  bind_rows
+
+pscis_all %>%
+  distinct(site_id) %>%
+  arrange(site_id) %>%
+  # head() %>% #test
+  pull(site_id) %>%
+  purrr::map(fpr_photo_amalg_cv)
 
 
 
