@@ -998,5 +998,3 @@ rm(hab_site_prep,
    hab_loc2)
 
 
-
-
