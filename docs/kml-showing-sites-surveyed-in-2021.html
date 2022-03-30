@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 KML showing sites surveyed in 2021 | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021 - DRAFT</title>
   <meta name="description" content="Wet-zuhn-kwa" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 KML showing sites surveyed in 2021 | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021 - DRAFT" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,9 @@
   
 <link rel="prev" href="drone-generated-orthomosaics-and-3d-models.html"/>
 <link rel="next" href="references.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -183,16 +184,16 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">fish_passage_skeena_2021_reporting</a></li>
+<li><a href="./">Fish Passage Planning Skeena 2021</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Acknowledgement</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background</a></li>
-<li class="chapter" data-level="3" data-path="drone-generated-orthomosaics-and-3d-models.html"><a href="drone-generated-orthomosaics-and-3d-models.html"><i class="fa fa-check"></i><b>3</b> Drone Generated Orthomosaics and 3D models</a></li>
-<li class="chapter" data-level="4" data-path="kml-showing-sites-surveyed-in-2021.html"><a href="kml-showing-sites-surveyed-in-2021.html"><i class="fa fa-check"></i><b>4</b> KML showing sites surveyed in 2021</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i>Session Info</a></li>
+<li><a href="index.html#acknowledgement">Acknowledgement<span></span></a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a></li>
+<li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background<span></span></a></li>
+<li class="chapter" data-level="3" data-path="drone-generated-orthomosaics-and-3d-models.html"><a href="drone-generated-orthomosaics-and-3d-models.html"><i class="fa fa-check"></i><b>3</b> Drone Generated Orthomosaics and 3D models<span></span></a></li>
+<li class="chapter" data-level="4" data-path="kml-showing-sites-surveyed-in-2021.html"><a href="kml-showing-sites-surveyed-in-2021.html"><i class="fa fa-check"></i><b>4</b> KML showing sites surveyed in 2021<span></span></a></li>
+<li><a href="references.html#references">References<span></span></a></li>
+<li><a href="session-info.html#session-info">Session Info<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting" target="blank">Scripts and Data</a></li>
 
@@ -213,10 +214,11 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="kml-showing-sites-surveyed-in-2021" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> KML showing sites surveyed in 2021</h1>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="kml-showing-sites-surveyed-in-2021.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;R/01_prep/0110-make-kml.R&#39;</span>)</span></code></pre></div>
-<p>Please click <a href="https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/outgoing/bulkley_morice_progress_2021_kml.zip">here</a> to download a zipped version of a kml file showing 2021 field season site survey locations. Field work was completed by Allan Irvine, Kyle Prince, Tieasha Pierre, Vern Joseph, Dallas Nikal, Alexandria Nikal, Chad Lewis, Tim Wilson, Adam Wrench, Lars Reese-Hanson and Don Morgan.</p>
+<div id="kml-showing-sites-surveyed-in-2021" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> KML showing sites surveyed in 2021<a href="kml-showing-sites-surveyed-in-2021.html#kml-showing-sites-surveyed-in-2021" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="kml-showing-sites-surveyed-in-2021.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># turned off to save time.  Should still work though.</span></span>
+<span id="cb24-2"><a href="kml-showing-sites-surveyed-in-2021.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/01_prep/0110-make-kml.R&#39;</span>)</span></code></pre></div>
+<p>Please click <a href="https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/data/outgoing/bulkley_morice_progress_2021_kml.zip">here</a> to download a zipped version of a kml file showing 2021 field season site survey locations. Field work was completed by Allan Irvine, Kyle Prince, Tieasha Pierre, Vern Joseph, Dallas Nikal, Alexandria Nikal, Chad Lewis, Tim Wilson, Adam Wrench, Lars Reese-Hanson and Don Morgan.</p>
 
 </div>
             </section>
@@ -229,7 +231,6 @@ div.csl-indent {
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -268,9 +269,9 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Template.pdf", "Template.html"],
+"download": ["Skeena2021.pdf", "Skeena2021.html"],
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
