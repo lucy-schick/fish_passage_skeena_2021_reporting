@@ -69,7 +69,7 @@ options(knitr.kable.NAN = '--')
 source('scripts/packages.R')
 source('scripts/functions.R')
 source('scripts/private_info.R')
-# source('R/tables.R')
+source('scripts/tables.R')
 
 ```
 
@@ -95,7 +95,7 @@ knitr::write_bib(c(
 # Acknowledgement {.front-matter .unnumbered}
 
 
-Modern civilization has a long journey ahead to acknowledge and address the historic and ongoing impacts of colonialism that have resulted in harm to the cutures and livelihoods of those that have lived in harmony with the land for many thousands of years. That harm extends naturally to the ecosystems themselves. 
+Modern civilization has a long journey ahead to acknowledge and address the historic and ongoing impacts of colonialism that have resulted in harm to the cultures and livelihoods living interconnected with our ecosystems for many thousands of years. 
 
 
 

@@ -20,6 +20,12 @@ fig:ortho-caption-robert-hatch
 fig:model-caption-robert-hatch
 fig:ortho-caption-station
 fig:model-caption-station
+fig:map-interactive
+tab:cost-est-phase-1
+tab:unnamed-chunk-9
+tab:cost-est-phase-2
+tab:tab-habitat-summary
+fig:plot-model-all
 intro
 background
 wetsuweten
@@ -36,3 +42,6 @@ bulkley-river-2
 morice-river-2
 drone-generated-orthomosaics-and-3d-models
 kml-showing-sites-surveyed-in-2021
+results-and-discussion
+phase-1
+phase-2
