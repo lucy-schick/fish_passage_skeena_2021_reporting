@@ -1,9 +1,9 @@
 ## we can switch this to pull from our own system but we will just use simons bcfishpass for now to save time
 ## simons db will not have the updated pscis names so we we include workflows to see that our new pscis crossings match our old modelled crossings
 
-source('R/packages.R')
-source('R/functions.R')
-source('R/private_info.R')
+source('scripts/packages.R')
+# source('R/functions.R')
+source('scripts/private_info.R')
 
 # conn <- DBI::dbConnect(
 #   RPostgres::Postgres(),
@@ -66,7 +66,7 @@ pscis_all <- bind_rows(fpr_import_pscis_all())
 
 dat <- pscis_all %>%
   sf::st_as_sf(coords = c("easting", "northing"),
-               crs = 26911, remove = F) %>% ##don't forget to put it in the right crs buds
+               crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
   sf::st_transform(crs = 3005) ##get the crs same as the layers we want to hit up
 
 
@@ -92,31 +92,32 @@ FROM
   ali.misc AS a
 CROSS JOIN LATERAL
   (SELECT *
-   FROM bcfishpass.crossings_20220228
+   FROM bcfishpass.crossings
    ORDER BY
      a.geometry <-> geom
    LIMIT 1) AS b")
 
 ##get all the data and save it as an sqlite database as a snapshot of what is happening.  we can always hopefully update it
 query <- "SELECT *
-   FROM bcfishpass.crossings_20220228
-   WHERE watershed_group_code IN ('ELKR')"
+   FROM bcfishpass.crossings
+   WHERE watershed_group_code IN ('BULK', 'MORR')"
 
 
 ##import and grab the coordinates - this is already done
-bcfishpass_elkr <- st_read(conn, query =  query) %>%
+bcfishpass<- st_read(conn, query =  query) %>%
   # st_transform(crs = 26911) %>%  #before the coordinates were switched but now they look fine...
   # mutate(
   #        easting = sf::st_coordinates(.)[,1],
   #        northing = sf::st_coordinates(.)[,2]) %>%
-  st_drop_geometry()
+  st_drop_geometry() %>%
+  mutate(downstream_route_measure = as.integer(downstream_route_measure))
 
 
 
 query <- "select col_description((table_schema||'.'||table_name)::regclass::oid, ordinal_position) as column_comment,
 * from information_schema.columns
 WHERE table_schema = 'bcfishpass'
-and table_name = 'crossings_20220228';"
+and table_name = 'crossings';"
 
 bcfishpass_column_comments <- st_read(conn, query =  query) %>%
   select(column_name, column_comment)
@@ -131,15 +132,15 @@ dbDisconnect(conn = conn)
 ##join the modelled road data to our pscis submission info
 
 dat_joined <- left_join(
-  dat,
-  dat_info,
+  dat %>% select(-aggregated_crossings_id),
+  dat_info %>% select(-utm_zone),
   # select(dat_info,misc_point_id:fcode_label, distance, crossing_id), ##geom keep only the road info and the distance to nearest point from here
   by = "misc_point_id"
 )
 
 ##lets simiplify dat_joined to have a look up
 my_pscis_modelledcrossings_streams_xref <- dat_joined %>%
-  select(pscis_crossing_id, stream_crossing_id, modelled_crossing_id, source) %>%
+  select(aggregated_crossings_id, pscis_crossing_id, stream_crossing_id, modelled_crossing_id, site_id, source, distance) %>%
   st_drop_geometry()
 
 
@@ -154,8 +155,12 @@ rws_list_tables(conn)
 # rws_write(bcfishpass_archive, exists = F, delete = TRUE,
 #           conn = conn, x_name = paste0("bcfishpass_archive_", format(Sys.time(), "%Y-%m-%d-%H%m")))
 rws_drop_table("bcfishpass", conn = conn) ##now drop the table so you can replace it
-rws_write(bcfishpass_elkr, exists = F, delete = TRUE,
+rws_write(bcfishpass, exists = F, delete = TRUE,
           conn = conn, x_name = "bcfishpass")
+# write in the xref
+rws_drop_table("xref_pscis_my_crossing_modelled", conn = conn) ##now drop the table so you can replace it
+rws_write(my_pscis_modelledcrossings_streams_xref, exists = F, delete = TRUE,
+          conn = conn, x_name = "xref_pscis_my_crossing_modelled")
 # add the comments
 # bcfishpass_column_comments_archive <- readwritesqlite::rws_read_table("bcfishpass_column_comments", conn = conn)
 # rws_write(bcfishpass_column_comments_archive, exists = F, delete = TRUE,
@@ -187,14 +192,14 @@ match_this_to_join <- match_this %>%
 
 
 ##extra test to see if the match_this hits are already assigned in crossings
-test <- bcfishpass_elkr %>%
+test <- bcfishpass %>%
   filter(stream_crossing_id %in% (match_this %>% pull(pscis_crossing_id)))
 
 
 ##!!!!!i believe this checks to make sure someone hasn't manually assigned our newly matched crossings....
 ## not sure why it would though so probalby not necessary - old script
 ##need to learn to move from the other fork for now rename and grab from there
-file.copy(from = "C:/scripts/bcfishpass/01_prep/02_pscis/data/pscis_modelledcrossings_streams_xref.csv",
+file.copy(from = "C:/scripts/bcfishpass/data/pscis_modelledcrossings_streams_xref.csv",
             to = "C:/scripts/pscis_modelledcrossings_streams_xref.csv",
           overwrite = T)
 #
@@ -209,7 +214,7 @@ pscis_modelledcrossings_streams_xref %>%
 ##nope - all good
 
 ##grab the bcfishpass spawning and rearing table and put in the database so it can be used to populate the methods and tie to the references table
-urlfile="https://github.com/smnorris/bcfishpass/raw/main/02_model/parameters_wcrp/param_habitat.csv"
+urlfile="https://github.com/smnorris/bcfishpass/raw/main/parameters/parameters_newgraph/param_habitat.csv"
 
 bcfishpass_spawn_rear_model <- read_csv(url(urlfile))
 
