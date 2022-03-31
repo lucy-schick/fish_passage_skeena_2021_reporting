@@ -5,7 +5,7 @@ source('R/packages.R')
 photo_metadata <- exifr::read_exif('data/photos',recursive=T)  %>%
   janitor::clean_names() %>%
   select(file_name, source_file, gps_latitude, gps_longitude) %>%
-  mutate(url  = paste0('https://github.com/NewGraphEnvironment/fish_passage_elk_2021_reporting/raw/master/',
+  mutate(url  = paste0('https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/',
                        source_file)) %>%
          # base = tools::file_path_sans_ext(filename)) %>%
   filter(file_name %like% '_k_' &
