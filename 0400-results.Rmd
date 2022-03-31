@@ -24,7 +24,7 @@ tracks <- sf::read_sf("./data/habitat_confirmation_tracks.gpx", layer = "tracks"
 
 wshd_study_areas <- sf::read_sf('data/fishpass_mapping/wshd_study_areas.geojson')
   # st_transform(crs = 4326)
-photo_metadata <- readr::read_csv(file = 'data/photo_metadata.csv')
+
   
   
 map <- leaflet(height=500, width=780) %>%
@@ -123,9 +123,16 @@ map %>%
 ```
 
 
+
+
+```{r eval = F}
 ## Planning
 
-Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed.   `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Georeferenced field maps are presented in `r if(gitbook_on){knitr::asis_output("[here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) and available for bulk download as [Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")} else knitr::asis_output("[Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")` 
+# Following review of background literature, fisheries information, PSCIS and `bcfishpass` outputs, `r tab_plan_sf %>% nrow()` modelled and PSCIS crossings were reviewed to select sites for follow up with Phase 1 and 2 assessments in the Morice River watershed.   `r tab_plan_sf %>% filter(Priority == 'high') %>%  nrow()` crossings ranked as high priority for future follow up with Phase 1 and/or Phase 2 assessments, `r tab_plan_sf %>% filter(Priority == 'moderate') %>%  nrow()` crossings ranked as moderate priorities, and `r tab_plan_sf %>% filter(Priority == 'low') %>%  nrow()` crossings ranked as low priorities. Georeferenced field maps are presented in `r if(gitbook_on){knitr::asis_output("[here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) and available for bulk download as [Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")} else knitr::asis_output("[Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")` 
+
+
+```
+
 
 ```{r eval=F}
 
@@ -174,7 +181,7 @@ if(gitbook_on){
 ## Phase 2
 
 
-During 2021 field assessments, habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites in the Bulkley River watershed group and one site in the Morice River watershed group.  A total of approximately 18 km of stream was assessed, fish sampling utilizing electrofishing and/or minnowtrapping was conducted at eight sites, and three sites were mapped using remotely piloted aircraft. Of note, in 2020, surveys in some larger mid Bulkley River tributaries with high potential low gradient habitat gains (ex. Toboggan Creek and John Brown Creek) were not conducted due to poor survey conditions caused by high water.  Additionally, assessment at crossings on some large tributary streams in the upper Bulkley River were not conducted due to finite quantities of field time (ex. Ailport Creek, Cesford Creek and Watson Creek). Georeferenced field maps are presented in `r if(gitbook_on){knitr::asis_output("[here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) and available for bulk download as [Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")} else knitr::asis_output("[Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")`
+During 2021 field assessments, habitat confirmation assessments were conducted at `r hab_site_priorities %>% nrow()` sites in the Bulkley River watershed group and one site in the Morice River watershed group.  A total of approximately `r habitat_confirmations_priorities %>% pull(length_surveyed) %>% sum() %>% round(-3)/1000`km of stream was assessed, fish sampling utilizing electrofishing was conducted at five sites, and five sites were mapped using remotely piloted aircraft. Georeferenced field maps are presented in `r if(gitbook_on){knitr::asis_output("[here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) and available for bulk download as [Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")} else knitr::asis_output("[Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")`
 
 <br>
 
