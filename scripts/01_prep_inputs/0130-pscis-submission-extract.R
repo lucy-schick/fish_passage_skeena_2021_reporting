@@ -85,6 +85,8 @@ file.copy(from = 'data/pscis_phase1.xlsm',
           to = paste0(targetdir, 'pscis_phase1.xlsm'),
           overwrite = T)
 
+
+
 ## going to make a few notes here about the submission process
 ## we need to work in microsoft edge and put sites in "Internet Explorer mode pages" and set exceptions for uploading to soft and esf
 ## https://www.env.gov.bc.ca/csd/imb/soft/soft.shtml
@@ -92,6 +94,8 @@ file.copy(from = 'data/pscis_phase1.xlsm',
 
 
 # soft url
-# https://www.env.gov.bc.ca/perl/soft/dl.pl/20220329230453-14-gp-915f55c7-a0fd-43cf-a3ee-75d301db?simple=y
+# https://www.env.gov.bc.ca/perl/soft/dl.pl/20220331022839-14-gp-92bd0e96-9ff1-451a-9fa1-0d72e543?simple=y
 
-##chack on your submission here https://apps.nrs.gov.bc.ca/ext/esf/submissionSearch.do?action=detail&submissionId=2142599
+##check on your submission here https://apps.nrs.gov.bc.ca/ext/esf/submissionSearch.do?action=detail&submissionId=2142948
+# https://apps.nrs.gov.bc.ca/ext/esf/submissionSearch.do?action=detail&submissionId=2143131
+# https://apps.nrs.gov.bc.ca/ext/esf/submissionSearch.do?action=detail&submissionId=2143132
