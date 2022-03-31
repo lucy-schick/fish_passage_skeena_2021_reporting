@@ -492,3 +492,393 @@ hab_priority_prep %>%
 
 
 
+# extract crossings xref pscis --------------------------------------------
+
+get_this <- bcdata::bcdc_tidy_resources('pscis-assessments') %>%
+  filter(bcdata_available == T)  %>%
+  pull(package_id)
+
+dat <- bcdata::bcdc_get_data(get_this)
+
+##grab the pscis id xreferenced
+xref_pscis_my_crossing_modelled <- dat %>%
+  purrr::set_names(nm = tolower(names(.))) %>%
+  dplyr::filter(funding_project_number == "bulkley_2021_Phase1") %>% ##funding_project_number == "Bulkley_6-288_Reassessments"
+  select(external_crossing_reference, stream_crossing_id) %>%
+  dplyr::mutate(external_crossing_reference = as.numeric(external_crossing_reference)) %>%
+  sf::st_drop_geometry()
+
+
+conn <- rws_connect("data/bcfishpass.sqlite")
+rws_list_tables(conn)
+rws_drop_table("xref_pscis_my_crossing_modelled", conn = conn) ##now drop the table so you can replace it
+rws_write(xref_pscis_my_crossing_modelled, exists = F, delete = TRUE,
+          conn = conn, x_name = "xref_pscis_my_crossing_modelled")
+rws_disconnect(conn)
+
+
+# extract rd cost multiplier ----------------------------------------------
+
+source('scripts/packages.R')
+source('scripts/private_info.R')
+
+pscis_all <- bind_rows(fpr_import_pscis_all())
+
+# n_distinct(pscis_all$aggregated_crossings_id)
+
+dat <- pscis_all %>%
+  sf::st_as_sf(coords = c("easting", "northing"),
+               crs = 26909, remove = F) %>% ##don't forget to put it in the right crs buds
+  sf::st_transform(crs = 3005) ##get the crs same as the layers we want to hit up
+
+
+##get the road info from the database
+conn <- DBI::dbConnect(
+  RPostgres::Postgres(),
+  dbname = dbname,
+  host = host,
+  port = port,
+  user = user,
+  password = password
+)
+#
+# ##listthe schemas in the database
+# dbGetQuery(conn,
+#            "SELECT schema_name
+#            FROM information_schema.schemata")
+# #
+# #
+# # # ##list tables in a schema
+dbGetQuery(conn,
+           "SELECT table_name
+           FROM information_schema.tables
+           WHERE table_schema='bcfishpass'")
+# # # # #
+# # # # # ##list column names in a table
+dbGetQuery(conn,
+           "SELECT column_name,data_type
+           FROM information_schema.columns
+           WHERE table_name='crossings'") #modelled_stream_crossings #modelled_crossings_closed_bottom
+
+
+# add a unique id - we could just use the reference number
+dat$misc_point_id <- seq.int(nrow(dat))
+
+# dbSendQuery(conn, paste0("CREATE SCHEMA IF NOT EXISTS ", "test_hack",";"))
+# load to database
+sf::st_write(obj = dat, dsn = conn, Id(schema= "ali", table = "misc"))
+
+# we are using fish_passage.modelled_crossings_closed_bottom but this table is deprecated. Should revise to pull from files raw but that's lots of work
+# and this data should be fine so whatever
+# sf doesn't automagically create a spatial index or a primary key
+res <- dbSendQuery(conn, "CREATE INDEX ON ali.misc USING GIST (geometry)")
+dbClearResult(res)
+res <- dbSendQuery(conn, "ALTER TABLE ali.misc ADD PRIMARY KEY (misc_point_id)")
+dbClearResult(res)
+# swapped out fish_passage.modelled_crossings_closed_bottom
+dat_info <- dbGetQuery(conn, "SELECT
+  a.misc_point_id,
+  b.*,
+  ST_Distance(ST_Transform(a.geometry,3005), b.geom) AS distance
+FROM
+  ali.misc AS a
+CROSS JOIN LATERAL
+  (SELECT *
+   FROM fish_passage.modelled_crossings_closed_bottom
+   ORDER BY
+     a.geometry <-> geom
+   LIMIT 1) AS b")
+
+##join the modelling data to our pscis submission info
+dat_joined <- left_join(
+  select(dat, misc_point_id,
+         pscis_crossing_id,
+         my_crossing_reference,
+         aggregated_crossings_id,
+         stream_name,
+         road_name,
+         downstream_channel_width_meters,
+         barrier_result,
+         fill_depth_meters,
+         crossing_fix,
+         habitat_value,
+         recommended_diameter_or_span_meters,
+         source), ##traded pscis_crossing_id for my_crossing_reference
+  select(dat_info,
+         misc_point_id:utm_northing,
+         distance, geom), ##keep only the road info and the distance to nearest point from here
+  by = "misc_point_id"
+)
+
+dbDisconnect(conn = conn)
+
+pscis_rd <- dat_joined %>%
+  sf::st_drop_geometry() %>%
+  dplyr::mutate(my_road_class = case_when(is.na(road_class) & !is.na(file_type_description) ~
+                                            file_type_description,
+                                          T ~ road_class)) %>%
+  dplyr::mutate(my_road_class = case_when(is.na(my_road_class) & !is.na(owner_name) ~
+                                            'rail',
+                                          T ~ my_road_class)) %>%
+  dplyr::mutate(my_road_surface = case_when(is.na(road_surface) & !is.na(file_type_description) ~
+                                              'loose',
+                                            T ~ road_surface)) %>%
+  dplyr::mutate(my_road_surface = case_when(is.na(my_road_surface) & !is.na(owner_name) ~
+                                              'rail',
+                                            T ~ my_road_surface)) %>%
+  select(-geom)
+
+
+
+conn <- rws_connect("data/bcfishpass.sqlite")
+rws_list_tables(conn)
+rws_write(pscis_rd, exists = F, delete = TRUE,
+          conn = conn, x_name = "rd_class_surface")
+
+####----tab cost multipliers for road surface-----
+rd_cost_mult <- pscis_rd %>%
+  select(my_road_class, my_road_surface) %>%
+  # mutate(road_surface_mult = NA_real_, road_class_mult = NA_real_) %>%
+  mutate(road_class_mult = case_when(my_road_class == 'local' ~ 4,
+                                     my_road_class == 'collector' ~ 4,
+                                     my_road_class == 'arterial' ~ 15,
+                                     my_road_class == 'highway' ~ 15,
+                                     my_road_class == 'rail' ~ 15,
+                                     T ~ 1))  %>%
+  mutate(road_surface_mult = case_when(my_road_surface == 'loose' |
+                                         my_road_surface == 'rough' ~
+                                         1,
+                                       T ~ 2)) %>%
+  # mutate(road_type_mult = road_class_mult * road_surface_mult) %>%
+  mutate(cost_m_1000s_bridge = road_surface_mult * road_class_mult * 20,  #changed from 12.5 due to inflation
+         cost_embed_cv = road_surface_mult * road_class_mult * 40) %>%
+  # mutate(cost_1000s_for_10m_bridge = 10 * cost_m_1000s_bridge) %>%
+  distinct( .keep_all = T) %>%
+  tidyr::drop_na() %>%
+  arrange(cost_m_1000s_bridge, my_road_class)
+
+rws_write(rd_cost_mult, exists = F, delete = TRUE,
+          conn = conn, x_name = "rd_cost_mult")
+rws_list_tables(conn)
+rws_disconnect(conn)
+
+
+
+# fish summary ------------------------------------------------------------
+
+# we need to summarize all our fish sizes
+
+## fish collection data ----------------------------------------------------
+habitat_confirmations <- fpr::fpr_import_hab_con()
+
+
+hab_fish_indiv_prep <- habitat_confirmations %>%
+  purrr::pluck("step_3_individual_fish_data") %>%
+  dplyr::filter(!is.na(site_number)) %>%
+  select(-gazetted_names:-site_number)
+
+hab_loc <- habitat_confirmations %>%
+  purrr::pluck("step_1_ref_and_loc_info") %>%
+  dplyr::filter(!is.na(site_number))%>%
+  mutate(survey_date = janitor::excel_numeric_to_date(as.numeric(survey_date)))
+
+##add the species code
+hab_fish_codes <- habitat_confirmations %>%
+  purrr::pluck("species_by_group") %>% ##changed from specie_by_common_name because BB burbot was wrong!!
+  select(-step)
+
+hab_fish_indiv_prep2 <- left_join(
+  hab_fish_indiv_prep,
+  hab_loc,
+  by = 'reference_number'
+)
+
+
+hab_fish_indiv_prep3 <- left_join(
+  hab_fish_indiv_prep2,
+  select(hab_fish_codes, common_name:species_code),
+  by = c('species' = 'common_name')
+) %>%
+  dplyr::select(reference_number,
+                alias_local_name,
+                site_number,
+                sampling_method,
+                method_number,
+                haul_number_pass_number,
+                species_code,
+                length_mm,
+                weight_g) ##added method #
+
+
+##we need the size of the sites too
+
+####workflow is a bit weird because we need to input NFC sites and the size of the sites
+##or else we don't know about them in the summary.
+# hab_fish_collect_prep <- habitat_confirmations %>%
+#   purrr::pluck("step_2_fish_coll_data") %>%
+#   dplyr::filter(!is.na(site_number)) %>%
+#   # select(-gazetted_name:-site_number) %>%
+#   dplyr::distinct(reference_number, method_number, .keep_all = T) ##added method #
+# hab_fish_collect_prep_mt <- habitat_confirmations %>%
+#   purrr::pluck("step_2_fish_coll_data") %>%
+#   dplyr::filter(!is.na(site_number)) %>%
+#   tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
+#   mutate(site_id = paste0(site, location)) %>%
+#   distinct(local_name, sampling_method, method_number, .keep_all = T) %>% ##changed this to make it work as a feed for the extract-fish.R file
+#   mutate(across(c(date_in,date_out), janitor::excel_numeric_to_date)) %>%
+#   mutate(across(c(time_in,time_out), chron::times))
+
+##we use this to test things out
+# hab_fish_indiv <- left_join(
+#   select(hab_fish_collect_prep_mt %>% filter(reference_number == 36),
+#          reference_number,
+#          local_name,
+#          site_number:model, date_in:time_out ##added date_in:time_out
+#   ),
+#   select(hab_fish_indiv_prep3 %>% filter(reference_number == 36),
+#          reference_number,
+#          sampling_method,
+#          method_number, ##added method #
+#          # alias_local_name,
+#          species_code, length_mm),
+#   by = c('reference_number', 'sampling_method', 'method_number') #added method # and haul
+# )
+
+hab_fish_indiv_prep3 %>%
+  filter(is.na(length_mm))
+
+hab_fish_indiv <- select(hab_fish_indiv_prep3,
+         reference_number,
+         sampling_method,
+         method_number, ##added method #
+         haul_number_pass_number,
+         alias_local_name,
+         species_code,
+         length_mm,
+         weight_g) %>%
+  mutate(species_code = as.character(species_code)) %>%
+  mutate(species_code = case_when(
+    is.na(species_code) ~ 'NFC',
+    T ~ species_code)
+  ) %>%
+  mutate(species_code = as.factor(species_code))  %>%
+  mutate(life_stage = case_when(  ##this section comes from the histogram below - we include here so we don't need to remake the df
+    length_mm <= 70 ~ 'fry',
+    length_mm > 70 & length_mm <= 100 ~ 'parr',
+    length_mm > 100 & length_mm <= 140 ~ 'juvenile',
+    length_mm > 140 ~ 'adult',
+    T ~ NA_character_
+  )) %>%
+  mutate(life_stage = fct_relevel(life_stage,
+                                  'fry',
+                                  'parr',
+                                  'juvenile',
+                                  'adult')) %>%
+  tidyr::separate(alias_local_name, into = c('site', 'location', 'ef'), remove = F) %>%
+  mutate(site_id = paste0(site, '_', location))
+
+
+tab_fish_summary <- hab_fish_indiv %>%
+  group_by(site_id,
+           sampling_method,
+           haul_number_pass_number,
+           species_code) %>% ##added sampling method!
+  summarise(count_fish = n())
+
+
+
+###------from duncan_fish_plots_20200210
+
+####----------fish length-----------
+fish <- hab_fish_indiv
+# filter(species_code == "CO")
+# fish_eb <-  hab_fish_indiv %>% filter(species_code != "EB")
+
+bin_1 <- floor(min(fish$length_mm, na.rm = TRUE)/5)*5
+bin_n <- ceiling(max(fish$length_mm, na.rm = TRUE)/5)*5
+bins <- seq(bin_1,bin_n, by = 5)
+
+plot_fish_hist <- ggplot(fish %>% filter(!species_code %in% c("LSU",'SU','NFC', 'DV')),
+                         aes(x=length_mm
+                             # fill=alias_local_name
+                             # color = alias_local_name
+                         )) +
+  geom_histogram(breaks = bins, alpha=0.75,
+                 position="identity", size = 0.75)+
+  labs(x = "Fork Length (mm)", y = "Count (#)") +
+  facet_wrap(~species_code)+
+  # scale_color_grey() +
+  # scale_fill_grey() +
+  theme_bw(base_size = 8)+
+  scale_x_continuous(breaks = bins[seq(1, length(bins), by = 2)])+
+  # scale_color_manual(values=c("grey90", "grey60", "grey30", "grey0"))+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+# geom_histogram(aes(y=..density..), breaks = bins, alpha=1,
+#                position="identity", size = 0.75)
+plot_fish_hist
+
+
+# ggsave(plot = plot_fish_hist, file="./fig/fish_histogram.png",
+#        h=3.4, w=5.11, units="in", dpi=300)
+
+####-----------summary tables for input to spreadsheet----------------------
+hab_fish_input_prep <- hab_fish_indiv %>%
+  group_by(across(-contains('length_mm'))) %>%
+  # group_by(reference_number:model, species_code, life_stage) %>%
+  summarise(min = min(length_mm),
+            max = max(length_mm),
+            n = length(length_mm))
+# janitor::adorn_totals()
+
+
+##need to add the species name
+hab_fish_input <- left_join(
+  hab_fish_input_prep,
+  select(hab_fish_codes, common_name, species_code),
+  by = 'species_code'
+) %>%
+  ungroup() %>%
+  select(reference_number:time_out, common_name, stage = life_stage, total_number = n,
+         min, max) %>%
+  mutate(total_number = case_when(
+    common_name == 'No Fish Caught' ~ NA_integer_,
+    T ~ total_number
+  ))
+# janitor::adorn_totals()   ##use this to ensure you have the same number of fish in the summary as the individual fish sheet
+
+##burn to a csv so you can cut and paste into your fish submission
+# hab_fish_input %>%
+#   readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/hab_con_fish_summary.csv'),
+#                    na = "")
+
+
+######----------------density plots--------------------------
+
+hab_fish_dens <- hab_fish_indiv %>%
+  filter(sampling_method == 'electrofishing') %>% ##added this since we now have mt data as well!!
+  mutate(area = round(ef_length_m * ef_width_m),0) %>%
+  group_by(local_name, site_number, ef_length_m, ef_width_m, ef_seconds, area, species_code, life_stage) %>%
+  summarise(fish_total = length(life_stage)) %>%
+  ungroup() %>%
+  mutate(density_100m2 = round(fish_total/area * 100, 1)) %>%
+  tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
+  mutate(site_id = paste0(site, location),
+         location = case_when(location == 'us' ~ 'Upstream',
+                              T ~ 'Downstream'),
+         life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult')))
+
+# hab_fish_dens %>%
+#   readr::write_csv(file = paste0(getwd(), '/data/extracted_inputs/hab_fish_dens.csv'))
+
+##paths to write to will need to change now
+# ggsave(plot = plot_fish_box, filename = "./fig/plot_fish_box.png",
+#        h=9.66, w=14.5, units="cm", dpi=300)
+
+
+##clean up the objects
+rm(hab_site_prep,
+   # hab_fish_indiv_prep,
+   # hab_fish_indiv_prep2,
+   hab_fish_collect_prep2,
+   hab_loc2)
+
