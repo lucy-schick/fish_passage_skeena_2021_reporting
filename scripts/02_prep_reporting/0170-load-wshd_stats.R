@@ -1,7 +1,7 @@
-source('R/packages.R')
-source('R/functions.R')
-source('R/private_info.R')
-source('R/tables.R')
+source('scripts/packages.R')
+source('scripts/functions.R')
+source('scripts/private_info.R')
+source('scripts/tables.R')
 
 # retrieve the watersheds and elevations of the pscis sites then burn to the sqlite
 
