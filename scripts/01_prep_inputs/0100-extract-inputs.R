@@ -60,7 +60,7 @@ dbGetQuery(conn,
 
 
 
-# UTMs --------------------------------------------------------------------
+# UTMs Phase 1--------------------------------------------------------------------
 
 
 
@@ -481,40 +481,19 @@ hab_priority_prep <- left_join(
     purrr::pluck("step_4_stream_site_data") %>%
     select(reference_number, comments),
   by = 'reference_number'
-)
-  # filter(!comments %ilike% 'feature_record_only') #we don't need to bin for these but we left them for now
+) %>%
+  filter(!comments %ilike% 'feature_record_only') #we don't need to bin for these but we left them for now
+
+# grab the fish species
+
 
 
 
 # burn to csv to use as your template.  For safety use a different name then rename manually
-hab_priority_prep %>%
-  readr::write_csv('data/habitat_confirmations_priorities_raw.csv', na = '')
+# hab_priority_prep %>%
+#   readr::write_csv('data/habitat_confirmations_priorities_raw.csv', na = '')
 
 
-
-# extract crossings xref pscis --------------------------------------------
-
-get_this <- bcdata::bcdc_tidy_resources('pscis-assessments') %>%
-  filter(bcdata_available == T)  %>%
-  pull(package_id)
-
-dat <- bcdata::bcdc_get_data(get_this)
-
-##grab the pscis id xreferenced
-xref_pscis_my_crossing_modelled <- dat %>%
-  purrr::set_names(nm = tolower(names(.))) %>%
-  dplyr::filter(funding_project_number == "bulkley_2021_Phase1") %>% ##funding_project_number == "Bulkley_6-288_Reassessments"
-  select(external_crossing_reference, stream_crossing_id) %>%
-  dplyr::mutate(external_crossing_reference = as.numeric(external_crossing_reference)) %>%
-  sf::st_drop_geometry()
-
-
-conn <- rws_connect("data/bcfishpass.sqlite")
-rws_list_tables(conn)
-rws_drop_table("xref_pscis_my_crossing_modelled", conn = conn) ##now drop the table so you can replace it
-rws_write(xref_pscis_my_crossing_modelled, exists = F, delete = TRUE,
-          conn = conn, x_name = "xref_pscis_my_crossing_modelled")
-rws_disconnect(conn)
 
 
 # extract rd cost multiplier ----------------------------------------------
@@ -546,15 +525,13 @@ conn <- DBI::dbConnect(
 # dbGetQuery(conn,
 #            "SELECT schema_name
 #            FROM information_schema.schemata")
-# #
-# #
-# # # ##list tables in a schema
+
+##list tables in a schema
 dbGetQuery(conn,
            "SELECT table_name
            FROM information_schema.tables
            WHERE table_schema='bcfishpass'")
-# # # # #
-# # # # # ##list column names in a table
+##list column names in a table
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
@@ -662,6 +639,84 @@ rws_write(rd_cost_mult, exists = F, delete = TRUE,
 rws_list_tables(conn)
 rws_disconnect(conn)
 
+
+# xref my_crossings pscis --------------------------------------------
+
+get_this <- bcdata::bcdc_tidy_resources('pscis-assessments') %>%
+  filter(bcdata_available == T)  %>%
+  pull(package_id)
+
+dat <- bcdata::bcdc_get_data(get_this)
+
+## xref_pscis_my_crossing_modelled ----------------
+xref_pscis_my_crossing_modelled <- dat %>%
+  purrr::set_names(nm = tolower(names(.))) %>%
+  dplyr::filter(funding_project_number == "bulkley_2021_Phase1") %>% ##funding_project_number == "Bulkley_6-288_Reassessments"
+  select(external_crossing_reference, stream_crossing_id) %>%
+  dplyr::mutate(external_crossing_reference = as.numeric(external_crossing_reference)) %>%
+  sf::st_drop_geometry()
+
+
+# conn <- rws_connect("data/bcfishpass.sqlite")
+# rws_list_tables(conn)
+# rws_drop_table("xref_pscis_my_crossing_modelled", conn = conn) ##now drop the table so you can replace it
+# rws_write(xref_pscis_my_crossing_modelled, exists = F, delete = TRUE,
+#           conn = conn, x_name = "xref_pscis_my_crossing_modelled")
+
+
+## xref_hab_site_corrected----------------------
+habitat_confirmations <- fpr_import_hab_con()
+
+hab_loc <- habitat_confirmations %>%
+  purrr::pluck("step_1_ref_and_loc_info") %>%
+  dplyr::filter(!is.na(site_number))%>%
+  mutate(survey_date = janitor::excel_numeric_to_date(as.numeric(survey_date))) %>%
+  tidyr::separate(alias_local_name, into = c('site', 'location', 'fish'), remove = F) %>%
+  select(site:fish) %>%
+  mutate(site = as.numeric(site))
+
+xref_hab_site_corrected <- left_join(
+  hab_loc,
+  xref_pscis_my_crossing_modelled,
+  by = c('site' = 'external_crossing_reference')
+) %>%
+  mutate(stream_crossing_id = as.numeric(stream_crossing_id),
+         stream_crossing_id = case_when(
+           is.na(stream_crossing_id) ~ site,
+           T ~ stream_crossing_id
+         )) %>%
+  mutate(site_corrected = paste(stream_crossing_id, location, fish, sep = '_')) %>%
+  mutate(site_corrected = stringr::str_replace_all(site_corrected, '_NA', '')) %>%
+  tibble::rownames_to_column() %>%
+  readr::write_csv(file = paste0(getwd(), '/data/inputs_extracted/xref_hab_site_corrected.csv'), na = '')
+
+
+# rws_list_tables(conn)
+# rws_drop_table("xref_hab_site_corrected", conn = conn) ##now drop the table so you can replace it
+# rws_write(hab_site_corrected, exists = F, delete = TRUE,
+#           conn = conn, x_name = "xref_hab_site_corrected")
+
+## xref_phase2_corrected------------------------------------
+pscis_all <- bind_rows(pscis_list)
+
+xref_phase2_corrected <- left_join(
+  pscis_all,
+  xref_pscis_my_crossing_modelled,
+  by = c('my_crossing_reference' = 'external_crossing_reference')
+) %>%
+  mutate(pscis_crossing_id = case_when(
+    is.na(pscis_crossing_id) ~ stream_crossing_id,
+    T ~ as.integer(pscis_crossing_id)
+  )) %>%
+  filter(source %ilike% 'phase2') %>%
+  readr::write_csv(file = paste0(getwd(), '/data/inputs_extracted/xref_phase2_corrected.csv'), na = '')
+
+# rws_list_tables(conn)
+# rws_drop_table("xref_phase2_corrected", conn = conn) ##now drop the table so you can replace it
+# rws_write(xref_pscis_my_crossing_phase2, exists = F, delete = TRUE,
+#           conn = conn, x_name = "xref_phase2_corrected")
+# rws_list_tables(conn)
+# rws_disconnect(conn)
 
 
 # fish summary ------------------------------------------------------------
