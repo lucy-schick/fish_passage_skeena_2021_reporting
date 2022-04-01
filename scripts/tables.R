@@ -185,80 +185,80 @@ tab_barrier_result <- dplyr::tribble(
 ##workflows to create these tables can be found at https://github.com/NewGraphEnvironment/fish_passage_elk_2020_reporting_cwf/blob/master/R/tables.R
 
 
-####---------make a table to cross reference column names for ---------------
-xref_names <- tibble::tribble(
-                          ~bcdata,                               ~spdsht,                 ~report, ~id_join, ~id_side,
-                             "id",                                    NA,                      NA,       NA,       NA,
-         "funding_project_number",                                    NA,                      NA,       NA,       NA,
-                "funding_project",                                    NA,                      NA,       NA,       NA,
-                     "project_id",                                    NA,                      NA,       NA,       NA,
-                 "funding_source",                                    NA,                      NA,       NA,       NA,
-         "responsible_party_name",                                    NA,                      NA,       NA,       NA,
-                "consultant_name",                                    NA,                      NA,       NA,       NA,
-                "assessment_date",                                "date",                  "Date",       1L,       1L,
-             "stream_crossing_id",                   "pscis_crossing_id",              "PSCIS ID",       2L,       1L,
-                  "assessment_id",                                    NA,                      NA,       NA,       NA,
-    "external_crossing_reference",               "my_crossing_reference",           "External ID",       3L,       1L,
-                   "crew_members",                        "crew_members",                  "Crew",       5L,       1L,
-                       "utm_zone",                            "utm_zone",              "UTM Zone",       6L,       1L,
-                    "utm_easting",                             "easting",               "Easting",       7L,       1L,
-                   "utm_northing",                            "northing",              "Northing",       8L,       1L,
-        "location_confidence_ind",                                    NA,                      NA,       NA,       NA,
-                    "stream_name",                         "stream_name",                "Stream",       9L,       1L,
-                      "road_name",                           "road_name",                  "Road",      10L,       1L,
-                   "road_km_mark",                        "road_km_mark",                      NA,       NA,       NA,
-                    "road_tenure",                         "road_tenure",           "Road Tenure",      11L,       1L,
-             "crossing_type_code",                       "crossing_type",         "Crossing Type",       NA,       NA,
-             "crossing_type_desc",                                    NA,                      NA,       NA,       NA,
-          "crossing_subtype_code",                    "crossing_subtype",     "Crossing Sub Type",       1L,       2L,
-          "crossing_subtype_desc",                                    NA,                      NA,       NA,       NA,
-               "diameter_or_span",             "diameter_or_span_meters",          "Diameter (m)",       2L,       2L,
-                "length_or_width",              "length_or_width_meters",            "Length (m)",       3L,       2L,
-    "continuous_embeddedment_ind",      "continuous_embeddedment_yes_no",              "Embedded",       5L,       2L,
-     "average_depth_embededdment",   "average_depth_embededdment_meters",    "Depth Embedded (m)",       6L,       2L,
-           "resemble_channel_ind",             "resemble_channel_yes_no",      "Resemble Channel",       7L,       2L,
-                "backwatered_ind",                  "backwatered_yes_no",           "Backwatered",       8L,       2L,
-         "percentage_backwatered",              "percentage_backwatered",   "Percent Backwatered",       9L,       2L,
-                     "fill_depth",                   "fill_depth_meters",        "Fill Depth (m)",      10L,       2L,
-                    "outlet_drop",                  "outlet_drop_meters",       "Outlet Drop (m)",      11L,       2L,
-              "outlet_pool_depth",             "outlet_pool_depth_0_01m", "Outlet Pool Depth (m)",      12L,       2L,
-                 "inlet_drop_ind",                   "inlet_drop_yes_no",            "Inlet Drop",      13L,       2L,
-                  "culvert_slope",               "culvert_slope_percent",             "Slope (%)",      14L,       2L,
-       "downstream_channel_width",     "downstream_channel_width_meters",     "Channel Width (m)",      12L,       1L,
-                   "stream_slope",                        "stream_slope",      "Stream Slope (%)",      13L,       1L,
-            "beaver_activity_ind",              "beaver_activity_yes_no",       "Beaver Activity",      14L,       1L,
-              "fish_observed_ind",                "fish_observed_yes_no",          "Fish Sighted",       NA,       NA,
-               "valley_fill_code",                         "valley_fill",           "Valley Fill",      15L,       2L,
-          "valley_fill_code_desc",                                    NA,                      NA,       NA,       NA,
-             "habitat_value_code",                       "habitat_value",         "Habitat Value",      15L,       1L,
-             "habitat_value_desc",                                    NA,                      NA,       NA,       NA,
-             "stream_width_ratio",                  "stream_width_ratio",                   "SWR",       NA,       NA,
-       "stream_width_ratio_score",                                    NA,                 "Score",       NA,       NA,
-           "culvert_length_score",                "culvert_length_score",                 "Score",       NA,       NA,
-                    "embed_score",                         "embed_score",                 "Score",       NA,       NA,
-              "outlet_drop_score",                   "outlet_drop_score",                 "Score",       NA,       NA,
-            "culvert_slope_score",                 "culvert_slope_score",                 "Score",       NA,       NA,
-                    "final_score",                         "final_score",           "Final score",      16L,       1L,
-            "barrier_result_code",                      "barrier_result",        "Barrier Result",      16L,       2L,
-     "barrier_result_description",                                    NA,                      NA,       NA,       NA,
-              "crossing_fix_code",                                    NA,                      NA,       NA,       NA,
-              "crossing_fix_desc",                        "crossing_fix",              "Fix type",      17L,       1L,
-   "recommended_diameter_or_span", "recommended_diameter_or_span_meters",   "Fix Span / Diameter",      17L,       2L,
-             "assessment_comment",                  "assessment_comment",               "Comment",       NA,       NA,
-                     "ecocat_url",                                    NA,                      NA,       NA,       NA,
-                 "image_view_url",                                    NA,                      NA,       NA,       NA,
-           "current_pscis_status",                                    NA,                      NA,       NA,       NA,
-     "current_crossing_type_code",                                    NA,                      NA,       NA,       NA,
-     "current_crossing_type_desc",                                    NA,                      NA,       NA,       NA,
-  "current_crossing_subtype_code",                                    NA,                      NA,       NA,       NA,
-  "current_crossing_subtype_desc",                                    NA,                      NA,       NA,       NA,
-    "current_barrier_result_code",                                    NA,                      NA,       NA,       NA,
-    "current_barrier_description",                                    NA,                      NA,       NA,       NA,
-                   "feature_code",                                    NA,                      NA,       NA,       NA,
-                       "objectid",                                    NA,                      NA,       NA,       NA,
-               "se_anno_cad_data",                                    NA,                      NA,       NA,       NA,
-                       "geometry",                                    NA,                      NA,       NA,       NA
-  )
+# ####---------make a table to cross reference column names for ---------------
+# xref_names <- tibble::tribble(
+#                           ~bcdata,                               ~spdsht,                 ~report, ~id_join, ~id_side,
+#                              "id",                                    NA,                      NA,       NA,       NA,
+#          "funding_project_number",                                    NA,                      NA,       NA,       NA,
+#                 "funding_project",                                    NA,                      NA,       NA,       NA,
+#                      "project_id",                                    NA,                      NA,       NA,       NA,
+#                  "funding_source",                                    NA,                      NA,       NA,       NA,
+#          "responsible_party_name",                                    NA,                      NA,       NA,       NA,
+#                 "consultant_name",                                    NA,                      NA,       NA,       NA,
+#                 "assessment_date",                                "date",                  "Date",       1L,       1L,
+#              "stream_crossing_id",                   "pscis_crossing_id",              "PSCIS ID",       2L,       1L,
+#                   "assessment_id",                                    NA,                      NA,       NA,       NA,
+#     "external_crossing_reference",               "my_crossing_reference",           "External ID",       3L,       1L,
+#                    "crew_members",                        "crew_members",                  "Crew",       5L,       1L,
+#                        "utm_zone",                            "utm_zone",              "UTM Zone",       6L,       1L,
+#                     "utm_easting",                             "easting",               "Easting",       7L,       1L,
+#                    "utm_northing",                            "northing",              "Northing",       8L,       1L,
+#         "location_confidence_ind",                                    NA,                      NA,       NA,       NA,
+#                     "stream_name",                         "stream_name",                "Stream",       9L,       1L,
+#                       "road_name",                           "road_name",                  "Road",      10L,       1L,
+#                    "road_km_mark",                        "road_km_mark",                      NA,       NA,       NA,
+#                     "road_tenure",                         "road_tenure",           "Road Tenure",      11L,       1L,
+#              "crossing_type_code",                       "crossing_type",         "Crossing Type",       NA,       NA,
+#              "crossing_type_desc",                                    NA,                      NA,       NA,       NA,
+#           "crossing_subtype_code",                    "crossing_subtype",     "Crossing Sub Type",       1L,       2L,
+#           "crossing_subtype_desc",                                    NA,                      NA,       NA,       NA,
+#                "diameter_or_span",             "diameter_or_span_meters",          "Diameter (m)",       2L,       2L,
+#                 "length_or_width",              "length_or_width_meters",            "Length (m)",       3L,       2L,
+#     "continuous_embeddedment_ind",      "continuous_embeddedment_yes_no",              "Embedded",       5L,       2L,
+#      "average_depth_embededdment",   "average_depth_embededdment_meters",    "Depth Embedded (m)",       6L,       2L,
+#            "resemble_channel_ind",             "resemble_channel_yes_no",      "Resemble Channel",       7L,       2L,
+#                 "backwatered_ind",                  "backwatered_yes_no",           "Backwatered",       8L,       2L,
+#          "percentage_backwatered",              "percentage_backwatered",   "Percent Backwatered",       9L,       2L,
+#                      "fill_depth",                   "fill_depth_meters",        "Fill Depth (m)",      10L,       2L,
+#                     "outlet_drop",                  "outlet_drop_meters",       "Outlet Drop (m)",      11L,       2L,
+#               "outlet_pool_depth",             "outlet_pool_depth_0_01m", "Outlet Pool Depth (m)",      12L,       2L,
+#                  "inlet_drop_ind",                   "inlet_drop_yes_no",            "Inlet Drop",      13L,       2L,
+#                   "culvert_slope",               "culvert_slope_percent",             "Slope (%)",      14L,       2L,
+#        "downstream_channel_width",     "downstream_channel_width_meters",     "Channel Width (m)",      12L,       1L,
+#                    "stream_slope",                        "stream_slope",      "Stream Slope (%)",      13L,       1L,
+#             "beaver_activity_ind",              "beaver_activity_yes_no",       "Beaver Activity",      14L,       1L,
+#               "fish_observed_ind",                "fish_observed_yes_no",          "Fish Sighted",       NA,       NA,
+#                "valley_fill_code",                         "valley_fill",           "Valley Fill",      15L,       2L,
+#           "valley_fill_code_desc",                                    NA,                      NA,       NA,       NA,
+#              "habitat_value_code",                       "habitat_value",         "Habitat Value",      15L,       1L,
+#              "habitat_value_desc",                                    NA,                      NA,       NA,       NA,
+#              "stream_width_ratio",                  "stream_width_ratio",                   "SWR",       NA,       NA,
+#        "stream_width_ratio_score",                                    NA,                 "Score",       NA,       NA,
+#            "culvert_length_score",                "culvert_length_score",                 "Score",       NA,       NA,
+#                     "embed_score",                         "embed_score",                 "Score",       NA,       NA,
+#               "outlet_drop_score",                   "outlet_drop_score",                 "Score",       NA,       NA,
+#             "culvert_slope_score",                 "culvert_slope_score",                 "Score",       NA,       NA,
+#                     "final_score",                         "final_score",           "Final score",      16L,       1L,
+#             "barrier_result_code",                      "barrier_result",        "Barrier Result",      16L,       2L,
+#      "barrier_result_description",                                    NA,                      NA,       NA,       NA,
+#               "crossing_fix_code",                                    NA,                      NA,       NA,       NA,
+#               "crossing_fix_desc",                        "crossing_fix",              "Fix type",      17L,       1L,
+#    "recommended_diameter_or_span", "recommended_diameter_or_span_meters",   "Fix Span / Diameter",      17L,       2L,
+#              "assessment_comment",                  "assessment_comment",               "Comment",       NA,       NA,
+#                      "ecocat_url",                                    NA,                      NA,       NA,       NA,
+#                  "image_view_url",                                    NA,                      NA,       NA,       NA,
+#            "current_pscis_status",                                    NA,                      NA,       NA,       NA,
+#      "current_crossing_type_code",                                    NA,                      NA,       NA,       NA,
+#      "current_crossing_type_desc",                                    NA,                      NA,       NA,       NA,
+#   "current_crossing_subtype_code",                                    NA,                      NA,       NA,       NA,
+#   "current_crossing_subtype_desc",                                    NA,                      NA,       NA,       NA,
+#     "current_barrier_result_code",                                    NA,                      NA,       NA,       NA,
+#     "current_barrier_description",                                    NA,                      NA,       NA,       NA,
+#                    "feature_code",                                    NA,                      NA,       NA,       NA,
+#                        "objectid",                                    NA,                      NA,       NA,       NA,
+#                "se_anno_cad_data",                                    NA,                      NA,       NA,       NA,
+#                        "geometry",                                    NA,                      NA,       NA,       NA
+#   )
 
 
 xref_structure_fix <- tibble::tribble(
@@ -373,8 +373,7 @@ tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names 
   # dplyr::group_split(value)
 
 
-##these are the reassessments!!!!!
-##built from funciton in functions.R file
+# html tables
 tabs_phase1 <- mapply(
   fpr::fpr_table_cv_detailed_print,
   tab_sum = tab_summary,
@@ -382,15 +381,28 @@ tabs_phase1 <- mapply(
   photos = tab_photo_url)
 
 
-##built from funciton in functions.R file
-tabs_phase1_pdf <- mapply(
-  fpr::fpr_table_cv_detailed_print,
-  tab_sum = tab_summary,
-  comments = tab_summary_comments,
-  photos = tab_photo_url,
-  gitbook = FALSE
-  )
+# html tables for the pdf version
+# tabs_phase1_pdf <- mapply(
+#   fpr::fpr_table_cv_detailed_print,
+#   tab_sum = tab_summary,
+#   comments = tab_summary_comments,
+#   photos = tab_photo_url,
+#   gitbook_switch = FALSE
+#   ) %>%
+#   head()
+fpr_print_tab_summary_all_pdf <- function(tab_sum, comments, photos){
+  kable(tab_sum, booktabs = T) %>%
+    kableExtra::kable_styling(c("condensed"), full_width = T, font_size = 11) %>%
+    kableExtra::add_footnote(label = paste0('Comments: ', comments[[1]]), notation = 'none') %>% #this grabs the comments out
+    kableExtra::add_footnote(label = paste0('Photos: PSCIS ID ', photos[[2]],
+                                            '. From top left clockwise: Road/Site Card, Barrel, Outlet, Downstream, Upstream, Inlet.',
+                                            photos[[1]]), notation = 'none') %>%
+    kableExtra::add_footnote(label = '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>', escape = F, notation = 'none')
+}
 
+
+tabs_phase1_pdf <- mapply(fpr_print_tab_summary_all_pdf, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url) %>%
+  head()
 
 hab_site_prep <-  habitat_confirmations %>%
   purrr::pluck("step_4_stream_site_data") %>%
@@ -753,174 +765,6 @@ xref_bcfishpass_names <- tibble::tribble(
 
 
 
-# xref_bcfishpass_names_old <-  tibble::tribble(
-#                                                                                ~bcfishpass,                                                  ~report, ~id_join, ~id_side,
-#                                                                  "aggregated_crossings_id",                                "Aggregated Crossings Id",       NA,       NA,
-#                                                                       "stream_crossing_id",                                     "Stream Crossing Id",       NA,       NA,
-#                                                                                   "dam_id",                                                 "Dam Id",       NA,       NA,
-#                                                            "misc_barrier_anthropogenic_id",                          "Misc Barrier Anthropogenic Id",       NA,       NA,
-#                                                                     "modelled_crossing_id",                                   "Modelled Crossing Id",       NA,       NA,
-#                                                                          "crossing_source",                                        "Crossing Source",       NA,       NA,
-#                                                                             "pscis_status",                                           "Pscis Status",       NA,       NA,
-#                                                                       "crossing_type_code",                                     "Crossing Type Code",       NA,       NA,
-#                                                                    "crossing_subtype_code",                                  "Crossing Subtype Code",       NA,       NA,
-#                                                            "modelled_crossing_type_source",                          "Modelled Crossing Type Source",       NA,       NA,
-#                                                                           "barrier_status",                                         "Barrier Status",       NA,       NA,
-#                                                                          "pscis_road_name",                                        "Pscis Road Name",       NA,       NA,
-#                                                         "transport_line_structured_name_1",                       "Transport Line Structured Name 1",       NA,       NA,
-#                                                          "transport_line_type_description",                        "Transport Line Type Description",       NA,       NA,
-#                                                       "transport_line_surface_description",                     "Transport Line Surface Description",       NA,       NA,
-#                                                                      "ften_forest_file_id",                                    "Ften Forest File Id",       NA,       NA,
-#                                                               "ften_file_type_description",                             "Ften File Type Description",       NA,       NA,
-#                                                                       "ften_client_number",                                     "Ften Client Number",       NA,       NA,
-#                                                                         "ften_client_name",                                       "Ften Client Name",       NA,       NA,
-#                                                              "ften_life_cycle_status_code",                            "Ften Life Cycle Status Code",       NA,       NA,
-#                                                                          "rail_track_name",                                        "Rail Track Name",       NA,       NA,
-#                                                                          "rail_owner_name",                                        "Rail Owner Name",       NA,       NA,
-#                                                               "rail_operator_english_name",                             "Rail Operator English Name",       NA,       NA,
-#                                                                            "ogc_proponent",                                          "Ogc Proponent",       NA,       NA,
-#                                                                                 "dam_name",                                               "Dam Name",       NA,       NA,
-#                                                                                "dam_owner",                                              "Dam Owner",       NA,       NA,
-#                                                                        "wcrp_barrier_type",                                      "Wcrp Barrier Type",       NA,       NA,
-#                                                                                 "utm_zone",                                               "Utm Zone",       NA,       NA,
-#                                                                              "utm_easting",                                            "Utm Easting",       NA,       NA,
-#                                                                             "utm_northing",                                           "Utm Northing",       NA,       NA,
-#                                                                        "linear_feature_id",                                      "Linear Feature Id",       NA,       NA,
-#                                                                            "blue_line_key",                                          "Blue Line Key",       NA,       NA,
-#                                                                 "downstream_route_measure",                               "Downstream Route Measure",       NA,       NA,
-#                                                                             "wscode_ltree",                                           "Wscode Ltree",       NA,       NA,
-#                                                                          "localcode_ltree",                                        "Localcode Ltree",       NA,       NA,
-#                                                                     "watershed_group_code",                                   "Watershed Group Code",       NA,       NA,
-#                                                                          "dnstr_crossings",                                        "Dnstr Crossings",       NA,       NA,
-#                                                             "dnstr_barriers_anthropogenic",                           "Dnstr Barriers Anthropogenic",       NA,       NA,
-#                                                                             "stream_order",                                           "Stream Order",       NA,       NA,
-#                                                                         "stream_magnitude",                                       "Stream Magnitude",       NA,       NA,
-#                                                                                 "gradient",                                               "Gradient",       NA,       NA,
-#                                                               "accessibility_model_salmon",                             "Accessibility Model Salmon",       NA,       NA,
-#                                                            "accessibility_model_steelhead",                          "Accessibility Model Steelhead",       NA,       NA,
-#                                                                  "accessibility_model_wct",                                "Accessibility Model Wct",       NA,       NA,
-#                                                                        "observedspp_dnstr",                                      "Observedspp Dnstr",       NA,       NA,
-#                                                                        "observedspp_upstr",                                      "Observedspp Upstr",       NA,       NA,
-#                                                                       "watershed_upstr_ha",                                   "Watershed Upstr (ha)",       NA,       NA,
-#                                                                         "total_network_km",                                     "Total Network (km)",       NA,       NA,
-#                                                                          "total_stream_km",                                      "Total Stream (km)",       NA,       NA,
-#                                                                   "total_lakereservoir_ha",                              "Total Lake Reservoir (ha)",       NA,       NA,
-#                                                                         "total_wetland_ha",                                     "Total Wetland (ha)",       NA,       NA,
-#                                                        "total_slopeclass03_waterbodies_km",                    "Total Slopeclass03 Waterbodies (km)",       NA,       NA,
-#                                                                    "total_slopeclass03_km",                                "Total Slopeclass03 (km)",       NA,       NA,
-#                                                                    "total_slopeclass05_km",                                "Total Slopeclass05 (km)",       NA,       NA,
-#                                                                    "total_slopeclass08_km",                                "Total Slopeclass08 (km)",       NA,       NA,
-#                                                                    "total_slopeclass15_km",                                "Total Slopeclass15 (km)",       NA,       NA,
-#                                                                    "total_slopeclass22_km",                                "Total Slopeclass22 (km)",       NA,       NA,
-#                                                                    "total_slopeclass30_km",                                "Total Slopeclass30 (km)",       NA,       NA,
-#                                                      "total_belowupstrbarriers_network_km",                      "Total Below Barriers Network (km)",       NA,       NA,
-#                                                       "total_belowupstrbarriers_stream_km",                       "Total Below Barriers Stream (km)",       NA,       NA,
-#                                                "total_belowupstrbarriers_lakereservoir_ha",               "Total Below Barriers Lake Reservoir (ha)",       NA,       NA,
-#                                                      "total_belowupstrbarriers_wetland_ha",                      "Total Below Barriers Wetland (ha)",       NA,       NA,
-#                                     "total_belowupstrbarriers_slopeclass03_waterbodies_km",     "Total Below Barriers Slopeclass03 Waterbodies (km)",       NA,       NA,
-#                                                 "total_belowupstrbarriers_slopeclass03_km",                 "Total Below Barriers Slopeclass03 (km)",       NA,       NA,
-#                                                 "total_belowupstrbarriers_slopeclass05_km",                 "Total Below Barriers Slopeclass05 (km)",       NA,       NA,
-#                                                 "total_belowupstrbarriers_slopeclass08_km",                 "Total Below Barriers Slopeclass08 (km)",       NA,       NA,
-#                                                 "total_belowupstrbarriers_slopeclass15_km",                 "Total Below Barriers Slopeclass15 (km)",       NA,       NA,
-#                                                 "total_belowupstrbarriers_slopeclass22_km",                 "Total Below Barriers Slopeclass22 (km)",       NA,       NA,
-#                                                 "total_belowupstrbarriers_slopeclass30_km",                 "Total Below Barriers Slopeclass30 (km)",       NA,       NA,
-#                                                                        "salmon_network_km",                                    "Salmon Network (km)",      70L,       1L,
-#                                                                         "salmon_stream_km",                                     "Salmon Stream (km)",       NA,       NA,
-#                                                                  "salmon_lakereservoir_ha",                             "Salmon Lake Reservoir (ha)",      80L,       1L,
-#                                                                        "salmon_wetland_ha",                                    "Salmon Wetland (ha)",      90L,       1L,
-#                                                       "salmon_slopeclass03_waterbodies_km",                   "Salmon Slopeclass03 Waterbodies (km)",       NA,       NA,
-#                                                                   "salmon_slopeclass03_km",                               "Salmon Slopeclass03 (km)",       NA,       NA,
-#                                                                   "salmon_slopeclass05_km",                               "Salmon Slopeclass05 (km)",       NA,       NA,
-#                                                                   "salmon_slopeclass08_km",                               "Salmon Slopeclass08 (km)",       NA,       NA,
-#                                                                   "salmon_slopeclass15_km",                               "Salmon Slopeclass15 (km)",       NA,       NA,
-#                                                                   "salmon_slopeclass22_km",                               "Salmon Slopeclass22 (km)",       NA,       NA,
-#                                                                   "salmon_slopeclass30_km",                               "Salmon Slopeclass30 (km)",       NA,       NA,
-#                                                     "salmon_belowupstrbarriers_network_km",                     "Salmon Below Barriers Network (km)",      70L,       2L,
-#                                                      "salmon_belowupstrbarriers_stream_km",                      "Salmon Below Barriers Stream (km)",       NA,       NA,
-#                                               "salmon_belowupstrbarriers_lakereservoir_ha",              "Salmon Below Barriers Lake Reservoir (ha)",      80L,       2L,
-#                                                     "salmon_belowupstrbarriers_wetland_ha",                     "Salmon Below Barriers Wetland (ha)",      90L,       2L,
-#                                    "salmon_belowupstrbarriers_slopeclass03_waterbodies_km",    "Salmon Below Barriers Slopeclass03 Waterbodies (km)",       NA,       NA,
-#                                                "salmon_belowupstrbarriers_slopeclass03_km",                "Salmon Below Barriers Slopeclass03 (km)",       NA,       NA,
-#                                                "salmon_belowupstrbarriers_slopeclass05_km",                "Salmon Below Barriers Slopeclass05 (km)",       NA,       NA,
-#                                                "salmon_belowupstrbarriers_slopeclass08_km",                "Salmon Below Barriers Slopeclass08 (km)",       NA,       NA,
-#                                                "salmon_belowupstrbarriers_slopeclass15_km",                "Salmon Below Barriers Slopeclass15 (km)",       NA,       NA,
-#                                                "salmon_belowupstrbarriers_slopeclass22_km",                "Salmon Below Barriers Slopeclass22 (km)",       NA,       NA,
-#                                                "salmon_belowupstrbarriers_slopeclass30_km",                "Salmon Below Barriers Slopeclass30 (km)",       NA,       NA,
-#                                                                     "steelhead_network_km",                                 "Steelhead Network (km)",     100L,       1L,
-#                                                                      "steelhead_stream_km",                                  "Steelhead Stream (km)",       NA,       NA,
-#                                                               "steelhead_lakereservoir_ha",                          "Steelhead Lake Reservoir (ha)",     102L,       1L,
-#                                                                     "steelhead_wetland_ha",                                 "Steelhead Wetland (ha)",     103L,       1L,
-#                                                    "steelhead_slopeclass03_waterbodies_km",                "Steelhead Slopeclass03 Waterbodies (km)",       NA,       NA,
-#                                                                "steelhead_slopeclass03_km",                            "Steelhead Slopeclass03 (km)",       NA,       NA,
-#                                                                "steelhead_slopeclass05_km",                            "Steelhead Slopeclass05 (km)",       NA,       NA,
-#                                                                "steelhead_slopeclass08_km",                            "Steelhead Slopeclass08 (km)",       NA,       NA,
-#                                                                "steelhead_slopeclass15_km",                            "Steelhead Slopeclass15 (km)",       NA,       NA,
-#                                                                "steelhead_slopeclass22_km",                            "Steelhead Slopeclass22 (km)",       NA,       NA,
-#                                                                "steelhead_slopeclass30_km",                            "Steelhead Slopeclass30 (km)",       NA,       NA,
-#                                                  "steelhead_belowupstrbarriers_network_km",                  "Steelhead Below Barriers Network (km)",     100L,       2L,
-#                                                   "steelhead_belowupstrbarriers_stream_km",                   "Steelhead Below Barriers Stream (km)",       NA,       NA,
-#                                            "steelhead_belowupstrbarriers_lakereservoir_ha",           "Steelhead Below Barriers Lake Reservoir (ha)",     102L,       2L,
-#                                                  "steelhead_belowupstrbarriers_wetland_ha",                  "Steelhead Below Barriers Wetland (ha)",     103L,       2L,
-#                                 "steelhead_belowupstrbarriers_slopeclass03_waterbodies_km", "Steelhead Below Barriers Slopeclass03 Waterbodies (km)",       NA,       NA,
-#                                             "steelhead_belowupstrbarriers_slopeclass03_km",             "Steelhead Below Barriers Slopeclass03 (km)",       NA,       NA,
-#                                             "steelhead_belowupstrbarriers_slopeclass05_km",             "Steelhead Below Barriers Slopeclass05 (km)",       NA,       NA,
-#                                             "steelhead_belowupstrbarriers_slopeclass08_km",             "Steelhead Below Barriers Slopeclass08 (km)",       NA,       NA,
-#                                             "steelhead_belowupstrbarriers_slopeclass15_km",             "Steelhead Below Barriers Slopeclass15 (km)",       NA,       NA,
-#                                             "steelhead_belowupstrbarriers_slopeclass22_km",             "Steelhead Below Barriers Slopeclass22 (km)",       NA,       NA,
-#                                             "steelhead_belowupstrbarriers_slopeclass30_km",             "Steelhead Below Barriers Slopeclass30 (km)",       NA,       NA,
-#                                                                           "wct_network_km",                                       "Wct Network (km)",       NA,       NA,
-#                                                                            "wct_stream_km",                                        "Wct Stream (km)",       NA,       NA,
-#                                                                     "wct_lakereservoir_ha",                                "Wct Lake Reservoir (ha)",       NA,       NA,
-#                                                                           "wct_wetland_ha",                                       "Wct Wetland (ha)",       NA,       NA,
-#                                                          "wct_slopeclass03_waterbodies_km",                      "Wct Slopeclass03 Waterbodies (km)",       NA,       NA,
-#                                                                      "wct_slopeclass03_km",                                  "Wct Slopeclass03 (km)",       NA,       NA,
-#                                                                      "wct_slopeclass05_km",                                  "Wct Slopeclass05 (km)",       NA,       NA,
-#                                                                      "wct_slopeclass08_km",                                  "Wct Slopeclass08 (km)",       NA,       NA,
-#                                                                      "wct_slopeclass15_km",                                  "Wct Slopeclass15 (km)",       NA,       NA,
-#                                                                      "wct_slopeclass22_km",                                  "Wct Slopeclass22 (km)",       NA,       NA,
-#                                                                      "wct_slopeclass30_km",                                  "Wct Slopeclass30 (km)",       NA,       NA,
-#                                                        "wct_belowupstrbarriers_network_km",                        "Wct Below Barriers Network (km)",       NA,       NA,
-#                                                         "wct_belowupstrbarriers_stream_km",                         "Wct Below Barriers Stream (km)",       NA,       NA,
-#                                                  "wct_belowupstrbarriers_lakereservoir_ha",                 "Wct Below Barriers Lake Reservoir (ha)",       NA,       NA,
-#                                                        "wct_belowupstrbarriers_wetland_ha",                        "Wct Below Barriers Wetland (ha)",       NA,       NA,
-#                                       "wct_belowupstrbarriers_slopeclass03_waterbodies_km",       "Wct Below Barriers Slopeclass03 Waterbodies (km)",       NA,       NA,
-#                                                   "wct_belowupstrbarriers_slopeclass03_km",                   "Wct Below Barriers Slopeclass03 (km)",       NA,       NA,
-#                                                   "wct_belowupstrbarriers_slopeclass05_km",                   "Wct Below Barriers Slopeclass05 (km)",       NA,       NA,
-#                                                   "wct_belowupstrbarriers_slopeclass08_km",                   "Wct Below Barriers Slopeclass08 (km)",       NA,       NA,
-#                                                   "wct_belowupstrbarriers_slopeclass15_km",                   "Wct Below Barriers Slopeclass15 (km)",       NA,       NA,
-#                                                   "wct_belowupstrbarriers_slopeclass22_km",                   "Wct Below Barriers Slopeclass22 (km)",       NA,       NA,
-#                                                   "wct_belowupstrbarriers_slopeclass30_km",                   "Wct Below Barriers Slopeclass30 (km)",       NA,       NA,
-#                                                                           "ch_spawning_km",                                       "CH Spawning (km)",     110L,       1L,
-#                                                                            "ch_rearing_km",                                        "CH Rearing (km)",     120L,       1L,
-#                                                        "ch_spawning_belowupstrbarriers_km",                        "CH Spawning Below Barriers (km)",     110L,       2L,
-#                                                         "ch_rearing_belowupstrbarriers_km",                         "CH Rearing Below Barriers (km)",     120L,       2L,
-#                                                                           "co_spawning_km",                                       "CO Spawning (km)",     130L,       1L,
-#                                                                            "co_rearing_km",                                        "CO Rearing (km)",     140L,       1L,
-#                                                                            "co_rearing_ha",                                        "CO Rearing (ha)",     145L,       1L,
-#                                                        "co_spawning_belowupstrbarriers_km",                        "CO Spawning Below Barriers (km)",     130L,       2L,
-#                                                         "co_rearing_belowupstrbarriers_km",                         "CO Rearing Below Barriers (km)",     140L,       2L,
-#                                                         "co_rearing_belowupstrbarriers_ha",                         "CO Rearing Below Barriers (ha)",     145L,       2L,
-#                                                                           "sk_spawning_km",                                       "SK Spawning (km)",     150L,       1L,
-#                                                                            "sk_rearing_km",                                        "SK Rearing (km)",     160L,       1L,
-#                                                                            "sk_rearing_ha",                                        "SK Rearing (ha)",     165L,       1L,
-#                                                        "sk_spawning_belowupstrbarriers_km",                        "SK Spawning Below Barriers (km)",     150L,       2L,
-#                                                         "sk_rearing_belowupstrbarriers_km",                         "SK Rearing Below Barriers (km)",     160L,       2L,
-#                                                         "sk_rearing_belowupstrbarriers_ha",                         "SK Rearing Below Barriers (ha)",     165L,       2L,
-#                                                                           "st_spawning_km",                                       "ST Spawning (km)",     170L,       1L,
-#                                                                            "st_rearing_km",                                        "ST Rearing (km)",     180L,       1L,
-#                                                        "st_spawning_belowupstrbarriers_km",                        "ST Spawning Below Barriers (km)",     170L,       2L,
-#                                                         "st_rearing_belowupstrbarriers_km",                         "ST Rearing Below Barriers (km)",     180L,       2L,
-#                                                                          "all_spawning_km",                                      "All Spawning (km)",     190L,       1L,
-#                                                       "all_spawning_belowupstrbarriers_km",                       "All Spawning Below Barriers (km)",     190L,       2L,
-#                                                                           "all_rearing_km",                                       "All Rearing (km)",     200L,       1L,
-#                                                        "all_rearing_belowupstrbarriers_km",                        "All Rearing Below Barriers (km)",     200L,       2L,
-#                                                                   "all_spawningrearing_km",                               "All Spawningrearing (km)",     210L,       1L,
-#                                                "all_spawningrearing_belowupstrbarriers_km",                "All Spawningrearing Below Barriers (km)",     210L,       2L,
-#                                                                         "dbm_mof_50k_grid",                                       "Dbm Mof 50k Grid",       NA,       NA,
-#                                                       "dnstr_barriers_anthropogenic_count",                     "Dnstr Barriers Anthropogenic Count",       NA,       NA
-#                                 )
-
-
 ####-----------overview table------------
 
 tab_overview_prep1 <- pscis_phase2 %>%
@@ -1027,7 +871,7 @@ tab_cost_est_prep3 <- left_join(
 #   by = c('my_crossing_reference' = 'external_crossing_reference')
 # ) %>%
 #   mutate(stream_crossing_id = case_when(
-#     is.na(stream_crossing_id) ~ pscis_crossing_id,
+#     is.na(stream_crossing_id) ~ as.integer(pscis_crossing_id),
 #     T ~ stream_crossing_id
 #   ))
 
@@ -1035,7 +879,7 @@ tab_cost_est_prep3 <- left_join(
 tab_cost_est_phase1_prep <- left_join(
   phase1_priorities %>% select(aggregated_crossings_id,
          priority_phase1),
-  tab_cost_est_prep3, #add phase1 here
+  tab_cost_est_prep3, #not sure why this isn't prep4...
   by = 'aggregated_crossings_id'
 ) %>%
   arrange(aggregated_crossings_id) %>%
@@ -1076,7 +920,7 @@ tab_cost_est_phase1 <- tab_cost_est_phase1_prep %>%
 # -----------------------------------------phase 2 cost estimate
 ##phase 2 specific
 tab_cost_est_prep4 <- left_join(
-  tab_cost_est_prep2,
+  tab_cost_est_prep3,
   select(
     filter(habitat_confirmations_priorities, location == 'us'),
     site, upstream_habitat_length_m),
@@ -1092,7 +936,7 @@ tab_cost_est_prep5 <- left_join(
   by = c('pscis_crossing_id' = 'site')
 ) %>%
   ##intervention for Parker to reflect that there are 2 bridges to build.
-  mutate(cost_est_1000s = case_when(pscis_crossing_id == 50067 ~ 500, T ~ cost_est_1000s)) %>%
+  # mutate(cost_est_1000s = case_when(pscis_crossing_id == 50067 ~ 500, T ~ cost_est_1000s)) %>%
   mutate(cost_net = round(upstream_habitat_length_m/cost_est_1000s, 1),
          cost_area_net = round((upstream_habitat_length_m * avg_channel_width_m)/cost_est_1000s, 1)) #downstream_channel_width_meters
 
@@ -1135,7 +979,7 @@ hab_loc_prep <- left_join(
   hab_loc %>%
     tidyr::separate(alias_local_name, into = c('site', 'location', 'ef'), remove = F) %>%
     filter(!alias_local_name %ilike% 'ef' &
-             alias_local_name %ilike% 'us') %>%
+             location == 'us') %>%
     mutate(site = as.integer(site)),
   select(filter(habitat_confirmations_priorities, location == 'us'),
          site, priority, comments),
@@ -1143,31 +987,31 @@ hab_loc_prep <- left_join(
 )
 
 
-##need to populate the coordinates before this will work
-####please note that the photos are only in those files ecause they are referenced in other parts
-##of the document
-# tab_hab_map <- left_join(
-#   tab_cost_est_phase2 %>% filter(source %like% 'phase2'),
-#   hab_loc_prep %>% select(site, priority, utm_easting, utm_northing, comments),
-#   by = c('pscis_crossing_id' = 'site')
-# )  %>%
-#   sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
-#                crs = 26909, remove = F) %>%
-#   sf::st_transform(crs = 4326) %>%
-#   ##changed this to docs .html from fig .png
-#   # mutate(data_link = paste0('<a href =',
-#   #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/docs/sum/', pscis_crossing_id,
-#   #                           '.html', '>', 'data link', '</a>')) %>%
-#   mutate(data_link = paste0('<a href =', 'sum/cv/', pscis_crossing_id, '.html ', 'target="_blank">Culvert Data</a>')) %>%
-#   mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id, '/crossing_all.JPG ',
-#                              'target="_blank">Culvert Photos</a>')) %>%
-#   mutate(model_link = paste0('<a href =', 'sum/bcfp/', pscis_crossing_id, '.html ', 'target="_blank">Model Data</a>'))
-# # mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id,
-# #                           '/crossing_all.JPG', '>', 'Photos', '>New Tab</a>'))
-# # mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
-# # mutate(photo_link = paste0('<a href =',
-# #                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
-# #                            '/crossing_all.JPG', '>', 'photo link', '</a>'))
+#need to populate the coordinates before this will work
+###please note that the photos are only in those files ecause they are referenced in other parts
+#of the document
+tab_hab_map <- left_join(
+  tab_cost_est_phase2 %>% filter(source %like% 'phase2'),
+  hab_loc_prep %>% select(site, priority, utm_easting, utm_northing, comments),
+  by = c('pscis_crossing_id' = 'site')
+)  %>%
+  sf::st_as_sf(coords = c("utm_easting", "utm_northing"),
+               crs = 26909, remove = F) %>%
+  sf::st_transform(crs = 4326) %>%
+  ##changed this to docs .html from fig .png
+  # mutate(data_link = paste0('<a href =',
+  #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/docs/sum/', pscis_crossing_id,
+  #                           '.html', '>', 'data link', '</a>')) %>%
+  mutate(data_link = paste0('<a href =', 'sum/cv/', pscis_crossing_id, '.html ', 'target="_blank">Culvert Data</a>')) %>%
+  mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id, '/crossing_all.JPG ',
+                             'target="_blank">Culvert Photos</a>')) %>%
+  mutate(model_link = paste0('<a href =', 'sum/bcfp/', pscis_crossing_id, '.html ', 'target="_blank">Model Data</a>'))
+# mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id,
+#                           '/crossing_all.JPG', '>', 'Photos', '>New Tab</a>'))
+# mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
+# mutate(photo_link = paste0('<a href =',
+#                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
+#                            '/crossing_all.JPG', '>', 'photo link', '</a>'))
 
 
 #--------------need to review if this is necessary
