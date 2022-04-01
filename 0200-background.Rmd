@@ -168,16 +168,19 @@ fiss_species_table <- readr::read_csv(paste0(getwd(), '/data/inputs_extracted/fi
   # filter(`Species Code` != 'CT') %>% 
 # fiss_species_table %>%  
 #   my_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
+# 
+# 
+# if(gitbook_on){
+# fiss_species_table %>% 
+#   fpr::fpr_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
+# } else fiss_species_table[1:41, ] %>% 
+#   fpr::fpr_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.', scroll = F)
+# 
+# if(identical(gitbook_on, FALSE)){fiss_species_table[42:nrow(fiss_species_table), ] %>% 
+#   fpr::fpr_kable(scroll = F)}
 
-
-if(gitbook_on){
 fiss_species_table %>% 
-  fpr::fpr_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
-} else fiss_species_table[1:41, ] %>% 
-  fpr::fpr_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.', scroll = F)
-
-if(identical(gitbook_on, FALSE)){fiss_species_table[42:nrow(fiss_species_table), ] %>% 
-  fpr::fpr_kable(scroll = F)}
+  fpr::fpr_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.', scroll = gitbook_on)
 
 ```
 
@@ -325,7 +328,7 @@ As a result of high-level direction from the provincial government, a Fish Passa
 
 ### Bulkley River
 
-There is a rich history of fish passage restoration planning in the Bulkley River watershed group with not all the work documented in the PSCIS system.  A non-exhaustive list of historic fish passage reports for the watershed includes @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,@smith2018AssessingBarriers @casselman_stanley2010BulkleyFulton and @irvine2018AnalysisPriority.
+There is a rich history of fish passage restoration planning in the Bulkley River watershed group with not all the work documented in the PSCIS system.  A non-exhaustive list of historic fish passage reports for the watershed includes @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,@smith2018AssessingBarriers @casselman_stanley2010BulkleyFulton and @irvine2018AnalysisPriority. 
 
 <br>
 
