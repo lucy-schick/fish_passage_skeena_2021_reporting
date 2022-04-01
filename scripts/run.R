@@ -49,6 +49,10 @@ rmarkdown::render_site(output_format = 'bookdown::gitbook',
 ##move the phase 1 appendix out of the main directory to a backup file or else the file is too big
 
 
+# define the _bookfile_name from _bookdown.yml
+filename_html <- 'Skeena2021'
+
+{
 file.rename('0600-appendix.Rmd', 'hold/0600-appendix.Rmd')
 
 ##   then make our printable pdf
@@ -59,12 +63,13 @@ file.rename('hold/0600-appendix.Rmd', '0600-appendix.Rmd')
 
 # print to pdf
 pagedown::chrome_print(
-  paste0(getwd(),'/Elk2021.html'),
-  output = paste0(getwd(),'/docs/Elk2021.pdf')
+  paste0(getwd(), '/', filename_html, '.html'),
+  output = paste0(getwd(),'/docs/', filename_html, '.pdf')
 )
 
 # get rid of the html as its too big and not needed
-file.remove(paste0(getwd(), "/Elk2021.html"))
+file.remove(paste0(getwd(), '/', filename_html, '.html'))
+}
 
 
 
@@ -74,7 +79,7 @@ file.remove(paste0(getwd(), "/Elk2021.html"))
 #################################################################################################
 ##we need a workflow to print the Phase 1 attachment
 files_to_move <- list.files(pattern = ".Rmd$") %>%
-  stringr::str_subset(., 'index|Elk2021|0600', negate = T)
+  stringr::str_subset(., 'index|Skeena2021|0600', negate = T)
 files_destination <- paste0('hold/', files_to_move)
 
 ##move the files
@@ -94,17 +99,18 @@ mapply(file.rename, from = files_destination, to = files_to_move)
 # openHTML('docs/Attachment_3_Phase_1_Data_and_Photos_prep.html')
 
 pagedown::chrome_print(
-  paste0(getwd(),'/Elk2021.html'),
-  output = paste0(getwd(),'/docs/Attachment_3_Phase_1_Data_and_Photos_prep.pdf')
+  paste0(getwd(),'/', filename_html,'.html'),
+  output = paste0(getwd(),'/docs/Attachment_2_prep.pdf')
 )
 
-##now get rid of the first 10 pages
-length <- pdftools::pdf_length(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos_prep.pdf"))
 
-pdftools::pdf_subset(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos_prep.pdf"),
-           pages = 11:length, output = paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos.pdf"))
+##now get rid of the first 10 pages
+length <- pdftools::pdf_length(paste0(getwd(), "/docs/Attachment_2_prep.pdf"))
+
+pdftools::pdf_subset(paste0(getwd(), "/docs/Attachment_2_prep.pdf"),
+           pages = 11:length, output = paste0(getwd(), "/docs/Attachment_2.pdf"))
 
 ##clean out the old file
-file.remove(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos_prep.pdf"))
-file.remove(paste0(getwd(), "/docs/Attachment_3_Phase_1_Data_and_Photos.html"))
+file.remove(paste0(getwd(), "/docs/Attachment_2_prep.pdf"))
+file.remove(paste0(getwd(), "/docs/Attachment_2.html"))
 
