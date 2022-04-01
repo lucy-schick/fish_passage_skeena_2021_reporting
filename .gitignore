@@ -19,7 +19,7 @@ scripts/pers_*
 #data/raw_input
 #docs/Bulkley.pdf
 #docs/Elk.tex
-docs/Bulkley.html
+docs/Skeena2021.html
 *~$*
 *.sqlite
 hold
@@ -29,6 +29,7 @@ data/watershed_reports/*
 maps/*
 data/streams.csv
 data/photos/**/*.pdf
+docs/Skeena2021.pdf
 
 
 
