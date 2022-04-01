@@ -215,6 +215,7 @@ div.csl-indent {
 <li class="chapter" data-level="3" data-path="drone-generated-orthomosaics-and-3d-models.html"><a href="drone-generated-orthomosaics-and-3d-models.html"><i class="fa fa-check"></i><b>3</b> Drone Generated Orthomosaics and 3D models<span></span></a></li>
 <li class="chapter" data-level="4" data-path="kml-showing-sites-surveyed-in-2021.html"><a href="kml-showing-sites-surveyed-in-2021.html"><i class="fa fa-check"></i><b>4</b> KML showing sites surveyed in 2021<span></span></a></li>
 <li class="chapter" data-level="5" data-path="results-and-discussion.html"><a href="results-and-discussion.html"><i class="fa fa-check"></i><b>5</b> Results and Discussion<span></span></a></li>
+<li><a href="appendix---phase-1-fish-passage-assessment-data-and-photos.html#appendix---phase-1-fish-passage-assessment-data-and-photos">Appendix - Phase 1 Fish Passage Assessment Data and Photos<span></span></a></li>
 <li><a href="references.html#references">References<span></span></a></li>
 <li><a href="session-info.html#session-info">Session Info<span></span></a></li>
 <li class="divider"></li>
@@ -360,13 +361,19 @@ Figure 2.6: Summary of hydrology statistics for Morice River near outlet of Mori
 <span id="cb14-2"><a href="background.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter(`Species Code` != &#39;CT&#39;) %&gt;% </span></span>
 <span id="cb14-3"><a href="background.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fiss_species_table %&gt;%  </span></span>
 <span id="cb14-4"><a href="background.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   my_kable(caption_text = &#39;Fish species recorded in the Bulkley River and Morice River watershed groups.&#39;)</span></span>
-<span id="cb14-5"><a href="background.html#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="background.html#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="background.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(gitbook_on){</span>
-<span id="cb14-8"><a href="background.html#cb14-8" aria-hidden="true" tabindex="-1"></a>fiss_species_table <span class="sc">%&gt;%</span> </span>
-<span id="cb14-9"><a href="background.html#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">my_kable_scroll</span>(<span class="at">caption_text =</span> <span class="st">&#39;Fish species recorded in the Bulkley River and Morice River watershed groups.&#39;</span>)</span>
-<span id="cb14-10"><a href="background.html#cb14-10" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> fiss_species_table[<span class="dv">1</span><span class="sc">:</span><span class="dv">41</span>, ] <span class="sc">%&gt;%</span> </span>
-<span id="cb14-11"><a href="background.html#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">my_kable</span>(<span class="at">caption_text =</span> <span class="st">&#39;Fish species recorded in the Bulkley River and Morice River watershed groups.&#39;</span>)</span></code></pre></div>
+<span id="cb14-5"><a href="background.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb14-6"><a href="background.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb14-7"><a href="background.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># if(gitbook_on){</span></span>
+<span id="cb14-8"><a href="background.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># fiss_species_table %&gt;% </span></span>
+<span id="cb14-9"><a href="background.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   fpr::fpr_kable(caption_text = &#39;Fish species recorded in the Bulkley River and Morice River watershed groups.&#39;)</span></span>
+<span id="cb14-10"><a href="background.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># } else fiss_species_table[1:41, ] %&gt;% </span></span>
+<span id="cb14-11"><a href="background.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   fpr::fpr_kable(caption_text = &#39;Fish species recorded in the Bulkley River and Morice River watershed groups.&#39;, scroll = F)</span></span>
+<span id="cb14-12"><a href="background.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb14-13"><a href="background.html#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># if(identical(gitbook_on, FALSE)){fiss_species_table[42:nrow(fiss_species_table), ] %&gt;% </span></span>
+<span id="cb14-14"><a href="background.html#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   fpr::fpr_kable(scroll = F)}</span></span>
+<span id="cb14-15"><a href="background.html#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="background.html#cb14-16" aria-hidden="true" tabindex="-1"></a>fiss_species_table <span class="sc">%&gt;%</span> </span>
+<span id="cb14-17"><a href="background.html#cb14-17" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="st">&#39;Fish species recorded in the Bulkley River and Morice River watershed groups.&#39;</span>, <span class="at">scroll =</span> gitbook_on)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -1712,48 +1719,46 @@ Yes
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="background.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">identical</span>(gitbook_on, <span class="cn">FALSE</span>)){fiss_species_table[<span class="dv">42</span><span class="sc">:</span><span class="fu">nrow</span>(fiss_species_table), ] <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a href="background.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">my_kable</span>()}</span></code></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="background.html#cb16-1" aria-hidden="true" tabindex="-1"></a>gantt_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/inputs_raw/fish_species_life_history_gantt.csv&quot;</span>)</span>
-<span id="cb16-2"><a href="background.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="background.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="background.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">##start with just the morice to keep it simple</span></span>
-<span id="cb16-5"><a href="background.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ungroup()</span></span>
-<span id="cb16-6"><a href="background.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="do">##start with just the morice to keep it simple</span></span>
-<span id="cb16-7"><a href="background.html#cb16-7" aria-hidden="true" tabindex="-1"></a>gantt <span class="ot">&lt;-</span> gantt_raw <span class="sc">%&gt;%</span></span>
-<span id="cb16-8"><a href="background.html#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species,</span>
-<span id="cb16-9"><a href="background.html#cb16-9" aria-hidden="true" tabindex="-1"></a>         life_stage,</span>
-<span id="cb16-10"><a href="background.html#cb16-10" aria-hidden="true" tabindex="-1"></a>         morice_start2,</span>
-<span id="cb16-11"><a href="background.html#cb16-11" aria-hidden="true" tabindex="-1"></a>         morice_end2) <span class="sc">%&gt;%</span></span>
-<span id="cb16-12"><a href="background.html#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb16-13"><a href="background.html#cb16-13" aria-hidden="true" tabindex="-1"></a>    life_stage <span class="sc">!=</span> <span class="st">&#39;Rearing&#39;</span> <span class="sc">&amp;</span></span>
-<span id="cb16-14"><a href="background.html#cb16-14" aria-hidden="true" tabindex="-1"></a>      life_stage <span class="sc">!=</span> <span class="st">&#39;Upstream fry migration&#39;</span> <span class="sc">&amp;</span></span>
-<span id="cb16-15"><a href="background.html#cb16-15" aria-hidden="true" tabindex="-1"></a>      <span class="sc">!</span><span class="fu">is.na</span>(life_stage),</span>
-<span id="cb16-16"><a href="background.html#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(morice_start2)</span>
-<span id="cb16-17"><a href="background.html#cb16-17" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span></span>
-<span id="cb16-18"><a href="background.html#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb16-19"><a href="background.html#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">morice_start2 =</span> lubridate<span class="sc">::</span><span class="fu">as_date</span>(morice_start2),</span>
-<span id="cb16-20"><a href="background.html#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">morice_end2 =</span> lubridate<span class="sc">::</span><span class="fu">as_date</span>(morice_end2),</span>
-<span id="cb16-21"><a href="background.html#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">life_stage =</span> <span class="fu">factor</span>(life_stage, <span class="at">levels =</span></span>
-<span id="cb16-22"><a href="background.html#cb16-22" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">c</span>(<span class="st">&#39;Migration&#39;</span>, <span class="st">&#39;Overwintering&#39;</span>, <span class="st">&#39;Spawning&#39;</span>, <span class="st">&#39;Incubation&#39;</span>, <span class="st">&#39;Emergence&#39;</span>, <span class="st">&#39;Outmigration&#39;</span>)),</span>
-<span id="cb16-23"><a href="background.html#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">life_stage =</span> forcats<span class="sc">::</span><span class="fu">fct_rev</span>(life_stage) <span class="do">##last line was upside down!</span></span>
-<span id="cb16-24"><a href="background.html#cb16-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb16-25"><a href="background.html#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(life_stage <span class="sc">!=</span> <span class="st">&#39;Overwintering&#39;</span>)</span>
-<span id="cb16-26"><a href="background.html#cb16-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-27"><a href="background.html#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-28"><a href="background.html#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="do">##make a plot</span></span>
-<span id="cb16-29"><a href="background.html#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gantt, <span class="fu">aes</span>(<span class="at">xmin =</span> morice_start2,</span>
-<span id="cb16-30"><a href="background.html#cb16-30" aria-hidden="true" tabindex="-1"></a>                  <span class="at">xmax =</span> morice_end2,</span>
-<span id="cb16-31"><a href="background.html#cb16-31" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> life_stage,</span>
-<span id="cb16-32"><a href="background.html#cb16-32" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> life_stage)) <span class="sc">+</span></span>
-<span id="cb16-33"><a href="background.html#cb16-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb16-34"><a href="background.html#cb16-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="cn">NULL</span>)<span class="sc">+</span></span>
-<span id="cb16-35"><a href="background.html#cb16-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theme_bw()+</span></span>
-<span id="cb16-36"><a href="background.html#cb16-36" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)<span class="sc">+</span></span>
-<span id="cb16-37"><a href="background.html#cb16-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
-<span id="cb16-38"><a href="background.html#cb16-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%B&quot;</span>)<span class="sc">+</span></span>
-<span id="cb16-39"><a href="background.html#cb16-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="background.html#cb15-1" aria-hidden="true" tabindex="-1"></a>gantt_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/inputs_raw/fish_species_life_history_gantt.csv&quot;</span>)</span>
+<span id="cb15-2"><a href="background.html#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="background.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="background.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="do">##start with just the morice to keep it simple</span></span>
+<span id="cb15-5"><a href="background.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ungroup()</span></span>
+<span id="cb15-6"><a href="background.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">##start with just the morice to keep it simple</span></span>
+<span id="cb15-7"><a href="background.html#cb15-7" aria-hidden="true" tabindex="-1"></a>gantt <span class="ot">&lt;-</span> gantt_raw <span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="background.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species,</span>
+<span id="cb15-9"><a href="background.html#cb15-9" aria-hidden="true" tabindex="-1"></a>         life_stage,</span>
+<span id="cb15-10"><a href="background.html#cb15-10" aria-hidden="true" tabindex="-1"></a>         morice_start2,</span>
+<span id="cb15-11"><a href="background.html#cb15-11" aria-hidden="true" tabindex="-1"></a>         morice_end2) <span class="sc">%&gt;%</span></span>
+<span id="cb15-12"><a href="background.html#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb15-13"><a href="background.html#cb15-13" aria-hidden="true" tabindex="-1"></a>    life_stage <span class="sc">!=</span> <span class="st">&#39;Rearing&#39;</span> <span class="sc">&amp;</span></span>
+<span id="cb15-14"><a href="background.html#cb15-14" aria-hidden="true" tabindex="-1"></a>      life_stage <span class="sc">!=</span> <span class="st">&#39;Upstream fry migration&#39;</span> <span class="sc">&amp;</span></span>
+<span id="cb15-15"><a href="background.html#cb15-15" aria-hidden="true" tabindex="-1"></a>      <span class="sc">!</span><span class="fu">is.na</span>(life_stage),</span>
+<span id="cb15-16"><a href="background.html#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(morice_start2)</span>
+<span id="cb15-17"><a href="background.html#cb15-17" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span></span>
+<span id="cb15-18"><a href="background.html#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-19"><a href="background.html#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">morice_start2 =</span> lubridate<span class="sc">::</span><span class="fu">as_date</span>(morice_start2),</span>
+<span id="cb15-20"><a href="background.html#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">morice_end2 =</span> lubridate<span class="sc">::</span><span class="fu">as_date</span>(morice_end2),</span>
+<span id="cb15-21"><a href="background.html#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">life_stage =</span> <span class="fu">factor</span>(life_stage, <span class="at">levels =</span></span>
+<span id="cb15-22"><a href="background.html#cb15-22" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">c</span>(<span class="st">&#39;Migration&#39;</span>, <span class="st">&#39;Overwintering&#39;</span>, <span class="st">&#39;Spawning&#39;</span>, <span class="st">&#39;Incubation&#39;</span>, <span class="st">&#39;Emergence&#39;</span>, <span class="st">&#39;Outmigration&#39;</span>)),</span>
+<span id="cb15-23"><a href="background.html#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">life_stage =</span> forcats<span class="sc">::</span><span class="fu">fct_rev</span>(life_stage) <span class="do">##last line was upside down!</span></span>
+<span id="cb15-24"><a href="background.html#cb15-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-25"><a href="background.html#cb15-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(life_stage <span class="sc">!=</span> <span class="st">&#39;Overwintering&#39;</span>)</span>
+<span id="cb15-26"><a href="background.html#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="background.html#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="background.html#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="do">##make a plot</span></span>
+<span id="cb15-29"><a href="background.html#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gantt, <span class="fu">aes</span>(<span class="at">xmin =</span> morice_start2,</span>
+<span id="cb15-30"><a href="background.html#cb15-30" aria-hidden="true" tabindex="-1"></a>                  <span class="at">xmax =</span> morice_end2,</span>
+<span id="cb15-31"><a href="background.html#cb15-31" aria-hidden="true" tabindex="-1"></a>                  <span class="at">y =</span> life_stage,</span>
+<span id="cb15-32"><a href="background.html#cb15-32" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> life_stage)) <span class="sc">+</span></span>
+<span id="cb15-33"><a href="background.html#cb15-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb15-34"><a href="background.html#cb15-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="cn">NULL</span>, <span class="at">y=</span><span class="cn">NULL</span>)<span class="sc">+</span></span>
+<span id="cb15-35"><a href="background.html#cb15-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theme_bw()+</span></span>
+<span id="cb15-36"><a href="background.html#cb15-36" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)<span class="sc">+</span></span>
+<span id="cb15-37"><a href="background.html#cb15-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb15-38"><a href="background.html#cb15-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%B&quot;</span>)<span class="sc">+</span></span>
+<span id="cb15-39"><a href="background.html#cb15-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species, <span class="at">ncol =</span> <span class="dv">1</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:fish-gantt-morice"></span>
 <img src="Skeena2021_files/figure-html/fish-gantt-morice-1.png" alt="Gantt chart for select species in the Morice River and Bulkley River watersheds.  To be updated in consultation with local fisheries techicians and knowledge holders." width="100%" />
 <p class="caption">
@@ -1761,20 +1766,20 @@ Figure 2.7: Gantt chart for select species in the Morice River and Bulkley River
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="background.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fiss_sum &lt;- readr::read_csv(file = paste0(getwd(), &#39;/data/extracted_inputs/fiss_sum.csv&#39;))</span></span>
-<span id="cb17-2"><a href="background.html#cb17-2" aria-hidden="true" tabindex="-1"></a>fiss_sum_grad <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&#39;/data/inputs_extracted/fiss_sum_grad.csv&#39;</span>))</span>
-<span id="cb17-3"><a href="background.html#cb17-3" aria-hidden="true" tabindex="-1"></a>fiss_sum_width <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&#39;/data/inputs_extracted/fiss_sum_width.csv&#39;</span>))</span>
-<span id="cb17-4"><a href="background.html#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="background.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># A summary of historical westslope cutthrout trout observations in the Elk River watershed group by average gradient category of associated stream segment is provided in Figure \@ref(fig:fish-wct-bar). Of `r wct_elkr_grad %&gt;% filter(gradient_id == 3) %&gt;% pull(total)` observations, `r wct_elkr_grad %&gt;% filter(gradient_id == 3) %&gt;% pull(Percent) + wct_elkr_grad %&gt;% filter(gradient_id == 5) %&gt;% pull(Percent) + wct_elkr_grad %&gt;% filter(gradient_id == 8) %&gt;% pull(Percent)`% were within stream segments with average gradients ranging from 0 - 8%.  A total of `r wct_elkr_grad %&gt;% filter(gradient_id == 3) %&gt;% pull(Percent)`% of historic observations were within stream segments with gradients between 0 - 3%, `r wct_elkr_grad %&gt;% filter(gradient_id == 5) %&gt;% pull(Percent)`% were within stream segments with gradients ranging from 3 - 5% and `r wct_elkr_grad %&gt;% filter(gradient_id == 5) %&gt;% pull(Percent)`% were within stream segments with gradients between 5 - 8% [@data_fish_obs; @norris2020bcfishobs]. </span></span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="background.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">##bar graph</span></span>
-<span id="cb18-2"><a href="background.html#cb18-2" aria-hidden="true" tabindex="-1"></a>plot_grad <span class="ot">&lt;-</span> fiss_sum_grad <span class="sc">%&gt;%</span> </span>
-<span id="cb18-3"><a href="background.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gradient_id <span class="sc">!=</span> <span class="dv">99</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-4"><a href="background.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Gradient, <span class="at">y =</span> Percent)) <span class="sc">+</span></span>
-<span id="cb18-5"><a href="background.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
-<span id="cb18-6"><a href="background.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_code, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb18-7"><a href="background.html#cb18-7" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)<span class="sc">+</span></span>
-<span id="cb18-8"><a href="background.html#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Average Stream Gradient&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Occurrences (%)&quot;</span>)</span>
-<span id="cb18-9"><a href="background.html#cb18-9" aria-hidden="true" tabindex="-1"></a>plot_grad</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="background.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fiss_sum &lt;- readr::read_csv(file = paste0(getwd(), &#39;/data/extracted_inputs/fiss_sum.csv&#39;))</span></span>
+<span id="cb16-2"><a href="background.html#cb16-2" aria-hidden="true" tabindex="-1"></a>fiss_sum_grad <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&#39;/data/inputs_extracted/fiss_sum_grad.csv&#39;</span>))</span>
+<span id="cb16-3"><a href="background.html#cb16-3" aria-hidden="true" tabindex="-1"></a>fiss_sum_width <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="at">file =</span> <span class="fu">paste0</span>(<span class="fu">getwd</span>(), <span class="st">&#39;/data/inputs_extracted/fiss_sum_width.csv&#39;</span>))</span>
+<span id="cb16-4"><a href="background.html#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="background.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># A summary of historical westslope cutthrout trout observations in the Elk River watershed group by average gradient category of associated stream segment is provided in Figure \@ref(fig:fish-wct-bar). Of `r wct_elkr_grad %&gt;% filter(gradient_id == 3) %&gt;% pull(total)` observations, `r wct_elkr_grad %&gt;% filter(gradient_id == 3) %&gt;% pull(Percent) + wct_elkr_grad %&gt;% filter(gradient_id == 5) %&gt;% pull(Percent) + wct_elkr_grad %&gt;% filter(gradient_id == 8) %&gt;% pull(Percent)`% were within stream segments with average gradients ranging from 0 - 8%.  A total of `r wct_elkr_grad %&gt;% filter(gradient_id == 3) %&gt;% pull(Percent)`% of historic observations were within stream segments with gradients between 0 - 3%, `r wct_elkr_grad %&gt;% filter(gradient_id == 5) %&gt;% pull(Percent)`% were within stream segments with gradients ranging from 3 - 5% and `r wct_elkr_grad %&gt;% filter(gradient_id == 5) %&gt;% pull(Percent)`% were within stream segments with gradients between 5 - 8% [@data_fish_obs; @norris2020bcfishobs]. </span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="background.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">##bar graph</span></span>
+<span id="cb17-2"><a href="background.html#cb17-2" aria-hidden="true" tabindex="-1"></a>plot_grad <span class="ot">&lt;-</span> fiss_sum_grad <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="background.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gradient_id <span class="sc">!=</span> <span class="dv">99</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="background.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Gradient, <span class="at">y =</span> Percent)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="background.html#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
+<span id="cb17-6"><a href="background.html#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_code, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb17-7"><a href="background.html#cb17-7" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)<span class="sc">+</span></span>
+<span id="cb17-8"><a href="background.html#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Average Stream Gradient&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Occurrences (%)&quot;</span>)</span>
+<span id="cb17-9"><a href="background.html#cb17-9" aria-hidden="true" tabindex="-1"></a>plot_grad</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:fish-plot-grad"></span>
 <img src="Skeena2021_files/figure-html/fish-plot-grad-1.png" alt="Summary of historic salmonid observations vs. stream gradient category for the Bulkley River watershed group." width="100%" />
 <p class="caption">
@@ -1782,15 +1787,15 @@ Figure 2.8: Summary of historic salmonid observations vs. stream gradient categ
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="background.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">##bar graph</span></span>
-<span id="cb19-2"><a href="background.html#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_width <span class="ot">&lt;-</span> fiss_sum_width <span class="sc">%&gt;%</span> </span>
-<span id="cb19-3"><a href="background.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(width_id)) <span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href="background.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Width, <span class="at">y =</span> Percent)) <span class="sc">+</span></span>
-<span id="cb19-5"><a href="background.html#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
-<span id="cb19-6"><a href="background.html#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_code, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb19-7"><a href="background.html#cb19-7" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)<span class="sc">+</span></span>
-<span id="cb19-8"><a href="background.html#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Channel Width&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Occurrences (%)&quot;</span>)</span>
-<span id="cb19-9"><a href="background.html#cb19-9" aria-hidden="true" tabindex="-1"></a>plot_width</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="background.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">##bar graph</span></span>
+<span id="cb18-2"><a href="background.html#cb18-2" aria-hidden="true" tabindex="-1"></a>plot_width <span class="ot">&lt;-</span> fiss_sum_width <span class="sc">%&gt;%</span> </span>
+<span id="cb18-3"><a href="background.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(width_id)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="background.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Width, <span class="at">y =</span> Percent)) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="background.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
+<span id="cb18-6"><a href="background.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_code, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb18-7"><a href="background.html#cb18-7" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)<span class="sc">+</span></span>
+<span id="cb18-8"><a href="background.html#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Channel Width&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Occurrences (%)&quot;</span>)</span>
+<span id="cb18-9"><a href="background.html#cb18-9" aria-hidden="true" tabindex="-1"></a>plot_width</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:fish-plot-width"></span>
 <img src="Skeena2021_files/figure-html/fish-plot-width-1.png" alt="Summary of historic salmonid observations vs. channel width category for the Bulkley River watershed group." width="100%" />
 <p class="caption">
@@ -1798,33 +1803,33 @@ Figure 2.9: Summary of historic salmonid observations vs. channel width categor
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="background.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">##bar graph</span></span>
-<span id="cb20-2"><a href="background.html#cb20-2" aria-hidden="true" tabindex="-1"></a>fiss_sum_wshed_filter <span class="ot">&lt;-</span> fiss_sum <span class="sc">%&gt;%</span> </span>
-<span id="cb20-3"><a href="background.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(upstream_area_ha <span class="sc">&lt;</span> <span class="dv">5000</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-4"><a href="background.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">upstream_area_km =</span> upstream_area_ha<span class="sc">/</span><span class="dv">100</span>)</span>
-<span id="cb20-5"><a href="background.html#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="background.html#cb20-6" aria-hidden="true" tabindex="-1"></a>bin_1 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb20-7"><a href="background.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># bin_1 &lt;- floor(min(fiss_sum_wshed_filter$upstream_area_ha, na.rm = TRUE)/5)*5</span></span>
-<span id="cb20-8"><a href="background.html#cb20-8" aria-hidden="true" tabindex="-1"></a>bin_n <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">max</span>(fiss_sum_wshed_filter<span class="sc">$</span>upstream_area_km, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span></span>
-<span id="cb20-9"><a href="background.html#cb20-9" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(bin_1,bin_n, <span class="at">by =</span> <span class="dv">5</span>)</span>
-<span id="cb20-10"><a href="background.html#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-11"><a href="background.html#cb20-11" aria-hidden="true" tabindex="-1"></a>plot_wshed_hist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(fiss_sum_wshed_filter, <span class="fu">aes</span>(<span class="at">x=</span>upstream_area_km</span>
-<span id="cb20-12"><a href="background.html#cb20-12" aria-hidden="true" tabindex="-1"></a>                                           <span class="co"># fill=alias_local_name</span></span>
-<span id="cb20-13"><a href="background.html#cb20-13" aria-hidden="true" tabindex="-1"></a>                                           <span class="co"># color = alias_local_name</span></span>
-<span id="cb20-14"><a href="background.html#cb20-14" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">+</span></span>
-<span id="cb20-15"><a href="background.html#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> bins, </span>
-<span id="cb20-16"><a href="background.html#cb20-16" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="st">&quot;identity&quot;</span>, <span class="at">size =</span> <span class="fl">0.75</span>)<span class="sc">+</span></span>
-<span id="cb20-17"><a href="background.html#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Upstream Watershed Area (km)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count Fish (#)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb20-18"><a href="background.html#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_code, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb20-19"><a href="background.html#cb20-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_color_grey() +</span></span>
-<span id="cb20-20"><a href="background.html#cb20-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_fill_grey() +</span></span>
-<span id="cb20-21"><a href="background.html#cb20-21" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)<span class="sc">+</span></span>
-<span id="cb20-22"><a href="background.html#cb20-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> bins[<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(bins), <span class="at">by =</span> <span class="dv">2</span>)])<span class="sc">+</span></span>
-<span id="cb20-23"><a href="background.html#cb20-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_color_manual(values=c(&quot;grey90&quot;, &quot;grey60&quot;, &quot;grey30&quot;, &quot;grey0&quot;))+</span></span>
-<span id="cb20-24"><a href="background.html#cb20-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theme(axis.text.x = element_text(angle = 45, hjust = 1))+</span></span>
-<span id="cb20-25"><a href="background.html#cb20-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">breaks =</span> bins, <span class="at">alpha=</span><span class="fl">0.5</span>,</span>
-<span id="cb20-26"><a href="background.html#cb20-26" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="st">&quot;identity&quot;</span>, <span class="at">size =</span> <span class="fl">0.75</span>)</span>
-<span id="cb20-27"><a href="background.html#cb20-27" aria-hidden="true" tabindex="-1"></a>plot_wshed_hist</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="background.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">##bar graph</span></span>
+<span id="cb19-2"><a href="background.html#cb19-2" aria-hidden="true" tabindex="-1"></a>fiss_sum_wshed_filter <span class="ot">&lt;-</span> fiss_sum <span class="sc">%&gt;%</span> </span>
+<span id="cb19-3"><a href="background.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(upstream_area_ha <span class="sc">&lt;</span> <span class="dv">5000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-4"><a href="background.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">upstream_area_km =</span> upstream_area_ha<span class="sc">/</span><span class="dv">100</span>)</span>
+<span id="cb19-5"><a href="background.html#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="background.html#cb19-6" aria-hidden="true" tabindex="-1"></a>bin_1 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb19-7"><a href="background.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># bin_1 &lt;- floor(min(fiss_sum_wshed_filter$upstream_area_ha, na.rm = TRUE)/5)*5</span></span>
+<span id="cb19-8"><a href="background.html#cb19-8" aria-hidden="true" tabindex="-1"></a>bin_n <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">max</span>(fiss_sum_wshed_filter<span class="sc">$</span>upstream_area_km, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)<span class="sc">/</span><span class="dv">5</span>)<span class="sc">*</span><span class="dv">5</span></span>
+<span id="cb19-9"><a href="background.html#cb19-9" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(bin_1,bin_n, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb19-10"><a href="background.html#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="background.html#cb19-11" aria-hidden="true" tabindex="-1"></a>plot_wshed_hist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(fiss_sum_wshed_filter, <span class="fu">aes</span>(<span class="at">x=</span>upstream_area_km</span>
+<span id="cb19-12"><a href="background.html#cb19-12" aria-hidden="true" tabindex="-1"></a>                                           <span class="co"># fill=alias_local_name</span></span>
+<span id="cb19-13"><a href="background.html#cb19-13" aria-hidden="true" tabindex="-1"></a>                                           <span class="co"># color = alias_local_name</span></span>
+<span id="cb19-14"><a href="background.html#cb19-14" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">+</span></span>
+<span id="cb19-15"><a href="background.html#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">breaks =</span> bins, </span>
+<span id="cb19-16"><a href="background.html#cb19-16" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="st">&quot;identity&quot;</span>, <span class="at">size =</span> <span class="fl">0.75</span>)<span class="sc">+</span></span>
+<span id="cb19-17"><a href="background.html#cb19-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Upstream Watershed Area (km)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count Fish (#)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb19-18"><a href="background.html#cb19-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species_code, <span class="at">ncol =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb19-19"><a href="background.html#cb19-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_color_grey() +</span></span>
+<span id="cb19-20"><a href="background.html#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_fill_grey() +</span></span>
+<span id="cb19-21"><a href="background.html#cb19-21" aria-hidden="true" tabindex="-1"></a>  ggdark<span class="sc">::</span><span class="fu">dark_theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>)<span class="sc">+</span></span>
+<span id="cb19-22"><a href="background.html#cb19-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> bins[<span class="fu">seq</span>(<span class="dv">1</span>, <span class="fu">length</span>(bins), <span class="at">by =</span> <span class="dv">2</span>)])<span class="sc">+</span></span>
+<span id="cb19-23"><a href="background.html#cb19-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># scale_color_manual(values=c(&quot;grey90&quot;, &quot;grey60&quot;, &quot;grey30&quot;, &quot;grey0&quot;))+</span></span>
+<span id="cb19-24"><a href="background.html#cb19-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># theme(axis.text.x = element_text(angle = 45, hjust = 1))+</span></span>
+<span id="cb19-25"><a href="background.html#cb19-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">breaks =</span> bins, <span class="at">alpha=</span><span class="fl">0.5</span>,</span>
+<span id="cb19-26"><a href="background.html#cb19-26" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="st">&quot;identity&quot;</span>, <span class="at">size =</span> <span class="fl">0.75</span>)</span>
+<span id="cb19-27"><a href="background.html#cb19-27" aria-hidden="true" tabindex="-1"></a>plot_wshed_hist</span></code></pre></div>
 <p><br></p>
 </div>
 </div>
@@ -1844,18 +1849,18 @@ Figure 2.9: Summary of historic salmonid observations vs. channel width categor
 <p>There is a rich history of fish passage restoration planning in the Bulkley River watershed group with not all the work documented in the PSCIS system. A non-exhaustive list of historic fish passage reports for the watershed includes <span class="citation">Wilson and Rabnett (2007)</span>, <span class="citation">McCarthy and Fernando (2015)</span>,<span class="citation">Smith (2018)</span> <span class="citation">Casselman and Stanley (2010)</span> and <span class="citation">Irvine (2018)</span>.</p>
 <p><br></p>
 <p>Review of the PSCIS database indicated that prior to 2020, XXXXXXXXXXXXXXXXXXXXX assessments for fish passage (Phase 1) at crossing structures within the Bulkley River watershed group have been recorded in the PSCIS database <span class="citation">(MoE 2021a)</span>. No habitat confirmations are recorded in the PSCIS database <span class="citation">(MoE 2021b)</span>. Within the Bulkley River watershed group, a number of remediation projects have been completed over the years with backwatering works conducted on Toboggan Creek, Coffin Creek, Moan Creek, Johnny David Creek and potentially others. Three culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS and include works on Barren Creek as well as two tributaries to Harold Prince Creek <span class="citation">(MoE 2021c)</span>. McDowell Creek at Highway 16 was replaced with a horizontally drilled baffled structure in 2017 and a design is currently being drafted for the Highway 16 crossing over Taman Creek (pers. comm. Kathryn Graham, Regional Manager Environmental Services - Ministry of Transportation and Infrastructure).</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="background.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">##`r pscis_historic_phase1 %&gt;% filter(watershed_group_code %ilike% &#39;BULK&#39; &amp; assessment_date &lt; &#39;2020-01-01&#39;) %&gt;% nrow()`</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="background.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">##`r pscis_historic_phase1 %&gt;% filter(watershed_group_code %ilike% &#39;BULK&#39; &amp; assessment_date &lt; &#39;2020-01-01&#39;) %&gt;% nrow()`</span></span></code></pre></div>
 <p><br></p>
 </div>
 </div>
 <div id="morice-river-2" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> Morice river<a href="background.html#morice-river-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Within the Morice River watershed group prior to 2020, XXXXXXXXXXXXXXXXXX fish passage assessments (Phase 1) had been recorded in the PSCIS database <span class="citation">(MoE 2021a)</span>. At the time of reporting, no habitat confirmations had been recorded <span class="citation">(MoE 2021b)</span>. Two culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS in the and include works on a tributary to the Morice River located at km 39.2 of the Morice River FSR and on bridge installation at km 4 of McBride Road on a tributary to McBride Lake <span class="citation">(MoE 2021c)</span>.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="background.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">##`r pscis_historic_phase1 %&gt;% filter(watershed_group_code %ilike% &#39;MORR&#39; &amp; assessment_date &lt; &#39;2020-01-01&#39;) %&gt;% nrow()`</span></span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="background.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">##`r pscis_historic_phase1 %&gt;% filter(watershed_group_code %ilike% &#39;MORR&#39; &amp; assessment_date &lt; &#39;2020-01-01&#39;) %&gt;% nrow()`</span></span></code></pre></div>
 
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="background.html#cb23-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb23-2"><a href="background.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># source(&#39;R/packages.R&#39;)</span></span>
-<span id="cb23-3"><a href="background.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># source(&#39;R/functions.R&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="background.html#cb22-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb22-2"><a href="background.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># source(&#39;R/packages.R&#39;)</span></span>
+<span id="cb22-3"><a href="background.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># source(&#39;R/functions.R&#39;)</span></span></code></pre></div>
 </div>
 </div>
             </section>

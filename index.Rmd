@@ -67,7 +67,7 @@ options(knitr.kable.NAN = '--')
 
 
 source('scripts/packages.R')
-source('scripts/functions.R')
+# source('scripts/functions.R')
 source('scripts/private_info.R')
 source('scripts/tables.R')
 
