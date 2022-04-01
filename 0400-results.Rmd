@@ -37,12 +37,15 @@ map <- leaflet(height=500, width=780) %>%
   # addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
   #   opacity = 1.0, fillOpacity = 0.25,
   #   fillColor = "#00DBFF", label = wshds$stream_crossing_id, group = "Phase 2") %>%
+  
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'BULK'), color = "#F29A6E", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0,
     fillColor = "#F29A6E", label = 'Bulkley River') %>%
+  
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'MORR'), color = "#C39D50", weight = 1, smoothFactor = 0.5,
     opacity = 1.0, fillOpacity = 0,
     fillColor = "#C39D50", label = 'Morice River') %>%
+  
     addLegend(
     position = "topright",
     colors = c("red", "yellow", "grey", "black"),
@@ -65,7 +68,8 @@ map <- leaflet(height=500, width=780) %>%
     # opacity = 1.0,
     # group = "Planning") %>% 
 
-    addCircleMarkers(data=tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments'),
+    addCircleMarkers(data=tab_map %>% 
+                       filter(source %like% 'phase1' | source %like% 'pscis_reassessments'),
     label = tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments') %>% pull(pscis_crossing_id),               
     # label = tab_map$pscis_crossing_id,
     labelOptions = labelOptions(noHide = F, textOnly = TRUE),
@@ -82,31 +86,35 @@ map <- leaflet(height=500, width=780) %>%
     opacity = 1.0,
     group = "Phase 1"
     ) %>% 
+  
     addPolylines(data=tracks,  
                  opacity=0.75, color = '#e216c4',
                fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
+  
   addAwesomeMarkers(
     lng = photo_metadata$gps_longitude,lat = photo_metadata$gps_latitude,
                     popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
                     clusterOptions = markerClusterOptions(),
                     group = "Phase 2") %>%
-    # addCircleMarkers(
-    # data=tab_hab_map,
-    # label = tab_hab_map$pscis_crossing_id,
-    # labelOptions = labelOptions(noHide = T, textOnly = TRUE),
-    # popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)),
-    #                                        Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments, `Culvert data` = data_link, `Culvert photos` = photo_link, `Model data` = model_link),
-    #                             feature.id = F,
-    #                             row.numbers = F),
-    # radius = 9,
-    # fillColor = ~pal(priority),
-    # color= "#ffffff",
-    # stroke = TRUE,
-    # fillOpacity = 1.0,
-    # weight = 2,
-    # opacity = 1.0,
-    # group = "Phase 2"
-    # ) %>%
+  
+    addCircleMarkers(
+    data=tab_hab_map,
+    label = tab_hab_map$pscis_crossing_id,
+    labelOptions = labelOptions(noHide = T, textOnly = TRUE),
+    popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)),
+                                           Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments, `Culvert data` = data_link, `Culvert photos` = photo_link, `Model data` = model_link),
+                                feature.id = F,
+                                row.numbers = F),
+    radius = 9,
+    fillColor = ~pal(priority),
+    color= "#ffffff",
+    stroke = TRUE,
+    fillOpacity = 1.0,
+    weight = 2,
+    opacity = 1.0,
+    group = "Phase 2"
+    ) %>%
+  
   #     # addScaleBar(position = 'bottomleft', options = scaleBarOptions(imperial = FALSE)) %>% 
   addLayersControl(
     baseGroups = c(
@@ -114,7 +122,9 @@ map <- leaflet(height=500, width=780) %>%
       "ESRI Aerial"),
     overlayGroups = c("Phase 1", "Phase 2"),
     options = layersControlOptions(collapsed = F)) %>%
+  
   leaflet.extras::addFullscreenControl() %>% 
+  
   addMiniMap(tiles = providers$"Esri.NatGeoWorldMap",
              zoomLevelOffset = -6, width = 100, height = 100)
 
