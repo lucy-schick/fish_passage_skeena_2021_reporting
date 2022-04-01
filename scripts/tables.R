@@ -60,15 +60,15 @@ pscis_all <- left_join(
   xref_pscis_my_crossing_modelled,
   by = c('my_crossing_reference' = 'external_crossing_reference')
 ) %>%
-  # mutate(pscis_crossing_id = case_when(
-  #   is.na(pscis_crossing_id) ~ stream_crossing_id,
-  #   T ~ pscis_crossing_id
-  # )) %>%
+  mutate(pscis_crossing_id = case_when(
+    is.na(pscis_crossing_id) ~ as.numeric(stream_crossing_id),
+    T ~ pscis_crossing_id
+  )) %>%
   # mutate(amalgamated_crossing_id = case_when(
   #   !is.na(my_crossing_reference) ~ my_crossing_reference,
   #   T ~ pscis_crossing_id
   # )) %>%
-  select(-stream_crossing_id) %>%
+  # select(-stream_crossing_id) %>%
   arrange(pscis_crossing_id)
 
 
@@ -334,60 +334,62 @@ phase1_priorities <- pscis_all %>%
   dplyr::rename(utm_easting = easting, utm_northing = northing)
 
 
-##turn spreadsheet into list of data frames - why was this pscis_crossing_id?
+##turn spreadsheet into list of data frames
 pscis_phase1_for_tables <- pscis_all %>%
   filter(source %ilike% 'phase1') %>%
   arrange(pscis_crossing_id)
 
 
+pscis_split <- pscis_phase1_for_tables  %>% #pscis_phase1_reassessments
+  # sf::st_drop_geometry() %>%
+  # mutate_if(is.numeric, as.character) %>% ##added this to try to get the outlet drop to not disapear
+  # tibble::rownames_to_column() %>%
+  dplyr::group_split(pscis_crossing_id) %>%
+  purrr::set_names(pscis_phase1_for_tables$pscis_crossing_id)
+
+##make result summary tables for each of the crossings
+tab_summary <- pscis_split %>%
+  purrr::map(fpr::fpr_table_cv_detailed)
+
+tab_summary_comments <- pscis_split %>%
+  purrr::map(fpr::fpr_table_cv_detailed_comments)
+
+##had a hickup where R cannot handle the default size of the integers we used for numbers so we had to change site names!!
+tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names = T) %>%
+  basename() %>%
+  as_tibble() %>%
+  mutate(value = as.integer(value)) %>%  ##need this to sort
+  dplyr::arrange(value)  %>%
+  mutate(photo = paste0('![](data/photos/', value, '/crossing_all.JPG)')) %>%
+  filter(value %in% pscis_phase1_for_tables$my_crossing_reference)  %>% ##we don't want all the photos - just the phase 1 photos for this use case!!!
+  left_join(., xref_pscis_my_crossing_modelled, by = c('value' = 'external_crossing_reference'))  %>% ##we need to add the pscis id so that we can sort the same
+  arrange(stream_crossing_id) %>%
+  select(-value) %>%
+  # pull(photo)
+  dplyr::group_split(stream_crossing_id)
+  # purrr::set_names(nm = . %>% bind_rows() %>% arrange(value) %>% pull(stream_crossing_id)) %>%
+  # bind_rows()
+  # arrange(stream_crossing_id) %>%
+  # dplyr::group_split(value)
 
 
-# NOT WORKING YET ---------------------------------------------------------
-#
-#
-# pscis_split <- pscis_phase1_for_tables  %>% #pscis_phase1_reassessments
-#   # sf::st_drop_geometry() %>%
-#   # mutate_if(is.numeric, as.character) %>% ##added this to try to get the outlet drop to not disapear
-#   # tibble::rownames_to_column() %>%
-#   dplyr::group_split(pscis_crossing_id) %>%
-#   purrr::set_names(pscis_phase1_for_tables$pscis_crossing_id)  ##changed to my_crossing_id
-#
-# ##make result summary tables for each of the crossings
-# tab_summary <- pscis_split %>%
-#   purrr::map(fpr_make_tab_summary)
-#
-# tab_summary_comments <- pscis_split %>%
-#   purrr::map(fpr_make_tab_summary_comments)
-#
-# ##had a hickup where R cannot handle the default size of the integers we used for numbers so we had to change site names!!
-# tab_photo_url <- list.files(path = paste0(getwd(), '/data/photos/'), full.names = T) %>%
-#   basename() %>%
-#   as_tibble() %>%
-#   mutate(value = as.integer(value)) %>%  ##need this to sort
-#   dplyr::arrange(value)  %>%
-#   mutate(photo = paste0('![](data/photos/', value, '/crossing_all.JPG)')) %>%
-#   filter(value %in% pscis_phase1_for_tables$my_crossing_reference)  %>% ##we don't want all the photos - just the phase 1 photos for this use case!!!
-#   left_join(., xref_pscis_my_crossing_modelled, by = c('value' = 'external_crossing_reference'))  %>% ##we need to add the pscis id so that we can sort the same
-#   arrange(stream_crossing_id) %>%
-#   select(-value) %>%
-#   # pull(photo)
-#   dplyr::group_split(stream_crossing_id)
-#   # purrr::set_names(nm = . %>% bind_rows() %>% arrange(value) %>% pull(stream_crossing_id)) %>%
-#   # bind_rows()
-#   # arrange(stream_crossing_id) %>%
-#   # dplyr::group_split(value)
-#
-#
-# ##these are the reassessments!!!!!
-# ##built from funciton in functions.R file
-# tabs_phase1 <- mapply(fpr_print_tab_summary_all, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url)
-#
-# ##built from funciton in functions.R file
-# tabs_phase1_pdf <- mapply(fpr_print_tab_summary_all_pdf, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url)
+##these are the reassessments!!!!!
+##built from funciton in functions.R file
+tabs_phase1 <- mapply(
+  fpr::fpr_table_cv_detailed_print,
+  tab_sum = tab_summary,
+  comments = tab_summary_comments,
+  photos = tab_photo_url)
 
 
-
-# UNHASH TO HERE ----------------------------------------------------------
+##built from funciton in functions.R file
+tabs_phase1_pdf <- mapply(
+  fpr::fpr_table_cv_detailed_print,
+  tab_sum = tab_summary,
+  comments = tab_summary_comments,
+  photos = tab_photo_url,
+  gitbook = FALSE
+  )
 
 
 hab_site_prep <-  habitat_confirmations %>%

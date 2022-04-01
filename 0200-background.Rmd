@@ -172,12 +172,12 @@ fiss_species_table <- readr::read_csv(paste0(getwd(), '/data/inputs_extracted/fi
 
 if(gitbook_on){
 fiss_species_table %>% 
-  my_kable_scroll(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
+  fpr::fpr_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
 } else fiss_species_table[1:41, ] %>% 
-  my_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.')
+  fpr::fpr_kable(caption_text = 'Fish species recorded in the Bulkley River and Morice River watershed groups.', scroll = F)
 
 if(identical(gitbook_on, FALSE)){fiss_species_table[42:nrow(fiss_species_table), ] %>% 
-  my_kable()}
+  fpr::fpr_kable(scroll = F)}
 
 ```
 
