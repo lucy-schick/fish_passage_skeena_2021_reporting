@@ -386,7 +386,7 @@ test <- fpr::fpr_photo_qa() %>%
 
 # build photo amalgamation for each site ------------------------------------------------
 pscis_all <- fpr::fpr_import_pscis_all() %>%
-  bind_rows
+  bind_rows()
 
 pscis_all %>%
   distinct(site_id) %>%
@@ -398,4 +398,77 @@ pscis_all %>%
 
 
 
+# make phase2 photo files and copy in photos ------------------------------
+
+# because we did not have the pscis ids our photos for phase 2 sites that had a my_crossing_reference
+# need to be copied into new folders
+
+##path to the photos
+path <- paste0(getwd(), '/data/photos/')
+
+
+##use the pscis spreadsheet to make the folders to copy the photos to
+# d <- import_pscis(workbook_name = 'pscis_phase1.xlsm')
+d <- fpr::fpr_import_pscis(workbook_name = 'pscis_phase2.xlsm')
+
+conn <- rws_connect("data/bcfishpass.sqlite")
+xref_pscis_my_crossing_modelled <- readwritesqlite::rws_read_table("xref_pscis_my_crossing_modelled", conn = conn)
+rws_disconnect(conn)
+
+pscis_new_sites <- left_join(
+  d,
+  xref_pscis_my_crossing_modelled,
+  by = c('pscis_crossing_id' = 'stream_crossing_id')
+) %>%
+  filter(!is.na(external_crossing_reference))
+
+folderstocopy<- pscis_new_sites$external_crossing_reference %>% as.character()
+
+folders_new_names <- pscis_new_sites$pscis_crossing_id %>% as.character()
+
+path_to_photos <- paste0(getwd(), '/data/photos/', folderstocopy)
+
+folderstocreate <- paste0(path, folders_new_names)
+
+##create the folders
+lapply(folderstocreate, dir.create)
+
+
+paths_to_copy <- function(target){
+  list.files(path = target,
+             pattern = ".JPG$",
+             recursive = TRUE,
+             full.names = T,
+             include.dirs = T)
+  # stringr::str_subset(., 'barrel|outlet|upstream|downstream|road|inlet')
+}
+
+photo_names_to_copy <- function(target){
+  list.files(path = target,
+             pattern = ".JPG$",
+             recursive = TRUE,
+             full.names = F,
+             include.dirs = T)
+  # stringr::str_subset(., 'barrel|outlet|upstream|downstream|road|inlet')
+}
+
+
+filestocopy_list <- path_to_photos %>%
+  purrr::map(paths_to_copy)
+
+change_file_names <- function(filestocopy, filename_before, filename_after){
+  gsub(filestocopy, pattern = filename_before, replacement = filename_after)
+}
+
+
+filestopaste_list <- mapply(change_file_names, filestocopy_list, folderstocopy, folders_new_names)
+
+copy_over_photos <- function(filescopy, filespaste){
+  file.copy(from=filescopy, to=filespaste,
+            overwrite = T,
+            copy.mode = TRUE)
+}
+
+mapply(copy_over_photos, filescopy =  filestocopy_list,
+       filespaste = filestopaste_list)
 
