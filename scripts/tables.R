@@ -28,6 +28,9 @@ pscis_all_prep <- pscis_list %>%
 
 
 
+# import data from sqlite -------------------------------------------------
+
+
 ##this is our new db made from 0282-extract-bcfishpass2-crossing-corrections.R and 0290
 conn <- rws_connect("data/bcfishpass.sqlite")
 rws_list_tables(conn)
@@ -45,7 +48,7 @@ tab_cost_rd_mult <- readwritesqlite::rws_read_table("rd_cost_mult", conn = conn)
 rd_class_surface <- readwritesqlite::rws_read_table("rd_class_surface", conn = conn)
 xref_pscis_my_crossing_modelled <- readwritesqlite::rws_read_table("xref_pscis_my_crossing_modelled", conn = conn)
 
-# wshds <- readwritesqlite::rws_read_table("wshds", conn = conn)
+wshds <- readwritesqlite::rws_read_table("wshds", conn = conn)
 
 photo_metadata <- readwritesqlite::rws_read_table("photo_metadata", conn = conn)
 # fiss_sum <- readwritesqlite::rws_read_table("fiss_sum", conn = conn)
@@ -142,7 +145,8 @@ pscis_rd <- left_join(
 #load priorities
 habitat_confirmations_priorities <- readr::read_csv(
   file = "./data/habitat_confirmations_priorities.csv") %>%
-  filter(!alias_local_name %like% 'ef') %>% ##ditch the ef sites
+  filter(!alias_local_name %like% 'ef' &
+           !alias_local_name %like% '198042') %>% ##ditch the ef sites and the toboggan site that is passable
   # tidyr::separate(local_name, into = c('site', 'location'), remove = F) %>%
   mutate(
     # site = as.numeric(site),
@@ -486,10 +490,11 @@ hab_site_priorities <- left_join(
   select(hab_site, reference_number, alias_local_name, site, utm_zone:utm_northing),
   by = 'reference_number'
 ) %>%
-  filter(!local_name %like% '_ds') %>%
+  filter(!local_name %like% '_ds' &
+           # ends in a number
+           !local_name %like% '\\d$') %>%
   select(-local_name)
 # filter(!is.na(priority))  ##this is how we did it before.  changed it to get a start on it
-
 
 
 # When we need to update our column names according to the new output from bcfishpass.crossings...
@@ -827,7 +832,9 @@ tab_hab_summary <- left_join(
   # replace(., is.na(.), "--") #this shouldn't be necessary
 
 
-####--------------------cost estimates phase1
+# cost estimates ----------------------------------------------------------
+
+## phase1 --------------------
 ##make the cost estimates
 tab_cost_est_prep <- left_join(
   pscis_rd %>%  arrange(aggregated_crossings_id),
@@ -917,8 +924,7 @@ tab_cost_est_phase1 <- tab_cost_est_phase1_prep %>%
 #   filter(!source %like% 'phase2') %>%
 #   select(-source)
 
-# -----------------------------------------phase 2 cost estimate
-##phase 2 specific
+## phase2 --------------------
 tab_cost_est_prep4 <- left_join(
   tab_cost_est_prep3,
   select(
@@ -932,7 +938,12 @@ tab_cost_est_prep4 <- left_join(
 
 tab_cost_est_prep5 <- left_join(
   tab_cost_est_prep4,
-  select(hab_site %>% filter(!alias_local_name %like% 'ds' & !alias_local_name %like% 'ef'), site, avg_channel_width_m),
+  select(hab_site %>% filter(
+    !alias_local_name %like% 'ds' &
+      !alias_local_name %like% 'ef' &
+    !alias_local_name %like% '\\d$'),
+    site,
+    avg_channel_width_m),
   by = c('pscis_crossing_id' = 'site')
 ) %>%
   ##intervention for Parker to reflect that there are 2 bridges to build.
@@ -952,6 +963,7 @@ tab_cost_est_phase2 <- tab_cost_est_prep5 %>%
                                     T ~ cost_est_1000s))
 
 tab_cost_est_phase2_report <- tab_cost_est_phase2 %>%
+  dplyr::arrange(pscis_crossing_id) %>%
   filter(source %like% 'phase2') %>%
   rename(`PSCIS ID` = pscis_crossing_id,
          Stream = stream_name,
@@ -971,10 +983,7 @@ rm(tab_cost_est_prep, tab_cost_est_prep2,
    tab_cost_est_prep3, tab_cost_est_prep4, tab_cost_est_prep5)
 
 
-# -------------------------map tables
-
-##we need an sf object with details for the interactive map
-##prep the location data
+# map tables --------------------------------------------------------------
 hab_loc_prep <- left_join(
   hab_loc %>%
     tidyr::separate(alias_local_name, into = c('site', 'location', 'ef'), remove = F) %>%
@@ -1003,15 +1012,14 @@ tab_hab_map <- left_join(
   #                           'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/docs/sum/', pscis_crossing_id,
   #                           '.html', '>', 'data link', '</a>')) %>%
   mutate(data_link = paste0('<a href =', 'sum/cv/', pscis_crossing_id, '.html ', 'target="_blank">Culvert Data</a>')) %>%
-  mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id, '/crossing_all.JPG ',
-                             'target="_blank">Culvert Photos</a>')) %>%
-  mutate(model_link = paste0('<a href =', 'sum/bcfp/', pscis_crossing_id, '.html ', 'target="_blank">Model Data</a>'))
-# mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id,
-#                           '/crossing_all.JPG', '>', 'Photos', '>New Tab</a>'))
-# mutate(data_link = paste0('[data](fig/sum/', pscis_crossing_id, '.png)')) %>%
-# mutate(photo_link = paste0('<a href =',
-#                            'https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos/', pscis_crossing_id,
-#                            '/crossing_all.JPG', '>', 'photo link', '</a>'))
+  # mutate(photo_link = paste0('<a href =', 'data/photos/', pscis_crossing_id, '/crossing_all.JPG ',
+  #                            'target="_blank">Culvert Photos</a>')) %>%
+  mutate(model_link = paste0('<a href =', 'sum/bcfp/', pscis_crossing_id, '.html ', 'target="_blank">Model Data</a>')) %>%
+  # mutate(photo_link = paste0('<a href =',
+  #                            'https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/photos/', pscis_crossing_id,
+  #                            '/crossing_all.JPG', '>', 'photo link', '</a>')) %>%
+  mutate(photo_link = paste0('<a href =', 'https://raw.githubusercontent.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/master/data/photos/', pscis_crossing_id, '/crossing_all.JPG ',
+                             'target="_blank">Culvert Photos</a>'))
 
 
 #--------------need to review if this is necessary
@@ -1024,8 +1032,6 @@ tab_map_prep <- left_join(
   by = 'pscis_crossing_id'
 )
 
-# mutate(data_link = paste0('<a href =', 'sum/', pscis_crossing_id,
-#                           '.html', '>', 'Data', '>New Tab</a>'))
 
 tab_map <- tab_map_prep %>%
   # mutate(pscis_crossing_id = as.character(pscis_crossing_id),
@@ -1040,7 +1046,7 @@ tab_map <- tab_map_prep %>%
   mutate(priority_phase1 = case_when(priority_phase1 == 'mod' ~ 'moderate',
                                      T ~ priority_phase1)) %>%
   mutate(data_link = paste0('<a href =', 'sum/cv/', pscis_crossing_id, '.html ', 'target="_blank">Culvert Data</a>')) %>%
-  mutate(photo_link = paste0('<a href =', 'data/photos/', site_id, '/crossing_all.JPG ',
+  mutate(photo_link = paste0('<a href =', 'https://raw.githubusercontent.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/master/data/photos/', my_crossing_reference, '/crossing_all.JPG ',
                              'target="_blank">Culvert Photos</a>')) %>%
   mutate(model_link = paste0('<a href =', 'sum/bcfp/', pscis_crossing_id, '.html ', 'target="_blank">Model Data</a>')) %>%
   dplyr::distinct(site_id, .keep_all = T) #just for now
