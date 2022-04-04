@@ -1,5 +1,5 @@
 source('scripts/packages.R')
-source('scripts/functions.R')
+# source('scripts/functions.R')
 source('scripts/private_info.R')
 source('scripts/tables.R')
 
@@ -9,14 +9,6 @@ source('scripts/tables.R')
 ##i wonder if it is because the 1st order watershed is the first one on the list so the api kicks us off...
 bcfishpass_phase2_clean <- bcfishpass_phase2 %>%
   filter(stream_order != 1)
-
-# lets get our fist order watersheds
-dat <- bcfishpass_phase2 %>%
-  filter(stream_order == 1)
-
-# add a unique id - we could just use the reference number
-dat$misc_point_id <- seq.int(nrow(dat))
-
 
 conn <- DBI::dbConnect(
   RPostgres::Postgres(),
@@ -28,8 +20,16 @@ conn <- DBI::dbConnect(
 )
 
 dat <- bcfishpass_phase2 %>%
-  filter(stream_order == 1) %>%
-  distinct(localcode_ltree, .keep_all = T)
+  filter(stream_order == 1)
+  # distinct(localcode_ltree, .keep_all = T)
+
+# add a unique id - we could just use the reference number
+dat$misc_point_id <- seq.int(nrow(dat))
+
+
+# # lets get our fist order watersheds
+# dat <- bcfishpass_phase2 %>%
+#   filter(stream_order == 1)
 
 ##pull out the localcode_ltrees we want
 ids <-  dat %>%
@@ -85,7 +85,7 @@ wshds_1ord <- left_join(
 
 
 ## call fwapgr
-wshds_fwapgr <- fpr_get_watershed(bcfishpass_phase2_clean)
+wshds_fwapgr <- fpr::fpr_sp_watershed(bcfishpass_phase2_clean)
 
 wshds <- bind_rows(
   wshds_fwapgr,
@@ -99,10 +99,9 @@ wshds <- left_join(wshds %>% mutate(stream_crossing_id = as.numeric(stream_cross
                      select(pscis_crossing_id, elev_site = elev),
                    by = c('stream_crossing_id' = 'pscis_crossing_id'))
 
-
-
 # calculate stats for each watershed
-wshds <- fpr_elev_stats() %>%
+# cesford at the railway doesn't pull out correctly so we don't include it
+wshds <- fpr::fpr_sp_wshd_stats(dat = wshds %>% filter(stream_crossing_id != 198090)) %>%
   mutate(area_km = round(area_ha/100, 1)) %>%
   mutate(across(contains('elev'), round, 0)) %>%
   arrange(stream_crossing_id)
@@ -115,7 +114,12 @@ wshds %>%
 
 
 #burn to kml as well so we can see elevations
-st_write(wshds, append = F, delete_layer = T, driver = 'kml', dsn = "data/inputs_extracted/wshds.kml")
+st_write(wshds %>%
+           rename(name = stream_crossing_id),
+         append = F,
+         delete_layer = T,
+         driver = 'kml',
+         dsn = "data/inputs_extracted/wshds.kml")
 
 
 conn <- rws_connect("data/bcfishpass.sqlite")
