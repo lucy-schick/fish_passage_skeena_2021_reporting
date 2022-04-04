@@ -1,10 +1,10 @@
-source('R/packages.R')
-source('R/functions.R')
-source('R/private_info.R')
-source('R/tables.R')
+source('scripts/packages.R')
+# source('R/functions.R')
+source('scripts/private_info.R')
+source('scripts/tables.R')
 
 ##make your geopackage for mapping
-make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 11){
+make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
   nm <-deparse(substitute(dat))
   dat %>%
     sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26900 + utm_zone, remove = F) %>%
@@ -18,7 +18,7 @@ dir.create('data/fishpass_mapping')
 make_geopackage(dat = hab_features)
 make_geopackage(dat = hab_site_priorities)
 make_geopackage(dat = phase1_priorities)
-make_geopackage(dat = tab_dams_raw)
+# make_geopackage(dat = tab_dams_raw)
 
 
 ##we do this manually
@@ -61,17 +61,6 @@ wshd_study_areas %>%
   sf::st_write(paste0("./data/fishpass_mapping/", 'fishpass_mapping', ".gpkg"), 'wshd_study_areas', append = F)
 
 dbDisconnect(conn = conn)
-
-####------------add the dams
-
-
-
-
-
-
-
-
-
 
 
 ####--------------------burn geojsons from geopackage-----------------------------------------------------
