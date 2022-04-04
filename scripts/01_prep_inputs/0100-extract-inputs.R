@@ -719,6 +719,40 @@ xref_phase2_corrected <- left_join(
 # rws_disconnect(conn)
 
 
+# UTMs Phase 2--------------------------------------------------------------------
+# get just the us sites that aren't ef sites
+
+get_this <- bcdata::bcdc_tidy_resources('pscis-assessments') %>%
+  filter(bcdata_available == T)  %>%
+  pull(package_id)
+
+dat <- bcdata::bcdc_get_data(get_this) %>%
+  janitor::clean_names()
+
+
+habitat_confirmations <- fpr::fpr_import_hab_con()
+
+utms_hab_prep1 <- habitat_confirmations %>%
+  purrr::pluck("step_1_ref_and_loc_info") %>%
+  dplyr::filter(!is.na(site_number))%>%
+  tidyr::separate(alias_local_name, into = c('site', 'location', 'ef'), remove = F)
+
+utms <- dat %>%
+  filter(stream_crossing_id %in% (utms_hab_prep1 %>% distinct(site) %>% pull(site))) %>%
+  select(stream_crossing_id, utm_zone:utm_northing) %>%
+  mutate(alias_local_name = paste0(stream_crossing_id, '_us')) %>%
+  sf::st_drop_geometry()
+
+utms_hab <- left_join(
+  utms_hab_prep1 %>% select(-utm_zone:-utm_northing),
+  utms,
+  by = 'alias_local_name'
+) %>%
+  readr::write_csv('data/inputs_extracted/utms_hab.csv', na = '')
+
+
+
+
 # fish summary ------------------------------------------------------------
 
 # we need to summarize all our fish sizes
@@ -936,4 +970,6 @@ rm(hab_site_prep,
    # hab_fish_indiv_prep2,
    hab_fish_collect_prep2,
    hab_loc2)
+
+
 
