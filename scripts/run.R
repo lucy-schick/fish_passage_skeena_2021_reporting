@@ -53,6 +53,7 @@ rmarkdown::render_site(output_format = 'bookdown::gitbook',
 filename_html <- 'Skeena2021'
 
 {
+
 file.rename('0600-appendix.Rmd', 'hold/0600-appendix.Rmd')
 
 ##   then make our printable pdf
@@ -69,6 +70,7 @@ pagedown::chrome_print(
 
 # get rid of the html as its too big and not needed
 file.remove(paste0(getwd(), '/', filename_html, '.html'))
+
 }
 
 

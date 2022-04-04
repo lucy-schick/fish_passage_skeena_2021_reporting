@@ -9,25 +9,20 @@ data/inputs_extracted/*
 data/~$*
 scripts/private_info.R
 scripts/pers_*
-#data/photos/*
 *.JPG
 !crossing_all.JPG
-
 !*_k_*
 *.gpkg-wal
 *.gpkg-shm
 #data/raw_input
-#docs/Bulkley.pdf
 #docs/Elk.tex
 docs/Skeena2021.html
 *~$*
 *.sqlite
 hold
-data/watershed_reports/*
 *.Kmz
 *.kml
 maps/*
-data/streams.csv
 data/photos/**/*.pdf
 docs/Skeena2021.pdf
 
