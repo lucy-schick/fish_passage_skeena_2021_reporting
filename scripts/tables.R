@@ -144,8 +144,11 @@ pscis_rd <- left_join(
 
 #load priorities
 habitat_confirmations_priorities <- readr::read_csv(
-  file = "./data/habitat_confirmations_priorities.csv") %>%
+  file = "./data/habitat_confirmations_priorities.csv",
+  #this is not necessary but we will leave.
+  locale = readr::locale(encoding = "UTF-8")) %>%
   filter(!alias_local_name %like% 'ef' &
+           ##ditch the ef sites and the toboggan site that is passable
            !alias_local_name %like% '198042') %>% ##ditch the ef sites and the toboggan site that is passable
   # tidyr::separate(local_name, into = c('site', 'location'), remove = F) %>%
   mutate(
@@ -860,10 +863,10 @@ tab_cost_est_prep2 <- left_join(
 tab_cost_est_prep3 <- left_join(
   tab_cost_est_prep2,
   bcfishpass %>%
-    select(aggregated_crossings_id,
+    select(stream_crossing_id,
            st_network_km,
            st_belowupstrbarriers_network_km),
-  by = c('aggregated_crossings_id') #not sure we need to add my_crossing_reference
+  by = c('pscis_crossing_id' = 'stream_crossing_id')
 ) %>%
   mutate(cost_net = round(st_belowupstrbarriers_network_km * 1000/cost_est_1000s, 1),
          cost_gross = round(st_network_km * 1000/cost_est_1000s, 1),
