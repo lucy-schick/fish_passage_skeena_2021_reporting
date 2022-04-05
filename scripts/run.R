@@ -36,6 +36,10 @@ preview_chapter('index.Rmd')
 ##go to the index.Rmd and change gitbook_on <- TRUE
 #################################################################################################
 
+
+# if you need to update after renameing photos to keep and add to map....
+source('scripts/02_prep_reporting/0180-photos-extract-metadata.R')
+
 rmarkdown::render_site(output_format = 'bookdown::gitbook',
                        encoding = 'UTF-8')
 
