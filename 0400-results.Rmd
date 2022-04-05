@@ -220,7 +220,8 @@ As collaborative decision making was ongoing at the time of reporting, site prio
 
 tab_overview %>% 
   select(-Tenure) %>%
-  fpr::fpr_kable(caption_text = 'Overview of habitat confirmation sites. Coho rearing model used for habitat estimates (total length of stream segments <7.5% gradient)', scroll = gitbook_on)
+  table_phase2_overview(caption_text = 'Overview of habitat confirmation sites. Coho rearing model used for habitat estimates (total length of stream segments <7.5% gradient)', 
+                        scroll = gitbook_on)
 
 ```
 
