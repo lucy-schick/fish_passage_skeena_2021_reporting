@@ -8,13 +8,15 @@ author: |
  | Canadian Wildlife Federation
  |
  |
- | Prepared 
+ | Prepared by
+ | Al Irvine, B.Sc., R.P.Bio.
+ | New Graph Environment Ltd.
  | on behalf of
  | Society for Ecosytem Restoration in Northern British Columbia
 
 date: |
  |
- | Version 0.0.2
+ | Version 0.0.2 - DRAFT INCOMPLETE
  | `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
