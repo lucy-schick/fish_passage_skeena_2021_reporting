@@ -751,6 +751,37 @@ utms_hab <- left_join(
   readr::write_csv('data/inputs_extracted/utms_hab.csv', na = '')
 
 
+# Fish species and hab gain estimates for phase 2 sites ------------------------
+habitat_con_pri <- read_csv('data/habitat_confirmations_priorities.csv')
+
+hab_priority_fish_hg <- left_join(
+  habitat_con_pri %>% select(reference_number, alias_local_name, site, location, ef),
+  bcfishpass %>% select(stream_crossing_id, observedspp_upstr, co_rearing_km),
+  by = c('site' = 'stream_crossing_id')
+) %>%
+  mutate(observedspp_upstr = gsub("[{}]", "", observedspp_upstr)) %>%
+  mutate(observedspp_upstr = case_when(
+    alias_local_name %like% 'ds' |
+      # ends in a number
+      alias_local_name %like% '\\d$' ~ NA_character_,
+    T ~ observedspp_upstr),
+    co_rearing_km = case_when(
+      alias_local_name %like% 'ds' |
+        # ends in a number
+        alias_local_name %like% '\\d$' ~ NA_real_,
+      T ~ co_rearing_km)) %>%
+  rename(species_codes = observedspp_upstr) %>%
+  mutate(
+    upstream_habitat_length_m = co_rearing_km * 1000,
+    species_codes = stringr::str_replace_all(species_codes, c('CCT,|SST,|SP,'), ''),
+    species_codes = case_when(
+      site == 198090 ~ NA_character_,
+      T ~ species_codes
+    )
+  ) %>%
+  readr::write_csv('data/inputs_extracted/hab_priority_fish_hg.csv', na = '')
+
+
 
 
 # fish summary ------------------------------------------------------------
