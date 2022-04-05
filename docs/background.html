@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="intro.html"/>
-<link rel="next" href="drone-generated-orthomosaics-and-3d-models.html"/>
+<link rel="next" href="results-and-discussion.html"/>
 <script src="libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -212,9 +212,9 @@ div.csl-indent {
 <li><a href="index.html#acknowledgement">Acknowledgement<span></span></a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a></li>
 <li class="chapter" data-level="2" data-path="background.html"><a href="background.html"><i class="fa fa-check"></i><b>2</b> Background<span></span></a></li>
-<li class="chapter" data-level="3" data-path="drone-generated-orthomosaics-and-3d-models.html"><a href="drone-generated-orthomosaics-and-3d-models.html"><i class="fa fa-check"></i><b>3</b> Drone Generated Orthomosaics and 3D models<span></span></a></li>
-<li class="chapter" data-level="4" data-path="kml-showing-sites-surveyed-in-2021.html"><a href="kml-showing-sites-surveyed-in-2021.html"><i class="fa fa-check"></i><b>4</b> KML showing sites surveyed in 2021<span></span></a></li>
-<li class="chapter" data-level="5" data-path="results-and-discussion.html"><a href="results-and-discussion.html"><i class="fa fa-check"></i><b>5</b> Results and Discussion<span></span></a></li>
+<li class="chapter" data-level="3" data-path="results-and-discussion.html"><a href="results-and-discussion.html"><i class="fa fa-check"></i><b>3</b> Results and Discussion<span></span></a></li>
+<li class="chapter" data-level="4" data-path="drone-generated-orthomosaics-and-3d-models.html"><a href="drone-generated-orthomosaics-and-3d-models.html"><i class="fa fa-check"></i><b>4</b> Drone Generated Orthomosaics and 3D models<span></span></a></li>
+<li class="chapter" data-level="5" data-path="kml-showing-sites-surveyed-in-2021.html"><a href="kml-showing-sites-surveyed-in-2021.html"><i class="fa fa-check"></i><b>5</b> KML showing sites surveyed in 2021<span></span></a></li>
 <li><a href="appendix---phase-1-fish-passage-assessment-data-and-photos.html#appendix---phase-1-fish-passage-assessment-data-and-photos">Appendix - Phase 1 Fish Passage Assessment Data and Photos<span></span></a></li>
 <li><a href="references.html#references">References<span></span></a></li>
 <li><a href="session-info.html#session-info">Session Info<span></span></a></li>
@@ -1858,9 +1858,6 @@ Figure 2.9: Summary of historic salmonid observations vs. channel width categor
 <p>Within the Morice River watershed group prior to 2020, XXXXXXXXXXXXXXXXXX fish passage assessments (Phase 1) had been recorded in the PSCIS database <span class="citation">(MoE 2021a)</span>. At the time of reporting, no habitat confirmations had been recorded <span class="citation">(MoE 2021b)</span>. Two culvert replacements (with open bottom structures) in the watershed group have been tracked in PSCIS in the and include works on a tributary to the Morice River located at km 39.2 of the Morice River FSR and on bridge installation at km 4 of McBride Road on a tributary to McBride Lake <span class="citation">(MoE 2021c)</span>.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="background.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">##`r pscis_historic_phase1 %&gt;% filter(watershed_group_code %ilike% &#39;MORR&#39; &amp; assessment_date &lt; &#39;2020-01-01&#39;) %&gt;% nrow()`</span></span></code></pre></div>
 
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="background.html#cb22-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb22-2"><a href="background.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># source(&#39;R/packages.R&#39;)</span></span>
-<span id="cb22-3"><a href="background.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># source(&#39;R/functions.R&#39;)</span></span></code></pre></div>
 </div>
 </div>
             </section>
@@ -1869,7 +1866,7 @@ Figure 2.9: Summary of historic salmonid observations vs. channel width categor
         </div>
       </div>
 <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="drone-generated-orthomosaics-and-3d-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="results-and-discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
