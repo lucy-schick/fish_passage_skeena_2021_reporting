@@ -31,53 +31,46 @@ map <- leaflet(height=500, width=780) %>%
   # leafem::addMouseCoordinates(proj4 = 26911) %>% ##can't seem to get it to render utms yet
   # addProviderTiles(providers$"Esri.DeLorme") %>% 
   addProviderTiles("Esri.WorldTopoMap", group = "Topo") %>%
-  addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>%
-  
-
-  
+  addProviderTiles("Esri.WorldImagery", group = "ESRI Aerial") %>% 
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'BULK'), color = "#F29A6E", weight = 1, smoothFactor = 0.5,
               opacity = 1.0, fillOpacity = 0,
               fillColor = "#F29A6E", label = 'Bulkley River') %>%
-  
   addPolygons(data = wshd_study_areas %>% filter(watershed_group_code == 'MORR'), color = "#C39D50", weight = 1, smoothFactor = 0.5,
               opacity = 1.0, fillOpacity = 0,
               fillColor = "#C39D50", label = 'Morice River') %>%
-    addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
+  addPolygons(data = wshds, color = "#0859C6", weight = 1, smoothFactor = 0.5,
               opacity = 1.0, fillOpacity = 0.25,
-              fillColor = "#00DBFF", 
-              label = wshds$stream_crossing_id, 
+              fillColor = "#00DBFF",
+              label = wshds$stream_crossing_id,
               popup = leafpop::popupTable(x = select(wshds %>% st_set_geometry(NULL),
-                                                     Site = stream_crossing_id, 
+                                                     Site = stream_crossing_id,
                                                      elev_min:area_km),
                                           feature.id = F,
                                           row.numbers = F),
-              group = "Phase 2") %>%
-  
+              group = "Phase 2") %>% 
   addLegend(
     position = "topright",
     colors = c("red", "yellow", "grey", "black"),
     labels = c("High", "Moderate", "Low", 'No fix'), opacity = 1,
-    title = "Fish Passage Priorities",
-  ) %>%
-  # addCircleMarkers(
-  # data=tab_plan_sf,
-  # label = tab_plan_sf$Comments,
-  # labelOptions = labelOptions(noHide = F, textOnly = F),
-  # popup = leafpop::popupTable(x = tab_plan_sf %>% st_drop_geometry(),
-  #                             feature.id = F,
-  #                             row.numbers = F),
-  # radius = 9,
-  # fillColor = ~pal_phase1(tab_plan_sf$Priority),
-  # color= "#ffffff",
-  # stroke = TRUE,
-# fillOpacity = 1.0,
-# weight = 2,
-# opacity = 1.0,
-# group = "Planning") %>% 
-
-addCircleMarkers(data=tab_map %>% 
+    title = "Fish Passage Priorities") %>% 
+#   # addCircleMarkers(
+#   # data=tab_plan_sf,
+#   # label = tab_plan_sf$Comments,
+#   # labelOptions = labelOptions(noHide = F, textOnly = F),
+#   # popup = leafpop::popupTable(x = tab_plan_sf %>% st_drop_geometry(),
+#   #                             feature.id = F,
+#   #                             row.numbers = F),
+#   # radius = 9,
+#   # fillColor = ~pal_phase1(tab_plan_sf$Priority),
+#   # color= "#ffffff",
+#   # stroke = TRUE,
+#   # fillOpacity = 1.0,
+# # weight = 2,
+# # opacity = 1.0,
+# # group = "Planning") %>% 
+addCircleMarkers(data=tab_map %>%
                    filter(source %like% 'phase1' | source %like% 'pscis_reassessments'),
-                 label = tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments') %>% pull(pscis_crossing_id),               
+                 label = tab_map %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments') %>% pull(pscis_crossing_id),
                  # label = tab_map$pscis_crossing_id,
                  labelOptions = labelOptions(noHide = F, textOnly = TRUE),
                  popup = leafpop::popupTable(x = select((tab_map %>% st_set_geometry(NULL) %>% filter(source %like% 'phase1' | source %like% 'pscis_reassessments')),
@@ -91,25 +84,29 @@ addCircleMarkers(data=tab_map %>%
                  fillOpacity = 1.0,
                  weight = 2,
                  opacity = 1.0,
-                 group = "Phase 1"
-) %>% 
-  
-  addPolylines(data=tracks,  
+                 group = "Phase 1") %>% 
+  addPolylines(data=tracks,
                opacity=0.75, color = '#e216c4',
                fillOpacity = 0.75, weight=5, group = "Phase 2") %>%
-  
   addAwesomeMarkers(
     lng = photo_metadata$gps_longitude,lat = photo_metadata$gps_latitude,
     popup = leafpop::popupImage(photo_metadata$url, src = "remote"),
     clusterOptions = markerClusterOptions(),
-    group = "Phase 2") %>%
-  
+    group = "Phase 2") %>% 
   addCircleMarkers(
     data=tab_hab_map,
     label = tab_hab_map$pscis_crossing_id,
     labelOptions = labelOptions(noHide = T, textOnly = TRUE),
-    popup = leafpop::popupTable(x = select((tab_hab_map %>% st_set_geometry(NULL)),
-                                           Site = pscis_crossing_id, Priority = priority, Stream = stream_name, Road = road_name, `Habitat (m)`= upstream_habitat_length_m, Comments = comments, `Culvert data` = data_link, `Culvert photos` = photo_link, `Model data` = model_link),
+    popup = leafpop::popupTable(x = select((tab_hab_map %>% st_drop_geometry()),
+                                           Site = pscis_crossing_id,
+                                           Priority = priority,
+                                           Stream = stream_name,
+                                           Road = road_name,
+                                           `Habitat (m)`= upstream_habitat_length_m,
+                                           Comments = comments,
+                                           `Culvert data` = data_link,
+                                           `Culvert photos` = photo_link,
+                                           `Model data` = model_link),
                                 feature.id = F,
                                 row.numbers = F),
     radius = 9,
@@ -120,22 +117,21 @@ addCircleMarkers(data=tab_map %>%
     weight = 2,
     opacity = 1.0,
     group = "Phase 2"
-  ) %>%
-  
+    ) %>% 
+
   addLayersControl(
     baseGroups = c(
       "Esri.DeLorme",
       "ESRI Aerial"),
     overlayGroups = c("Phase 1", "Phase 2"),
     options = layersControlOptions(collapsed = F)) %>%
-  
-  leaflet.extras::addFullscreenControl() %>% 
-  
+  leaflet.extras::addFullscreenControl() %>%
   addMiniMap(tiles = providers$"Esri.NatGeoWorldMap",
              zoomLevelOffset = -6, width = 100, height = 100)
 
 map %>% 
   hideGroup(c("Phase 1"))
+
 ```
 
 
@@ -172,7 +168,7 @@ rws_disconnect(conn)
 
 ## Phase 1
 
-Field assessments were conducted between `r format(min(pscis_phase1$date), format="%B %d %Y")` and `r format(max(pscis_phase1$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio. and Kyle Prince, P.Biol., Tieasha Pierre, Vern Joseph, Dallas Nikal, Alexandria Nikal, Chad Lewis, Tim Wilson, Adam Wrench, Lars Reese-Hanson and Don Morgan. A total of `r n_distinct(pscis_phase1$my_crossing_reference)` Phase 1 assessments were conducted with `r pscis_phase1 %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis_phase1 %>% filter(barrier_result == 'Potential') %>% nrow() %>% english::as.english()` crossings considered "potential" barriers and `r pscis_phase1 %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered "barriers" according to threshold values based on culvert embedment, outlet drop, slope, diameter (relative to channel size) and length [@fish_passage_assessments]. Georeferenced field maps are presented in `r if(gitbook_on){knitr::asis_output("[here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) and available for bulk download as [Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")} else knitr::asis_output("[Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")` A summary of crossings assessed, a cost benefit analysis and priority ranking for follow up for Phase 1 sites presented in Table \@ref(tab:cost-est-phase-1). Detailed data with photos are presented in `r if(gitbook_on){knitr::asis_output("[Appendix - Phase 1 Fish Passage Assessment Data and Photos]")} else knitr::asis_output("[Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/docs/Attachment_2.pdf)")`.
+Field assessments were conducted between `r format(min(pscis_phase1$date), format="%B %d %Y")` and `r format(max(pscis_phase1$date), format="%B %d %Y")` by Allan Irvine, R.P.Bio. and Kyle Prince, P.Biol., Tieasha Pierre, Vern Joseph, Dallas Nikal, Alexandria Nikal, Chad Lewis, Tim Wilson, Adam Wrench, Lars Reese-Hanson and Don Morgan. A total of `r n_distinct(pscis_phase1$my_crossing_reference)` Phase 1 assessments were conducted with `r pscis_phase1 %>% filter(barrier_result == 'Passable') %>% nrow()` crossings considered "passable", `r pscis_phase1 %>% filter(barrier_result == 'Potential') %>% nrow() %>% english::as.english()` crossings considered "potential" barriers and `r pscis_phase1 %>% filter(barrier_result == 'Barrier') %>% nrow()` crossings considered "barriers" according to threshold values based on culvert embedment, outlet drop, slope, diameter (relative to channel size) and length [@fish_passage_assessments]. Additionally, although all were considered fully passable, `r pscis_phase1 %>% filter(barrier_result == 'Unknown') %>% nrow() %>% english::as.english()` crossings assessed were fords and ranked as "unknown" according to the provincial protocol. Georeferenced field maps are presented in `r if(gitbook_on){knitr::asis_output("[here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/) and available for bulk download as [Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")} else knitr::asis_output("[Attachment 1](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2021-04-21.zip).")` A summary of crossings assessed, a cost benefit analysis and priority ranking for follow up for Phase 1 sites presented in Table \@ref(tab:cost-est-phase-1). Detailed data with photos are presented in `r if(gitbook_on){knitr::asis_output("[Appendix - Phase 1 Fish Passage Assessment Data and Photos]")} else knitr::asis_output("[Attachment 2](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/docs/Attachment_2.pdf)")`.
 
 
 <br>
@@ -192,7 +188,8 @@ Field assessments were conducted between `r format(min(pscis_phase1$date), forma
 #   fpr::fpr_kable(scroll = F, caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.')
 
 tab_cost_est_phase1 %>% 
-  fpr::fpr_kable(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments.', scroll = gitbook_on)
+  fpr::fpr_kable(caption_text = 'Upstream habitat estimates and cost benefit analysis for Phase 1 assessments. Steelhead network model (total length stream network <20% gradient).', 
+                 scroll = gitbook_on)
 ```
 
 <br>
@@ -241,7 +238,8 @@ fpr::fpr_table_cv_summary(dat = pscis_phase2) %>%
 
 ```{r cost-est-phase-2}
 tab_cost_est_phase2_report %>% 
-  fpr::fpr_kable(caption_text = 'Cost benefit analysis for Phase 2 assessments.', scroll = gitbook_on)
+  fpr::fpr_kable(caption_text = 'Cost benefit analysis for Phase 2 assessments. Coho rearing model used (total length streams <7.5% gradient)', 
+                 scroll = gitbook_on)
 
 ```
 
