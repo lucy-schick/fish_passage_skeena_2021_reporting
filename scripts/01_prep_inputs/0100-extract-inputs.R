@@ -752,6 +752,7 @@ utms_hab <- left_join(
 
 
 # Fish species and hab gain estimates for phase 2 sites ------------------------
+
 habitat_con_pri <- read_csv('data/habitat_confirmations_priorities.csv')
 
 hab_priority_fish_hg <- left_join(
@@ -761,7 +762,7 @@ hab_priority_fish_hg <- left_join(
 ) %>%
   mutate(observedspp_upstr = gsub("[{}]", "", observedspp_upstr)) %>%
   mutate(observedspp_upstr = case_when(
-    alias_local_name %like% 'ds' |
+    alias_local_name %like% '_ds' |
       # ends in a number
       alias_local_name %like% '\\d$' ~ NA_character_,
     T ~ observedspp_upstr),
