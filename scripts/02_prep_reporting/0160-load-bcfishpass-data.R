@@ -99,7 +99,7 @@ CROSS JOIN LATERAL
 
 ##get all the data and save it as an sqlite database as a snapshot of what is happening.  we can always hopefully update it
 query <- "SELECT *
-   FROM ali.crossings_20220401
+   FROM ali.crossings_20220404
    WHERE watershed_group_code IN ('BULK', 'MORR')"
 
 
@@ -110,8 +110,8 @@ bcfishpass<- st_read(conn, query =  query) %>%
   #        easting = sf::st_coordinates(.)[,1],
   #        northing = sf::st_coordinates(.)[,2]) %>%
   st_drop_geometry() %>%
-  mutate(downstream_route_measure = as.integer(downstream_route_measure)) %>%
-  dplyr::distinct(.keep_all = T) #needed to do this because there are duplicated outputs
+  mutate(downstream_route_measure = as.integer(downstream_route_measure))
+  # dplyr::distinct(.keep_all = T) #needed to do this because there are duplicated outputs
 
 
 
@@ -154,7 +154,7 @@ rws_list_tables(conn)
 bcfishpass_archive <- readwritesqlite::rws_read_table("bcfishpass", conn = conn)
 # rws_drop_table("bcfishpass_archive", conn = conn) ##if it exists get rid of it - might be able to just change exists to T in next line
 rws_write(bcfishpass_archive, exists = F, delete = TRUE,
-          conn = conn, x_name = paste0("bcfishpass_archive_", format(Sys.time(), "%Y-%m-%d-%H%m")))
+          conn = conn, x_name = paste0("bcfishpass_archive_", format(Sys.time(), "%Y-%m-%d-%H%M")))
 rws_drop_table("bcfishpass", conn = conn) ##now drop the table so you can replace it
 rws_write(bcfishpass, exists = F, delete = TRUE,
           conn = conn, x_name = "bcfishpass")
