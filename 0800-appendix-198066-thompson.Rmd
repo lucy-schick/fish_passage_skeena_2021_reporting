@@ -102,6 +102,7 @@ fpr::fpr_table_cv_summary_memo(site = my_site2, site_photo_id = my_site2)
 hab_site %>% filter(site == my_site & location == 'ds') %>% pull(comments)
 my_priority <-  my_priority_info()
 
+
 ```
 
 ## Stream Characteristics Downstream {-}

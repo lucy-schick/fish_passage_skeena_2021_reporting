@@ -72,7 +72,7 @@ fpr::fpr_table_bcfp() %>%
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment]. There was rip rap placed around the culvert inlets and outlets (Table \@ref(tab:tab-culvert-124420)). 
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment]. There was rip rap placed around the culvert inlets and outlets (Table \@ref(tab:tab-culvert-124420)). Surveys were conducted with a remotely piloted aircraft immediately upstream and downstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model `r if(gitbook_on){knitr::asis_output(" presented in Figures\\@ref(fig:ortho-caption-station) - \\@ref(fig:model-caption-station)} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59) and [here](https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59).")`
 
 
 <br>
