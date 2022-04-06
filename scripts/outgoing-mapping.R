@@ -3,6 +3,12 @@ source('scripts/packages.R')
 source('scripts/private_info.R')
 source('scripts/tables.R')
 
+# edit the qlr text file with these 3 entries.  first 2 might do it though
+#  <datasource>dbname='bcfishpass' host=localhost port=5432 user='postgres' password='postgres' with <datasource>dbname='bcbarriers' host=159.203.55.129 port=5432 user='ali' password='XXXXXXXXXXXX'
+# <datasource>dbname='bcfishpass' host=localhost with <datasource>dbname='bcbarriers' host=159.203.55.129
+# replace source="dbname='bcfishpass' host=localhost port=5432 user='postgres' with source="dbname='bcbarriers' host=159.203.55.129 port=5432 user='ali'
+# replace source="dbname='bcfishpass' host=localhost with source="dbname='bcbarriers' host=159.203.55.129
+
 ##make your geopackage for mapping
 make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
   nm <-deparse(substitute(dat))
