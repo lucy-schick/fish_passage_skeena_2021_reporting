@@ -51,7 +51,7 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 
 ```{r fig-channel-197912, eval = T}
-knitr::include_graphics("fig/robert_hatch_plan_20211023.JPG")
+knitr::include_graphics("fig/robert_hatch_plan_20211023_k_.JPG")
 ```
 
 <br>
