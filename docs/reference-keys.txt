@@ -24,8 +24,6 @@ fig:ortho-caption-lamprey
 fig:model-caption-lamprey
 fig:ortho-caption-richfield
 fig:model-caption-richfield
-fig:ortho-caption-robert-hatch
-fig:model-caption-robert-hatch
 tab:tab-wshd-124420
 tab:tab-culvert-bcfp-124420
 tab:tab-culvert-124420
@@ -36,6 +34,16 @@ fig:photo-124420-01
 fig:photo-124420-02
 fig:photo-124420-03
 fig:photo-124420-04
+tab:tab-wshd-197912
+tab:tab-culvert-bcfp-197912
+tab:tab-culvert-197912
+fig:ortho-caption-robert-hatch
+fig:model-caption-robert-hatch
+tab:tab-habitat-summary-197912
+fig:photo-197912-01
+fig:photo-197912-02
+fig:photo-197912-03
+fig:photo-197912-04
 tab:tab-wshd-198066
 tab:tab-culvert-bcfp-198066
 tab:tab-culvert-198066
