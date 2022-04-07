@@ -810,19 +810,33 @@ rm(tab_overview_prep1, tab_overview_prep2)
 
 tab_hab_summary <- left_join(
   hab_site %>%
-    select(site, location, avg_channel_width_m, avg_wetted_width_m,
-           average_residual_pool_depth_m, average_gradient_percent, total_cover),
+    select(alias_local_name,
+           site,
+           location,
+           avg_channel_width_m,
+           avg_wetted_width_m,
+           average_residual_pool_depth_m,
+           average_gradient_percent,
+           total_cover),
 
   habitat_confirmations_priorities %>%
-    select(site, location, length_surveyed, hab_value),
+    select(local_name,
+           # site,
+           # location,
+           length_surveyed,
+           hab_value),
 
-  by = c('site', 'location')
+  by = c('alias_local_name' = 'local_name') #c('site', 'location')
 ) %>%
+  # mutate(location = case_when(
+  #   location %ilike% 'us' ~ 'Upstream',
+  #   T ~ 'Downstream'
+  # )) %>%
   mutate(location = case_when(
-    location == 'us' ~ 'Upstream',
-    T ~ 'Downstream'
-  )) %>%
-  arrange(site) %>%
+    location %ilike% 'us' ~ stringr::str_replace_all(location, 'us', 'Upstream'),
+    T ~ stringr::str_replace_all(location, 'ds', 'Downstream')
+    )) %>%
+  arrange(site, location) %>%
   select(Site = site,
          Location = location,
          `Length Surveyed (m)` = length_surveyed,
@@ -832,7 +846,6 @@ tab_hab_summary <- left_join(
          `Gradient (%)` = average_gradient_percent,
          `Total Cover` = total_cover,
          `Habitat Value` = hab_value)
-  # replace(., is.na(.), "--") #this shouldn't be necessary
 
 
 # cost estimates ----------------------------------------------------------
