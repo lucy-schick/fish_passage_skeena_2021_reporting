@@ -48,44 +48,6 @@ knitr::include_graphics(my_photo, dpi = NA)
 ```
 
 
-<br>
-
-
-## McBride Creek {-}
-
-```{r ortho-mbride, eval = identical(gitbook_on, TRUE)}
-model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/009dbfef7a924182933029a5927ceb98" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
-
-knitr::asis_output(model_url)
-```
-
-
-```{r ortho-caption-mcbride, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
-my_photo = 'fig/pixel.png'
-
-my_caption = paste0('Orthomosaic of habitat immediately upstream and downstream of McBride Creek. To zoom press "shift" and scroll.')
-
-knitr::include_graphics(my_photo, dpi = NA)
-
-```
-
-
-```{r model-mcbride, eval = identical(gitbook_on, TRUE)}
-model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/009dbfef7a924182933029a5927ceb98" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
-
-knitr::asis_output(model_url)
-```
-
-
-```{r model-caption-mcbride, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
-my_photo = 'fig/pixel.png'
-
-my_caption = paste0('3D model of habitat immediately upstream and downstream of McBride Creek. To zoom press "shift" and scroll.')
-
-knitr::include_graphics(my_photo, dpi = NA)
-
-```
-
 
 
 <br>
