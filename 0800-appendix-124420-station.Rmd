@@ -38,7 +38,7 @@ At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr:
 
 <br>
 
-@wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek  (PSCIS  124420, UTM: 9U.586630.6122416) has  been the subject  of  numerous  assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authority reports that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation  design  options  and  identified  the  natural limits  of  potential  fish distribution to support rehabilitation efforts.  At the time of reporting, a design for remediation was being drafted (Sean Wong, Environmental Programs Manager - Ministry of Transportation and Infrastructure pers. comm.).
+@wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek has  been the subject of numerous assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authority reports that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation  design  options  and  identified the natural limits of  potential fish distribution to support rehabilitation efforts.  At the time of reporting, a design for remediation was being drafted (Sean Wong, Environmental Programs Manager - Ministry of Transportation and Infrastructure pers. comm.).
 
 <br>
 
@@ -72,7 +72,7 @@ fpr::fpr_table_bcfp() %>%
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment]. There was rip rap placed around the culvert inlets and outlets (Table \@ref(tab:tab-culvert-124420)). Surveys were conducted with a remotely piloted aircraft immediately upstream and downstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model `r if(gitbook_on){knitr::asis_output(" presented in Figures\\@ref(fig:ortho-caption-station) - \\@ref(fig:model-caption-station)} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59) and [here](https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59).")`
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-124420)). Surveys were conducted with a remotely piloted aircraft immediately upstream and downstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model `r if(gitbook_on){knitr::asis_output(" presented in Figures \\@ref(fig:ortho-caption-station) - \\@ref(fig:model-caption-station).")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59) and [here](https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59).")`
 
 
 <br>
@@ -83,7 +83,7 @@ fpr::fpr_table_cv_summary_memo()
 ```
 
 
-
+<br>
 
 ```{r ortho-station, eval = identical(gitbook_on, TRUE)}
 model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
@@ -108,6 +108,7 @@ model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/8f568e62b
 knitr::asis_output(model_url)
 ```
 
+<br>
 
 ```{r model-caption-station, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
 my_photo = 'fig/pixel.png'
