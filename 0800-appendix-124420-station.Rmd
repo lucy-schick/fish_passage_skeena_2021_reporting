@@ -38,7 +38,11 @@ At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr:
 
 <br>
 
-@wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek has  been the subject of numerous assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authority reports that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation  design  options  and  identified the natural limits of  potential fish distribution to support rehabilitation efforts.  At the time of reporting, a design for remediation was being drafted (Sean Wong, Environmental Programs Manager - Ministry of Transportation and Infrastructure pers. comm.).
+@wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek has been the subject of numerous assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authority reports that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation design options and  identified the natural limits of potential fish distribution to support rehabilitation efforts.  At the time of reporting, a design for remediation utilizing a retrofit of the existing structure to backwater the pipe was being drafted (Sean Wong, Environmental Programs Manager - Ministry of Transportation and Infrastructure pers. comm.).
+
+<br>
+
+A trap and truck operation led by the Chicago Creek Restoration Society moves spawning coho upstream of the crossing annually.  Following stream morphology changes which occurred during a fall 2017 flood event causing the release and distribution of sediment loads, @newman_england2018MissionCreek conducted a fish habitat assessment from the confluence of Mission Creek with the Bulkley River upstream to the Mile 48 Canadian National railway crossing to determine stream diversity, spawning gravel catchment areas, beaver dam activity and negative impacts present in or along the stream.  Beaver control activities on Mission and Waterfall Creeks by CN Rail upstream of crossing `r as.character(my_site)` may have been the cause of the 2017 flood event (pers comm. Brenda Donas, Chicago Creek Restoration Society). 
 
 <br>
 
@@ -53,7 +57,7 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory and @irvine2018AnalysisPriority because of known high value spawning and rearing habitat upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-124420).  A trap and truck operation led by the Chicago Creek Restoration Society moves spawning coho upstream of the crossing annually.  Following stream morphology changes which occurred during a fall 2017 flood event causing the release and distribution of sediment loads, @newman_england2018MissionCreek conducted a fish habitat assessment from the confluence of Mission Creek with the Bulkley River upstream to the Mile 48 Canadian National railway crossing to determine stream diversity, spawning gravel catchment areas, beaver dam activity and negative impacts present in or along the stream. A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory and @irvine2018AnalysisPriority because of known high value spawning and rearing habitat upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-124420).   A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
 
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
@@ -144,7 +148,7 @@ The stream was surveyed immediately upstream from `r as.character(my_site)` for 
 
 ## Structure Remediation and Cost Estimate {-}
 
-Should restoration/maintenance activities proceed at the site, replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r fpr::fpr_my_pscis_info(col_pull = recommended_diameter_or_span_meters)`m span) is recommended. 
+Should restoration/maintenance activities proceed, replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r fpr::fpr_my_pscis_info(col_pull = recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(fpr::fpr_my_cost_estimate(), big.mark = ',')` for a cost benefit of `r fpr::fpr_my_cost_estimate(col_pull = cost_net)` linear m/\$1000 and `r fpr::fpr_my_cost_estimate(col_pull = cost_area_net)` m^2^/\$1000.  These cost benefit estimates assume that adult coho spawner passage through `r as.character(my_site)` will result in passage through upstream crossings which rank as barriers according to the provincial metric but are likely to be passable to adult coho.
 
 ```{r}
 # The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000. 
@@ -156,7 +160,7 @@ Should restoration/maintenance activities proceed at the site, replacement of PS
 
 ## Conclusion {-}
 
-There was `r as.character(my_site)` is `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
+There was `r as.character(my_site)` is `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. At the time of reporting, the Ministry of Transportation and Infrastructure was in the process of developing a design to retrofit the existing structure at `r as.character(my_site)` with some sort of backwatering mechanism so that it could pass adult coho spawners. Although, backwatering can be considered an interim solution, replacement of this crossing with an open bottom structure is recomended in the long term. 
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
