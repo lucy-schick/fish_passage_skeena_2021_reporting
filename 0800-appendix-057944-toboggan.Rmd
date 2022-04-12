@@ -25,7 +25,7 @@ my_site <- 57944
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` within the Coryatsaqua 2 (Moricetown) Indian Reserve at Moricetown, BC. PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. Crossing `r as.character(my_site)` is the responsibility of the Canadian National Railway.
+PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` within the Coryatsaqua 2 (Moricetown) Indian Reserve at Moricetown, BC. PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. Crossing `r as.character(my_site)` is the responsibility of the Ministry of Transportation and Infrastructure.
 
 
 <br>
@@ -33,8 +33,9 @@ PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info
 ## Background {-}
 
 
-At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-57944)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. 
+At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-57944)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. There is a wealth of information available for Toboggan Creek with numerous references available through the [Skeena Salmon Data Centre](https://data.skeenasalmon.info/dataset?q=Toboggan).
 
+<br>
 
 
 ```{r tab-wshd-57944, eval = T}
@@ -61,7 +62,7 @@ Toboggan Lake is `r fpr::fpr_my_bcfishpass(site = my_site, col_pull = total_lake
 
 <br>
 
-Works to remediate fish passage issues at PSCIS stream crossing `r as.character(my_site)` were conducted in 2017 with backwatering completed through installation of boulders downstream of the crossing.  Comparison of historic PSCIS photos and data between 2021 and 2012 indicate that the historical recorded outlet drop of 90cm has been reduced to 0cm as a result of the works.  Sandra Devcic, DFO Restoration Engineer (pers. comm.) has noted that developing a design to replace the crossing with an open bottom structure presents challenges due to the stream crossing location at the bottom of a hill and on a corner of the highway. 
+Works to remediate fish passage issues at PSCIS stream crossing `r as.character(my_site)` were conducted in 2015 with backwatering completed through installation of boulders downstream of the crossing [@mccarthy_fernando20152015Inventory].  Comparison of historic PSCIS photos and data between 2021 and 2012 indicate that the historical recorded outlet drop of 90cm has been reduced to 0cm as a result of the works.  Sandra Devcic, DFO Restoration Engineer (pers. comm.) has noted that developing a design to replace the crossing with an open bottom structure presents challenges due to the stream crossing location at the bottom of a hill and on a corner of the highway. 
 
 <br>
 
@@ -70,7 +71,7 @@ In 2021 at the time of the assessment, pink salmon spawners were noted as presen
 <br>
 
 
-PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage,  @irvine2021BulkleyRiver and @mazany-wright_etal2021BulkleyRiver because of significant amounts of habitat modelled as upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-57944). A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @irvine2018AnalysisPriority, @irvine2021BulkleyRiver and @mazany-wright_etal2021BulkleyRiver because of significant amounts of habitat modelled as upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-57944). A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
 
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
@@ -89,7 +90,7 @@ fpr::fpr_table_bcfp() %>%
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-57944)). 
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-57944)). Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. 
 
 
 <br>
@@ -107,7 +108,7 @@ my_priority <-  my_priority_info()
 
 ```
 
-## Stream Characteristics Downstream of `r as.character(my_site)`{-}
+## Stream Characteristics Downstream {-}
 
 `r fpr_my_survey_dist(loc = 'ds')` to the conflence with the Bulkley River
 `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-57944-01) - \\@ref(fig:photo-57944-02)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-57944-d01))."))`
@@ -115,7 +116,7 @@ my_priority <-  my_priority_info()
 
 
 
-## Stream Characteristics Upstream of `r as.character(my_site)`{-}
+## Stream Characteristics Upstream {-}
 
 
 `r fpr_my_survey_dist(loc = 'us')`
@@ -124,7 +125,7 @@ my_priority <-  my_priority_info()
 
 <br>
 
-The stream was also surveyed at a second location upstream of the hatchery adjacent to the Owen Road bridge for `r fpr::fpr_my_priority_info(loc = 'us2', col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-57944-05) - \\@ref(fig:photo-57944-06))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-57944-d03))"))`. Total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'us2', cover_type = 'total cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'us2', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us2', cover_type = 'sub-dominant')`. The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = 'average_gradient_percent')`%. The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = "bed_material_subdominant")` subdominant.  The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'us2')` value for salmon rearing and spawning. 
+The stream was also surveyed at a second location upstream of the hatchery adjacent to the Owen Road bridge for `r fpr::fpr_my_priority_info(loc = 'us2', col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-57944-05) - \\@ref(fig:photo-57944-06))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-57944-d03))"))`. `r fpr::fpr_my_cover_sentence(loc = 'us2')` The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = 'average_gradient_percent')`%. The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us2', col_pull = "bed_material_subdominant")` subdominant.  The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'us2')` value for salmon rearing and spawning. 
 
 
 ## Structure Remediation and Cost Estimate {-}
@@ -137,7 +138,7 @@ Should restoration/maintenance activities proceed, replacement of PSCIS crossing
 
 ## Conclusion {-}
 
-There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. Toboggan Creek represents an extremely important system for the Bulkley River system in terms of fisheries values as well as it's function for outreach wihtin the community as well as it's contribution to stock enhancement and assessment. Development of a plan to replace the crossing with a bridge may be considered as a prudent step to mitigating risks of a blow out of the backwatering works currently in place downstream.  
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. Toboggan Creek represents an extremely important system for the Bulkley River system in terms of fisheries values, it's function for outreach within the community as well as it's contribution to stock enhancement and assessment. Development of a plan to replace the crossing with a bridge may be considered as a prudent step to mitigating risks of a blow out of the backwatering works currently in place downstream and a return to conditions similiar to those observed historically when a significant outlet drop was present `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-57944-07) - \\@ref(fig:photo-57944-08))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-57944-d04))"))`.  
 
 
 
@@ -231,6 +232,7 @@ knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics(my_photo2)
 ```
 
+<br>
 
 ```{r photo-57944-05-prep}
 my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u3_')
@@ -265,3 +267,41 @@ knitr::include_graphics(my_photo1)
 knitr::include_graphics("fig/pixel.png")
 knitr::include_graphics(my_photo2)
 ```
+
+
+<br>
+
+```{r photo-57944-07-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_2012a_')
+
+my_caption1 = paste0('Outlet of PSCIS crossing ', my_site, ' in 2012. Photo from PSCIS.')
+```
+
+```{r photo-57944-07, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+
+
+<br>
+
+```{r photo-57944-08-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_2012b_')
+
+my_caption2 = paste0('Inlet of PSCIS crossing ', my_site, ' in 2012. Photo from PSCIS.')
+
+```
+
+```{r photo-57944-08, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-57944-d04, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
