@@ -1,0 +1,227 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup-197960, eval = F}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+source('scripts/packages.R')
+source('scripts/tables.R')
+
+```
+
+
+
+```{r  load-data-197960}
+my_site <- 197960
+my_site2 <- 123775
+
+
+
+```
+
+`r fpr::fpr_appendix_title()`
+
+## Site Location {-}
+
+PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` within the Coryatsaqua 2 (Moricetown) Indian Reserve at Moricetown, BC. PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. Crossing `r as.character(my_site)` is the responsibility of the Canadian National Railway.
+
+
+<br>
+
+## Background {-}
+
+
+At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-197960)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. PSCIS crossing 124612 is a bridge located 800m upstream at the powerline crossing and PSCIS crossing 123776 is a newly installed bridge downstream on Highway 16.  Witset Creek drains Witset Lake and is a tributary to Corya Creek that flows in immediately downstream of the Highway 16 bridge. Witset Lake is `r fpr::fpr_my_bcfishpass(site = my_site2, col_pull = total_lakereservoir_ha)`ha in size with an associated `r fpr::fpr_my_bcfishpass(site = my_site2, col_pull = total_wetland_ha)`ha of wetland. The upper Corya Creek watershed is glaciated and may provide best habitat conditions for bull trout and cutthroat due to cold water and turbid conditions due to glacial flour.  Although only `r fpr::fpr_my_fish_sp()` have previously been recorded upstream of the railway, the historic culvert under Highway 16 and the current culvert under the railway may have hindered passage by other species including anadromous salmon.
+
+<br>
+
+In spring of 2017 a flood event caused by beaver dam failure forced the evacuation of homes in the Two Mile subdivision of Moricetown [@smithersinteriornews2017Moricetownsubdivision]. Since this time beaver control activities have taken place in both the Corya and Witset watersheds to reduce the risk of flooding (pers comm. Dallas Nikal, Nico Ridge Consulting).
+
+<br>
+
+```{r tab-wshd-197960, eval = T}
+fpr::fpr_table_wshd_sum() %>% 
+  filter(Site == my_site | Site == my_site2) %>% 
+  fpr::fpr_kable(caption_text = paste0('Summary of derived upstream watershed statistics for PSCIS crossing ', 
+                                       my_site, 'and PSCIS crossing ', my_site2, '.'),
+                 footnote_text = 'Elev P60 = Elevation at which 60% of the watershed area is above',
+                 scroll = F)
+```
+
+
+<br>
+
+PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by Canadian Wildlife Federation because of significan amounts of habitat modelled as upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-197960). In the field, PSCIS stream crossing `r as.character(my_site2)` was also assessed as Witset Lake is located upstream.  A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+
+
+`r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
+
+<br>
+
+
+```{r tab-culvert-bcfp-197960, eval = T}
+fpr::fpr_table_bcfp() %>% 
+  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
+                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+```
+
+<br>
+
+
+## Stream Characteristics at Crossing {-}
+
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-197960)). 
+
+
+<br>
+
+At the time of the survey, PSCIS crossing `r as.character(my_site2)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(site = my_site2, col_pull = barrier_result)` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-123775)). 
+
+<br>
+
+```{r tab-culvert-197960, eval = T}
+fpr::fpr_table_cv_summary_memo()
+
+```
+
+
+<br>
+
+```{r tab-culvert-123755, eval = T}
+fpr::fpr_table_cv_summary_memo(site = my_site2, site_photo_id = my_site2)
+
+```
+
+```{r eval=F}
+##this is useful to get some comments for the report
+hab_site %>% filter(site == my_site2 & location == 'us') %>% pull(comments)
+my_priority <-  my_priority_info()
+
+```
+
+## Stream Characteristics Downstream of `r as.character(my_site)`{-}
+
+`r fpr_my_survey_dist(loc = 'ds')`
+`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197960-01) - \\@ref(fig:photo-197960-02)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-197960-d01))."))`
+`r fpr_my_cover_sentence(loc = 'ds')` The average channel width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_subdominant")` subdominant. The stream was moderately turbid due to glacial flour with abundant quantities of gravels suitably sized for trout and salmon species present. The stream channel was noted as riffle dominated with a lack of complexity due to adjacent riparian clearing and dyke installation. The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for salmonid rearing and spawning. 
+
+
+
+## Stream Characteristics Upstream of `r as.character(my_site)`{-}
+
+
+`r fpr_my_survey_dist(loc = 'us')`
+`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197960-03) - \\@ref(fig:photo-197960-04)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-197960-d02))."))`
+`r fpr_my_cover_sentence(loc = 'us')` The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_subdominant")` subdominant. The first 50 - 100m upstream of crossing channel and banks were noted as armoured with riprap. Abundant gravels suitable for resident and anadromous salmonids were noted throughout. The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'us')` value as an important migration corridor containing suitable spawning habitat and having moderate rearing potential.
+
+
+## Structure Remediation and Cost Estimate {-}
+
+Should restoration/maintenance activities proceed, replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r fpr::fpr_my_pscis_info(col_pull = recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(fpr::fpr_my_cost_estimate(), big.mark = ',')` for a cost benefit of `r fpr::fpr_my_cost_estimate(col_pull = cost_net)` linear m/\$1000 and `r fpr::fpr_my_cost_estimate(col_pull = cost_area_net)` m^2^/\$1000.  
+
+
+<br>
+
+
+## Conclusion {-}
+
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site)` rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. The stream is a cold water glaciated system and may currently provide habitat conditions most suitable for dolly varden and cutthrout trout.
+
+<br>
+
+Crossing `r as.character(my_site)` was ranked as a low priority for remediation at the time of reporting due to low habitat value within the channel connecting Witset Lake to Corya Creek. Beaver control activities within the watershed to reduce the risk of flooding in the Moricetown  likely impacts flow patterns (shorter freshet and flashier flows following precipitation) and the subsequent habitat quality in Witset Creek. A watershed level plan to hold more water on the landscape upstream of the highway and increase the capacity of PSCIS crossing `r as.character(my_site)` to pass higher flow events could be considered in the long term to increase the overall health of the watershed and improve the potential for connectivity between Corya Creek and Witset Lake. 
+
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+<br>
+
+```{r tab-habitat-summary-197960}
+tab_hab_summary %>% 
+  filter(Site  == my_site |
+           Site == my_site2) %>% 
+  # select(-Site) %>% 
+  fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, ' and ', my_site2, '.'),
+                 scroll = F) 
+
+```
+
+<br>
+
+
+
+```{r photo-197960-01-prep, eval=T}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_d1_')
+
+my_caption1 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+
+
+# fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = '6257')
+
+```
+
+```{r photo-197960-01, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+<br>
+
+```{r photo-197960-02-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_d2_')
+
+my_caption2 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-197960-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+
+```
+
+<br>
+
+```{r photo-197960-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+
+```{r photo-197960-03-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u1_')
+
+my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-197960-03, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+
+
+<br>
+
+```{r photo-197960-04-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u2_')
+
+my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-197960-04, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-197960-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
