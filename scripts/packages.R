@@ -2,7 +2,7 @@
 
 
 package_list <- c(
-  'plotKML',
+  #'plotKML', #this takes forever to load so going to leave it out for now
   'raster', #load this dog before dplyr yo
   'tidyverse',
   'readwritesqlite',
@@ -30,7 +30,6 @@ package_list <- c(
   'elevatr',
   'rayshader',
   'geojsonio',
-  # flextable,
   'english',
   'leaflet.extras',
   'ggdark',
@@ -46,7 +45,6 @@ package_list <- c(
   # geojsonsf,
   # bit64 ##to make integer column type for pg
   # gert  ##to track git moves
-  ##leafpop I think
   )
 
 lapply(package_list,
