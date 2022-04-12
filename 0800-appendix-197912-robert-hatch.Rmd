@@ -26,7 +26,7 @@ my_site <- 197912
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` near Topley, BC. PSCIS crossing `r as.character(my_site)` is located on a small private road and the Hatch Creek Ranch.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with Richfield Creek. Crossing `r as.character(my_site2)` is the responsibility of the range tenure holder where the road is located.
+PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` near Topley, BC. PSCIS crossing `r as.character(my_site)` is located on a small private road and the Hatch Creek Ranch.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with Richfield Creek. Crossing `r as.character(my_site2)` is the responsibility of the range tenure holder (Hatch Creek Ranch Ltd. - forest file id RAN074136 and Groot Bros. Contracting Ltd. - forest file id RANM01180) where the road is located.
 
 
 <br>
