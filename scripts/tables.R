@@ -48,7 +48,16 @@ tab_cost_rd_mult <- readwritesqlite::rws_read_table("rd_cost_mult", conn = conn)
 rd_class_surface <- readwritesqlite::rws_read_table("rd_class_surface", conn = conn)
 xref_pscis_my_crossing_modelled <- readwritesqlite::rws_read_table("xref_pscis_my_crossing_modelled", conn = conn)
 
-wshds <- readwritesqlite::rws_read_table("wshds", conn = conn)
+wshds <- readwritesqlite::rws_read_table("wshds", conn = conn) %>%
+  mutate(aspect = as.character(aspect)) %>%
+  # issues with particular sites and the aws tiles
+  mutate(elev_min = case_when(
+    stream_crossing_id == 123770 ~ 375,
+    T ~ elev_min),
+    aspect = case_when(
+      stream_crossing_id == 124420 ~ 'NNE',
+      T ~ aspect)
+  )
 
 photo_metadata <- readwritesqlite::rws_read_table("photo_metadata", conn = conn)
 # fiss_sum <- readwritesqlite::rws_read_table("fiss_sum", conn = conn)

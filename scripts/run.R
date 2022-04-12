@@ -3,8 +3,8 @@ preview_chapter('0100-intro.Rmd')
 preview_chapter('0200-background.Rmd')
 preview_chapter('0300-method.Rmd')
 preview_chapter('0400-results.Rmd')
-preview_chapter('0600-appendix.Rmd')
-preview_chapter('0800-appendix-197912.Rmd')
+bookdown::preview_chapter('test.Rmd')
+preview_chapter('0800-appendix-123770-john-brown.Rmd')
 preview_chapter('index.Rmd')
 
 #######################################################################################
