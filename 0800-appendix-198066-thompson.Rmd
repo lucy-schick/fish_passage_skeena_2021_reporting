@@ -42,7 +42,7 @@ Landowners adjacent to the stream at both crossings as well as regional DFO staf
 
 <br>
 
-```{r tab-wshd-198066, eval = T}
+```{r tab-wshd-198066, fig.cap= 'Map of current man made channels and historic channel on Thompson Creek near Bulkley River mainstem.',  eval = T}
 fpr::fpr_table_wshd_sum(site_id = my_site) %>% 
   fpr::fpr_kable(caption_text = paste0('Summary of derived upstream watershed statistics for PSCIS crossing ', my_site, '.'),
            footnote_text = 'Elev P60 = Elevation at which 60% of the watershed area is above',
@@ -70,7 +70,7 @@ PSCIS stream crossing `r as.character(my_site2)` was ranked as a high priority f
 
 ```{r tab-culvert-bcfp-198066, eval = T}
 fpr::fpr_table_bcfp() %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
+  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '. Note that modelling data is imprecise as mapped location of Thompson Creek mainstem differs from location in the field.'),
                  footnote_text = 'Model data is preliminary and subject to adjustments.')
 ```
 
@@ -79,7 +79,7 @@ fpr::fpr_table_bcfp() %>%
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment]. There was rip rap placed around the culvert inlets and outlets (Table \@ref(tab:tab-culvert-198066)). 
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment]. There was rip rap placed around the culvert inlets and outlets (Table \@ref(tab:tab-culvert-198066)). Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. 
 
 
 <br>

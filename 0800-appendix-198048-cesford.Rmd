@@ -58,7 +58,7 @@ knitr::include_graphics("fig/cesford.JPG")
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was ranked as a priority for follow up by @irvine2021BulkleyRiver because of the relatively large size of the stream and the potential for large amounts of habitat gains through fish passage remediation (Table \@ref(tab:tab-culvert-bcfp-198048).  Although @wilson_rabnett2007FishPassage recommended establishing a downstream weir and excavating adequate outfall drop pools to facilitate fish passage at crossing `r as.character(my_site)`, they ranked the site as a low priority for remediation due to dewatering below Highway 16. @smith2018AssessingBarriers assessed teh site in 2017 and noted that a comparison of photos taken in 2006 and 2017 indicates that a significant amount of gravel has been deposited in the channel below the culvert outlets. A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+PSCIS stream crossing `r as.character(my_site)` was ranked as a priority for follow up by @irvine2021BulkleyRiver because of the relatively large size of the stream and the potential for large amounts of habitat gains through fish passage remediation (Table \@ref(tab:tab-culvert-bcfp-198048).  Although @wilson_rabnett2007FishPassage recommended establishing a downstream weir and excavating adequate outfall drop pools to facilitate fish passage at crossing `r as.character(my_site)`, they ranked the site as a moderate priority for remediation due to dewatering below Highway 16. @smith2018AssessingBarriers assessed teh site in 2017 and noted that a comparison of photos taken in 2006 and 2017 indicates that a significant amount of gravel has been deposited in the channel below the culvert outlets. A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
 
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
@@ -77,7 +77,7 @@ fpr::fpr_table_bcfp() %>%
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment](Table \@ref(tab:tab-culvert-198048)). 
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment](Table \@ref(tab:tab-culvert-198048)). Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. 
 
 
 <br>

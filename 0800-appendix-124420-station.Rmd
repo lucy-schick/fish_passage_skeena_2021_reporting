@@ -17,8 +17,8 @@ source('scripts/tables.R')
 
 ```{r  load-data-124420}
 my_site <- 124420
-my_site2 <- 124422
-
+my_site2 <- 124421
+my_site3 <- 124422
 
 ```
 
@@ -26,7 +26,7 @@ my_site2 <- 124422
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` at Hazleton, BC. PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. Crossing `r as.character(my_site2)` is the responsibility of the Ministry of Transportation and Infrastructure.
+PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` at Hazleton, BC. PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. Crossing `r as.character(my_site)` is the responsibility of the Ministry of Transportation and Infrastructure.
 
 
 <br>
@@ -76,13 +76,29 @@ fpr::fpr_table_bcfp() %>%
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-124420)). Surveys were conducted with a remotely piloted aircraft immediately upstream and downstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model `r if(gitbook_on){knitr::asis_output(" presented in Figures \\@ref(fig:ortho-caption-station) - \\@ref(fig:model-caption-station).")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59) and [here](https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59).")`
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-124420)). Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. Surveys were conducted with a remotely piloted aircraft upstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model `r if(gitbook_on){knitr::asis_output(" presented in Figures \\@ref(fig:ortho-caption-station) - \\@ref(fig:model-caption-station).")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59) and [here](https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59).")`
 
 
 <br>
 
 ```{r tab-culvert-124420, eval = T}
 fpr::fpr_table_cv_summary_memo()
+
+```
+
+
+<br>
+
+```{r tab-culvert-124421, eval = T}
+fpr::fpr_table_cv_summary_memo(site = my_site2, site_photo_id = my_site2)
+
+```
+
+
+<br>
+
+```{r tab-culvert-124422, eval = T}
+fpr::fpr_table_cv_summary_memo(site = my_site3, site_photo_id = my_site3)
 
 ```
 
@@ -138,7 +154,7 @@ The stream was surveyed downstream from the culvert for `r fpr::fpr_my_priority_
 
 <br>
 
-## Stream Characteristics Upstream of `r as.character(my_site)` and downstream of `r as.character(my_site2)`{-}
+## Stream Characteristics Upstream {-}
 
 
 The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124420-03) - \\@ref(fig:photo-124420-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-124420-d02))"))`. Within the area surveyed, total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'total_cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-124420)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_subdominant")` subdominant. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning. 
@@ -169,9 +185,10 @@ There was `r as.character(my_site)` is `r fpr::fpr_my_priority_info(col_pull= up
 ```{r tab-habitat-summary-124420}
 tab_hab_summary %>% 
   filter(Site  == my_site |
-           Site == my_site2) %>% 
+           Site == my_site2 |
+           Site == my_site3 ) %>% 
   # select(-Site) %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, ' and ', my_site2, '.'),
+  fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, ', ', my_site2, ' and ', my_site3, '.'),
                  scroll = F) 
 
 ```
