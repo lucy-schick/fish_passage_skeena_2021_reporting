@@ -498,6 +498,9 @@ hab_priority_prep <- left_join(
 
 # extract rd cost multiplier ----------------------------------------------
 
+# pscis_rd is not a good way to do this because it keeps to much from the spreadsheet
+# plus it pulls from an old db. Need to ditch this method next time
+
 source('scripts/packages.R')
 source('scripts/private_info.R')
 
