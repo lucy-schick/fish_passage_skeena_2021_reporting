@@ -851,12 +851,28 @@ tab_hab_summary <- left_join(
 # cost estimates ----------------------------------------------------------
 
 ## phase1 --------------------
-##make the cost estimates
+#make the cost estimates
 tab_cost_est_prep <- left_join(
-  pscis_rd %>%  arrange(aggregated_crossings_id),
+  pscis_rd %>%
+    arrange(aggregated_crossings_id) %>%
+    # Corya is messed up for some reason
+    mutate(my_road_class = case_when(pscis_crossing_id == 197960 ~ 'rail',
+                                     T ~ my_road_class),
+           my_road_surface = case_when(pscis_crossing_id == 197960 ~ 'rail',
+                                       T ~ my_road_surface)),
   select(tab_cost_rd_mult, my_road_class, my_road_surface, cost_m_1000s_bridge, cost_embed_cv),
   by = c('my_road_class','my_road_surface')
-)
+) %>%
+  # station was entered wrong the first time so is messed in pscis_rd
+  mutate(recommended_diameter_or_span_meters = case_when(
+    pscis_crossing_id == 124420 ~ 30,
+    T ~ recommended_diameter_or_span_meters
+  ),
+  crossing_fix = case_when(
+    pscis_crossing_id == 197960 ~ 'Replace with New Open Bottom Structure',
+    T ~ crossing_fix
+  ))
+
 
 
 tab_cost_est_prep2 <- left_join(
@@ -962,25 +978,26 @@ tab_cost_est_prep5 <- left_join(
     avg_channel_width_m),
   by = c('pscis_crossing_id' = 'site')
 ) %>%
-  ##intervention for Parker to reflect that there are 2 bridges to build.
-  # mutate(cost_est_1000s = case_when(pscis_crossing_id == 50067 ~ 500, T ~ cost_est_1000s)) %>%
+  ##intervention for Robert Hatch to reflect the bridge removal.
+  mutate(cost_est_1000s = case_when(pscis_crossing_id == 197912 ~ 30, T ~ cost_est_1000s)) %>%
   mutate(cost_net = round(upstream_habitat_length_m/cost_est_1000s, 1),
          cost_area_net = round((upstream_habitat_length_m * avg_channel_width_m)/cost_est_1000s, 1)) #downstream_channel_width_meters
 
 
 ##add the priority info
 tab_cost_est_phase2 <- tab_cost_est_prep5 %>%
+  filter(source %like% 'phase2') %>%
   select(pscis_crossing_id, stream_name, road_name, barrier_result, habitat_value, avg_channel_width_m,
          crossing_fix_code, cost_est_1000s, upstream_habitat_length_m,
          cost_net, cost_area_net, source) %>%
-  mutate(upstream_habitat_length_m = round(upstream_habitat_length_m,0)) %>%
+  mutate(upstream_habitat_length_m = round(upstream_habitat_length_m,0))
   ##we have a hickup in the dry creek estimate.  Lets just fix it here
-  mutate(cost_est_1000s = case_when(pscis_crossing_id == 62182 ~ 7200,
-                                    T ~ cost_est_1000s))
+  # mutate(cost_est_1000s = case_when(pscis_crossing_id == 62182 ~ 7200,
+  #                                   T ~ cost_est_1000s))
 
 tab_cost_est_phase2_report <- tab_cost_est_phase2 %>%
   dplyr::arrange(pscis_crossing_id) %>%
-  filter(source %like% 'phase2') %>%
+  # filter(source %like% 'phase2') %>%
   rename(`PSCIS ID` = pscis_crossing_id,
          Stream = stream_name,
          Road = road_name,
