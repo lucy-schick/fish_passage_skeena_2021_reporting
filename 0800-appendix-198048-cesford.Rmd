@@ -1,7 +1,7 @@
 ---
 output: html_document
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 ```{r setup-198048, eval = F}
@@ -26,16 +26,22 @@ my_site3 <- 198090
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` and `r as.character(my_site2)` are located on `r fpr::fpr_my_pscis_info()` near Topley, BC. PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)` and `r as.character(my_site2)` is located on `r fpr_my_pscis_info(site = my_site2, col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River and `r as.character(my_site2)` was located `r round(fpr::fpr_my_bcfishpass(site = my_site2, col_pull = downstream_route_measure)*0.001, 1)`km upstream of the confluence. Crossings `r as.character(my_site)` and `r as.character(my_site2)` are the responsibility of the Ministry of Transportation and Infrastructure. PSCIS crossing `r as.character(my_site3)` makes reference to `r fpr_my_pscis_info(site = my_site3, col_pull = road_name)`
+PSCIS crossing `r as.character(my_site)` and `r as.character(my_site2)` are located on `r fpr::fpr_my_pscis_info()` near Topley, BC. PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)` and `r as.character(my_site2)` is located on `r fpr_my_pscis_info(site = my_site2, col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River and `r as.character(my_site2)` was located `r round(fpr::fpr_my_bcfishpass(site = my_site2, col_pull = downstream_route_measure)*0.001, 1)`km upstream of the confluence. Crossings `r as.character(my_site)` and `r as.character(my_site2)` are the responsibility of the Ministry of Transportation and Infrastructure. PSCIS crossing `r as.character(my_site3)` makes reference to a potential crossing location under the `r fpr::fpr_my_pscis_info(site = my_site3, col_pull = road_name)`. The survey team was not able to locate a crossing in the field which coincides with personal communications with the adjacent landowner (Figure \@ref(fig:fig-channel-198048)). 
 
 
-<br>
 
 ## Background {-}
 
 
 At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-198048)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. 
 
+<br>
+
+
+
+```{r fig-channel-198048, fig.cap= 'Location of potential location of crossing 198090 which was not present in the field.',  eval = T}
+grid::grid.raster(jpeg::readJPEG("fig/cesford.JPG"))
+```
 
 
 <br>
@@ -48,13 +54,6 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 ```
 
-<br>
-
-
-
-```{r fig-channel-198048, eval = T}
-knitr::include_graphics("fig/cesford.JPG")
-```
 
 <br>
 
