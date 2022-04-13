@@ -12,7 +12,7 @@ Recommendations for potential incorporation into collaborative watershed connect
  
  * Model fish densities (fish/m^2^) vs. habitat/water quality characteristics (i.e. gradient, discharge, alkalinity, elevation, riparian health, distance from high order streams, etc.) using historically gathered electrofishing and remotely sensed geodata to inform crossing prioritization, future data acquisition needs and the monitoring of restoration actions.
 
-  * Continue to develop `bcfishpass`,`bcfishobs`, `fwapg`, `bcdata` and share open source data analysis and presentation tools that are scaleable and facilitate continual improvement.  Tools should continue to be flexible and well documented to allow the future incorporation of alternative fragmentation indicators, habitat gain/value metrics and watershed sensitivity indicators.
+  * Continue to develop `bcfishpass`,`bcfishobs`, `fwapg`, `bcdata` and `fpr` as well as to share open source data analysis and presentation tools that are scaleable and facilitate continual improvement.  Tools should continue to be flexible and well documented to allow the future incorporation of alternative fragmentation indicators, habitat gain/value metrics and watershed sensitivity indicators.
  
  * Continue to collaborate with potential partners to build relationships, explore perspectives and develop “road maps” for aquatic restoration in different situations (MoT roads, rail lines, permit roads of different usages, FSRs, etc.) – documenting the people involved, discussions and processes that are undertaken, funding options, synergies, measures of success, etc. 
 
