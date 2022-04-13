@@ -7,7 +7,7 @@
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("<br>")}`
 
-This report builds on reporting from the spring of 2021 which can be referenced [here](https://newgraphenvironment.github.io/fish_passage_bulkley_2020_reporting/).  The work presented currently is in a rough draft form for partner and stakeholder engagement purposes, contains errors and will change extensively over time. 
+This report builds on reporting from the spring of 2021 which can be referenced [here](https://newgraphenvironment.github.io/fish_passage_bulkley_2020_reporting/).  The work presented is currently in draft form for partner and stakeholder engagement purposes, contains errors and will change over time. 
 
 <br>
 
