@@ -19,9 +19,9 @@ To identify priorities for crossing structure rehabilitation, background literat
  
 <br>
 
-### Accessible Habitat 
+### Habitat Modelling
 
-`bcfishpass` calculates the average gradient of BC Freshwater Atlas stream network lines at minimum 100m long intervals starting from the downstream end of the streamline segment and working upstream.  The network lines are broken into max gradient categories with new segments created if and when the average slope of the stream line segment exceeds user provided thresholds. For this project, the user provided gradient thresholds used to delineate "potentially accessible habitat" were based on estimated max gradients that salmon (15%) and steelhead (20%) are likely to be capable of ascending.  
+`bcfishpass` calculates the average gradient of BC Freshwater Atlas stream network lines at minimum 100m long intervals starting from the downstream end of the streamline segment and working upstream.  The network lines are broken into max gradient categories with new segments created if and when the average slope of the stream line segment exceeds user provided thresholds. For this project, the user provided gradient thresholds used to delineate "potentially accessible habitat" were based on estimated max gradients that salmon (15% - coho and chinook) and steelhead (20%) are likely to be capable of ascending.  
 
 <br>
 
@@ -36,7 +36,7 @@ Gradient, channel size and stream discharge are key determinants of channel morp
 
 
 
-`bcfishpass` and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories [@moeStreamInventorySample].  Although currently in draft form, and subject to development revisions, gradient and channel width thresholds for habitat with the highest intrinsic value for a number of fish species in the Bulkley River and Morice River watersheds groups have been specified and applied to model habitat upstream of stream crossing locations with the highest intrinsic value (Table \@ref(tab:tab-fish-spawning-rearing)).  Thresholds were derived based on a literature review with references provided in Table \@ref(tab:tab-fish-spawning-rearing-references). 
+`bcfishpass` and associated tools have been designed to be flexible in analysis, accepting user defined gradient, channel width and stream discharge categories [@moeStreamInventorySample].  Although currently in draft form, and subject to development revisions, gradient and channel width thresholds for habitat with the highest intrinsic value for a number of fish species in the Bulkley River and Morice River watersheds groups have been specified and applied to model habitat upstream of stream crossing locations with the highest intrinsic value (Table \@ref(tab:tab-fish-spawning-rearing)).  Thresholds were derived based on a literature review with references provided in Table \@ref(tab:tab-fish-spawning-rearing-references). Output parameters for modelling are presented in Table \@ref(tab:tab-bcfp-def).
 
 
 
@@ -64,7 +64,7 @@ bcfishpass_spawn_rear_model %>%
   as_tibble(rownames = "row_names") %>% 
   janitor::row_to_names(row_number = 1) %>% 
   rename(Variable = Species) %>% 
-  fpr::fpr_kable(caption_text = 'Stream gradient and channel width thresholds used to model potentially highest value fish habitat.')
+  fpr::fpr_kable(caption_text = 'Stream gradient and channel width thresholds used to model potentially highest value fish habitat.', scroll = F)
 
 ```
 
@@ -92,10 +92,21 @@ bcfishpass_spawn_rear_model_references %>%
   as_tibble(rownames = "row_names") %>% 
   janitor::row_to_names(row_number = 1) %>% 
   rename(Variable = Species) %>% 
-  fpr::fpr_kable(caption_text = 'References for stream gradient and channel width thresholds used to model potentially highest value fish habitat. Preliminary and subject to revisions.')
+  fpr::fpr_kable(caption_text = 'References for stream gradient and channel width thresholds used to model potentially highest value fish habitat. Preliminary and subject to revisions.', scroll = F)
 ```
 
 
+<br>
+
+```{r tab-bcfp-def}
+xref_bcfishpass_names %>% 
+  filter(id_side == 1) %>% 
+  arrange(id_join) %>%  
+  select(Attribute = report, Definition = column_comment) %>% 
+  fpr::fpr_kable(caption_text = 'bcfishpass outputs and associated definitions',
+                 footnote_text = 'Steelhead model uses a gradient threshold of maximum 20% to determine if access if likely possible')
+
+```
 
 
 
@@ -126,7 +137,7 @@ table_thresh_average %>%
 
 ### PSCIS and Modelled Stream Crossing Review
 
-To prepare for Phase 1 and 2 assessments in the study area, past fish passage assessment reports for the Bulkley River and Morice River watershed groups were first reviewed to identify crossing structures not yet assessed or previously ranked as priorities for rehabilitation [@casselman_stanley2010BulkleyFulton; @irvine2018AnalysisPriority; @mccarthy_fernando20152015Inventory; @smith2018AssessingBarriers; @wilson_rabnett2007FishPassage].  To determine which of those crossings had not yet been assessed with Phase 1 and Phase 2 assessments we cross-referenced these reports with the PSCIS database, available background info and viewed sites within the output of the `Fish Habitat Model` and `bcfishpass`.  Outputs for modelled and PSCIS crossings (barriers and potential barriers) that met the following criteria underwent a detailed review to facilitate prioritization for Phase1 - Fish Passage Assessments and Phase 2 - Habitat Confirmations.
+To prepare for Phase 1 and 2 assessments in the study area, past fish passage assessment reports for the Bulkley River and Morice River watershed groups were first reviewed to identify crossing structures not yet assessed or previously ranked as priorities for rehabilitation [@casselman_stanley2010BulkleyFulton; @irvine2018AnalysisPriority; @mccarthy_fernando20152015Inventory; @smith2018AssessingBarriers; @wilson_rabnett2007FishPassage].  To determine which of those crossings had not yet been assessed with Phase 1 and Phase 2 assessments we cross-referenced these reports with the PSCIS database, available background info and viewed sites within the output of `bcfishpass`.  Outputs for modelled and PSCIS crossings (barriers and potential barriers) that met the following criteria underwent a detailed review to facilitate prioritization for Phase1 - Fish Passage Assessments and Phase 2 - Habitat Confirmations.
 
  * Confirmed fish presence upstream of the structure.
  * Stream width documented as > 2.0m in PSCIS.
@@ -172,7 +183,7 @@ tab <- as_tibble(t(tab_barrier_scoring)) %>%
                           T ~ Risk))
 
 tab %>% 
-  fpr::fpr_kable(caption_text = 'Fish Barrier Risk Assessment (MoE 2011).')
+  fpr::fpr_kable(caption_text = 'Fish Barrier Risk Assessment (MoE 2011).', scroll = F)
 
 ```
 
@@ -181,7 +192,7 @@ tab %>%
 
 ```{r tab-barrier-result}
 tab_barrier_result %>% 
-  fpr::fpr_kable(caption_text = 'Fish Barrier Scoring Results (MoE 2011).') 
+  fpr::fpr_kable(caption_text = 'Fish Barrier Scoring Results (MoE 2011).', scroll = F) 
 
 ```
 
@@ -226,7 +237,7 @@ Base costs for installation of bridges on forest service roads and permit roads 
 ```{r tab-cost-mult}
 # print_tab_cost_mult(caption_text = 'Cost multiplier table based on road class and surface type.')
 tab_cost_rd_mult_report %>%
-  fpr::fpr_kable(caption_text = 'Cost multiplier table based on road class and surface type.')
+  fpr::fpr_kable(caption_text = 'Cost multiplier table based on road class and surface type.', scroll = F)
 ```
 
 <br>
@@ -249,25 +260,25 @@ Fish sampling was conducted a subset of sites when biological data was considere
 
 ## Reporting
 
-Reporting was generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rmarkdown] with primarily `R` [@rcoreteam2020languageenvironment] and `SQL` scripts. In addition to numerous spatial layers sourced through the BC Data Catalogue then stored and queried in a local `postgresql` database [data inputs](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data) for this project include: 
+Reporting was generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rmarkdown] with primarily `R` [@rcoreteam2022languageenvironment] and `SQL` scripts. The `R` package `fpr` contains many specialized custom functions related to the work [@irvine2022NewGraphEnvironmentfpr].  In addition to numerous spatial layers sourced through the BC Data Catalogue then stored and queried in a local `postgresql` and `sqlite` databases [data inputs](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data) for this project include: 
 
  + Populated [Fish Data Submission Spreadsheet Template - V 2.0, January 20, 2020 ](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish) 
 
  + Populated [pscis_assessment_template_v24.xls](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects)
  
  
- + [`Fish Habitat Model`/`bcfishpass`](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/blob/master/data/bcfishpass-phase2.csv) outputs.
+ + [`bcfishpass`](https://github.com/smnorris/bcfishpass) outputs.
 
 
- + [Custom CSV file](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/raw/master/data/habitat_confirmations_priorities.csv) detailing Phase 2 site:
+ + [Custom CSV file](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/blob/master/data/habitat_confirmations_priorities.csv) detailing Phase 2 site:
      - priority level for proceeding to design for replacement
      - length of survey upstream and downstream
      - a conservative estimate of the linear length of mainstem habitat potentially available upstream of the crossing 
      - fish species confirmed as present upstream of the crossing
 
- + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
+ + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
 
- + [Photos](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photos) and [photo metadata](https://github.com/NewGraphEnvironment/fish_passage_bulkley_2020_reporting/tree/master/data/photo_metadata.csv)
+ + [Photos](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/photos) and photo metadata
 
 
 ## Mapping
