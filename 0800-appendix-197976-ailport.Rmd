@@ -164,7 +164,8 @@ There was `r fpr::fpr_my_priority_info(sit = my_site2, col_pull= upstream_habita
 
 ```{r tab-habitat-summary-197976}
 tab_hab_summary %>% 
-  filter(Site  == my_site) %>% 
+  filter(Site  == my_site |
+           Site  == my_site2) %>% 
   # select(-Site) %>% 
   fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, '.'),
                  scroll = F) 
