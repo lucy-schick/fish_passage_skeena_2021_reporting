@@ -265,10 +265,8 @@ During 2021 field assessments, habitat confirmation assessments were conducted a
 
 As collaborative decision making was ongoing at the time of reporting, site prioritization can be considered preliminary.  In total, `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities, and `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as low priorities. Results are summarized in `r if(gitbook_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(fig:plot-fish-all) with raw habitat and fish sampling data included in digital format as [Attachment 3](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/data/habitat_confirmations.xls).  A summary of preliminary modelling results illustrating the quantity of chinook, coho and steelhead spawning and rearing habitat potentially available upstream of each crossing as estimated by measured/modelled channel width and upstream accessible stream length are presented in Figure \@ref(fig:plot-model-all). Detailed information for each site assessed with Phase 2 assessments (including maps) are presented within site specific appendices to this document.
 
-
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
-`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
 ```{r tab-overview, eval = T}
 #`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>")`
@@ -307,10 +305,7 @@ tab_cost_est_phase2_report %>%
 ```
 
 
-
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
-
-
 
 ```{r tab-habitat-summary}
 tab_hab_summary %>% 
@@ -321,46 +316,8 @@ tab_hab_summary %>%
 
 
 ```
-```{r}
-## Fish Sampling
-
-# Fish sampling was conducted at five sites with a total of `r tab_fish_summary %>% filter(species_code == 'WCT') %>% pull(count_fish) %>% sum()` westslope cutthout trout,  `r tab_fish_summary %>% filter(species_code == 'EB') %>% pull(count_fish) %>% sum()` eastern brook trout and `r tab_fish_summary %>% filter(species_code == 'BT') %>% pull(count_fish) %>% sum()` bull trout captured.  Westslope cutthrout trout were captured at three of the sites sampled with fork length data delineated into life stages: fry (&le;60mm), parr (>60 to 110mm), juvenile (>110mm to 140mm) and adult (>140mm) by visually assessing the histogram presented in Figure \@ref(fig:fish-histogram).  Fish sampling results are presented in detail within individual habitat confirmation site memos within the appendices of this document with westslope cutthrout trout density results also presented in Figure \@ref(fig:plot-fish-all).  
-```
-
-
-```{r fish-histogram, fig.cap= 'Histogram of westslope cutthrout trout captured during electrofishing surveys.', eval = F}
-knitr::include_graphics("fig/fish_histogram.png")
-
-```
 
 <br>
-
-```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of fish captured by life stage and site for data collected during habitat confirmation assessments.', eval=F}
-plot_fish_box_all2 <- function(dat = hab_fish_dens){#, sp = 'RB'
-  dat %>%
-    filter(
-      species_code  != 'MW'
-      # &
-      #   species_code == species
-    ) %>%
-    ggplot(., aes(x = location, y =density_100m2)) +
-    geom_boxplot()+
-    facet_grid(site ~ species_code, scales ="fixed", #life_stage
-               as.table = T)+
-    # theme_bw()+
-    theme(legend.position = "none", axis.title.x=element_blank()) +
-    geom_dotplot(binaxis='y', stackdir='center', dotsize=1)+
-    ylab(expression(Density ~ (Fish/100 ~  m^2))) +
-    ggdark::dark_theme_bw()
-}
-
-
-plot_fish_box_all2()
-```
-
-
-<br>
-
 
 ```{r tab-wshd-sum-all}
 fpr::fpr_table_wshd_sum() %>% 
@@ -414,5 +371,49 @@ bcfishpass_phase2_plot_prep <- bcfishpass %>%
 ```
 
 
+### Fish Sampling
+
+Fish sampling was conducted at `tab_fish_sites %>% n_distinct()` sites with a total of `r hab_fish_indiv %>% filter(species_code != 'NFC') %>% nrow()` fish captured.  Of these, `r hab_fish_indiv %>% filter(species_code == 'RB') %>% nrow()` were rainbow trout,  `r hab_fish_indiv %>% filter(species_code == 'CO') %>% nrow()` coho, `r hab_fish_indiv %>% filter(species_code == 'DV') %>% nrow()` were dolly varden and `r hab_fish_indiv %>% filter(species_code == 'L') %>% nrow()` were lamprey.  A summary of sites assessed are included in Figure \@ref(fig:tab-fish-site-sumary).  Fork length data was used to delineate salmonids based on life stages: fry (0 to 65mm), parr (>65 to 110mm), juvenile (>110mm to 140mm) and adult (>140mm) by visually assessing the histograms presented in Figure \@ref(fig:fish-histogram).  Raw data is provided in [Attachment 3](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/data/habitat_confirmations.xls) and a summary of density results for all life stages combined of select species is also presented in Figure \@ref(fig:plot-fish-all). Additionally, results are presented in greater detail within individual habitat confirmation site appendices.
+
+<br>
+
+```{r fish-histogram, fig.cap= 'Histograms of fish lengths by species.  Fish captured by electrofishing during habitat confirmation assessments.', eval = T}
+knitr::include_graphics("fig/fish_histogram.png")
+
+```
 
 
+<br
+
+```{r tab-fish-site-sumary}
+tab_fish_sites %>% 
+  fpr::fpr_kable(caption_text = 'Summary of electrofishing sites.')
+```
+
+<br>
+
+```{r plot-fish-all, fig.cap='Boxplots of densities (fish/100m2) of fish captured by electrofishing during habitat confirmation assessments.', eval=T}
+plot_fish_box_all <- tab_fish_density_prep %>%
+    filter(
+      !species_code %in% c('MW', 'SU', 'NFC', 'CT', 'LSU')
+    ) %>%
+    ggplot(., aes(x = location, y =density_100m2)) +
+    geom_boxplot()+
+    facet_grid(site ~ species_code, scales ="fixed", #life_stage
+               as.table = T)+
+    # theme_bw()+
+    theme(legend.position = "none", axis.title.x=element_blank()) +
+    geom_dotplot(binaxis='y', stackdir='center', dotsize=1)+
+    ylab(expression(Density ~ (Fish/100 ~  m^2))) +
+    ggdark::dark_theme_bw()
+
+plot_fish_box_all
+```
+
+## Phase 3
+
+Engineering designs have been completed for replacement of PSCIS crossing 58159 on McDowell Creek [@irvine2021BulkleyRiver] with a clear-span bridge and for removal of the collapsed bridge (PSCIS crossing 197912) on Robert Hatch Creek.  At the time of reporting, the Ministry of Transportation and Infrastructure was in the process of procuring designs for remediation of fish passage at three sites documented in @irvine2021BulkleyRiver including PSCIS 123445 on Tyhee Creek, PSCIS 124500 on Helps Creek and PSCIS 197640 on a tributary to Buck Creek.  Additionally, the Ministry of Transportation and Infrastructure were procuring a design for PSCIS crossing 124420 on Mission Creek (a.k.a Station Creek) in Hazleton (pers. comm. Sean Wong, Environmental Programs, MoTi). Details for the habitat confirmation of Mission Creek are included in the associated appendix of this report.
+
+## Phase 4
+
+Ministry of Forest engineers collaborated with Canfor and Coastal Gaslink to replace crossing 197962 on Peacock Creek located on the Morice FSR within the Morice River watershed group.  As detailed in the associated attachment within this report, baseline effectiveness monitoring including multipass electrofishing at three closed sites both upstream and downstream of the FSR in the fall of 2021 before the bridge install occurred. 

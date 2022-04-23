@@ -1,7 +1,7 @@
 # this file imports our data and builds the tables we need for our reporting
 
-source('scripts/packages.R')
-source('scripts/private_info.R')
+# source('scripts/packages.R')
+# source('scripts/private_info.R')
 # source('R/functions.R')
 
 
@@ -151,22 +151,9 @@ pscis_rd <- left_join(
   # filter(distance < 100)
 
 
-#load priorities
-habitat_confirmations_priorities <- readr::read_csv(
-  file = "./data/habitat_confirmations_priorities.csv",
-  #this is not necessary but we will leave.
-  locale = readr::locale(encoding = "UTF-8")) %>%
-  filter(!alias_local_name %like% 'ef' &
-           ##ditch the ef sites and the toboggan site that is passable
-           !alias_local_name %like% '198042') %>% ##ditch the ef sites and the toboggan site that is passable
-  # tidyr::separate(local_name, into = c('site', 'location'), remove = F) %>%
-  mutate(
-    # site = as.numeric(site),
-         upstream_habitat_length_km = round(upstream_habitat_length_m/1000,1)) %>%
-  rename(local_name = alias_local_name) #did this to stay consistent for later
 
-####--------------bring in the habitat and fish data------------------
-habitat_confirmations <- fpr_import_hab_con()
+
+
 
 
 
@@ -420,6 +407,9 @@ fpr_print_tab_summary_all_pdf <- function(tab_sum, comments, photos){
 tabs_phase1_pdf <- mapply(fpr_print_tab_summary_all_pdf, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url) %>%
   head()
 
+####-------------- habitat and fish data------------------
+habitat_confirmations <- fpr_import_hab_con(col_filter_na = T)
+
 hab_site_prep <-  habitat_confirmations %>%
   purrr::pluck("step_4_stream_site_data") %>%
   # tidyr::separate(local_name, into = c('site', 'location'), remove = F) %>%
@@ -472,9 +462,11 @@ hab_fish_codes <- habitat_confirmations %>%
   purrr::pluck("species_by_group") %>% ##changed from specie_by_common_name because BB burbot was wrong!!
   select(-step)
 
-
+# this is the table to burn to geojson for mapping
 hab_fish_collect <- left_join(
-  hab_fish_collect_prep2 %>% mutate(species = as.factor(species)),  ##just needed to do this b/c there actually are no fish.
+  hab_fish_collect_prep2 %>%
+    mutate(species = as.factor(species)),  ##just needed to do this b/c there actually are no fish.
+
   select(hab_fish_codes, common_name, species_code),
   by = c('species' = 'common_name')
 )
@@ -496,7 +488,261 @@ hab_features <- left_join(
   by = c('feature_type' = 'spreadsheet_feature_type')
 )
 
-##add the priorities to the site data
+
+## fish densities ----------------------------------------------------------
+hab_fish_indiv_prep <- habitat_confirmations %>%
+  purrr::pluck("step_3_individual_fish_data") %>%
+  dplyr::filter(!is.na(site_number)) %>%
+  select(-gazetted_names:-site_number)
+
+hab_fish_indiv_prep2 <- left_join(
+  hab_fish_indiv_prep,
+  hab_loc,
+  by = 'reference_number'
+)
+
+hab_fish_indiv_prep3 <- left_join(
+  hab_fish_indiv_prep2,
+  select(hab_fish_codes, common_name:species_code),
+  by = c('species' = 'common_name')
+) %>%
+  dplyr::select(reference_number,
+                alias_local_name,
+                site_number,
+                sampling_method,
+                method_number,
+                haul_number_pass_number,
+                species_code,
+                length_mm,
+                weight_g) ##added method #
+
+hab_fish_collect_info <- habitat_confirmations %>%
+  purrr::pluck("step_2_fish_coll_data") %>%
+  dplyr::filter(!is.na(site_number)) %>%
+  # select(-gazetted_name:-site_number) %>%
+  dplyr::distinct(reference_number, sampling_method, method_number, haul_number_pass_number, .keep_all = T)
+
+# join the indiv fish data to existing site info
+hab_fish_indiv <- full_join(
+  select(hab_fish_indiv_prep3,
+         reference_number,
+         sampling_method,
+         method_number,
+         haul_number_pass_number,
+         species_code,
+         length_mm,
+         weight_g),
+  select(hab_fish_collect_info,
+         reference_number,
+         local_name,
+         temperature_c:model, ##added date_in:time_out
+         comments
+  ),
+  by = c(
+    "reference_number",
+    # 'alias_local_name' = 'local_name',
+    "sampling_method",
+    "method_number",
+    "haul_number_pass_number")
+) %>%
+  mutate(species_code = as.character(species_code)) %>%
+  mutate(species_code = case_when(
+    is.na(species_code) ~ 'NFC',
+    T ~ species_code)
+  ) %>%
+  mutate(species_code = as.factor(species_code)) %>%
+  mutate(life_stage = case_when(  ##this section comes from the histogram below - we include here so we don't need to remake the df
+    length_mm <= 65 ~ 'fry',
+    length_mm > 65 & length_mm <= 110 ~ 'parr',
+    length_mm > 110 & length_mm <= 140 ~ 'juvenile',
+    length_mm > 140 ~ 'adult',
+    T ~ NA_character_
+  ),
+  life_stage = case_when(
+    species_code %in% c('L', 'SU', 'LSU') ~ NA_character_,
+    T ~ life_stage
+  ),
+  # comments = case_when(
+  #   species_code %in% c('L', 'SU', 'LSU') & !is.na(comments) ~
+  #     paste0(comments, 'Not salmonids so no life stage specified.'),
+  #   species_code %in% c('L', 'SU', 'LSU') & is.na(comments) ~
+  #     'Not salmonids so no life stage specified.',
+  #   T ~ comments
+  # ),
+  )%>%
+  mutate(life_stage = fct_relevel(life_stage,
+                                  'fry',
+                                  'parr',
+                                  'juvenile',
+                                  'adult')) %>%
+  tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
+  mutate(site_id = paste0(site, '_', location))
+
+# this will be joined to the abundance estimates and the confidence intervals
+fish_abund_prep <- hab_fish_indiv %>%
+  group_by(local_name,
+           site_id,
+           ef,
+           sampling_method,
+           haul_number_pass_number,
+           species_code,
+           life_stage,
+           ef_seconds) %>% ##added sampling method!
+  filter(sampling_method == 'electrofishing') %>%
+  summarise(catch = n()) %>%
+  arrange(site_id, species_code, ef) %>%
+  # ungroup() %>%
+  mutate(catch = case_when(
+    species_code == 'NFC' ~ 0L,
+    T ~ catch),
+    # effort = catch/ef_seconds,
+    id = paste0(local_name, '_', species_code, '_', life_stage)) %>%
+  ungroup() %>%
+  arrange(id)
+
+# join the total number of passes to each event so that we know if it is a higher number than the pass of the catch
+fish_abund_prep2 <- left_join(
+  fish_abund_prep,
+
+  fish_abund_prep %>%
+    group_by(local_name) %>%
+    summarise(pass_total = max(haul_number_pass_number)),
+  by = 'local_name'
+)
+
+# make a dat to indicate if the nfc in the set
+fish_abund_nfc_tag <- fish_abund_prep2 %>%
+  mutate(nfc_pass = case_when(
+    species_code == 'NFC' &
+      (haul_number_pass_number = pass_total) ~ T,
+    T ~ F)
+    ) %>%
+  select(local_name, nfc_pass) %>%
+  filter(nfc_pass == T) %>%
+  distinct()
+
+# dat to show sites that have abund
+fish_abund_no_deplete <- left_join(
+  fish_abund_prep2,
+
+  fish_abund_nfc_tag,
+  by = 'local_name'
+) %>%
+  filter(!is.na(nfc_pass)) %>%
+  group_by(local_name, species_code) %>%
+  summarise(abundance = sum(catch)) %>%
+  mutate(nfc_pass = case_when(
+    species_code != 'NFC' ~ 'TRUE',
+    T ~ NA_character_))
+
+
+fish_abund_prep3 <- left_join(
+  fish_abund_prep2,
+
+  fish_abund_no_deplete,
+
+  by = c('local_name', 'species_code')
+)
+
+# add back the size of the sites so we can do a density
+fish_abund_prep4 <- left_join(
+  fish_abund_prep3,
+
+  hab_fish_collect_info %>%
+    select(local_name,
+           sampling_method,
+           haul_number_pass_number,
+           ef_length_m:enclosure) %>%
+    distinct(),
+
+  by = c('local_name', 'sampling_method','haul_number_pass_number')
+) %>%
+  mutate(area_m2 = round(ef_length_m * ef_width_m,1))
+
+
+
+### depletion estimates -----------------------------------------------------
+
+# only run depletion estimates when there are site/species events with more than 1 pass and all passes have fish.
+# otherwise just add the counts together for the abundance
+# fish_deplet_prep <- fish_abund_prep3 %>%
+#   filter(is.na(abundance)) %>%
+#   # at least three passes
+#   group_by(id) %>%
+#   filter( n() > 2 )
+#
+#
+# fish_abund_prep_ls <-  fish_deplet_prep %>%
+#   ungroup() %>%
+#   dplyr::group_split(id) %>%
+#   purrr::set_names(nm = unique(fish_deplet_prep$id))
+#
+# fpr_fish_depletion <- function(dat, ...){
+#   ls <- FSA::depletion(dat$catch, dat$ef_seconds, Ricker.mod = F)
+#   out <-  summary(ls) %>%
+#       as_tibble() %>%
+#       slice(1)
+#   out
+#   }
+#
+#
+# fish_abund_prep_ls %>%
+#   purrr::map(fpr_fish_depletion) %>%
+#   map(plot)
+#
+# fish_abund_calc <- fish_abund_prep_ls %>%
+#   purrr::map(fpr_fish_depletion) %>%
+#   bind_rows(.id = 'id') %>%
+#   janitor::clean_names()
+
+# well 2 events did not have a negative slope and 12 more were suspect as model
+#  did not show a significant slope so this is crap.
+
+
+### density results -----------------------------------------------------------
+
+tab_fish_density_prep <- fish_abund_prep4 %>%
+  group_by(local_name, species_code, sampling_method, pass_total, nfc_pass, enclosure, area_m2) %>%
+  summarize(catch = sum(catch, na.rm = T)) %>%
+  ungroup() %>%
+  select(-sampling_method) %>%
+  mutate(density_100m2 = catch/area_m2 * 100) %>%
+  tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F)
+
+# need to summarize just the sites
+tab_fish_sites <- fish_abund_prep4 %>%
+  distinct(local_name, .keep_all = T) %>%
+  select(site = local_name, passes = pass_total, ef_length_m, ef_width_m, area_m2, enclosure)
+
+
+# hab_fish_dens <- hab_fish_indiv %>%
+#   filter(sampling_method == 'electrofishing') %>% ##added this since we now have mt data as well!!
+#   mutate(area = round(ef_length_m * ef_width_m),0) %>%
+#   group_by(local_name, method_number, haul_number_pass_number, ef_length_m, ef_width_m, ef_seconds, area, species_code, life_stage) %>%
+#   summarise(fish_total = length(life_stage)) %>%
+#   ungroup() %>%
+#   mutate(density_100m2 = round(fish_total/area * 100, 1)) %>%
+#   tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
+#   mutate(site_id = paste0(site, location),
+#          location = case_when(location == 'us' ~ 'Upstream',
+#                               T ~ 'Downstream'),
+#          life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult')))
+
+# priorities --------------------------------------------------------------
+#load priorities
+habitat_confirmations_priorities <- readr::read_csv(
+  file = "./data/habitat_confirmations_priorities.csv",
+  #this is not necessary but we will leave.
+  locale = readr::locale(encoding = "UTF-8")) %>%
+  filter(!alias_local_name %like% 'ef' &
+           ##ditch the ef sites and the toboggan site that is passable
+           !alias_local_name %like% '198042') %>% ##ditch the ef sites and the toboggan site that is passable
+  # tidyr::separate(local_name, into = c('site', 'location'), remove = F) %>%
+  mutate(upstream_habitat_length_km = round(upstream_habitat_length_m/1000,1)) %>%
+  rename(local_name = alias_local_name) #did this to stay consistent for later
+
+
+
 hab_site_priorities <- left_join(
   select(habitat_confirmations_priorities, reference_number, local_name, priority),
   select(hab_site, reference_number, alias_local_name, site, utm_zone:utm_northing),
