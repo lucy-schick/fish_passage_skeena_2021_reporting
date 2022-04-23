@@ -910,8 +910,13 @@ hab_fish_indiv <- full_join(
   ),
   life_stage = case_when(
     species_code %in% c('L', 'SU', 'LSU') ~ NA_character_,
-    T ~ life_stage
-  )
+    T ~ life_stage),
+  comments = case_when(
+    species_code %in% c('L', 'SU', 'LSU') & !is.na(comments) ~
+      paste0(comments, 'Not salmonids so no life stage specified.'),
+    species_code %in% c('L', 'SU', 'LSU') & is.na(comments) ~
+      'Not salmonids so no life stage specified.',
+    T ~ comments)
   )%>%
   mutate(life_stage = fct_relevel(life_stage,
                                   'fry',
@@ -953,8 +958,8 @@ plot_fish_hist <- ggplot(hab_fish_indiv %>% filter(!species_code %in% c('LSU','S
 #                position="identity", size = 0.75)
 plot_fish_hist
 
-ggsave(plot = plot_fish_hist, file="./fig/fish_histogram.png",
-       h=3.4, w=5.11, units="in", dpi=300)
+# ggsave(plot = plot_fish_hist, file="./fig/fish_histogram.png",
+#        h=3.4, w=5.11, units="in", dpi=300)
 
 
 ####-----------summary tables for input to spreadsheet----------------------
@@ -992,6 +997,8 @@ hab_fish_input <- left_join(
          total_number = n,
          min,
          max,
+         # a hack to get number of columns right
+         fish_activity = age,
          comments) %>%
   mutate(make = 'other',
          model = 'halltech HT2000') %>%
