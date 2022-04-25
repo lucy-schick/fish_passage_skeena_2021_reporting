@@ -1,0 +1,227 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup-197662, eval = F}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+source('scripts/packages.R')
+source('scripts/tables.R')
+
+```
+
+
+
+```{r  load-data-197662}
+my_site <- 197662
+my_site2 <- 198043
+
+
+
+
+```
+
+`r fpr::fpr_appendix_title()`
+
+## Site Location {-}
+
+PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` approximately 30km east of Houston, BC with the highway located approximately `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream upstream from the confluence with the Bulkley River. `r fpr::fpr_my_pscis_info(col_pull = road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.  Habitat modelling outputs are presented in Table \@ref(tab:tab-culvert-bcfp-197662). A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+
+
+## Background {-}
+
+At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-197662)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded upstream [@moe2020KnownBC; @norris2020bcfishobs]. 
+
+<br>
+
+
+```{r tab-wshd-197662, eval = T}
+fpr::fpr_table_wshd_sum(site_id = my_site) %>% 
+  fpr::fpr_kable(caption_text = paste0('Summary of derived upstream watershed statistics for PSCIS crossing ', my_site, '.'),
+           footnote_text = 'Elev P60 = Elevation at which 60% of the watershed area is above',
+           scroll = F)
+
+```
+
+
+A habitat confirmation assessment was conducted by @irvine2021BulkleyRiver in 2020 and the reader is directed there for detailed background, habitat assessment and fish sampling information from 2020 surveys. Acquisition of high resolution aerial imagery and fish sampling was conducted at the site in 2021 to provide context for crossing prioritization.  Additionally, Society for Ecosystem Restoration BC, Fisheries and Oceans Canada and the Morice Watershed Monitoring Trust were able to collaborate in 2021 to provide funding for the installation of barbed wire fenceing adjacent to  a buffer on the west bank of Richfield Creek below the highway as a restorative action to exclude cattle from the riparian area. Details of these three activities are provided below.
+
+
+```{r tab-culvert-bcfp-197662, eval = T}
+fpr::fpr_table_bcfp() %>% 
+  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
+                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+```
+
+
+<br>
+
+
+## Stream Characteristics at Crossing {-}
+
+Although, culvert measurement data was recycled from 2020, crossing photos were retaken (Table \@ref(tab:tab-culvert-197662)).  
+
+<br>
+
+```{r tab-culvert-197662, eval = T}
+fpr::fpr_table_cv_summary_memo()
+
+```
+
+<br>
+
+
+# Aerial Imagery
+
+Surveys were conducted with a remotely piloted aircraft upstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model `r if(gitbook_on){knitr::asis_output(" presented in Figures \\@ref(fig:ortho-caption-richfield) - \\@ref(fig:model-caption-richfield).")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/fe773f4deef84939b04f5e941e35506a) and [here](https://www.mapsmadeeasy.com/maps/public_3D/fe773f4deef84939b04f5e941e35506a).")`
+
+
+
+
+```{r ortho-richfield, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/fe773f4deef84939b04f5e941e35506a" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r ortho-caption-richfield, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('Orthomosaic of habitat immediately upstream and downstream of Richfield Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+
+```{r model-richfield, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/fe773f4deef84939b04f5e941e35506a" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+
+```{r model-caption-richfield, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat immediately upstream and downstream of Richfield Creek. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+
+`r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
+
+# Fish Sampling
+
+
+Multipass electrofishing was conducted at three sites upstream of the highway and three sites downstream. Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. results are summarised in Tables \@ref(tab:tab-fish-site-197662) - \@ref(tab:tab-fish-dens-197662) and Figure \@ref(fig:plot-fish-box-197662). Photos are provided in `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197662-01) - \\@ref(fig:photo-197662-04)).")}else(knitr::asis_output("(Figures \\@ref(fig:photo-197662-d01)) - \\@ref(fig:photo-197662-d02))."))`
+
+
+<br>
+
+```{r tab-fish-site-197662, eval=T}
+fpr_table_fish_site()
+
+```
+
+<br>
+
+```{r tab-fish-dens-197662, eval=T}
+fpr_table_fish_density()
+
+```
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+```{r plot-fish-box-197662, fig.cap= my_caption, eval=T}
+my_caption <- paste0('Densites of fish (fish/100m2) captured upstream and downstream of PSCIS crossing ', my_site, '.')
+
+fpr_plot_fish_box() 
+
+```
+
+
+
+<br>
+
+
+```{r photo-197662-01-prep, eval=T}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = 'ds_ef1_')
+
+my_caption1 = paste0('Habitat downstream of PSCIS crossing ', my_site, '.')
+
+
+# fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = '6257')
+
+```
+
+```{r photo-197662-01, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+<br>
+
+```{r photo-197662-02-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_f1_')
+
+my_caption2 = paste0('Lamprey captured downstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-197662-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+
+```
+
+<br>
+
+```{r photo-197662-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+
+```{r photo-197662-03-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_ef2_')
+
+my_caption1 = paste0('Habitat upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-197662-03, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+
+
+<br>
+
+```{r photo-197662-04-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_ef3_')
+
+my_caption2 = paste0('Habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-197662-04, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-197662-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+
+# Riparian Fenceing
+Approximately 1100 m of new four strand barbed wire fencing was installed to the west of Richfield Creek between November 26 and December 14, 2021.  Fencing of the area complemented significant restoration work completed in by the Morice Watershed Monitoring Trust project which included bank stabilization, installation of vertical posts for bank stability, live stakeing of willow/cottonwood and planting of rooted willow plugs.  Details of the work conducted is documented in @wrench2022RichfieldCreek and included as [Attachment 4](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/docs/Attachment_4.pdf).
