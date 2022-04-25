@@ -4,7 +4,7 @@ preview_chapter('0200-background.Rmd')
 preview_chapter('0300-method.Rmd')
 preview_chapter('0400-results.Rmd')
 bookdown::preview_chapter('test.Rmd')
-preview_chapter('0800-appendix-123770-john-brown.Rmd')
+preview_chapter('0800-appendix-197976-ailport.Rmd')
 preview_chapter('index.Rmd')
 
 #######################################################################################
@@ -36,6 +36,9 @@ preview_chapter('index.Rmd')
 ##go to the index.Rmd and change gitbook_on <- TRUE
 #################################################################################################
 
+
+# run if bcfishpass changed
+source('scripts/02_prep_reporting/0190-build-html-map-tables.R')
 
 # if you need to update after renameing photos to keep and add to map....
 source('scripts/02_prep_reporting/0180-photos-extract-metadata.R')
