@@ -2,14 +2,14 @@ The repository builds an [interactive report](https://newgraphenvironment.github
 
 <br>
 
-Reporting was generated with `bookdown` from `Rmarkdown` with primarily `R` and `SQL` scripts. In addition to numerous spatial layers sourced through the BC Data Catalogue then stored and queried in local `postgresql` database, [data inputs](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data) for this project include: 
+Reporting was generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rmarkdown] with primarily `R` [@rcoreteam2022languageenvironment] and `SQL` scripts. The `R` package `fpr` contains many specialized custom functions related to the work [@irvine2022NewGraphEnvironmentfpr].  In addition to numerous spatial layers sourced through the BC Data Catalogue then stored and queried in a local `postgresql` and `sqlite` databases [data inputs](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data) for this project include: 
 
  + Populated [Fish Data Submission Spreadsheet Template - V 2.0, January 20, 2020 ](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/fish-and-fish-habitat-data-information/fish-data-submission/submit-fish-data#submitfish) 
 
  + Populated [pscis_assessment_template_v24.xls](https://www2.gov.bc.ca/gov/content/environment/plants-animals-ecosystems/fish/aquatic-habitat-management/fish-passage/fish-passage-technical/assessment-projects)
  
  
- + [`Fish Habitat Model`/`bcfishpass`](https://github.com/smnorris/bcfishpass) outputs.
+ + [`bcfishpass`](https://github.com/smnorris/bcfishpass) outputs.
 
 
  + [Custom CSV file](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/blob/master/data/habitat_confirmations_priorities.csv) detailing Phase 2 site:
@@ -20,4 +20,4 @@ Reporting was generated with `bookdown` from `Rmarkdown` with primarily `R` and 
 
  + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
 
- + [Photos](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/photos) and [photo metadata](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/photo_metadata.csv)
+ + [Photos](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/photos) and photo metadata
