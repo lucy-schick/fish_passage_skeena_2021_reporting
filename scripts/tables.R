@@ -561,15 +561,7 @@ hab_fish_indiv <- full_join(
   life_stage = case_when(
     species_code %in% c('L', 'SU', 'LSU') ~ NA_character_,
     T ~ life_stage
-  ),
-  # comments = case_when(
-  #   species_code %in% c('L', 'SU', 'LSU') & !is.na(comments) ~
-  #     paste0(comments, 'Not salmonids so no life stage specified.'),
-  #   species_code %in% c('L', 'SU', 'LSU') & is.na(comments) ~
-  #     'Not salmonids so no life stage specified.',
-  #   T ~ comments
-  # ),
-  )%>%
+  ))%>%
   mutate(life_stage = fct_relevel(life_stage,
                                   'fry',
                                   'parr',
@@ -610,55 +602,67 @@ fish_abund_prep2 <- left_join(
   by = 'local_name'
 )
 
-# make a dat to indicate if the nfc in the set
-fish_abund_nfc_tag <- fish_abund_prep2 %>%
+# make a dat to indicate if the nfc in the set for each species
+fish_nfc_tag<- fish_abund_prep2 %>%
   mutate(nfc_pass = case_when(
-    species_code == 'NFC' &
-      (haul_number_pass_number = pass_total) ~ T,
-    T ~ F)
-    ) %>%
-  select(local_name, nfc_pass) %>%
-  filter(nfc_pass == T) %>%
-  distinct()
+    # species_code != 'NFC' &
+      haul_number_pass_number == pass_total ~ F,
+    T ~ T),
+    nfc_pass = case_when(
+      species_code == 'NFC' ~ T,
+      T ~ nfc_pass)
+  ) %>%
+  select(local_name, species_code, life_stage, haul_number_pass_number, pass_total, nfc_pass) %>%
+  arrange(desc(haul_number_pass_number)) %>%
+  # filter(nfc_pass == T) %>%
+  distinct(local_name, species_code, life_stage, .keep_all = T) %>%
+  select(-haul_number_pass_number, -pass_total)
 
-# dat to show sites that have abund
-fish_abund_no_deplete <- left_join(
-  fish_abund_prep2,
+# dat to show sites  for those that have a pass where no fish of those species were captured
+# nfc_pass tag used to indicate that this is an abundance estimate
+# fish_nfc_tag <- left_join(
+#   fish_abund_prep2,
+#
+#   fish_nfc_prep,
+#   by = c('local_name','species_code', 'life_stage', 'haul_number_pass_number', 'pass_total')
+# ) %>%
+#   tidyr::fill(nfc_pass, .direction = 'up')
 
-  fish_abund_nfc_tag,
-  by = 'local_name'
-) %>%
-  filter(!is.na(nfc_pass)) %>%
-  group_by(local_name, species_code) %>%
-  summarise(abundance = sum(catch)) %>%
-  mutate(nfc_pass = case_when(
-    species_code != 'NFC' ~ 'TRUE',
-    T ~ NA_character_))
+  # filter(!is.na(nfc_pass)) %>%
+
+  # mutate(nfc_pass = case_when(
+  #   species_code != 'NFC' ~ 'TRUE',
+  #   T ~ NA_character_))
 
 
+# calculate abundance for each site regardless of whether a nfc_pass occurred.
 fish_abund_prep3 <- left_join(
-  fish_abund_prep2,
+  fish_abund_prep2 %>%
+  group_by(local_name, species_code, life_stage) %>%
+  summarise(catch = sum(catch)),
 
-  fish_abund_no_deplete,
+  fish_nfc_tag,
 
-  by = c('local_name', 'species_code')
+  by = c('local_name', 'species_code', 'life_stage')
 )
 
+
 # add back the size of the sites so we can do a density
-fish_abund_prep4 <- left_join(
+fish_abund <- left_join(
   fish_abund_prep3,
 
   hab_fish_collect_info %>%
     select(local_name,
-           sampling_method,
-           haul_number_pass_number,
-           ef_length_m:enclosure) %>%
-    distinct(),
+           # sampling_method,
+           # haul_number_pass_number,
+           ef_seconds:enclosure) %>%
+    distinct(local_name, ef_length_m, .keep_all = T),
 
-  by = c('local_name', 'sampling_method','haul_number_pass_number')
+  by = c('local_name')
 ) %>%
-  mutate(area_m2 = round(ef_length_m * ef_width_m,1))
-
+  mutate(area_m2 = round(ef_length_m * ef_width_m,1),
+         density_100m2 = round(catch/area_m2 * 100,1)) %>%
+  tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F)
 
 
 ### depletion estimates -----------------------------------------------------
@@ -700,19 +704,39 @@ fish_abund_prep4 <- left_join(
 
 
 ### density results -----------------------------------------------------------
-
-tab_fish_density_prep <- fish_abund_prep4 %>%
-  group_by(local_name, species_code, sampling_method, pass_total, nfc_pass, enclosure, area_m2) %>%
-  summarize(catch = sum(catch, na.rm = T)) %>%
-  ungroup() %>%
-  select(-sampling_method) %>%
-  mutate(density_100m2 = catch/area_m2 * 100) %>%
-  tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F)
-
 # need to summarize just the sites
-tab_fish_sites <- fish_abund_prep4 %>%
-  distinct(local_name, .keep_all = T) %>%
+tab_fish_sites_sum <- left_join(
+  fish_abund_prep2 %>%
+    select(local_name, pass_total) %>%
+    distinct(),
+
+
+  hab_fish_collect_info %>%
+    select(local_name,
+           ef_length_m:enclosure) %>%
+    distinct(),
+
+  by = 'local_name'
+) %>%
+  mutate(area_m2 = round(ef_length_m * ef_width_m,1)) %>%
   select(site = local_name, passes = pass_total, ef_length_m, ef_width_m, area_m2, enclosure)
+
+rm(
+  fish_abund_nfc_prep,
+  fish_abund_prep,
+  fish_abund_prep2,
+  fish_abund_prep3,
+  fish_abund_prep4,
+  fish_nfc_tag
+)
+
+# # table to summarize ef passes done in a site
+# tab_fish_sites <- hab_fish_collect_info %>%
+#   select(local_name, haul_number_pass_number, ef_seconds:enclosure) %>%
+#   distinct() %>%
+#   mutate(area_m2 = round(ef_length_m * ef_width_m,1)) %>%
+#   tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F)
+
 
 
 # hab_fish_dens <- hab_fish_indiv %>%
