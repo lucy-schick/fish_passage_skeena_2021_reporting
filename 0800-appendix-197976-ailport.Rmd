@@ -140,7 +140,9 @@ Habitat value was rated as `r fpr::fpr_my_priority_info(loc = 'us')` as the surv
 Immediately upstream of the crossing for ~80m, extensive anthropogenic damage was noted due to dredging of the channel. Heavy cattle grazing was also observed on the left bank. Juvenile salmonids were observed occasionally throughout the area surveyed.  Fencing was located across the stream approximately 250m upstream of the culvert.  Patches of gravels suitable for spawning were present.
 Habitat value was rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us')` as the surveyed area was considered an important migration corridor containing suitable spawning habitat and having moderate rearing potential.
 
+## Fish Sampling {-}
 
+Electrofishing was conducted with results summarised in Tables \@ref(tab:tab-fish-site-197976) - \@ref(tab:tab-fish-dens-197976) and Figure \@ref(fig:plot-fish-box-197976).
 
 ## Structure Remediation and Cost Estimate {-}
 
@@ -171,6 +173,34 @@ tab_hab_summary %>%
                  scroll = F) 
 
 ```
+
+<br>
+
+```{r tab-fish-site-197976, eval=T}
+fpr_table_fish_site(sit = my_site2)
+
+```
+
+
+<br>
+
+
+```{r tab-fish-dens-197976, eval=T}
+fpr_table_fish_density(sit = my_site2)
+
+```
+
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+
+```{r plot-fish-box-197976, fig.cap= my_caption, eval=T}
+my_caption <- paste0('Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing ', my_site2, '.')
+
+fpr_plot_fish_box(sit = my_site2) 
+
+```
+
 
 <br>
 
