@@ -23,7 +23,6 @@ Skeena2021.html
 hold
 *.Kmz
 *.kml
-maps/*
 data/photos/**/*.pdf
 
 
