@@ -1,4 +1,20 @@
 # Appendix - Phase 1 Fish Passage Assessment Data and Photos {-}
 
-`r if(gitbook_on){knit(text = unlist(tabs_phase1))} else knit(text = unlist(tabs_phase1_pdf))`
+<!-- `r if(gitbook_on){knit(text = unlist(tabs_phase1))} else knit(text = unlist(tabs_phase1_pdf))` -->
 
+
+
+
+
+
+```{r eval = F}
+
+# `r purrr::map2(fpr::fpr_table_cv_detailed_print, tab_sum = tab_summary,  comments = tab_summary_comments,  photos = tab_photo_url,  gitbook_switch = FALSE) %>% head()`
+
+test <- mapply(fpr::fpr_test,  tab_sum = tab_summary[1:5],  comments = tab_summary_comments[1:5])
+
+```
+
+`r knitr::knit(text = mapply(fpr::fpr_table_cv_detailed_print,  tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url))`
+
+`r if(gitbook_on){knitr::asis_output("")} else knitr::asis_output("\\pagebreak")`

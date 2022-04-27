@@ -180,7 +180,9 @@ Field assessments were conducted between `r format(min(pscis_phase1$date), forma
 "Barrier" and "Potential Barrier" rankings used in this project followed @fish_passage_assessments and reflect an assessment of passability for juvenile salmon or small resident rainbow trout at any flows potentially present throughout the year [@clarkinNationalInventoryAssessment2005 ;@bellFisheriesHandbookEngineering1991; @thompsonAssessingFishPassage2013].  As noted in @bourne_etal2011Barriersfish, with a detailed review of different criteria in @kemp_ohanley2010Proceduresevaluating, passability of barriers can be quantified in many different ways. Fish physiology (i.e. species, length, swim speeds) can make defining passability complex but with important implications for evaluating connectivity and prioritizing remediation candidates [@bourne_etal2011Barriersfish; @shaw_etal2016Importancepartial; @mahlum_etal2014EvaluatingBarrier; @kemp_ohanley2010Proceduresevaluating].  @washingtondepartmentoffishwildlife2009FishPassage present criteria for assigning passability scores to culverts that have already been assessed as barriers in coarser level assessments.  These passability scores provide additional information to feed into decision making processes related to the prioritization of remediation site candidates and have potential for application in British Columbia.  
 
 
-`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("<br><br><br><br>")`
+`r if(gitbook_on){knitr::asis_output("")} else knitr::asis_output("<br><br><br><br>")`
+
+<br>
 
 
 ```{r cost-est-phase-1}
@@ -265,7 +267,9 @@ During 2021 field assessments, habitat confirmation assessments were conducted a
 
 As collaborative decision making was ongoing at the time of reporting, site prioritization can be considered preliminary.  In total, `r hab_site_priorities %>% filter(priority %ilike% 'high') %>% nrow() %>% english::as.english() %>% str_to_title()` crossings were rated as high priorities for proceeding to design for replacement, `r hab_site_priorities %>% filter(priority %ilike% 'Moderate') %>% nrow() %>% english::as.english()` crossings were rated as moderate priorities, and `r hab_site_priorities %>% filter(priority %ilike% 'Low') %>% nrow() %>% english::as.english()` crossings were rated as low priorities. Results are summarized in `r if(gitbook_on){knitr::asis_output("Figure \\@ref(fig:map-interactive) and ")}`Tables \@ref(tab:tab-overview) - \@ref(fig:plot-fish-all) with raw habitat and fish sampling data included in digital format as [Attachment 3](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/data/habitat_confirmations.xls).  A summary of preliminary modelling results illustrating the quantity of chinook, coho and steelhead spawning and rearing habitat potentially available upstream of each crossing as estimated by measured/modelled channel width and upstream accessible stream length are presented in Figure \@ref(fig:plot-model-all). Detailed information for each site assessed with Phase 2 assessments (including maps) are presented within site specific appendices to this document.
 
-`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+`r if(gitbook_on){knitr::asis_output("")} else knitr::asis_output("<br><br><br><br>")`
+
+<br>
 
 
 ```{r tab-overview, eval = T}
@@ -373,7 +377,7 @@ bcfishpass_phase2_plot_prep <- bcfishpass %>%
 
 ### Fish Sampling
 
-Fish sampling was conducted at `tab_fish_sites %>% n_distinct()` sites with a total of `r hab_fish_indiv %>% filter(species_code != 'NFC') %>% nrow()` fish captured.  Of these, `r hab_fish_indiv %>% filter(species_code == 'RB') %>% nrow()` were rainbow trout,  `r hab_fish_indiv %>% filter(species_code == 'CO') %>% nrow()` coho, `r hab_fish_indiv %>% filter(species_code == 'DV') %>% nrow()` were dolly varden and `r hab_fish_indiv %>% filter(species_code == 'L') %>% nrow()` were lamprey.  A summary of sites assessed are included in Figure \@ref(fig:tab-fish-site-sumary).  Fork length data was used to delineate salmonids based on life stages: fry (0 to 65mm), parr (>65 to 110mm), juvenile (>110mm to 140mm) and adult (>140mm) by visually assessing the histograms presented in Figure \@ref(fig:fish-histogram).  Raw data is provided in [Attachment 3](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/data/habitat_confirmations.xls) and a summary of density results for all life stages combined of select species is also presented in Figure \@ref(fig:plot-fish-all). Additionally, results are presented in greater detail within individual habitat confirmation site appendices.
+Fish sampling was conducted at `r tab_fish_sites_sum %>% n_distinct()` sites with a total of `r hab_fish_indiv %>% filter(species_code != 'NFC') %>% nrow()` fish captured.  Of these, `r hab_fish_indiv %>% filter(species_code == 'RB') %>% nrow()` were rainbow trout,  `r hab_fish_indiv %>% filter(species_code == 'CO') %>% nrow()` coho, `r hab_fish_indiv %>% filter(species_code == 'DV') %>% nrow()` were dolly varden and `r hab_fish_indiv %>% filter(species_code == 'L') %>% nrow()` were lamprey.  Fork length data was used to delineate salmonids based on life stages: fry (0 to 65mm), parr (>65 to 110mm), juvenile (>110mm to 140mm) and adult (>140mm) by visually assessing the histograms presented in Figure \@ref(fig:fish-histogram).  A summary of sites assessed are included in Table \@ref(tab:tab-fish-site-summary) and raw data is provided in [Attachment 3](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/data/habitat_confirmations.xls). A summary of density results for all life stages combined of select species is also presented in Figure \@ref(fig:plot-fish-all). Results are presented in greater detail within individual habitat confirmation site appendices.
 
 <br>
 
@@ -383,9 +387,11 @@ knitr::include_graphics("fig/fish_histogram.png")
 ```
 
 
+`r if(gitbook_on){knitr::asis_output("")} else knitr::asis_output("<br><br><br><br>")`
+
 <br>
 
-```{r tab-fish-site-sumary}
+```{r tab-fish-site-summary}
 tab_fish_sites_sum %>% 
   fpr::fpr_kable(caption_text = 'Summary of electrofishing sites.')
 ```

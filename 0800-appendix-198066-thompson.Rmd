@@ -69,9 +69,8 @@ PSCIS stream crossing `r as.character(my_site2)` was ranked as a high priority f
 
 
 ```{r tab-culvert-bcfp-198066, eval = T}
-fpr::fpr_table_bcfp() %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '. Note that modelling data is imprecise as mapped location of Thompson Creek mainstem differs from location in the field.'),
-                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+fpr::fpr_table_bcfp(scroll = gitbook_on) 
+
 ```
 
 <br>

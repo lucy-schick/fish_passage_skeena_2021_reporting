@@ -65,9 +65,7 @@ PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority fo
 
 
 ```{r tab-culvert-bcfp-123770, eval = T}
-fpr::fpr_table_bcfp() %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
-                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+fpr::fpr_table_bcfp(scroll = gitbook_on) 
 ```
 
 
@@ -132,7 +130,7 @@ Should restoration/maintenance activities proceed, replacement of PSCIS crossing
 
 ## Conclusion {-}
 
-There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. John Brown Creek is a large system with habitat suitable for numerous species includeing coho, steelhead and chinook salmon. Development of a plan to replace the crossing with a bridge may be considered as a prudent step to eliminating an outlet drop, reducing flow velocities at the highway crossing and mitigating risks of a blow out to the baffle induced partial embedding currently in place in the south pipe of the crossing.  
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` with areas surveyed rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. John Brown Creek is a large system with habitat suitable for numerous species includeing coho, steelhead and chinook salmon. Development of a plan to replace the crossing with a bridge may be considered as a prudent step to eliminating an outlet drop, reducing flow velocities at the highway crossing and mitigating risks of a blow out to the baffle induced partial embedding currently in place in the south pipe of the crossing.  
 
 
 

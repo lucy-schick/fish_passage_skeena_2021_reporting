@@ -66,9 +66,7 @@ PSCIS stream crossing `r as.character(my_site)` was ranked as a priority for fol
 
 
 ```{r tab-culvert-bcfp-198048, eval = T}
-fpr::fpr_table_bcfp() %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
-                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+fpr::fpr_table_bcfp(scroll = gitbook_on) 
 ```
 
 <br>

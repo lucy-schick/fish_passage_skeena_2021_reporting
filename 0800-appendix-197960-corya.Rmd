@@ -39,6 +39,8 @@ At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr:
 
 In spring of 2017 a flood event caused by beaver dam failure forced the evacuation of homes in the Two Mile subdivision of Moricetown [@smithersinteriornews2017Moricetownsubdivision]. Since this time beaver control activities have taken place in both the Corya and Witset watersheds to reduce the risk of flooding (pers comm. Dallas Nikal, Nico Ridge Consulting).
 
+`r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
+
 <br>
 
 ```{r tab-wshd-197960, eval = T}
@@ -53,7 +55,7 @@ fpr::fpr_table_wshd_sum() %>%
 
 <br>
 
-Corya Creek was ranked as a high priority for follow up by @irvine2018AnalysisPriorityCanadian and @mazany-wright_etal2021BulkleyRiver because of significant amounts of habitat modelled as upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-197960). In the field, PSCIS stream crossing `r as.character(my_site2)` was also assessed as Witset Lake is located upstream.  A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+Corya Creek was ranked as a high priority for follow up by @irvine2018AnalysisPriority and @mazany-wright_etal2021BulkleyRiver because of significant amounts of habitat modelled as upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-197960). In the field, PSCIS stream crossing `r as.character(my_site2)` was also assessed as Witset Lake is located upstream.  A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
 
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
@@ -62,9 +64,7 @@ Corya Creek was ranked as a high priority for follow up by @irvine2018AnalysisPr
 
 
 ```{r tab-culvert-bcfp-197960, eval = T}
-fpr::fpr_table_bcfp() %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
-                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+fpr::fpr_table_bcfp(scroll = gitbook_on) 
 ```
 
 <br>
@@ -78,6 +78,8 @@ At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embed
 <br>
 
 At the time of the survey, PSCIS crossing `r as.character(my_site2)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(site = my_site2, col_pull = barrier_result)` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-123775)). 
+
+`r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
 
 <br>
 

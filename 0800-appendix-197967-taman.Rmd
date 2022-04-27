@@ -71,9 +71,7 @@ PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority fo
 
 
 ```{r tab-culvert-bcfp-197967, eval = T}
-fpr::fpr_table_bcfp() %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
-                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+fpr::fpr_table_bcfp(scroll = gitbook_on) 
 ```
 
 
@@ -84,6 +82,7 @@ fpr::fpr_table_bcfp() %>%
 
 At the time of the survey, PSCIS crossing `r as.character(my_site)` was non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result)` to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-197967)).  Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. A beaver dam was noted just upstream of the culvert inlet (~1.5m high).
 
+`r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
 
 <br>
 
@@ -153,7 +152,7 @@ There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km 
 
 
 
-`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+`r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
 
 <br>
 

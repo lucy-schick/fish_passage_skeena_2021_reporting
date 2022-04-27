@@ -70,18 +70,15 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 
 ```{r tab-culvert-bcfp-197976, eval = T}
-fpr::fpr_table_bcfp() %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
-                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+fpr::fpr_table_bcfp(scroll = gitbook_on) 
+
 ```
 
 <br>
 
 
 ```{r tab-culvert-bcfp-197975, eval = T}
-fpr::fpr_table_bcfp(site = my_site2) %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site2, '.'),
-                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+fpr::fpr_table_bcfp(site = my_site2, scroll = gitbook_on) 
 ```
 
 
