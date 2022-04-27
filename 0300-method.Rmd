@@ -104,7 +104,8 @@ xref_bcfishpass_names %>%
   arrange(id_join) %>%  
   select(Attribute = report, Definition = column_comment) %>% 
   fpr::fpr_kable(caption_text = 'bcfishpass outputs and associated definitions',
-                 footnote_text = 'Steelhead model uses a gradient threshold of maximum 20% to determine if access if likely possible')
+                 footnote_text = 'Steelhead model uses a gradient threshold of maximum 20% to determine if access if likely possible',
+                 scroll = gitbook_on)
 
 ```
 
