@@ -1,5 +1,6 @@
 # fish_passage_skeena_2021_reporting 0.0.8 
 * 20220427
+* `fpr` tag v.20220427 and v.0.1.0.9002
 * add Thompson
 * add Maxan trib
 * reduce pdfs with ghostscript in `scripts/run.R`.  Requires GS install and point to `exe` file. 
