@@ -120,12 +120,6 @@ Should restoration/maintenance activities proceed at the site, replacement of PS
 <br>
 
 
-```{r fig-channel-197909, eval = T}
-knitr::include_graphics("fig/robert_hatch_plan_20211023_k_.JPG")
-```
-
-<br>
-
 
 ## Conclusion {-}
 
