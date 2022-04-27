@@ -364,7 +364,9 @@ pscis_all <- fpr_import_pscis_all() %>%
   bind_rows
 
 
-# here is a little tute on how to see the folder that need all photos to be renamed
+# here is a little test on how to see the folder that need all photos to be renamed
+# if you have a folder that is not in your pscis sheets it will break things.  watch out.
+# consider using list of folders in the file
 test <- fpr::fpr_photo_qa() %>%
   data.table::rbindlist(fill = T)
 
@@ -379,7 +381,7 @@ do_these_bud <- fpr::fpr_photo_qa()[
 
 # here is the test for missing individual photos
 test <- fpr::fpr_photo_qa() %>%
-  bind_rows() %>%
+  bind_rows()
   dplyr::filter(if_any(everything(), is.na))
 
 
@@ -471,4 +473,6 @@ copy_over_photos <- function(filescopy, filespaste){
 
 mapply(copy_over_photos, filescopy =  filestocopy_list,
        filespaste = filestopaste_list)
+
+
 

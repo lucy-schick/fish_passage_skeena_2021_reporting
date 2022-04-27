@@ -8,6 +8,7 @@
 * add placeholders for 197909 - Trib to Maxan
 * add placeholder for 
 * move Mcbride and Owen to the git ignored hold folder to clean up reporting review for CWF
+* stopped tracking the pscis submission templates in repo unless changes actually happen. Used `git update-index --assume-unchanged data/pscis_*` (#7) .  When changes actually occur we use `git update-index --no-assume-unchanged data/pscis_*.xlsm` to log a commit
 
 
 # fish_passage_skeena_2021_reporting 0.0.7
