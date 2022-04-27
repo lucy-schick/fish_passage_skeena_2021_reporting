@@ -17,6 +17,7 @@ scripts/pers_*
 #data/raw_input
 #docs/Elk.tex
 docs/Skeena2021.html
+Skeena2021.html
 *~$*
 *.sqlite
 hold
@@ -24,7 +25,5 @@ hold
 *.kml
 maps/*
 data/photos/**/*.pdf
-docs/Skeena2021.pdf
-fig/cesford.png
 
 
