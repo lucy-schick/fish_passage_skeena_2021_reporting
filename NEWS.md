@@ -1,3 +1,15 @@
+# fish_passage_skeena_2021_reporting 0.0.8 
+* 20220427
+* add Thompson
+* add Maxan trib
+* reduce pdfs with ghostscript in `scripts/run.R`.  Requires GS install and point to `exe` file. 
+* add Attachments to TOC
+* add placeholders for multiple crossings upstream on Station Creek
+* add placeholders for 197909 - Trib to Maxan
+* add placeholder for 
+* move Mcbride and Owen to the git ignored hold folder to clean up reporting review for CWF
+
+
 # fish_passage_skeena_2021_reporting 0.0.7
 
 * add fish sampling summary data
