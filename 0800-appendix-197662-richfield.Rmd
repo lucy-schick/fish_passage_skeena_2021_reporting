@@ -26,12 +26,12 @@ my_site2 <- 198043
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` approximately 30km east of Houston, BC with the highway located approximately `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream upstream from the confluence with the Bulkley River. `r fpr::fpr_my_pscis_info(col_pull = road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.  Habitat modelling outputs are presented in Table \@ref(tab:tab-culvert-bcfp-197662). A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` approximately 30km east of Houston, BC with the highway located approximately `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream upstream from the confluence with the Bulkley River. `r fpr::fpr_my_pscis_info(col_pull = road_name)` is the responsibility of the Ministry of Transportation and Infrastructure.   
 
 
 ## Background {-}
 
-At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-197662)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded upstream [@moe2020KnownBC; @norris2020bcfishobs]. 
+At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-197662)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded upstream [@moe2020KnownBC; @norris2020bcfishobs]. Habitat modelling outputs are presented in Table \@ref(tab:tab-culvert-bcfp-197662). A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`). 
 
 <br>
 
@@ -49,11 +49,14 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 A habitat confirmation assessment was conducted by @irvine2021BulkleyRiver in 2020 and the reader is directed there for detailed background, habitat assessment and fish sampling information from 2020 surveys. Acquisition of high resolution aerial imagery and fish sampling was conducted at the site in 2021 to provide context for crossing prioritization.  Additionally, Society for Ecosystem Restoration BC, Fisheries and Oceans Canada and the Morice Watershed Monitoring Trust were able to collaborate in 2021 to provide funding for the installation of barbed wire fenceing adjacent to  a buffer on the west bank of Richfield Creek below the highway as a restorative action to exclude cattle from the riparian area. Details of these three activities are provided below.
 
+`r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
+
+<br>
+
 
 ```{r tab-culvert-bcfp-197662, eval = T}
-fpr::fpr_table_bcfp() %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of fish habitat modelling for PSCIS crossing ', my_site, '.'),
-                 footnote_text = 'Model data is preliminary and subject to adjustments.')
+fpr::fpr_table_bcfp(scroll = gitbook_on) 
+
 ```
 
 
@@ -227,3 +230,9 @@ knitr::include_graphics(my_photo2)
 
 ## Riparian Fenceing
 Approximately 1100 m of new four strand barbed wire fencing was installed to the west of Richfield Creek between November 26 and December 14, 2021.  Fencing of the area complemented significant restoration work completed in by the Morice Watershed Monitoring Trust project which included bank stabilization, installation of vertical posts for bank stability, live stakeing of willow/cottonwood and planting of rooted willow plugs.  Details of the work conducted is documented in @wrench2022RichfieldCreek and included as [Attachment 4](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/raw/master/docs/Attachment_4.pdf).
+
+<br>
+
+## Conclusion {-}
+
+There was `r as.character(my_site)` is `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of the crossing with areas surveyed in 2020 rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning [@irvine2021BulkleyRiver].  There is extensive background information on this system summarized in @irvine2021BulkleyRiver and in development at the time of reporting.  Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement.  As Richfield Creek is a high value fish stream with cold water inputs and significant historic and ongoing impacts due to adjacent land use (linear development, residential development, cattle trampled banks and grazed/removed riparian vegetation) it is recommended that individuals, organizations and regulators continue to work with adjacent landowners and tenure holders to implement stream restoration actions, exclude cattle from the riparian area, and explore possibilities related to progressive beaver management in the watershed.
