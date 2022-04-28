@@ -463,7 +463,8 @@ test <- hab_fish_collect_prep %>%
 
 ##join the tables together
 hab_fish_collect_prep2 <- left_join(
-  select(hab_loc2, reference_number, site_id, utm_zone:utm_northing),
+  # distinct to get rid of lots of sites
+  select(hab_loc2, reference_number, site_id, utm_zone:utm_northing) %>% distinct(site_id, .keep_all = T),
   select(hab_fish_collect_prep %>% distinct(site_id, species, .keep_all = T), site_id, species),
   by = 'site_id'
 )
