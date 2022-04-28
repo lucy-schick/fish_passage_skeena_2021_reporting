@@ -1065,3 +1065,77 @@ rm(hab_site_prep,
 
 
 
+# gps get coordinates -----------------------------------------------------
+
+gpx <- 'C:/Users/allan/OneDrive/New_Graph/Current/2021-034-hctf-bulkley-fish-passage/data/GPS/kylegps_sept22backup_bulkley2021.GPX'
+
+
+wp_kyle <- sf::st_read(gpx,
+                       layer = 'waypoints',
+  quiet = T) %>%
+  janitor::clean_names() %>%
+  # this is a work around so that we get the original name of the renamed wp if there were duplicate names in basecamp
+  mutate(name = as.numeric(name),
+         name = case_when(name > 1000 ~ round(name/10, 0),
+                          T ~ name)) %>%
+  dplyr::select(name_old = name, everything())  %>%
+  mutate(source = 'KP',
+         name = paste0(name_old, '_', source, '_', lubridate::year(time))) %>%
+  sf::st_transform(crs = 26909) %>%
+  poisspatial::ps_sfc_to_coords(X = 'easting', Y = 'northing') %>%
+  select(name, name_old, source, ele, time, easting, northing)
+
+gpx <- "C:/Users/allan/OneDrive/New_Graph/Current/2021-034-hctf-bulkley-fish-passage/data/GPS/bulkley_2021_field_al.gpx"
+
+wp_al <- sf::st_read(gpx,
+                     layer = 'waypoints',
+                     quiet = T) %>%
+  janitor::clean_names() %>%
+  # this is a work around so that we get the original name of the renamed wp if there were duplicate names in basecamp
+  mutate(name = as.numeric(name),
+         name = case_when(name > 1000 ~ round(name/10, 0),
+                          T ~ name)) %>%
+  dplyr::select(name_old = name, everything())  %>%
+  mutate(source = 'AI',
+         name = paste0(name_old, '_', source, '_', lubridate::year(time))) %>%
+  sf::st_transform(crs = 26909) %>%
+  poisspatial::ps_sfc_to_coords(X = 'easting', Y = 'northing') %>%
+  select(name, name_old, source, ele, time, easting, northing)
+
+wp <- bind_rows(
+  wp_kyle,
+  wp_al
+)
+
+rm(wp_kyle, wp_al)
+
+# join with the priorities spreadsheet to get those coords
+hab_con <- readr::read_csv(file = "./data/habitat_confirmations_priorities.csv")
+
+
+wp_joined <- left_join(
+  hab_con %>% separate(crew_members, into = c('source', 'others')),
+  wp %>% select(name_old, source, easting, northing),
+  by = c('waypoint' = 'name_old', 'source')
+)
+
+# bring in the locations and insert utms where we don't have them already
+hab_loc_utm <- left_join(
+  fpr_import_hab_con(backup = F, col_filter_na = T) %>%
+  purrr::pluck("step_1_ref_and_loc_info"),
+
+  wp_joined %>% select(alias_local_name, easting, northing),
+
+  by = 'alias_local_name'
+) %>%
+  mutate(
+    utm_easting = case_when(
+    is.na(utm_easting) ~ easting,
+    T ~ utm_easting),
+    utm_northing = case_when(
+      is.na(utm_northing) ~ northing,
+      T ~ utm_northing
+      )
+    )
+
+
