@@ -14,14 +14,27 @@ make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
     sf::st_write(paste0("./data/fishpass_mapping/", gpkg_name, ".gpkg"), nm, delete_layer = TRUE)
 }
 
+# we need a single table of all sites assessed that has a column for phase
+
+priorities <- bind_rows(
+  hab_site_priorities %>%
+    mutate(source = 'pscis_phase2.xlsm') %>%
+    rename(pscis_crossing_id = site),
+  phase1_priorities %>%
+    rename(priority = priority_phase1)
+)
+
+
+
+
 dir.create('data/fishpass_mapping')
 
-# make_geopackage(dat = hab_fish_collect)
-make_geopackage(dat = hab_features)
-make_geopackage(dat = hab_site_priorities)
-make_geopackage(dat = phase1_priorities)
+fpr::fpr_make_geopackage(dat = hab_fish_collect)
+fpr::fpr_make_geopackage(dat = hab_features)
+fpr::fpr_make_geopackage(dat = hab_site_priorities)
+fpr::fpr_make_geopackage(dat = phase1_priorities)
+fpr::fpr_make_geopackage(dat = priorities)
 # make_geopackage(dat = tab_dams_raw)
-
 
 ##we do this manually
 #   st_transform(crs = 3005) %>%

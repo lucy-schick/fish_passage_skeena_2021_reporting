@@ -319,10 +319,10 @@ xref_obstacle_names <- tibble::tribble(
                          )
 
 
-####------------make a table to summarize priorization of phase 1 sites
+# priorities phase 1 ------------------------------------------------------
 ##uses habitat value to initially screen but then refines based on what are likely not barriers to most most the time
 phase1_priorities <- pscis_all %>%
-  filter(!source %ilike% 'phase2') %>% ##we don't want the phase 1 action
+  filter(!source %ilike% 'phase2') %>%
   select(aggregated_crossings_id, pscis_crossing_id, my_crossing_reference, utm_zone:northing, habitat_value, barrier_result, source) %>%
   mutate(priority_phase1 = case_when(habitat_value == 'High' & barrier_result != 'Passable' ~ 'high',
                                      habitat_value == 'Medium' & barrier_result != 'Passable' ~ 'mod',
@@ -454,6 +454,13 @@ hab_loc2 <- hab_loc %>%
   mutate(site_id = paste0(site, location)) %>%
   filter(alias_local_name %like% 'ef') ##changed this from ef1
 
+
+# test to see what we get at each site
+test <- hab_fish_collect_prep %>%
+  distinct(local_name, species)
+
+
+
 ##join the tables together
 hab_fish_collect_prep2 <- left_join(
   select(hab_loc2, reference_number, site_id, utm_zone:utm_northing),
@@ -468,13 +475,20 @@ hab_fish_codes <- habitat_confirmations %>%
   select(-step)
 
 # this is the table to burn to geojson for mapping
+# we are just going to keep 1 site for upstream and downstream because more detail won't show well on the map anyway
+# purpose is to show which fish are there vs. show all the sites and what was caught at each. TMI
+
 hab_fish_collect <- left_join(
   hab_fish_collect_prep2 %>%
     mutate(species = as.factor(species)),  ##just needed to do this b/c there actually are no fish.
 
   select(hab_fish_codes, common_name, species_code),
   by = c('species' = 'common_name')
-)
+) %>%
+  # this time we ditch the nfc because we don't want it to look like sites are non-fish bearing.  Its a multipass thing
+  # WATCH THIS IN THE FUTURE
+  filter(species_code != 'NFC')
+
 
 
 hab_fish_collect_prep1 <- habitat_confirmations %>%
@@ -757,7 +771,7 @@ rm(
 #                               T ~ 'Downstream'),
 #          life_stage = factor(life_stage, levels = c('fry', 'parr', 'juvenile', 'adult')))
 
-# priorities --------------------------------------------------------------
+# priorities phase 2--------------------------------------------------------------
 #load priorities
 habitat_confirmations_priorities <- readr::read_csv(
   file = "./data/habitat_confirmations_priorities.csv",
@@ -784,6 +798,11 @@ hab_site_priorities <- left_join(
 # filter(!is.na(priority))  ##this is how we did it before.  changed it to get a start on it
 
 
+
+
+# bcfishpass modelling table setup for reporting --------------------------
+
+
 # When we need to update our column names according to the new output from bcfishpass.crossings...
 bcfishpass_names_updated_prep <- names(bcfishpass) %>%
   tibble::as_tibble() %>%
@@ -796,7 +815,8 @@ bcfishpass_names_updated <- left_join(
   by = c('bcfishpass' = 'column_name')
 )
 
-# -----------bcfishpass modelling table setup for reporting
+
+
 #this is how we line up our new column names and put things in order for reporting on the fish habitat modeling
 # we need to update this sometimes.  When we do we update 02_prep_reporting/0160-load-bcfishpass-data.R,
 # get the data from  rename the xref_bcfishpass_names tribble to xref_bcfishpass_names_old  and go through the following procedure
