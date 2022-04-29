@@ -3,19 +3,7 @@ source('scripts/packages.R')
 source('scripts/private_info.R')
 source('scripts/tables.R')
 
-
-
-##make your geopackage for mapping
-make_geopackage <- function(dat, gpkg_name = 'fishpass_mapping', utm_zone = 9){
-  nm <-deparse(substitute(dat))
-  dat %>%
-    sf::st_as_sf(coords = c("utm_easting", "utm_northing"), crs = 26900 + utm_zone, remove = F) %>%
-    st_transform(crs = 4326) %>%
-    sf::st_write(paste0("./data/fishpass_mapping/", gpkg_name, ".gpkg"), nm, delete_layer = TRUE)
-}
-
 # we need a single table of all sites assessed that has a column for phase
-
 priorities <- bind_rows(
   hab_site_priorities %>%
     mutate(source = 'pscis_phase2.xlsm') %>%
