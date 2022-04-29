@@ -1,4 +1,13 @@
+# fish_passage_skeena_2021_reporting 0.0.9 
+
+* add reference to Thompson for historic restoration recommendations
+* update Station Creek with upstream culverts
+* change name of Mission Creek to Station Creek for consistency with FWA
+
+
+
 # fish_passage_skeena_2021_reporting 0.0.8 
+
 * 20220427
 * `fpr` tag v.20220427 and v.0.1.0.9002
 * add Thompson

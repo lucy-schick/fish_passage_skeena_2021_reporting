@@ -219,7 +219,7 @@ div.csl-indent {
 <li><a href="toboggan-creek---57944---appendix.html#toboggan-creek---57944---appendix">Toboggan Creek - 57944 - Appendix<span></span></a></li>
 <li><a href="mcdowell-creek---123544-58151---appendix.html#mcdowell-creek---123544-58151---appendix">McDowell Creek - 123544 &amp; 58151 - Appendix<span></span></a></li>
 <li><a href="john-brown---123770---appendix.html#john-brown---123770---appendix">John Brown - 123770 - Appendix<span></span></a></li>
-<li><a href="mission-creek---124420---appendix.html#mission-creek---124420---appendix">Mission Creek - 124420 - Appendix<span></span></a></li>
+<li><a href="station-creek---124420-124421-124422---appendix.html#station-creek---124420-124421-124422---appendix">Station Creek - 124420 &amp; 124421 &amp; 124422 - Appendix<span></span></a></li>
 <li><a href="richfield-creek---197662---appendix.html#richfield-creek---197662---appendix">Richfield Creek - 197662 - Appendix<span></span></a></li>
 <li><a href="tributary-to-maxan-creek---197909---appendix.html#tributary-to-maxan-creek---197909---appendix">Tributary to Maxan Creek - 197909 - Appendix<span></span></a></li>
 <li><a href="robert-hatch-creek---197912---appendix.html#robert-hatch-creek---197912---appendix">Robert Hatch Creek - 197912 - Appendix<span></span></a></li>
@@ -263,10 +263,10 @@ div.csl-indent {
 <p><br></p>
 <p>Landowners adjacent to the stream at both crossings as well as regional DFO staff report that Thompson Creek was historically redirected from its original channel on the height of land near the Bulkley River in the 1960s. The historic channel is visible in aerial imagery and would have directed flows in a north-eastern direction from where the agricultural fields meet the Thompson creek valley. The redirection diverts the channel into two seperate channels that flow south-east. The main flow of the channel was flowing in an excavated trench through the hay field at the time of the survey. The distance from the current confluence with the Bulkley River side channel to the historic valley is approximately 370m. The distance the stream would have traveled historically in a north-eastern direction is estimated at 1300m. The landowner reported that conceptually they would like to see the stream redirected to its historic channel. They noted that stranding has been observed within the excavated channel and a realignment would help prevent the loss of hay production caused by the high water table adjacent to the excavated channel. A map of the current man made channels and the historic channel is provided in Figure <a href="#fig:fig-channel-198066"><strong>??</strong></a>. Adjacent landowners also report that the crossing at Walcott Road had nearly washed out at the road due to high flows related to beaver dam failures. Crossing 123378 is a bridge on Thompson Creek on the BC Hydro powerline between 198066 and 123377. Landowners report this bridge washed out at the time of the beaver dam failure and was replaced in 2020.</p>
 <p><br></p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="thompson-creek---198066-123377---appendix.html#cb308-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb308-2"><a href="thompson-creek---198066-123377---appendix.html#cb308-2" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb308-3"><a href="thompson-creek---198066-123377---appendix.html#cb308-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb308-4"><a href="thompson-creek---198066-123377---appendix.html#cb308-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="thompson-creek---198066-123377---appendix.html#cb323-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb323-2"><a href="thompson-creek---198066-123377---appendix.html#cb323-2" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb323-3"><a href="thompson-creek---198066-123377---appendix.html#cb323-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb323-4"><a href="thompson-creek---198066-123377---appendix.html#cb323-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-198066">Table 5.64: </span>Summary of derived upstream watershed statistics for PSCIS crossing 198066.
@@ -336,12 +336,14 @@ WSW
 </tfoot>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="thompson-creek---198066-123377---appendix.html#cb309-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/thompson.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="thompson-creek---198066-123377---appendix.html#cb324-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/thompson.png&quot;</span>)</span></code></pre></div>
 <p><img src="fig/thompson.png" width="100%" /></p>
+<p><br></p>
+<p><span class="citation">G. Tamblyn and Jessop (2000)</span> have documented detailed fish habitat, riparian and channel assessment data for Reach 1 and 2 of the stream surveying 12.6km along with an impact synopsis and restoration suggestions.</p>
 <p><br></p>
 <p>PSCIS stream crossing 123377 was ranked as a high priority for follow up by <span class="citation">Irvine (2018)</span> and <span class="citation">Smith (2018)</span> because of the relatively large size of the stream and habitat rated as high value in PSCIS (Table <a href="thompson-creek---198066-123377---appendix.html#tab:tab-culvert-bcfp-198066">5.65</a>. A map of the watershed is provided in map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/FishPassage_093L.113.pdf">093L.113</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="thompson-creek---198066-123377---appendix.html#cb310-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="thompson-creek---198066-123377---appendix.html#cb325-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -656,11 +658,11 @@ All Spawning Rearing (km)
 </div>
 <p><br></p>
 </div>
-<div id="stream-characteristics-at-crossing-11" class="section level2 unnumbered hasAnchor">
-<h2>Stream Characteristics at Crossing<a href="thompson-creek---198066-123377---appendix.html#stream-characteristics-at-crossing-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stream-characteristics-at-crossing-10" class="section level2 unnumbered hasAnchor">
+<h2>Stream Characteristics at Crossing<a href="thompson-creek---198066-123377---appendix.html#stream-characteristics-at-crossing-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the time of the survey, PSCIS crossing 198066 was un-embedded, non-backwatered and ranked as a potential barrier to upstream fish passage according to the provincial protocol <span class="citation">(MoE 2011b)</span>. There was rip rap placed around the culvert inlets and outlets (Table <a href="thompson-creek---198066-123377---appendix.html#tab:tab-culvert-198066">5.66</a>). Water temperature was NA<span class="math inline">\(^\circ\)</span>C, pH was NA and conductivity was NAuS/cm.</p>
 <p><br></p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="thompson-creek---198066-123377---appendix.html#cb311-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="thompson-creek---198066-123377---appendix.html#cb326-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-198066">Table 5.66: </span>Summary of fish passage assessment for PSCIS crossing 198066.
@@ -914,10 +916,17 @@ Fix Span / Diameter
 </td>
 </tr>
 </tfoot>
+<tfoot>
+<tr>
+<td style="padding: 0; border:0;" colspan="100%">
+<sup></sup> Comments: Udder View Farm. Curently appears passable for all life stages and species but may present slight barrier at time of year when flow are high. Large outlet pool indicates that culvert is undersized. Landowners adjacent to the stream report that the channel was historically relocated through the fields near the river and they would like to work together to relocate. 16:48
+</td>
+</tr>
+</tfoot>
 </table></li>
 </ul>
 <p><br></p>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="thompson-creek---198066-123377---appendix.html#cb312-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>(<span class="at">site =</span> my_site2, <span class="at">site_photo_id =</span> my_site2)</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="thompson-creek---198066-123377---appendix.html#cb327-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>(<span class="at">site =</span> my_site2, <span class="at">site_photo_id =</span> my_site2)</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-198066-site2">Table 5.67: </span>Summary of fish passage assessment for PSCIS crossing 123377.
@@ -1171,38 +1180,49 @@ Fix Span / Diameter
 </td>
 </tr>
 </tfoot>
+<tfoot>
+<tr>
+<td style="padding: 0; border:0;" colspan="100%">
+<sup></sup> Comments: Debris is partially blocking one of the two pipes. Historic washouts on road at this site. Landowner reports stream diverted downstream &gt;50 years ago and crosses farmers field in ditched channel. 15:12
+</td>
+</tr>
+</tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="thompson-creek---198066-123377---appendix.html#cb313-1" aria-hidden="true" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb313-2"><a href="thompson-creek---198066-123377---appendix.html#cb313-2" aria-hidden="true" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb313-3"><a href="thompson-creek---198066-123377---appendix.html#cb313-3" aria-hidden="true" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="thompson-creek---198066-123377---appendix.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb328-2"><a href="thompson-creek---198066-123377---appendix.html#cb328-2" aria-hidden="true" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb328-3"><a href="thompson-creek---198066-123377---appendix.html#cb328-3" aria-hidden="true" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-6" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream<a href="thompson-creek---198066-123377---appendix.html#stream-characteristics-downstream-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The stream was surveyed downstream from the culvert for 100m (Figures <a href="thompson-creek---198066-123377---appendix.html#fig:photo-198066-01">5.69</a> - <a href="thompson-creek---198066-123377---appendix.html#fig:photo-198066-02">5.70</a>). Total cover amount was rated as with overhanging vegetation dominant. Cover was also present as (Table <a href="thompson-creek---198066-123377---appendix.html#tab:tab-habitat-summary-198066">5.68</a>). The average channel width was 3.3m, the average wetted width was 2.5m and the average gradient was 1.8%. The dominant substrate was gravels with fines subdominant. The habitat was rated as medium value for salmonid rearing and spawning.</p>
+<p>The stream was surveyed downstream from the culvert for 100m (Figures <a href="thompson-creek---198066-123377---appendix.html#fig:photo-198066-01">5.75</a> - <a href="thompson-creek---198066-123377---appendix.html#fig:photo-198066-02">5.76</a>). Total cover amount was rated as with overhanging vegetation dominant. Cover was also present as (Table <a href="thompson-creek---198066-123377---appendix.html#tab:tab-habitat-summary-198066">5.68</a>). The average channel width was 3.3m, the average wetted width was 2.5m and the average gradient was 1.8%. The dominant substrate was gravels with fines subdominant. The habitat was rated as medium value for salmonid rearing and spawning.</p>
 <p><br></p>
 </div>
 <div id="stream-characteristics-upstream-of-198066-and-downstream-of-123377" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Upstream of 198066 and downstream of 123377<a href="thompson-creek---198066-123377---appendix.html#stream-characteristics-upstream-of-198066-and-downstream-of-123377" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The stream was surveyed immediately upstream from 198066 for approximately 350m (Figures <a href="thompson-creek---198066-123377---appendix.html#fig:photo-198066-03">5.71</a> - <a href="thompson-creek---198066-123377---appendix.html#fig:photo-198066-04">5.72</a>). Within the area surveyed, total cover amount was rated as with undercut banks dominant. Cover was also present as deep pools and overhanging vegetation (Table <a href="thompson-creek---198066-123377---appendix.html#tab:tab-habitat-summary-198066">5.68</a>). The average channel width was 2.8m, the average wetted width was 2.1m and the average gradient was 0.5%. The dominant substrate was NA with NA subdominant. Habitat value was rated as medium value for resident salmonid rearing and spawning.</p>
+<p>The stream was surveyed immediately upstream from 198066 for approximately 350m (Figures <a href="thompson-creek---198066-123377---appendix.html#fig:photo-198066-03">5.77</a> - <a href="thompson-creek---198066-123377---appendix.html#fig:photo-198066-04">5.78</a>). Within the area surveyed, total cover amount was rated as with undercut banks dominant. Cover was also present as deep pools and overhanging vegetation (Table <a href="thompson-creek---198066-123377---appendix.html#tab:tab-habitat-summary-198066">5.68</a>). The average channel width was 2.8m, the average wetted width was 2.1m and the average gradient was 0.5%. The dominant substrate was NA with NA subdominant. Habitat value was rated as medium value for resident salmonid rearing and spawning.</p>
 </div>
 <div id="structure-remediation-and-cost-estimate-10" class="section level2 unnumbered hasAnchor">
 <h2>Structure Remediation and Cost Estimate<a href="thompson-creek---198066-123377---appendix.html#structure-remediation-and-cost-estimate-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Should restoration/maintenance activities proceed at the site, replacement of PSCIS crossing 198066 with a bridge (10m span) is recommended.</p>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="thompson-creek---198066-123377---appendix.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The cost of the work is estimated at \$`r format(my_cost_estimate() %&gt;% pull(cost_est_1000s) * 1000, big.mark = &#39;,&#39;)` for a cost benefit of `r as.character(my_cost_estimate() %&gt;% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %&gt;% pull(cost_area_net))`m^2^/\$1000. </span></span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="thompson-creek---198066-123377---appendix.html#cb329-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The cost of the work is estimated at \$`r format(my_cost_estimate() %&gt;% pull(cost_est_1000s) * 1000, big.mark = &#39;,&#39;)` for a cost benefit of `r as.character(my_cost_estimate() %&gt;% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %&gt;% pull(cost_area_net))`m^2^/\$1000. </span></span></code></pre></div>
 <p><br></p>
 </div>
 <div id="conclusion-11" class="section level2 unnumbered hasAnchor">
 <h2>Conclusion<a href="thompson-creek---198066-123377---appendix.html#conclusion-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There was 198066 is 14.7km of habitat upstream of crossing rated as medium value for salmonid rearing and spawning. Crossing 198066 was ranked as a high priority for proceeding to design for replacement.</p>
 <p><br></p>
+<p>There was 123377 is 12.3km of habitat upstream of crossing rated as high value for salmonid rearing and spawning. Crossing 123377 was ranked as a high priority for proceeding to design for replacement.</p>
 <p><br></p>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="thompson-creek---198066-123377---appendix.html#cb315-1" aria-hidden="true" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb315-2"><a href="thompson-creek---198066-123377---appendix.html#cb315-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site <span class="sc">|</span></span>
-<span id="cb315-3"><a href="thompson-creek---198066-123377---appendix.html#cb315-3" aria-hidden="true" tabindex="-1"></a>           Site <span class="sc">==</span> my_site2) <span class="sc">%&gt;%</span> </span>
-<span id="cb315-4"><a href="thompson-creek---198066-123377---appendix.html#cb315-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb315-5"><a href="thompson-creek---198066-123377---appendix.html#cb315-5" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; and &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb315-6"><a href="thompson-creek---198066-123377---appendix.html#cb315-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<p>Restoration suggestions by <span class="citation">G. Tamblyn and Jessop (2000)</span> can be considered still relevant for the stream and include working with landowners to limit cattle access to the riparian zone, re-establishing riparian vergetation, improving cattle crossings and fish passage at roads. Additionally, the redirection of the stream back into it’s historic channel on the north side of the agricultural field near the confluence with the Bulkley River is an extraordinary opportunity for sizable fish habitat gains in a currently very severely impacted section of stream.</p>
+<p><br></p>
+<p><br></p>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="thompson-creek---198066-123377---appendix.html#cb330-1" aria-hidden="true" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb330-2"><a href="thompson-creek---198066-123377---appendix.html#cb330-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site <span class="sc">|</span></span>
+<span id="cb330-3"><a href="thompson-creek---198066-123377---appendix.html#cb330-3" aria-hidden="true" tabindex="-1"></a>           Site <span class="sc">==</span> my_site2) <span class="sc">%&gt;%</span> </span>
+<span id="cb330-4"><a href="thompson-creek---198066-123377---appendix.html#cb330-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb330-5"><a href="thompson-creek---198066-123377---appendix.html#cb330-5" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; and &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb330-6"><a href="thompson-creek---198066-123377---appendix.html#cb330-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-198066">Table 5.68: </span>Summary of habitat details for PSCIS crossing 198066 and 123377.
@@ -1358,62 +1378,62 @@ medium
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="thompson-creek---198066-123377---appendix.html#cb316-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb316-2"><a href="thompson-creek---198066-123377---appendix.html#cb316-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb316-3"><a href="thompson-creek---198066-123377---appendix.html#cb316-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb316-4"><a href="thompson-creek---198066-123377---appendix.html#cb316-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb316-5"><a href="thompson-creek---198066-123377---appendix.html#cb316-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb316-6"><a href="thompson-creek---198066-123377---appendix.html#cb316-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="thompson-creek---198066-123377---appendix.html#cb317-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="thompson-creek---198066-123377---appendix.html#cb331-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb331-2"><a href="thompson-creek---198066-123377---appendix.html#cb331-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb331-3"><a href="thompson-creek---198066-123377---appendix.html#cb331-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb331-4"><a href="thompson-creek---198066-123377---appendix.html#cb331-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb331-5"><a href="thompson-creek---198066-123377---appendix.html#cb331-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb331-6"><a href="thompson-creek---198066-123377---appendix.html#cb331-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="thompson-creek---198066-123377---appendix.html#cb332-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198066-01"></span>
 <img src="Skeena2021_files/figure-html/photo-198066-01-1.png" alt="Typical habitat downstream of PSCIS crossing 198066." width="100%" />
 <p class="caption">
-Figure 5.69: Typical habitat downstream of PSCIS crossing 198066.
+Figure 5.75: Typical habitat downstream of PSCIS crossing 198066.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="thompson-creek---198066-123377---appendix.html#cb318-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb318-2"><a href="thompson-creek---198066-123377---appendix.html#cb318-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb318-3"><a href="thompson-creek---198066-123377---appendix.html#cb318-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat on side channel of Bulkley River downstream of crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="thompson-creek---198066-123377---appendix.html#cb319-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="thompson-creek---198066-123377---appendix.html#cb333-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb333-2"><a href="thompson-creek---198066-123377---appendix.html#cb333-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb333-3"><a href="thompson-creek---198066-123377---appendix.html#cb333-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat on side channel of Bulkley River downstream of crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="thompson-creek---198066-123377---appendix.html#cb334-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198066-02"></span>
 <img src="Skeena2021_files/figure-html/photo-198066-02-1.png" alt="Habitat on side channel of Bulkley River downstream of crossing 198066." width="100%" />
 <p class="caption">
-Figure 5.70: Habitat on side channel of Bulkley River downstream of crossing 198066.
+Figure 5.76: Habitat on side channel of Bulkley River downstream of crossing 198066.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="thompson-creek---198066-123377---appendix.html#cb320-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb320-2"><a href="thompson-creek---198066-123377---appendix.html#cb320-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb320-3"><a href="thompson-creek---198066-123377---appendix.html#cb320-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb320-4"><a href="thompson-creek---198066-123377---appendix.html#cb320-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb320-5"><a href="thompson-creek---198066-123377---appendix.html#cb320-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="thompson-creek---198066-123377---appendix.html#cb321-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb321-2"><a href="thompson-creek---198066-123377---appendix.html#cb321-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb321-3"><a href="thompson-creek---198066-123377---appendix.html#cb321-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Small drop (50cm high) located ~20m upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="thompson-creek---198066-123377---appendix.html#cb322-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="thompson-creek---198066-123377---appendix.html#cb335-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb335-2"><a href="thompson-creek---198066-123377---appendix.html#cb335-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb335-3"><a href="thompson-creek---198066-123377---appendix.html#cb335-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb335-4"><a href="thompson-creek---198066-123377---appendix.html#cb335-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb335-5"><a href="thompson-creek---198066-123377---appendix.html#cb335-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="thompson-creek---198066-123377---appendix.html#cb336-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb336-2"><a href="thompson-creek---198066-123377---appendix.html#cb336-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb336-3"><a href="thompson-creek---198066-123377---appendix.html#cb336-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Small drop (50cm high) located ~20m upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="thompson-creek---198066-123377---appendix.html#cb337-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198066-03"></span>
 <img src="Skeena2021_files/figure-html/photo-198066-03-1.png" alt="Small drop (50cm high) located ~20m upstream of PSCIS crossing 198066." width="100%" />
 <p class="caption">
-Figure 5.71: Small drop (50cm high) located ~20m upstream of PSCIS crossing 198066.
+Figure 5.77: Small drop (50cm high) located ~20m upstream of PSCIS crossing 198066.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="thompson-creek---198066-123377---appendix.html#cb323-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb323-2"><a href="thompson-creek---198066-123377---appendix.html#cb323-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb323-3"><a href="thompson-creek---198066-123377---appendix.html#cb323-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat immediately upstream of PSCIS crossing &#39;</span>,  my_site, <span class="st">&#39; that flows through a hay field within an excavated trench for approximately 350m.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="thompson-creek---198066-123377---appendix.html#cb324-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="thompson-creek---198066-123377---appendix.html#cb338-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb338-2"><a href="thompson-creek---198066-123377---appendix.html#cb338-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb338-3"><a href="thompson-creek---198066-123377---appendix.html#cb338-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat immediately upstream of PSCIS crossing &#39;</span>,  my_site, <span class="st">&#39; that flows through a hay field within an excavated trench for approximately 350m.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="thompson-creek---198066-123377---appendix.html#cb339-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198066-04"></span>
 <img src="Skeena2021_files/figure-html/photo-198066-04-1.png" alt="Habitat immediately upstream of PSCIS crossing 198066 that flows through a hay field within an excavated trench for approximately 350m." width="100%" />
 <p class="caption">
-Figure 5.72: Habitat immediately upstream of PSCIS crossing 198066 that flows through a hay field within an excavated trench for approximately 350m.
+Figure 5.78: Habitat immediately upstream of PSCIS crossing 198066 that flows through a hay field within an excavated trench for approximately 350m.
 </p>
 </div>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="thompson-creek---198066-123377---appendix.html#cb325-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb325-2"><a href="thompson-creek---198066-123377---appendix.html#cb325-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb325-3"><a href="thompson-creek---198066-123377---appendix.html#cb325-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb325-4"><a href="thompson-creek---198066-123377---appendix.html#cb325-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb325-5"><a href="thompson-creek---198066-123377---appendix.html#cb325-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="thompson-creek---198066-123377---appendix.html#cb340-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb340-2"><a href="thompson-creek---198066-123377---appendix.html#cb340-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb340-3"><a href="thompson-creek---198066-123377---appendix.html#cb340-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb340-4"><a href="thompson-creek---198066-123377---appendix.html#cb340-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb340-5"><a href="thompson-creek---198066-123377---appendix.html#cb340-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
 </div>
 </div>
