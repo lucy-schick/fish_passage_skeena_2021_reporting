@@ -60,6 +60,10 @@ knitr::include_graphics("fig/thompson.png")
 
 <br>
 
+@tamblyn_jessop2000DetailedFish have documented detailed fish habitat, riparian and channel assessment data for Reach 1 and 2 of the stream surveying 12.6km along with an impact synopsis and restoration suggestions.
+
+<br>
+
 PSCIS stream crossing `r as.character(my_site2)` was ranked as a high priority for follow up by @irvine2018AnalysisPriority and @smith2018AssessingBarriers because of the relatively large size of the stream and habitat rated as high value in PSCIS (Table \@ref(tab:tab-culvert-bcfp-198066).  A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
 
 
@@ -133,6 +137,14 @@ Should restoration/maintenance activities proceed at the site, replacement of PS
 ## Conclusion {-}
 
 There was `r as.character(my_site)` is `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
+
+<br>
+
+There was `r as.character(my_site2)` is `r fpr::fpr_my_priority_info(sit = my_site2, col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site2)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
+
+<br>
+
+Restoration suggestions by @tamblyn_jessop2000DetailedFish can be considered still relevant for the stream and include working with landowners to limit cattle access to the riparian zone, re-establishing riparian vergetation, improving cattle crossings and fish passage at roads.  Additionally, the redirection of the stream back into it's historic channel on the north side of the agricultural field near the confluence with the Bulkley River is an extraordinary opportunity for sizable fish habitat gains in a currently very severely impacted section of stream.  
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
