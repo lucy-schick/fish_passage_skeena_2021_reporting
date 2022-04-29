@@ -19,14 +19,15 @@ source('scripts/tables.R')
 my_site <- 124420
 my_site2 <- 124421
 my_site3 <- 124422
+my_site4 <- 124424
 
 ```
 
-`r fpr::fpr_appendix_title()`
+`r fpr::fpr_appendix_title(site2 = my_site2, site3 = my_site3)`
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` at Hazleton, BC. PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. Crossing `r as.character(my_site)` is the responsibility of the Ministry of Transportation and Infrastructure.
+PSCIS crossing `r as.character(my_site)` was located on `r fpr::fpr_my_pscis_info()` at Hazleton, BC. Station Creek is also known locally as Mission Creek.  PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. Crossing `r as.character(my_site)` is the responsibility of the Ministry of Transportation and Infrastructure.
 
 
 <br>
@@ -42,7 +43,15 @@ At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr:
 
 <br>
 
-A trap and truck operation led by the Chicago Creek Restoration Society moves spawning coho upstream of the crossing annually.  Following stream morphology changes which occurred during a fall 2017 flood event causing the release and distribution of sediment loads, @newman_england2018MissionCreek conducted a fish habitat assessment from the confluence of Mission Creek with the Bulkley River upstream to the Mile 48 Canadian National railway crossing to determine stream diversity, spawning gravel catchment areas, beaver dam activity and negative impacts present in or along the stream.  Beaver control activities on Mission and Waterfall Creeks by CN Rail upstream of crossing `r as.character(my_site)` may have been the cause of the 2017 flood event (pers comm. Brenda Donas, Chicago Creek Restoration Society). 
+A trap and truck operation led by the Chicago Creek Community Environmental Enhancement Society moves coho from a fence set up near the confluence with the Bulkley River to upstream of Highway 16 on Waterfall Creek annually.  @houlden_etal2001ChicagoCreek report that the coho stocks in the system were wiped out in the late 1970s by the improper installation of PSCIS crossing `r as.character(my_site)`. The Waterfall Creek Stream Rehabilitation Project began in 1990 to reintroduce coho to the stream with surplus stocks transplanted from Toboggan Creek near Smithers. In 1993 the Hazelton Elementary Streamkeepers program was developed to assist with the project and in 1995 the Chicago Creek Community Environmental Enhancement Society was incorporated to develop a hatchery nearby. The hatchery no longer operates but operations were considered successful with coho runs between 65 - 297 fish documented between 1998 - 2001 Watershed restoration and enhancement efforts were coordinated with other groups working in the system [@houlden_etal2001ChicagoCreek; @houlden_donas2002ChicagoCreek].
+
+
+
+<br>
+
+
+
+Following stream morphology changes which occurred during a fall 2017 flood event causing the release and distribution of sediment loads, @newman_england2018MissionCreek conducted a fish habitat assessment from the confluence of Station Creek with the Bulkley River upstream to the Mile 48 Canadian National railway crossing to determine stream diversity, spawning gravel catchment areas, beaver dam activity and negative impacts present in or along the stream.  Beaver control activities on Station and Waterfall Creeks by CN Rail upstream of crossing `r as.character(my_site)` may have been the cause of the 2017 flood event (pers comm. Brenda Donas, Chicago Creek Restoration Society). 
 
 <br>
 
@@ -57,7 +66,7 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory and @irvine2018AnalysisPriority because of known high value spawning and rearing habitat upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-124420).   A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,  @irvine2018AnalysisPriority and @mazany-wright_etal2021BulkleyRiver because of known high value spawning and rearing habitat upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-124420).   A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  There are numerous stream crossings located on tributaries to Station Creek with crossing 124421 and 124422 also assessed in 2021.
 
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
@@ -72,9 +81,25 @@ fpr::fpr_table_bcfp(scroll = gitbook_on)
 <br>
 
 
-## Stream Characteristics at Crossing {-}
+## Stream Characteristics at Crossings {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-124420)). Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. Surveys were conducted with a remotely piloted aircraft upstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model `r if(gitbook_on){knitr::asis_output(" presented in Figures \\@ref(fig:ortho-caption-station) - \\@ref(fig:model-caption-station).")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59) and [here](https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59).")`
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-124420)). Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. 
+
+
+<br>
+
+PSCIS crossing 124421 on Waterfall Creek was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-124421)). 
+
+<br>
+
+PSCIS crossing 124422 on Waterfall Creek was un-embedded, 100% backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-124422)). 
+
+
+<br>
+
+
+
+Surveys were conducted with a remotely piloted aircraft upstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model `r if(gitbook_on){knitr::asis_output(" presented in Figures \\@ref(fig:ortho-caption-station) - \\@ref(fig:model-caption-station).")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/8f568e62bb7d47568e1f0a365022ef59) and [here](https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59).")`
 
 
 <br>
@@ -113,7 +138,7 @@ knitr::asis_output(model_url)
 ```{r ortho-caption-station, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
 my_photo = 'fig/pixel.png'
 
-my_caption = paste0('Orthomosaic of habitat upstream of crossing 124420 on Mission Creek. To zoom press "shift" and scroll.')
+my_caption = paste0('Orthomosaic of habitat upstream of crossing 124420 on Station Creek showing both Station Creek (south) and Waterfall Creek (north) habitat. To zoom press "shift" and scroll.')
 
 knitr::include_graphics(my_photo, dpi = NA)
 
@@ -131,7 +156,7 @@ knitr::asis_output(model_url)
 ```{r model-caption-station, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
 my_photo = 'fig/pixel.png'
 
-my_caption = paste0('3D model of habitat upstream of crossing 124420 on Mission Creek. To zoom press "shift" and scroll.')
+my_caption = paste0('3D model of habitat upstream of crossing 124420 on Station Creek showing both Station Creek (south) and Waterfall Creek (north) habitat. To zoom press "shift" and scroll.')
 
 knitr::include_graphics(my_photo, dpi = NA)
 
@@ -139,33 +164,64 @@ knitr::include_graphics(my_photo, dpi = NA)
 
 
 
-```{r eval=F}
-##this is useful to get some comments for the report
-hab_site %>% filter(site == my_site & location == 'ds') %>% pull(comments)
-my_priority <-  my_priority_info()
-
-```
-
 ## Stream Characteristics Downstream of `r as.character(my_site)` {-}
 
-The stream was surveyed downstream from the culvert for `r fpr::fpr_my_priority_info(loc = 'ds', col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124420-01) - \\@ref(fig:photo-124420-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-124420-d01))"))`. Total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'total cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-124420)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'average_gradient_percent')`%. The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_subdominant")` subdominant.  The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for salmonid rearing and spawning. 
+The stream was surveyed downstream from the culvert for `r fpr::fpr_my_priority_info(loc = 'ds', col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124420-01) - \\@ref(fig:photo-124420-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-124420-d01))"))`. Total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'total cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-124420)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'average_gradient_percent')`%. The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_subdominant")` subdominant. Survey notes indicate a complex system with deeply undercut banks with steep sections and confined areas.  Segments of stream showed signs of erosion and deposition of fine sediments.  Multiple areas with braided channels around woody debris and evidence of large fluctuations in flow were noted.  The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for salmonid rearing and spawning. The reader is referred to @newman_england2018MissionCreek for addition information on habitat containing more detail.
+
+
 
 <br>
 
 ## Stream Characteristics Upstream of `r as.character(my_site)` and downstream of `r as.character(my_site2)`{-}
 
 
-The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124420-03) - \\@ref(fig:photo-124420-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-124420-d02))"))`. Within the area surveyed, total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'total_cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-124420)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_subdominant")` subdominant. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning. 
+The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124420-03) - \\@ref(fig:photo-124420-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-124420-d02))"))`. Within the area surveyed, total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'total_cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-124420)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_subdominant")` subdominant. There were frequent pockets of gravels suitable for spawning throughout with high value spawning habitat in upper end of the survey area. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning. The reader is referred to @newman_england2018MissionCreek for addition information on habitat in this area.
 
 <br>
 
+A small bridge (modelled crossing 24704553 - a.k.a Mile 48) is located under the CN Railway approximately 875m upstream of the highway.  
+
+<br>
+
+At approximately 1200m upstream of Highway 16, Waterfall Creek enters into station Creek. In addition to the survey via drone, Waterfall Creek was assessed immediately upstream of the confluence with Station Creek for `r fpr::fpr_my_priority_info(loc = 'us2', col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124420-05) - \\@ref(fig:photo-124420-06))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-124420-d03))"))`
+`r fpr::fpr_my_habitat_paragraph(loc = 'us2')` 
+The area assessed included slow flowing wetland type habitat with generally shallow glide type habitat and significant quantities of instream vascular vegetation.  Habitat value for areas surveyed was rated as `r fpr::fpr_my_priority_info(loc = 'us2')` value as the area could provide significant amounts of rearing habitat for juvenile rainbow and coho.  
+
+<br>
+
+Crossing 1803294 is modeled on Waterfall Creek at a location approximately 2.6km upstream of Highway 16 crossing `r as.character(my_site)` and approximately 965m downstream of PSCIS crossing 124421.  This site was not assessed in the field and data regarding this crossing has not previously been loaded to PSCIS.  Access to this location should by possible by wading across Waterfall Creek from access on the railway line.  At the time of assessment, the road leading to the crossing from the north was behind a gated area on private land. 
+
+<br>
+
+PSCIS crossing 124424 is located under the railway line approximately 55m downstream of 11th avenue where PSCIS crossing 124421 is located.  PSCIS records indicate this crossing was non-embedded and 100% backwatered.  Although ranking as a barrier according to the provincial protocol, 100% backwatered crossings are seldom an issue for fish passage for any lifestage or species. Upstream of 124424 the stream was assessed to PSCIS crossing `r as.character(my_site2)`.`r fpr::fpr_my_habitat_paragraph(sit = my_site4, loc = 'ds')` Survey notes indicate that below the crossing the water enters a wetland type complex dense in grasses and shrubs. Deep water and dense instream vegetation were present with the wetland/stream running relatively straight and parallel to the railway. Water depth was estimated at ~1.5m near the stream edge. Habitat value was rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'ds')` with surveyor notes indicating a defined channel that widens into a small wetland complex dominated by tall grasses and significant instream vegetation.
+
+
+
+
+```{r eval=F}
+##this is useful to get some comments for the report
+hab_site %>% filter(site == my_site4 & location == 'ds') %>% pull(comments)
+my_priority <-  my_priority_info()
+
+```
+
+
 ## Stream Characteristics Upstream of `r as.character(my_site2)` and downstream of `r as.character(my_site3)`{-}
+
+`r fpr_my_survey_dist(sit = my_site2, loc = 'us')` to `r as.character(my_site3)` 
+`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124420-07) - \\@ref(fig:photo-124420-08)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-124420-d04))."))`
+`r fpr_my_habitat_paragraph(sit = my_site2)` 
+Survey notes indicate a slow moving wetland like stream with deep glides throughout. Instream vegetation was abundant with somewhat stagnant water often smelling of sulfur. Near top of the survey, the gradient increased slightly and the substrate transitioned from primarily fines to small gravel. Within the riparian area shrubs and sedges were thick and vigorous. Habitat value was rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us')` as the this section of stream was considered an important migration corridor.
 
 
 <br>
 
 ## Stream Characteristics Upstream of `r as.character(my_site3)`{-}
-
+`r fpr_my_survey_dist(sit = my_site3, loc = 'us')`
+`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-124420-09) - \\@ref(fig:photo-124420-10)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-124420-d05))."))`
+`r fpr_my_habitat_paragraph(sit = my_site3)` 
+Within this section of stream there appears to have been restorative efforts involving the placement of logs to provide riffle pool breaks and retain gravel suitable for coho spawning.  Gravels were abundant in this area and it's location within a residential area of New Hazelton provides an important connection between the stream and the surrounding community.
+Habitat value was rated as `r fpr::fpr_my_priority_info(sit = my_site3, loc = 'us')` as the this section of stream was considered critical for coho spawning.
 
 <br>
 
@@ -184,6 +240,10 @@ Should restoration/maintenance activities proceed, replacement of PSCIS crossing
 ## Conclusion {-}
 
 There was `r as.character(my_site)` is `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of the crossing with areas surveyed rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. At the time of reporting, the Ministry of Transportation and Infrastructure was in the process of developing a design to retrofit the existing structure at `r as.character(my_site)` with some sort of backwatering mechanism so that it could pass adult coho spawners. Although, backwatering can be considered an interim solution, replacement of this crossing with an open bottom structure is recommended in the long term. 
+
+<br>
+
+Station and Waterfall Creeks are located directly within the community of New Hazelton and there is a rich history of community efforts to help restore coho stocks and enhance the habitat in the system.   This location and history provide importing context for the connection between the community, the Gitsxan, the salmon and the watershed.  Station Creek is a unique opportunity for CP Rail, the Ministry of Transportation and Infrastructure, DFO, the Chicago Creek Community Environmental Enhancement Society, the community of New Hazelton, the Gitsxan and other to work together for meaningful restorative actions.  
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
@@ -246,7 +306,7 @@ knitr::include_graphics(my_photo2)
 ```{r photo-124420-03-prep}
 my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u1_')
 
-my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+my_caption1 = paste0('Habitat upstream of PSCIS crossing ', my_site, '.')
 ```
 
 ```{r photo-124420-03, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
@@ -260,7 +320,7 @@ grid::grid.raster(jpeg::readJPEG(my_photo1))
 ```{r photo-124420-04-prep}
 my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u2_')
 
-my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+my_caption2 = paste0('Habitat upstream of PSCIS crossing ', my_site, '.')
 
 ```
 
@@ -269,6 +329,116 @@ grid::grid.raster(jpeg::readJPEG(my_photo2))
 ```
 
 ```{r photo-124420-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+```{r photo-124420-05-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u3_')
+
+my_caption1 = paste0('Habitat upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-124420-05, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+
+
+<br>
+
+```{r photo-124420-06-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u4_')
+
+my_caption2 = paste0('Habitat upstream of PSCIS crossing ', my_site, ' within Waterfall Creek.')
+
+```
+
+```{r photo-124420-06, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-124420-d03, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+
+```{r photo-124420-07-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_d1_')
+
+my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-124420-07, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+
+
+<br>
+
+```{r photo-124420-08-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_u1_')
+
+my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-124420-08, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-124420-d04, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+
+```{r photo-124420-09-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site3, str_to_pull = '_u1_')
+
+my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-124420-09, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+
+
+<br>
+
+```{r photo-124420-10-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site3, str_to_pull = '_u2_')
+
+my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-124420-10, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-124420-d05, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
 
 my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
 
