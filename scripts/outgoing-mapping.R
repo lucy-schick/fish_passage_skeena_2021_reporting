@@ -17,7 +17,11 @@ priorities <- bind_rows(
   #   T ~ barrier_result)
   #   )
 
-
+# need to make an array for mapping the hab_fish_collect files
+hab_fish_collect_array <- hab_fish_collect %>%
+  select(-species) %>%
+  pivot_wider(id_cols = reference_number:utm_northing, names_from = 'site_id', values_from = "species_code") %>%
+  pivot_longer(cols = `197912ds`:`123770us`)
 
 
 dir.create('data/fishpass_mapping')

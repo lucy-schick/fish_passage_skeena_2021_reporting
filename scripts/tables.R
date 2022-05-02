@@ -5,7 +5,8 @@
 
 # add project specific variables ------------------------------------------
 filename_html <- 'Skeena2021'
-map_location <- 'https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2022-05-02.zip'
+maps_location <- 'https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/'
+maps_location_zip <- 'https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/bulkley_2022-05-02.zip'
 
 
 pscis_list <- fpr::fpr_import_pscis_all()
