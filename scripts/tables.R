@@ -1,9 +1,11 @@
 # this file imports our data and builds the tables we need for our reporting
 
-# source('scripts/packages.R')
-# source('scripts/private_info.R')
-# source('R/functions.R')
 
+
+
+# add project specific variables ------------------------------------------
+filename_html <- 'Skeena2021'
+map_location <- 'https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/bulkley_2022-05-02.zip'
 
 
 pscis_list <- fpr::fpr_import_pscis_all()
@@ -787,7 +789,7 @@ habitat_confirmations_priorities <- readr::read_csv(
 
 
 
-hab_site_priorities <- left_join(
+hab_site_priorities_prep <- left_join(
   select(habitat_confirmations_priorities, reference_number, local_name, priority),
   select(hab_site, reference_number, alias_local_name, site, utm_zone:utm_northing),
   by = 'reference_number'
@@ -798,7 +800,15 @@ hab_site_priorities <- left_join(
   select(-local_name)
 # filter(!is.na(priority))  ##this is how we did it before.  changed it to get a start on it
 
+hab_site_priorities <- left_join(
+  hab_site_priorities_prep %>%
+    tidyr::separate(alias_local_name, into = c('alias_local_name', 'location'), remove = T),
 
+  pscis_phase2 %>% select(pscis_crossing_id, barrier_result) %>% mutate(pscis_crossing_id = as.character(pscis_crossing_id)),
+
+  by = c('alias_local_name' = 'pscis_crossing_id')
+) %>%
+  select(-location)
 
 
 # bcfishpass modelling table setup for reporting --------------------------

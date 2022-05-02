@@ -11,6 +11,11 @@ priorities <- bind_rows(
   phase1_priorities %>%
     rename(priority = priority_phase1)
 )
+  # # special case for the mapping to include the thompson details at hwy 16 since we didn't input yet
+  # mutate(barrier_result = case_when(
+  #   pscis_crossing_id == '123375' ~ 'barrier',
+  #   T ~ barrier_result)
+  #   )
 
 
 
