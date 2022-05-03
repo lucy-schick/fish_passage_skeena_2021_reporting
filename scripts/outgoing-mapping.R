@@ -18,12 +18,10 @@ priorities <- bind_rows(
   #   )
 
 # hab_fish_collect_map_prep3 is the long form of hab_fish_collect
-hab_fish_collect2 <- hab_fish_collect
 
 dir.create('data/fishpass_mapping')
 
-# fpr::fpr_make_geopackage(dat = hab_fish_collect) #could change this to hab_fish_collect_map_prep3
-fpr::fpr_make_geopackage(dat = hab_fish_collect2)
+fpr::fpr_make_geopackage(dat = hab_fish_collect) #could change this to hab_fish_collect_map_prep3 for long format
 fpr::fpr_make_geopackage(dat = hab_features)
 fpr::fpr_make_geopackage(dat = hab_site_priorities)
 fpr::fpr_make_geopackage(dat = phase1_priorities)
