@@ -511,7 +511,7 @@ hab_fish_collect <- left_join(
 ) %>%
   rowwise() %>%
   mutate(species_code = toString(species_code),
-         species_code = stringr::str_replace_all(species_code, ',', ' '))
+         species_code = stringr::str_replace_all(species_code, ',', ''))
 
 
 rm(hab_fish_collect_map_prep, hab_fish_collect_map_prep2)
