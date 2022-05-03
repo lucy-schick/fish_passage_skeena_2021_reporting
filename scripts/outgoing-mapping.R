@@ -17,16 +17,13 @@ priorities <- bind_rows(
   #   T ~ barrier_result)
   #   )
 
-# need to make an array for mapping the hab_fish_collect files
-hab_fish_collect_array <- hab_fish_collect %>%
-  select(-species) %>%
-  pivot_wider(id_cols = reference_number:utm_northing, names_from = 'site_id', values_from = "species_code") %>%
-  pivot_longer(cols = `197912ds`:`123770us`)
-
+# hab_fish_collect_map_prep3 is the long form of hab_fish_collect
+hab_fish_collect2 <- hab_fish_collect
 
 dir.create('data/fishpass_mapping')
 
-fpr::fpr_make_geopackage(dat = hab_fish_collect)
+fpr::fpr_make_geopackage(dat = hab_fish_collect) #could change this to hab_fish_collect_map_prep3
+fpr::fpr_make_geopackage(dat = hab_fish_collect2)
 fpr::fpr_make_geopackage(dat = hab_features)
 fpr::fpr_make_geopackage(dat = hab_site_priorities)
 fpr::fpr_make_geopackage(dat = phase1_priorities)
@@ -99,6 +96,14 @@ write_geojson <- function(layers){
   layers %>%
   geojsonio::geojson_write(file = paste0("./data/fishpass_mapping/", unique(layers$name), ".geojson"))
 }
+
+# this does not give us a proper array
+hab_fish_collect2 %>%
+  sf::st_as_sf(coords = c('utm_easting', 'utm_northing'), crs = 26900 + 9, remove = F) %>%
+  st_transform(crs = 4326) %>%
+  geojsonio::geojson_write(file = paste0("./data/fishpass_mapping/", 'hab_fish_collect2', ".geojson"))
+
+
 
 layers_to_burn %>%
   map(write_geojson)

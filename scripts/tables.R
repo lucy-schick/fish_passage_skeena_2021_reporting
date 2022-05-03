@@ -441,7 +441,7 @@ hab_site <- left_join(
   mutate(site = as.numeric(site)) %>%
   dplyr::filter(!alias_local_name %like% '_ef') ##get rid of the ef sites
 
-hab_fish_collect_prep <- habitat_confirmations %>%
+hab_fish_collect_map_prep <- habitat_confirmations %>%
   purrr::pluck("step_2_fish_coll_data") %>%
   dplyr::filter(!is.na(site_number)) %>%
   tidyr::separate(local_name, into = c('site', 'location', 'ef'), remove = F) %>%
@@ -459,16 +459,16 @@ hab_loc2 <- hab_loc %>%
 
 
 # test to see what we get at each site
-test <- hab_fish_collect_prep %>%
+test <- hab_fish_collect_map_prep %>%
   distinct(local_name, species)
 
 
 
 ##join the tables together
-hab_fish_collect_prep2 <- left_join(
+hab_fish_collect_map_prep2 <- left_join(
   # distinct to get rid of lots of sites
   select(hab_loc2, reference_number, site_id, utm_zone:utm_northing) %>% distinct(site_id, .keep_all = T),
-  select(hab_fish_collect_prep %>% distinct(site_id, species, .keep_all = T), site_id, species),
+  select(hab_fish_collect_map_prep %>% distinct(site_id, species, .keep_all = T), site_id, species),
   by = 'site_id'
 )
 
@@ -482,8 +482,8 @@ hab_fish_codes <- habitat_confirmations %>%
 # we are just going to keep 1 site for upstream and downstream because more detail won't show well on the map anyway
 # purpose is to show which fish are there vs. show all the sites and what was caught at each. TMI
 
-hab_fish_collect <- left_join(
-  hab_fish_collect_prep2 %>%
+hab_fish_collect_map_prep3 <- left_join(
+  hab_fish_collect_map_prep2 %>%
     mutate(species = as.factor(species)),  ##just needed to do this b/c there actually are no fish.
 
   select(hab_fish_codes, common_name, species_code),
@@ -493,7 +493,24 @@ hab_fish_collect <- left_join(
   # WATCH THIS IN THE FUTURE
   filter(species_code != 'NFC')
 
+# need to make an array for mapping the hab_fish_collect files
+# this gives a list column vs an array.  prob easier to use postgres and postgis to make the array
+hab_fish_collect <- left_join(
+  hab_fish_collect_map_prep3 %>%
+    select(site_id:utm_northing) %>%
+    distinct(),
 
+  hab_fish_collect_map_prep3 %>%
+    select(-species, -reference_number, -utm_zone:-utm_northing) %>%
+    pivot_wider(names_from = 'site_id', values_from = "species_code") %>%
+    pivot_longer(cols = `197912ds`:`123770us`) %>%
+    rename(site_id = name,
+           species_code = value),
+
+  by = 'site_id'
+)
+
+rm(hab_fish_collect_map_prep, hab_fish_collect_map_prep2)
 
 hab_fish_collect_prep1 <- habitat_confirmations %>%
   purrr::pluck("step_2_fish_coll_data") %>%
