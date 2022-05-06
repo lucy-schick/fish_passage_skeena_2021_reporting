@@ -77,28 +77,29 @@ filename_html <- 'Skeena2021'
 
 {
 
-file.rename('0600-appendix.Rmd', 'hold/0600-appendix.Rmd')
+  file.rename('0600-appendix.Rmd', 'hold/0600-appendix.Rmd')
 
-##   then make our printable pdf
-rmarkdown::render_site(output_format = 'pagedown::html_paged', encoding = 'UTF-8')
+  ##   then make our printable pdf
+  rmarkdown::render_site(output_format = 'pagedown::html_paged',
+                         encoding = 'UTF-8')
 
-#move the phase 1 appendix back to main directory
-file.rename('hold/0600-appendix.Rmd', '0600-appendix.Rmd')
+  #move the phase 1 appendix back to main directory
+  file.rename('hold/0600-appendix.Rmd', '0600-appendix.Rmd')
 
-# print to pdf
-pagedown::chrome_print(
-  paste0(getwd(), '/', filename_html, '.html'),
-  output = paste0(getwd(),'/docs/', filename_html, '.pdf'),
-  timeout = 180
-)
+  # print to pdf
+  pagedown::chrome_print(
+    paste0(getwd(), '/', filename_html, '.html'),
+    output = paste0(getwd(),'/docs/', filename_html, '.pdf'),
+    timeout = 180
+  )
 
-# reduce the size
-tools::compactPDF(paste0(getwd(), "/docs/", filename_html, ".pdf"),
-                  gs_quality = 'screen',
-                  gs_cmd = "C:/Program Files/gs/gs9.56.1/bin/gswin64.exe")
+  # reduce the size
+  tools::compactPDF(paste0(getwd(), "/docs/", filename_html, ".pdf"),
+                    gs_quality = 'screen',
+                    gs_cmd = "C:/Program Files/gs/gs9.56.1/bin/gswin64.exe")
 
-# get rid of the html as its too big and not needed
-file.remove(paste0(getwd(), '/', filename_html, '.html'))
+  # get rid of the html as its too big and not needed
+  file.remove(paste0(getwd(), '/', filename_html, '.html'))
 
 }
 
