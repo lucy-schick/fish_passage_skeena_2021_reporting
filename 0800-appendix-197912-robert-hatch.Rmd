@@ -149,7 +149,9 @@ Should restoration/maintenance activities proceed at the site, removal of PSCIS 
 <br>
 
 
-```{r fig-channel-197912, eval = T}
+```{r fig-channel-197912, eval = T, fig.cap= 'Restoration plan for Robert Hatch Creek including removal of collapsed bridge, resloping of banks and the installation of live cuttings/pegboarding'}
+
+
 knitr::include_graphics("fig/robert_hatch_plan_20211023_k_.JPG")
 ```
 
