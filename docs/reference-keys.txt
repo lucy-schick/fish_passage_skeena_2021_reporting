@@ -110,6 +110,7 @@ tab:tab-culvert-bcfp-197912
 tab:tab-culvert-197912
 fig:ortho-caption-robert-hatch
 fig:model-caption-robert-hatch
+fig:fig-channel-197912
 tab:tab-habitat-summary-197912
 tab:tab-fish-site-197912
 tab:tab-fish-dens-197912
@@ -130,6 +131,17 @@ fig:photo-197960-01
 fig:photo-197960-02
 fig:photo-197960-03
 fig:photo-197960-04
+tab:tab-wshd-197962
+tab:tab-culvert-bcfp-197962
+tab:tab-culvert-197962
+tab:tab-habitat-summary-197962
+tab:tab-fish-site-197962
+tab:tab-fish-dens-197962
+fig:plot-fish-box-197962
+fig:photo-197962-01
+fig:photo-197962-02
+fig:photo-197962-03
+fig:photo-197962-04
 tab:tab-wshd-197967
 tab:tab-culvert-bcfp-197967
 tab:tab-culvert-197967

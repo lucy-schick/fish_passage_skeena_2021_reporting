@@ -1,9 +1,19 @@
+# fish_passage_skeena_2021_reporting 0.0.9.2
+
+* fpr version `v0.1.0.9005` 
+* add Peacock
+* burn `hab_fish_collect` with all species for each site in one column.  Test first with `hab_fish_collect2`
+* fix issue with commas from `fpr_my_habitat_paragraph()` 
+
+
+
+
 # fish_passage_skeena_2021_reporting 0.0.9.1
 
 
 * 20220502
 * fpr tag v.20220502b  and version v.0.1.0.9004
-* point to 2022 pdf maps
+* point to 2022 pdf maps wihtin an archived folder
 * add Morice sites to facilitate discussions
 * add Attachment 4 - Richfield Fencing report
 * add track for Ailport

@@ -5,7 +5,8 @@ preview_chapter('0300-method.Rmd')
 preview_chapter('0400-results.Rmd')
 bookdown::preview_chapter('test.Rmd')
 preview_chapter('0800-appendix-123544-mcdowell.Rmd')
-preview_chapter('0800-appendix-197909-trib-maxan.Rmd')
+preview_chapter('0800-appendix-197962-peacock.Rmd')
+preview_chapter('2200-Attachment_1_Maps.Rmd')
 preview_chapter('index.Rmd')
 
 #######################################################################################
@@ -91,6 +92,7 @@ pagedown::chrome_print(
   timeout = 180
 )
 
+# reduce the size
 tools::compactPDF(paste0(getwd(), "/docs/", filename_html, ".pdf"),
                   gs_quality = 'screen',
                   gs_cmd = "C:/Program Files/gs/gs9.56.1/bin/gswin64.exe")
