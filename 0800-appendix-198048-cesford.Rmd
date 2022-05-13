@@ -38,7 +38,6 @@ At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr:
 <br>
 
 
-
 ```{r fig-channel-198048, fig.cap= 'Location of potential location of crossing 198090 which was not present in the field.',  eval = T}
 grid::grid.raster(jpeg::readJPEG("fig/cesford.JPG"))
 ```
@@ -105,7 +104,7 @@ fpr::fpr_table_cv_summary_memo(site = my_site3, site_photo_id = my_site3)
 
 ```{r eval=F}
 ##this is useful to get some comments for the report
-hab_site %>% filter(site == my_site & location == 'ds') %>% pull(comments)
+hab_site %>% filter(site == my_site2 & location == 'us') %>% pull(comments)
 my_priority <-  my_priority_info()
 
 ```
@@ -121,8 +120,18 @@ The stream was surveyed downstream from crossing 198048 at Highway 16 for `r fpr
 
 The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198048-03) - \\@ref(fig:photo-198048-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-198048-d02))"))`. Within the area surveyed, total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'total_cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198048)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_subdominant")` subdominant. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning. 
 
-## Stream Characteristics Upstream of `r as.character(my_site)`
+## Stream Characteristics Upstream of `r as.character(my_site)` {-}
+`r fpr_my_survey_dist(sit = my_site2, loc = 'us')`
+`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198048-05) - \\@ref(fig:photo-198048-06)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198048-d03))."))`
+`r fpr_my_habitat_paragraph(sit = my_site2)`
+The stream had good flow and moderate complexity due to mature cottonwood riparian and frequent large woody debris. Occasional pool and frequent gravel sections were also noted.
+Habitat value was rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us')` as the surveyed area was considered an important migration corridor containing suitable spawning habitat and having moderate rearing potential.
 
+<br>
+
+Cesford Creek was also surveyed approximately 950m upstream from 198049 for a distance of approximately 500m.
+`r fpr_my_habitat_paragraph(sit = my_site2, loc = 'us2')`
+Habitat value was rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us2')` with moderate value habitat for salmonid rearing and occasional pockets of gravel suitable for salmonid spawning.
 
 ## Structure Remediation and Cost Estimate {-}
 
@@ -237,6 +246,43 @@ grid::grid.raster(jpeg::readJPEG(my_photo2))
 ```
 
 ```{r photo-198048-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+
+```{r photo-198048-05-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_u1_')
+
+my_caption1 = paste0('Habitat upstream of PSCIS crossing ', my_site2, '.')
+```
+
+```{r photo-198048-05, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+
+
+<br>
+
+```{r photo-198048-06-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_u2_')
+
+my_caption2 = paste0('Habitat upstream of PSCIS crossing ', my_site2, '.')
+
+```
+
+```{r photo-198048-06, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-198048-d03, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
 
 my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
 
