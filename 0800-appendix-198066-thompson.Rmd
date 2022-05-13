@@ -54,7 +54,7 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 
 
-```{r fig-channel-198066, eval = T}
+```{r fig-channel-198066, eval = T, fig.cap= 'Map of the current man made channels and the historic channel on Thompson Creek adjacent to the Bulkley River.'}
 knitr::include_graphics("fig/thompson.png")
 ```
 
