@@ -55,7 +55,7 @@ dbGetQuery(conn,
 dbGetQuery(conn,
            "SELECT column_name,data_type
            FROM information_schema.columns
-           WHERE table_name='crossings'")
+           WHERE table_name='streams'")
 
 
 

@@ -1,3 +1,9 @@
+# fish_passage_skeena_2021_reporting 0.1.0
+
+ * 20220511
+ * Address comments from CWF review.  Please see issue [#15](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/issues/)
+
+
 # fish_passage_skeena_2021_reporting 0.0.9.2
 
 * fpr version `v0.1.0.9005` 

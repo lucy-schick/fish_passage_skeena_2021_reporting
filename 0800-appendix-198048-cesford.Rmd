@@ -33,7 +33,7 @@ PSCIS crossing `r as.character(my_site)` and `r as.character(my_site2)` are loca
 ## Background {-}
 
 
-At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-198048)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. 
+At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-198048)). Upstream of crossing `r as.character(my_site)`, rainbow trout have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. 
 
 <br>
 
@@ -57,7 +57,11 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was ranked as a priority for follow up by @irvine2021BulkleyRiver because of the relatively large size of the stream and the potential for large amounts of habitat gains through fish passage remediation (Table \@ref(tab:tab-culvert-bcfp-198048).  Although @wilson_rabnett2007FishPassage recommended establishing a downstream weir and excavating adequate outfall drop pools to facilitate fish passage at crossing `r as.character(my_site)`, they ranked the site as a moderate priority for remediation due to dewatering below Highway 16. @smith2018AssessingBarriers assessed teh site in 2017 and noted that a comparison of photos taken in 2006 and 2017 indicates that a significant amount of gravel has been deposited in the channel below the culvert outlets. A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+PSCIS stream crossing `r as.character(my_site)` was ranked as a priority for follow up by @irvine2021BulkleyRiver because of the relatively large size of the stream and the potential for large amounts of habitat gains through fish passage remediation (Table \@ref(tab:tab-culvert-bcfp-198048).  Although @wilson_rabnett2007FishPassage recommended establishing a downstream weir and excavating adequate outfall drop pools to facilitate fish passage at crossing `r as.character(my_site)`, they ranked the site as a moderate priority for remediation due to dewatering below Highway 16. @smith2018AssessingBarriers assessed the site in 2017 and noted that a comparison of photos taken in 2006 and 2017 indicates that a significant amount of gravel has been deposited in the channel below the culvert outlets. 
+
+<br>
+
+Upon review of aerial imagery, it appears that a large portion of the historical paths of Cesford Creek are located with the floodplain of the Bulkley River with extensive impacts apparent due to land clearing and the installation of the railway. The railway in this section of the upper Bulkley River bisects numerous historical meanders blocking access to extensive areas of likely very high value low velocity salmon rearing habitat. In addition there also appears to be ditching within these lands used for agriculture that although unconfirmed, may function to lower the water table in the floodplain, reducing productivity exacerbating seasonal dewatering. A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
 
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
@@ -108,7 +112,7 @@ my_priority <-  my_priority_info()
 
 ## Stream Characteristics Downstream {-}
 
-The stream was surveyed downstream from the culvert for `r fpr::fpr_my_priority_info(loc = 'ds', col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198048-01) - \\@ref(fig:photo-198048-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198048-d01))"))`. Total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'total cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198048)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'average_gradient_percent')`%. The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_subdominant")` subdominant.  The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for salmonid rearing and spawning. 
+The stream was surveyed downstream from crossing 198048 at Highway 16 for `r fpr::fpr_my_priority_info(loc = 'ds', col_pull = 'length_surveyed')`m to the mainstem of the Bulkley River `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198048-01) - \\@ref(fig:photo-198048-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198048-d01))"))`. Total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'total cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198048)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'average_gradient_percent')`%. The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_subdominant")` subdominant.  The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for salmonid rearing and spawning. 
 
 <br>
 
@@ -117,24 +121,38 @@ The stream was surveyed downstream from the culvert for `r fpr::fpr_my_priority_
 
 The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198048-03) - \\@ref(fig:photo-198048-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-198048-d02))"))`. Within the area surveyed, total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'total_cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198048)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_subdominant")` subdominant. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning. 
 
-
+## Stream Characteristics Upstream of `r as.character(my_site)`
 
 
 ## Structure Remediation and Cost Estimate {-}
 
-Should restoration/maintenance activities proceed at the site, replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r fpr::fpr_my_pscis_info(col_pull = recommended_diameter_or_span_meters)`m span) is recommended. 
+Should restoration/maintenance activities proceed, replacement of PSCIS crossing `r as.character(my_site)` with a bridge (`r fpr::fpr_my_pscis_info(col_pull = recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(fpr::fpr_my_cost_estimate(), big.mark = ',')` for a cost benefit of `r fpr::fpr_my_cost_estimate(col_pull = cost_net)` linear m/\$1000 and `r fpr::fpr_my_cost_estimate(col_pull = cost_area_net)` m^2^/\$1000. 
 
-```{r}
-# The cost of the work is estimated at \$`r format(my_cost_estimate() %>% pull(cost_est_1000s) * 1000, big.mark = ',')` for a cost benefit of `r as.character(my_cost_estimate() %>% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %>% pull(cost_area_net))`m^2^/\$1000. 
-
-```
 
 <br>
+
+Should restoration/maintenance activities proceed, replacement of PSCIS crossing `r as.character(my_site2)` with a bridge (`r fpr::fpr_my_pscis_info(site = my_site2, col_pull = recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(fpr::fpr_my_cost_estimate(site = my_site2), big.mark = ',')` for a cost benefit of `r fpr::fpr_my_cost_estimate(site = my_site2, col_pull = cost_net)` linear m/\$1000 and `r fpr::fpr_my_cost_estimate(site = my_site2, col_pull = cost_area_net)` m^2^/\$1000. Relocation of the driveway accessing the private land from the other side of the stream and removal of the crossing could also be considered. 
+
+<br>
+
+For PSCIS crossing `r as.character(my_site3)` it is recommended some sort of fish passable structure be installed under the railway to reconnect Cesford Creek with the Bulkley River.  The cost of the work is roughly estimated at \$`r format(fpr::fpr_my_cost_estimate(site = my_site2), big.mark = ',')`.
 
 
 ## Conclusion {-}
 
-There was `r as.character(my_site)` is `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
+Management of connectivity within Cesford Creek would be most appropriately managed on the watershed level beginning with re-connection of the stream under the railway in the vicinity of the location of PSCIS `r as.character(my_site3)`. Without re-connection at the railway, the stream cannot provide habitat for species other than the rainbow trout documented as resident.  A large portion of the historical paths of Cesford Creek are located with the floodplain of the Bulkley River with extensive impacts apparent due to land clearing and the installation of the railway which bisects numerous historical upper Bulkley River meanders. In addition there also appears to be ditching within these lands used for agriculture that although unconfirmed, may function to lower the water table in the floodplain.  It is recommended that a plan be developed in conjunction with CN Rail, adjacent landowners, First Nations regulators and local stewardship groups to reconnect the channel at the railway, exclude cattle from the riparian area, implement stream restoration actions and explore possibilities related to progressive beaver management in the watershed.
+
+<br>
+
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
+
+<br>
+
+There was `r fpr::fpr_my_priority_info(sit = my_site2, col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site2)` rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site2)` was ranked as a `r fpr::fpr_my_priority_info(sit = my_site2, col_pull = priority)` priority for proceeding to design for replacement. 
+
+<br>
+
+There was `r as.character(my_site2)` is `r fpr::fpr_my_priority_info(sit = my_site2, col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site2)` was ranked as a `r fpr::fpr_my_priority_info(sit = my_site2, col_pull = priority)` priority for proceeding to design for replacement. 
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 

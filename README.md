@@ -21,3 +21,7 @@ Reporting was generated with `bookdown` [@bookdown2016] from `Rmarkdown` [@R-rma
  + [GPS tracks](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/habitat_confirmation_tracks.gpx) from field surveys.  
 
  + [Photos](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/tree/master/data/photos) and photo metadata
+ 
+<br>
+
+Version changes are tracked [here](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/blob/master/NEWS.md) and issues/planned enhancements tracked [here](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/issues). 
