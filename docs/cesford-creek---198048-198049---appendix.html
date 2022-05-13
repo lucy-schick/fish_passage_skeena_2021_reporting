@@ -1457,7 +1457,7 @@ Fix Span / Diameter
 </table></li>
 </ul>
 <div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="cesford-creek---198048-198049---appendix.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb356-2"><a href="cesford-creek---198048-198049---appendix.html#cb356-2" aria-hidden="true" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb356-2"><a href="cesford-creek---198048-198049---appendix.html#cb356-2" aria-hidden="true" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site2 <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
 <span id="cb356-3"><a href="cesford-creek---198048-198049---appendix.html#cb356-3" aria-hidden="true" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-7" class="section level2 unnumbered hasAnchor">
@@ -1469,8 +1469,17 @@ Fix Span / Diameter
 <h2>Stream Characteristics Upstream of 198048 and downstream of 198049<a href="cesford-creek---198048-198049---appendix.html#stream-characteristics-upstream-of-198048-and-downstream-of-198049" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed immediately upstream from 198048 for approximately 675m (Figures <a href="cesford-creek---198048-198049---appendix.html#fig:photo-198048-03">5.87</a> - <a href="cesford-creek---198048-198049---appendix.html#fig:photo-198048-04">5.88</a>). Within the area surveyed, total cover amount was rated as with deep pools dominant. Cover was also present as small woody debris, large woody debris, and overhanging vegetation (Table <a href="cesford-creek---198048-198049---appendix.html#tab:tab-habitat-summary-198048">5.73</a>). The average channel width was 5.1m, the average wetted width was 3.3m and the average gradient was 2.8%. The dominant substrate was cobbles with gravels subdominant. Habitat value was rated as medium value for resident salmonid rearing and spawning.</p>
 </div>
-<div id="stream-characteristics-upstream-of-198048" class="section level2 hasAnchor" number="5.5">
-<h2><span class="header-section-number">5.5</span> Stream Characteristics Upstream of 198048<a href="cesford-creek---198048-198049---appendix.html#stream-characteristics-upstream-of-198048" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stream-characteristics-upstream-of-198048" class="section level2 unnumbered hasAnchor">
+<h2>Stream Characteristics Upstream of 198048<a href="cesford-creek---198048-198049---appendix.html#stream-characteristics-upstream-of-198048" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The stream was surveyed upstream from crossing 198049 for 600m
+(Figures <a href="cesford-creek---198048-198049---appendix.html#fig:photo-198048-05">5.89</a> - <a href="cesford-creek---198048-198049---appendix.html#fig:photo-198048-06">5.90</a>).
+The average channel width was 5m, the average wetted width was 2.8m, and the average gradient was 3.5%. Total cover amount was rated as moderate with large woody debris dominant. Cover was also present as deep pools and overhanging vegetation. The dominant substrate was cobbles with boulders sub-dominant.
+The stream had good flow and moderate complexity due to mature cottonwood riparian and frequent large woody debris. Occasional pool and frequent gravel sections were also noted.
+Habitat value was rated as medium as the surveyed area was considered an important migration corridor containing suitable spawning habitat and having moderate rearing potential.</p>
+<p><br></p>
+<p>Cesford Creek was also surveyed approximately 950m upstream from 198049 for a distance of approximately 500m.
+The average channel width was 4.3m, the average wetted width was 1.9m, and the average gradient was 3.5%. Total cover amount was rated as moderate with large woody debris dominant. Cover was also present as deep pools and overhanging vegetation. The dominant substrate was cobbles with boulders sub-dominant.
+Habitat value was rated as medium with moderate value habitat for salmonid rearing and occasional pockets of gravel suitable for salmonid spawning.</p>
 </div>
 <div id="structure-remediation-and-cost-estimate-10" class="section level2 unnumbered hasAnchor">
 <h2>Structure Remediation and Cost Estimate<a href="cesford-creek---198048-198049---appendix.html#structure-remediation-and-cost-estimate-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1708,12 +1717,39 @@ Figure 5.88: Typical habitat upstream of PSCIS crossing 198048.
 <span id="cb367-3"><a href="cesford-creek---198048-198049---appendix.html#cb367-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
 <span id="cb367-4"><a href="cesford-creek---198048-198049---appendix.html#cb367-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
 <span id="cb367-5"><a href="cesford-creek---198048-198049---appendix.html#cb367-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="cesford-creek---198048-198049---appendix.html#cb368-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb368-2"><a href="cesford-creek---198048-198049---appendix.html#cb368-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb368-3"><a href="cesford-creek---198048-198049---appendix.html#cb368-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="cesford-creek---198048-198049---appendix.html#cb369-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-198048-05"></span>
+<img src="Skeena2021_files/figure-html/photo-198048-05-1.png" alt="Habitat upstream of PSCIS crossing 198049." width="100%" />
+<p class="caption">
+Figure 5.89: Habitat upstream of PSCIS crossing 198049.
+</p>
+</div>
+<p><br></p>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="cesford-creek---198048-198049---appendix.html#cb370-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb370-2"><a href="cesford-creek---198048-198049---appendix.html#cb370-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb370-3"><a href="cesford-creek---198048-198049---appendix.html#cb370-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="cesford-creek---198048-198049---appendix.html#cb371-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-198048-06"></span>
+<img src="Skeena2021_files/figure-html/photo-198048-06-1.png" alt="Habitat upstream of PSCIS crossing 198049." width="100%" />
+<p class="caption">
+Figure 5.90: Habitat upstream of PSCIS crossing 198049.
+</p>
+</div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="cesford-creek---198048-198049---appendix.html#cb372-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb372-2"><a href="cesford-creek---198048-198049---appendix.html#cb372-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb372-3"><a href="cesford-creek---198048-198049---appendix.html#cb372-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb372-4"><a href="cesford-creek---198048-198049---appendix.html#cb372-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb372-5"><a href="cesford-creek---198048-198049---appendix.html#cb372-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="cesford-creek---198048-198049---appendix.html#cb368-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb368-2"><a href="cesford-creek---198048-198049---appendix.html#cb368-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb368-3"><a href="cesford-creek---198048-198049---appendix.html#cb368-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="cesford-creek---198048-198049---appendix.html#cb369-1" aria-hidden="true" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198066</span></span>
-<span id="cb369-2"><a href="cesford-creek---198048-198049---appendix.html#cb369-2" aria-hidden="true" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">123377</span></span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="cesford-creek---198048-198049---appendix.html#cb373-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb373-2"><a href="cesford-creek---198048-198049---appendix.html#cb373-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb373-3"><a href="cesford-creek---198048-198049---appendix.html#cb373-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="cesford-creek---198048-198049---appendix.html#cb374-1" aria-hidden="true" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198066</span></span>
+<span id="cb374-2"><a href="cesford-creek---198048-198049---appendix.html#cb374-2" aria-hidden="true" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">123377</span></span></code></pre></div>
 </div>
 </div>
             </section>
