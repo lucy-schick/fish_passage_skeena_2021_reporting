@@ -1,5 +1,12 @@
 # install.packages('pacman')
 
+# package_list <- c
+# p_load
+
+
+##to simplify set up swap  package_list <- c for pacman::p_load
+
+
 
 package_list <- c(
   #'plotKML', #this takes forever to load so going to leave it out for now
@@ -65,8 +72,11 @@ pacman::p_load_gh("poissonconsulting/fwapgr",
                   'poissonconsulting/poisspatial',
                   "crsh/citr",
                   'rstudio/pagedown',
-                  "poissonconsulting/fishbc")
+                  "poissonconsulting/fishbc",
+                  "newgraphenvironment/fpr")
                   # "poissonconsulting/subfoldr2")
+
+
 # custom package
 # devtools::install_github("NewGraphEnvironment/fpr"
 #                          ,ref="main"

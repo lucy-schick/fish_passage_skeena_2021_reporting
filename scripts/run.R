@@ -96,7 +96,9 @@ filename_html <- 'Skeena2021'
   # reduce the size
   tools::compactPDF(paste0(getwd(), "/docs/", filename_html, ".pdf"),
                     gs_quality = 'screen',
-                    gs_cmd = "C:/Program Files/gs/gs9.56.1/bin/gswin64.exe")
+                    ##this was on the windows machine
+                    # gs_cmd = "C:/Program Files/gs/gs9.56.1/bin/gswin64.exe"
+                    )
 
   # get rid of the html as its too big and not needed
   file.remove(paste0(getwd(), '/', filename_html, '.html'))
@@ -108,6 +110,14 @@ filename_html <- 'Skeena2021'
 ##########################################make Phase 1 appendix seperately only when updated
 #################################################################################################
 ##we need a workflow to print the Phase 1 attachment
+
+
+# lets install pdftools here since it is throwing error on us with build
+
+# pacman::p_load('pdftools')
+# pacman::p_load('rayshader')
+
+
 files_to_move <- list.files(pattern = ".Rmd$") %>%
   stringr::str_subset(., 'index|Skeena2021|0600', negate = T)
 files_destination <- paste0('hold/', files_to_move)

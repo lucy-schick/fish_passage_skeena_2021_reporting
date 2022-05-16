@@ -1,3 +1,10 @@
+# fish_passage_skeena_2021_reporting 0.1.2
+
+  * Build with Mac M1.  Everything seemed to compile fine.
+  * included `pacman::p_load` option to run on `source('scripts/packages.R') call to simplify setup.
+
+
+
 # fish_passage_skeena_2021_reporting 0.1.1
  * 20220511
  * add Cesford upstream of top site
