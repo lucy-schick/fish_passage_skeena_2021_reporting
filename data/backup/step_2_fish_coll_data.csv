@@ -1,7 +1,7 @@
 reference_number,gazetted_name,local_name,waterbody_id,reach_number,site_number,temperature_c,conductivity_m_s_cm,turbidity,sampling_method,method_number,haul_number_pass_number,ef_seconds,ef_length_m,ef_width_m,enclosure,voltage,frequency,pulse,make,model,gill_net_type,length_m,depth_m,mesh_size,set,date_in,time_in,date_out,time_out,soak_time,habitat,species,stage,age,total_number,min_length_mm,max_length_mm,fish_activity,comments
-4,Robert Hatch,197912_ds_ef1,0,0,4,9.1,285,clear,electrofishing,1,1,176,8.6,4.8,Closed,250,60,,other,halltech HT2000,,,,,,,,,,0,,Rainbow Trout,adult,,1,147,147,,
-4,Robert Hatch,197912_ds_ef1,0,0,4,9.1,285,clear,electrofishing,1,2,106,8.6,4.8,Closed,250,60,,other,halltech HT2000,,,,,,,,,,0,,No Fish Caught,,,,,,,
-4,Robert Hatch,197912_ds_ef1,0,0,4,9.1,285,clear,electrofishing,1,3,71,8.6,4.8,Closed,250,60,,other,halltech HT2000,,,,,,,,,,0,,No Fish Caught,,,,,,,
+4,Robert Hatch,197912_ds_ef1,0,0,4,9.1,285,clear,electrofishing,1,1,176,8.599999999999998,4.8,Closed,250,60,,other,halltech HT2000,,,,,,,,,,0,,Rainbow Trout,adult,,1,147,147,,
+4,Robert Hatch,197912_ds_ef1,0,0,4,9.1,285,clear,electrofishing,1,2,106,8.599999999999998,4.8,Closed,250,60,,other,halltech HT2000,,,,,,,,,,0,,No Fish Caught,,,,,,,
+4,Robert Hatch,197912_ds_ef1,0,0,4,9.1,285,clear,electrofishing,1,3,71,8.599999999999998,4.8,Closed,250,60,,other,halltech HT2000,,,,,,,,,,0,,No Fish Caught,,,,,,,
 5,Robert Hatch,197912_ds_ef2,0,0,5,9.1,285,clear,electrofishing,1,1,181,28,1.96,Open,250,60,,other,halltech HT2000,,,,,,,,,,0,,Rainbow Trout,fry,,1,58,58,,
 6,Robert Hatch,197912_ds_ef3,0,0,6,9.1,285,clear,electrofishing,1,1,84,14,2.87,Open,250,60,,other,halltech HT2000,,,,,,,,,,0,,Rainbow Trout,fry,,1,57,57,,
 6,Robert Hatch,197912_ds_ef3,0,0,6,9.1,285,clear,electrofishing,1,1,84,14,2.87,Open,250,60,,other,halltech HT2000,,,,,,,,,,0,,Rainbow Trout,adult,,1,179,179,,
