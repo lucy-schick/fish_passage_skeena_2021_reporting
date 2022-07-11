@@ -101,7 +101,7 @@ pscis_all_sf <- pscis_all %>%
 # looks like the api maxes out at 220 queries and we have 223.  As a work around lets make a function then split by source
 fpr_get_elev <- function(dat){
   poisspatial::ps_elevation_google(dat,
-                                   key = google_api_key,
+                                   key = Sys.getenv('GOOG_API_KEY'),
                                    Z = 'elev') %>%
   mutate(elev = round(elev, 0))
 }
