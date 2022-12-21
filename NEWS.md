@@ -1,3 +1,8 @@
+# fish_passage_skeena_2021_reporting 0.1.3
+
+  * bump to fpr v1.1.0.  
+  * Correct `fpr_my_channel_sentence` which was referenceing `my_site` for all calls to `average_gradient`
+
 # fish_passage_skeena_2021_reporting 0.1.2
 
   * Build with Mac M1.  Everything seemed to compile fine.

@@ -416,7 +416,7 @@ tabs_phase1_pdf <- mapply(
 # tabs_phase1_pdf <- mapply(fpr_print_tab_summary_all_pdf, tab_sum = tab_summary, comments = tab_summary_comments, photos = tab_photo_url)
 
 ####-------------- habitat and fish data------------------
-habitat_confirmations <- fpr_import_hab_con(col_filter_na = T)
+habitat_confirmations <- fpr::fpr_import_hab_con(col_filter_na = T, row_empty_remove = T)
 
 hab_site_prep <-  habitat_confirmations %>%
   purrr::pluck("step_4_stream_site_data") %>%
