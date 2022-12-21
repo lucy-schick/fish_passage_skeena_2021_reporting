@@ -20,7 +20,7 @@ docs/Skeena2021.html
 Skeena2021.html
 *~$*
 *.sqlite
-hold
+#hold
 *.Kmz
 *.kml
 data/photos/**/*.pdf
