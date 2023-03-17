@@ -18,15 +18,15 @@ source('scripts/tables.R')
 ```{r  load-data-198066}
 my_site <- 198066
 my_site2 <- 123377
-
+my_site3 <- 123375
 
 ```
 
-`r fpr::fpr_appendix_title(site2 = my_site2)`
+`r fpr::fpr_appendix_title(site2 = my_site2, site3 = my_site3)`
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` and `r as.character(my_site2)` are located on `r fpr::fpr_my_pscis_info()` midway between Telkwa and Houston. PSCIS crossing `r as.character(my_site)` is located on a small private road and `r as.character(my_site2)` is located on `r fpr_my_pscis_info(site = my_site2, col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with a side channel of the Bulkley River and `r as.character(my_site2)` was located `r round(fpr::fpr_my_bcfishpass(site = my_site2, col_pull = downstream_route_measure)*0.001, 1)`km upstream of the confluence. Crossing `r as.character(my_site)` was on private land owned by Jeremy Rouw and hay fields as well as other infrastructure that was part of Udder View Dairy were located upstream of the crossing. Crossing `r as.character(my_site2)` is the responsibility of the Ministry of Transportation and Infrastructure.
+PSCIS crossings `r as.character(my_site)`, `r as.character(my_site2)`, and `r as.character(my_site3)` are located on a small private road, `r fpr_my_pscis_info(site = my_site2, col_pull = road_name)`, and `r fpr_my_pscis_info(site = my_site3, col_pull = road_name)`, respectively. This area of Thompson Creek is located midway between Telkwa and Houston. Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with a side channel of the Bulkley River and `r as.character(my_site2)` was located `r round(fpr::fpr_my_bcfishpass(site = my_site2, col_pull = downstream_route_measure)*0.001, 1)`km upstream of the confluence. Crossing `r as.character(my_site)` was on private land owned by Jeremy Rouw and hay fields as well as other infrastructure that was part of Udder View Dairy were located upstream of the crossing. Crossings `r as.character(my_site2)` and `r as.character(my_site3)` are the responsibility of the Ministry of Transportation and Infrastructure.
 
 
 <br>
@@ -34,11 +34,16 @@ PSCIS crossing `r as.character(my_site)` and `r as.character(my_site2)` are loca
 ## Background {-}
 
 
-At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-198066)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. 
+At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-198066)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. A total of `r fpr::fpr_my_bcfishpass(col_pull = total_lakereservoir_ha)`ha of lake and `r fpr::fpr_my_bcfishpass(col_pull = total_wetland_ha)`ha of wetland are modelled upstream. This includes Fishpan Lake, which is located downstream of PSCIS crossing 123383 and drains into Thompson Creek.
 
 <br>
 
-Landowners adjacent to the stream at both crossings as well as regional DFO staff report that Thompson Creek was historically redirected from its original channel on the height of land near the Bulkley River in the 1960s.  The historic channel is  visible in aerial imagery and would have directed flows in a north-eastern direction from where the agricultural fields meet the Thompson creek valley. The redirection diverts the channel into two seperate channels that flow south-east.  The main flow of the channel was flowing in an excavated trench through the hay field at the time of the survey.  The distance from the current confluence with the Bulkley River side channel to the historic valley is approximately 370m.  The distance the stream would have traveled historically in a north-eastern direction is estimated at 1300m. The landowner reported that conceptually they would like to see the stream redirected to its historic channel.  They noted that stranding has been observed within the excavated channel and a realignment would help prevent the loss of hay production caused by the high water table adjacent to the excavated channel. A map of the current man made channels and the historic channel is provided in Figure \@ref(fig:fig-channel-198066).  Adjacent landowners also report that the crossing at Walcott Road had nearly washed out at the road due to high flows related to beaver dam failures.  Crossing 123378 has been recorded as a bridge on Thompson Creek on the BC Hydro powerline between `r as.character(my_site)` and `r as.character(my_site2)` [@gollner_cain2014FISHPASSAGE].  Landowners report this bridge washed out at the time of the beaver dam failure and was replaced in 2020.
+Landowners adjacent to the stream at crossings `r as.character(my_site)` and `r as.character(my_site2)` as well as regional DFO staff report that Thompson Creek was historically redirected from its original channel on the height of land near the Bulkley River in the 1960s.  The historic channel is  visible in aerial imagery and would have directed flows in a north-eastern direction from where the agricultural fields meet the Thompson creek valley. The redirection diverts the channel into two seperate channels that flow south-east.  The main flow of the channel was flowing in an excavated trench through the hay field at the time of the survey.  The distance from the current confluence with the Bulkley River side channel to the historic valley is approximately 370m.  The distance the stream would have traveled historically in a north-eastern direction is estimated at 1300m. The landowner reported that conceptually they would like to see the stream redirected to its historic channel.  They noted that stranding has been observed within the excavated channel and a realignment would help prevent the loss of hay production caused by the high water table adjacent to the excavated channel. A map of the current man made channels and the historic channel is provided in Figure \@ref(fig:fig-channel-198066).  Adjacent landowners also report that the crossing at Walcott Road had nearly washed out at the road due to high flows related to beaver dam failures.  Crossing 123378 has been recorded as a bridge on Thompson Creek on the BC Hydro powerline between `r as.character(my_site)` and `r as.character(my_site2)` [@gollner_cain2014FISHPASSAGE].  Landowners report this bridge washed out at the time of the beaver dam failure and was replaced in 2020. Thompson creek was re visited in 2022 and a survey was done downstream of the replaced bridge.
+
+
+<br>
+
+PSCIS crossing 123376 on Highway 16 was assessed by @gollner_etal2013FishPassage in 2013. This is an open bottom structure (pipe arch) that was passable to all life stages at the time of survey. It was 7m in diameter and 24m in length. It is important to note that the majority of flow from Thompson Creek comes from this section that flows under the highway as opposed to the channel mapped as the mainstem. This site was revisited in 2021, with photos shown in `r if(gitbook_on){knitr::asis_output("Figures \\@ref(fig:photo-123377-03) - \\@ref(fig:photo-123377-04).")}else(knitr::asis_output("Figure \\@ref(fig:photo-123377-d02)."))` There was minimal flow with much of the riparian vegetation removed and clear evidence of cattle trampled banks upstream and downstream. There was private land on both sides of the road. Crossings 123381 and 123380 located upstream of the highway were not accessible and could not be surveyed because they were on private land and blocked behind gates. However these sites likely do not have significant influence on connectivity in the watershed because the main body of the stream flows through crossing 123376. 
 
 <br>
 
@@ -64,7 +69,7 @@ knitr::include_graphics("fig/thompson.png")
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site2)` was ranked as a high priority for follow up by @irvine2018AnalysisPriority and @smith2018AssessingBarriers because of the relatively large size of the stream and habitat rated as high value in PSCIS (Table \@ref(tab:tab-culvert-bcfp-198066).  A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  
+PSCIS stream crossing `r as.character(my_site2)` was ranked as a high priority for follow up by @irvine2018AnalysisPriority and @smith2018AssessingBarriers because of the relatively large size of the stream and habitat rated as high value in PSCIS (Table \@ref(tab:tab-culvert-bcfp-198066).  A map of the watershed is provided in the attachment [here](https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulk/FishPassage_093L.114.pdf).  
 
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
@@ -80,10 +85,9 @@ fpr::fpr_table_bcfp(scroll = gitbook_on)
 <br>
 
 
-## Stream Characteristics at Crossing {-}
+## Stream Characteristics at Crossings {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment]. There was rip rap placed around the culvert inlets and outlets (Table \@ref(tab:tab-culvert-198066)). Water temperature was `r fpr::fpr_my_habitat_info(sit = my_site2, col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(sit = my_site2, col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(sit = my_site2, col_pull = 'conductivity_m_s_cm')`uS/cm. 
-
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment]. There was rip rap placed around the culvert inlets and outlets (Table \@ref(tab:tab-culvert-198066)). Water temperature was `r fpr::fpr_my_habitat_info(sit = my_site2, col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(sit = my_site2, col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(sit = my_site2, col_pull = 'conductivity_m_s_cm')`uS/cm. PSCIS crossing `r as.character(my_site2)` on Walcott Road was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(site = my_site2, col_pull = barrier_result) %>% stringr::str_to_lower()` to upstream fish passage (Table \@ref(tab:tab-culvert-123377)). PSCIS crossing `r as.character(my_site3)` on Highway 16 was un-embedded, 50% backwatered and ranked as a `r fpr::fpr_my_pscis_info(site = my_site3, col_pull = barrier_result) %>% stringr::str_to_lower()` to upstream fish passage (Table \@ref(tab:tab-culvert-123375)). 
 
 <br>
 
@@ -94,11 +98,19 @@ fpr::fpr_table_cv_summary_memo()
 
 <br>
 
-```{r tab-culvert-198066-site2, eval = T}
+```{r tab-culvert-123377, eval = T}
 fpr::fpr_table_cv_summary_memo(site = my_site2, site_photo_id = my_site2)
 
 ```
 
+<br>
+
+```{r tab-culvert-123375, eval = T}
+fpr::fpr_table_cv_summary_memo(site = my_site3, site_photo_id = my_site3)
+
+```
+
+<br>
 
 ```{r eval=F}
 ##this is useful to get some comments for the report
@@ -108,18 +120,71 @@ my_priority <-  my_priority_info()
 
 ```
 
-## Stream Characteristics Downstream {-}
+## Stream Characteristics Downstream of `r as.character(my_site)` {-}
 
-The stream was surveyed downstream from the culvert for `r fpr::fpr_my_priority_info(loc = 'ds', col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198066-01) - \\@ref(fig:photo-198066-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198066-d01))"))`. Total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'total cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198066)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'average_gradient_percent')`%. The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_subdominant")` subdominant.  The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for salmonid rearing and spawning. 
+The stream was surveyed downstream from the culvert for `r fpr::fpr_my_priority_info(loc = 'ds', col_pull = 'length_surveyed')`m to the confluence with the Bulkley River side channel `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198066-01) - \\@ref(fig:photo-198066-02))")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198066-d01))"))`. Total cover amount was rated as moderate with  `r fpr::fpr_my_habitat_cover(loc = 'ds', cover_type = 'dominant')` dominant (Table \@ref(tab:tab-habitat-summary-198066)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'average_gradient_percent')`%. The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = "bed_material_subdominant")` subdominant. The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for salmonid rearing and spawning. This area is an important migration corridor that connects to oxbow of the Bulkley River. Hundreds of fish were spotted that ranged from 40 - 80mm in length.
 
 <br>
 
-## Stream Characteristics Upstream of `r as.character(my_site)` and downstream of `r as.character(my_site2)`{-}
+## Stream Characteristics Upstream of `r as.character(my_site)` and downstream of `r as.character(my_site2)` {-}
 
 
-The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198066-03) - \\@ref(fig:photo-198066-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-198066-d02))"))`. Within the area surveyed, total cover amount was rated as `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'total_cover')` with  `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198066)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_subdominant")` subdominant. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning. 
+The stream was surveyed immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198066-03) - \\@ref(fig:photo-198066-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-198066-d02))"))`. Within the area surveyed, total cover amount was rated as moderate with `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198066)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning. 
+
+<br>
+
+This site was revisited in 2022. Surveyors walked downstream from the bridge (crossing 123378) and then west along the historic channel for a total of approximately `r fpr::fpr_my_priority_info(loc = "us2", col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198066-05) - \\@ref(fig:photo-198066-06))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-198066-d03))"))`. `r fpr_my_habitat_paragraph(loc = 'us2')` Abundant gravels were present suitable for spawning resident and anadromous species. Few deep pools were present suitable for juvenile rearing and overwintering. there was some evidence of large flow events likely due to beaver dam blowouts upstream which have been reported by adjacent landowners. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning. The area was also surveyed by drone `r if(gitbook_on){knitr::asis_output(" presented in Figures \\@ref(fig:ortho-caption-198066) - \\@ref(fig:model-caption-198066).")} else knitr::asis_output("presented [here](https://www.mapsmadeeasy.com/maps/public/f2c9a83f405c4672bde09b05d0462f61) and [here](https://www.mapsmadeeasy.com/maps/public_3D/f2c9a83f405c4672bde09b05d0462f61).")`
+
+<br>
+
+The section downstream of `r as.character(my_site2)` was surveyed for approximately `r fpr::fpr_my_priority_info(sit = my_site2, loc = "ds", col_pull = 'length_surveyed')`m. `r fpr_my_habitat_paragraph(loc = 'ds', sit = my_site2)` This is a fantastic creek with abundant habitat and consistent grassy banks throughout, especially at the beginning half of the survey. The habitat transitioned to mixed but it was initially mature deciduous and shrub with grasses. There were abundant deep pools throughout, with lots of undercut banks, and periodic small and large woody debris jams and overhanging vegetation. All jams had free flowing water below but were perpendicular to the channel and approximately 1 - 1.3m tall. The latter half of the survey had more fines deposited, especially in deep pools. Countless fish were sighted throughout, especially in pools. The riparian vegetation was in great shape. There was one site of significant bank erosion, one small walking trail bridge and one water intake site (appears to be for a cabin). Overall the habitat was complex and `r fpr::fpr_my_priority_info(loc = 'ds', sit = my_site2)` value, with great water levels and abundant fish. 
+
+## Stream Characteristics Upstream of `r as.character(my_site2)` and downstream of `r as.character(my_site3)` {-}
+
+The stream was surveyed upstream of `r as.character(my_site2)` for approximately `r fpr::fpr_my_priority_info(sit = my_site2, loc = "us", col_pull = 'length_surveyed')`m. `r fpr_my_habitat_paragraph(loc = 'us', sit = my_site2)` There were frequent deep pools up to 80cm and abundant large woody debris and gravels. There was narrow but meaningful mature cottonwoood riparian. The channel was hard to locate upstream of confluence with the mainstem due to reed canary grass and willow dominated vegetation.
+
+<br>
+
+Crossing `r as.character(my_site3)` located further upstream on the highway was surveyed in a downstream direction for `r fpr::fpr_my_priority_info(sit = my_site3, loc = "ds", col_pull = 'length_surveyed')`m. The stream flow was low, and the vegetation was predominantly grass, shrubs, and young deciduous. Substrate predominantly fines and full of small and large woody debris. The gradient was estimated at <2%. There was no suitable spawning habitat, therefore habitat value was rated as low.
+
+## Stream Characteristics Upstream of `r as.character(my_site3)` {-}
+
+This section was surveyed upstream of `r as.character(my_site3)` for approximately `r fpr::fpr_my_priority_info(sit = my_site3, loc = "us", col_pull = 'length_surveyed')`m. The habitat value was low as the stream was heavily impacted by cattle. The dominant substrate was fines, the flow was low, and the stream was very small.
 
 
+<br>
+
+```{r ortho-198066, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public/f2c9a83f405c4672bde09b05d0462f61" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+```{r ortho-caption-198066, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('Orthomosaic of habitat upstream of PSCIS crossing 198066.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
+
+<br>
+
+```{r model-198066, eval = identical(gitbook_on, TRUE)}
+model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/f2c9a83f405c4672bde09b05d0462f61" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
+
+knitr::asis_output(model_url)
+```
+
+```{r model-caption-198066, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
+my_photo = 'fig/pixel.png'
+
+my_caption = paste0('3D model of habitat upstream of PSCIS crossing 198066. To zoom press "shift" and scroll.')
+
+knitr::include_graphics(my_photo, dpi = NA)
+
+```
 
 
 ## Structure Remediation and Cost Estimate {-}
@@ -136,15 +201,9 @@ Should restoration/maintenance activities proceed at the site, replacement of PS
 
 ## Conclusion {-}
 
-There was`r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
-
-<br>
-
-There was `r fpr::fpr_my_priority_info(sit = my_site2, col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site2)` rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site2)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
-
-<br>
-
-Restoration suggestions by @tamblyn_jessop2000DetailedFish can be considered still relevant for Thompson Creek and include working with landowners to limit cattle access to the riparian zone, re-establishing riparian vegetation, improving cattle crossings and fish passage at roads.  Additionally, the redirection of the stream back into it's historic channel on the north side of the agricultural field near the confluence with the Bulkley River provides an extraordinary opportunity for sizable fish habitat gains in a currently very severely impacted section of stream.  
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
+There was `r fpr::fpr_my_priority_info(sit = my_site2, col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site2)` rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site2)` was ranked as a `r fpr::fpr_my_priority_info(sit = my_site2, col_pull = priority)` priority for proceeding to design for replacement. Crossing `r as.character(my_site3)` was ranked as a `r fpr::fpr_my_priority_info(sit = my_site3, col_pull = priority)` priority due to its low habitat value and the fact that the main flow of the stream is actually through the open bottom structure at crossing 123376.  
+Restoration suggestions by @tamblyn_jessop2000DetailedFish can still be considered relevant for Thompson Creek and include working with landowners to limit cattle access to the riparian zone, re-establishing riparian vegetation, improving cattle crossings and fish passage at roads.  Additionally, the redirection of the stream back into it's historic channel on the north side of the agricultural field near the confluence with the Bulkley River provides an extraordinary opportunity for sizable fish habitat gains in a currently very severely impacted section of stream.  
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
@@ -153,9 +212,10 @@ Restoration suggestions by @tamblyn_jessop2000DetailedFish can be considered sti
 ```{r tab-habitat-summary-198066}
 tab_hab_summary %>% 
   filter(Site  == my_site |
-           Site == my_site2) %>% 
+           Site == my_site2 |
+           Site == my_site3) %>% 
   # select(-Site) %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, ' and ', my_site2, '.'),
+  fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, my_site2, ' and ', my_site3, '.'),
                  scroll = F) 
 
 ```
@@ -229,6 +289,110 @@ grid::grid.raster(jpeg::readJPEG(my_photo2))
 ```
 
 ```{r photo-198066-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+```{r photo-198066-05-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u3_')
+
+my_caption1 = paste0('Habitat upstream of PSCIS crossing ', my_site, ' and downstream of PSCIS crossing 123378.')
+```
+
+```{r photo-198066-05, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+
+
+<br>
+
+```{r photo-198066-06-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u4_')
+
+my_caption2 = paste0('Habitat upstream of PSCIS crossing ', my_site, ' and downstream of PSCIS crossing 123378.')
+
+```
+
+```{r photo-198066-06, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-198066-d03, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+```{r photo-123377-01-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_d1_')
+
+my_caption1 = paste0('Habitat downstream of PSCIS crossing ', my_site2, '.')
+```
+
+```{r photo-123377-01, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+<br>
+
+```{r photo-123377-02-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_d2_')
+
+my_caption2 = paste0('Habitat downstream of PSCIS crossing ', my_site2, '.')
+
+```
+
+```{r photo-123377-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-123377-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+```{r photo-123377-03-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_obs_')
+
+my_caption1 = paste0('Open bottom structure on Highway 16 (PSCIS crossing 123376).')
+```
+
+```{r photo-123377-03, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+<br>
+
+```{r photo-123377-04-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_u1_')
+
+my_caption2 = paste0('Habitat immediately upstream of PSCIS crossing 123376.')
+
+```
+
+```{r photo-123377-04, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-123377-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
 
 my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
 
