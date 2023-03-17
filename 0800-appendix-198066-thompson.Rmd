@@ -38,12 +38,16 @@ At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr:
 
 <br>
 
-Landowners adjacent to the stream at crossings `r as.character(my_site)` and `r as.character(my_site2)` as well as regional DFO staff report that Thompson Creek was historically redirected from its original channel on the height of land near the Bulkley River in the 1960s.  The historic channel is  visible in aerial imagery and would have directed flows in a north-eastern direction from where the agricultural fields meet the Thompson creek valley. The redirection diverts the channel into two seperate channels that flow south-east.  The main flow of the channel was flowing in an excavated trench through the hay field at the time of the survey.  The distance from the current confluence with the Bulkley River side channel to the historic valley is approximately 370m.  The distance the stream would have traveled historically in a north-eastern direction is estimated at 1300m. The landowner reported that conceptually they would like to see the stream redirected to its historic channel.  They noted that stranding has been observed within the excavated channel and a realignment would help prevent the loss of hay production caused by the high water table adjacent to the excavated channel. A map of the current man made channels and the historic channel is provided in Figure \@ref(fig:fig-channel-198066).  Adjacent landowners also report that the crossing at Walcott Road had nearly washed out at the road due to high flows related to beaver dam failures.  Crossing 123378 has been recorded as a bridge on Thompson Creek on the BC Hydro powerline between `r as.character(my_site)` and `r as.character(my_site2)` [@gollner_cain2014FISHPASSAGE].  Landowners report this bridge washed out at the time of the beaver dam failure and was replaced in 2020. Thompson creek was re visited in 2022 and a survey was done downstream of the replaced bridge.
+Landowners adjacent to the stream at crossings `r as.character(my_site)` and `r as.character(my_site2)` as well as regional DFO staff report that Thompson Creek was historically redirected from its original channel on the height of land near the Bulkley River in the 1960s.  The historic channel is  visible in aerial imagery and would have directed flows in a north-eastern direction from where the agricultural fields meet the Thompson creek valley. The redirection diverts the channel into two seperate channels that flow south-east.  The main flow of the channel was flowing in an excavated trench through the hay field at the time of the survey.  The distance from the current confluence with the Bulkley River side channel to the historic valley is approximately 370m.  The distance the stream would have traveled historically in a north-eastern direction is estimated at 1300m. The landowner reported that conceptually they would like to see the stream redirected to its historic channel.  They noted that stranding has been observed within the excavated channel and a realignment would help prevent the loss of hay production caused by the high water table adjacent to the excavated channel. A map of the current man made channels and the historic channel is provided in Figure \@ref(fig:fig-channel-198066). A digital elevation model is presented in Figure \@ref(fig:fig-dem-198066). The model shows evidence of extensive machine work to prevent the channel from flooding the agricultural fields that are on the floodplain of the Bulkley River as well as to drain the water that appears to inundate the wetlands to the south of the property. During field assessments it was noted that there was significant clearing of mature cottonwood forest adjacent to the side channel of the Bulkley River adjacent to 198066 Adjacent landowners also report that the crossing at Walcott Road had nearly washed out at the road due to high flows related to beaver dam failures. A digital elevation model of the area surrounding crossing 123377 is presented in Figure \@ref(fig:fig-dem-198066-walcott).  Crossing 123378 has been recorded as a bridge on Thompson Creek on the BC Hydro powerline between `r as.character(my_site)` and `r as.character(my_site2)` [@gollner_cain2014FISHPASSAGE].  Landowners report this bridge washed out at the time of the beaver dam failure and was replaced in 2020. 
+
+<br>
+
+Thompson creek was re visited in 2022 and a survey was done downstream of the replaced bridge (crossing 123378). In addition to surveying the wetted channel to where the stream directs to the south and the agricultural fields begin, surveyors walked the north edge of the field towards the Bulkley River for approximately 150m then circled back south through the shrub dominated areas to the hay fields to scope for evidence that a defined historic channel was located in this area. Although some low lying areas were observed, no defined channel was located which is not surprising since this area is all within the floodplain of the Bulkley River, so channels/wetland complexes would historically shift throughout the floodplain based on beaver activity and flows in both Thompson Creek and the Bulkley River.
 
 
 <br>
 
-PSCIS crossing 123376 on Highway 16 was assessed by @gollner_etal2013FishPassage in 2013. This is an open bottom structure (pipe arch) that was passable to all life stages at the time of survey. It was 7m in diameter and 24m in length. It is important to note that the majority of flow from Thompson Creek comes from this section that flows under the highway as opposed to the channel mapped as the mainstem. This site was revisited in 2021, with photos shown in `r if(gitbook_on){knitr::asis_output("Figures \\@ref(fig:photo-123377-03) - \\@ref(fig:photo-123377-04).")}else(knitr::asis_output("Figure \\@ref(fig:photo-123377-d02)."))` There was minimal flow with much of the riparian vegetation removed and clear evidence of cattle trampled banks upstream and downstream. There was private land on both sides of the road. Crossings 123381 and 123380 located upstream of the highway were not accessible and could not be surveyed because they were on private land and blocked behind gates. However these sites likely do not have significant influence on connectivity in the watershed because the main body of the stream flows through crossing 123376. 
+PSCIS crossing 123376 on Highway 16 was assessed by @gollner_etal2013FishPassage in 2013. This is an open bottom structure (pipe arch) that was passable to all life stages at the time of survey. It was 7m in diameter and 24m in length. It is important to note that the majority of flow from Thompson Creek comes from this section that flows under the highway as opposed to the channel mapped as the mainstem. This site was revisited in 2021, with photos shown in `r if(gitbook_on){knitr::asis_output("Figures \\@ref(fig:photo-123377-03) - \\@ref(fig:photo-123377-04).")}else(knitr::asis_output("Figure \\@ref(fig:photo-123377-d02)."))` Crossings 123381 and 123380 located upstream of the highway were not accessible and could not be surveyed because they were on private land and blocked behind gates. However these sites likely do not have significant influence on connectivity in the watershed because the main body of the stream flows through crossing 123376. Further upstream, PSCIS crossing 123382 was also visited `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-123382-01) - \\@ref(fig:photo-123382-02)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-123382-d01))."))` There was minimal flow with much of the riparian vegetation removed and clear evidence of cattle trampled banks upstream and downstream. There was private land on both sides of the road. 
 
 <br>
 
@@ -61,6 +65,18 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 ```{r fig-channel-198066, eval = T, fig.cap= 'Map of the current man made channels and the historic channel on Thompson Creek adjacent to the Bulkley River.'}
 knitr::include_graphics("fig/thompson.png")
+```
+
+<br>
+
+```{r fig-dem-198066, eval = T, fig.cap= 'Digital elevation model of the current man made channels and the historic channel on Thompson Creek.'}
+knitr::include_graphics("fig/lidar_198066.png")
+```
+
+<br>
+
+```{r fig-dem-198066-walcott, eval = T, fig.cap= 'Digital elevation model of the area surrounding crossing 123377 on Thompson Creek.'}
+knitr::include_graphics("fig/lidar_123377.png")
 ```
 
 <br>
@@ -203,7 +219,8 @@ Should restoration/maintenance activities proceed at the site, replacement of PS
 
 There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
 There was `r fpr::fpr_my_priority_info(sit = my_site2, col_pull= upstream_habitat_length_km)`km of habitat upstream of crossing `r as.character(my_site2)` rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site2)` was ranked as a `r fpr::fpr_my_priority_info(sit = my_site2, col_pull = priority)` priority for proceeding to design for replacement. Crossing `r as.character(my_site3)` was ranked as a `r fpr::fpr_my_priority_info(sit = my_site3, col_pull = priority)` priority due to its low habitat value and the fact that the main flow of the stream is actually through the open bottom structure at crossing 123376.  
-Restoration suggestions by @tamblyn_jessop2000DetailedFish can still be considered relevant for Thompson Creek and include working with landowners to limit cattle access to the riparian zone, re-establishing riparian vegetation, improving cattle crossings and fish passage at roads.  Additionally, the redirection of the stream back into it's historic channel on the north side of the agricultural field near the confluence with the Bulkley River provides an extraordinary opportunity for sizable fish habitat gains in a currently very severely impacted section of stream.  
+Restoration suggestions by @tamblyn_jessop2000DetailedFish can still be considered relevant for Thompson Creek and include working with landowners to limit cattle access to the riparian zone, re-establishing riparian vegetation, improving cattle crossings and fish passage at roads. Other recommendations for restoring this system include working with landowners and regulators to develop a plan for removing agricultural area from sections of the floodplain to re-establish riparian forest adjacent to Thompson Creek as well as the Bulkley River and side channels. Additionally, retention of water within floodplain wetland complexes should be encouraged.
+Additionally, electrofishing above and below crossing 123377 and tagging with Passive Integrated Transponders (PIT tags) to gather baseline data before designing a potential replacement of the structure. This would help track the movement of fish in the system over time and to give an indication of whether anadromous species are able to ascend through the rangelands adjacent to the Bulkley River floodplain.
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
@@ -393,6 +410,40 @@ grid::grid.raster(jpeg::readJPEG(my_photo2))
 ```
 
 ```{r photo-123377-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+```{r photo-123382-01-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_u3_')
+
+my_caption1 = paste0('Downstream view of PSCIS crossing 123382.')
+```
+
+```{r photo-123382-01, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+<br>
+
+```{r photo-123382-02-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_u4_')
+
+my_caption2 = paste0('Upstream view of PSCIS crossing 123382.')
+
+```
+
+```{r photo-123382-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+```
+
+```{r photo-123382-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
 
 my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
 
