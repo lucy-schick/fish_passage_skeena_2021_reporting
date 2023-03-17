@@ -19,7 +19,7 @@ scripts/pers_*
 docs/Skeena2021.html
 Skeena2021.html
 *~$*
-*.sqlite
+#*.sqlite
 #hold
 *.Kmz
 *.kml
