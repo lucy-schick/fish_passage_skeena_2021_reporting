@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>John Brown - 123770 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021</title>
   <meta name="description" content="Wet-zuhn-kwa" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="John Brown - 123770 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   <meta property="og:type" content="book" />
@@ -52,7 +52,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
@@ -228,7 +228,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="ailport-creek---197976-197975---appendix.html"><a href="ailport-creek---197976-197975---appendix.html"><i class="fa fa-check"></i>Ailport Creek - 197976 &amp; 197975 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="mcbride-creek---198000---appendix.html"><a href="mcbride-creek---198000---appendix.html"><i class="fa fa-check"></i>McBride Creek - 198000 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="cesford-creek---198048-198049---appendix.html"><a href="cesford-creek---198048-198049---appendix.html"><i class="fa fa-check"></i>Cesford Creek - 198048 &amp; 198049 - Appendix</a></li>
-<li class="chapter" data-level="" data-path="thompson-creek---198066-123377---appendix.html"><a href="thompson-creek---198066-123377---appendix.html"><i class="fa fa-check"></i>Thompson Creek - 198066 &amp; 123377 - Appendix</a></li>
+<li class="chapter" data-level="" data-path="thompson-creek---198066-123377-123375---appendix.html"><a href="thompson-creek---198066-123377-123375---appendix.html"><i class="fa fa-check"></i>Thompson Creek - 198066 &amp; 123377 &amp; 123375 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="chapter" data-level="" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i>Session Info</a></li>
 <li class="chapter" data-level="" data-path="attachment-1---maps.html"><a href="attachment-1---maps.html"><i class="fa fa-check"></i><strong>Attachment 1 - Maps</strong></a></li>
@@ -266,10 +266,10 @@ div.csl-indent {
 <h2>Background<a href="john-brown---123770---appendix.html#background-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At crossing 123770, John Brown is a fifth order stream with a watershed area upstream of the crossing of approximately 80.6km<sup>2</sup>. The elevation of the watershed ranges from a maximum of 2050m to 375m near the crossing (Table <a href="john-brown---123770---appendix.html#tab:tab-wshd-123770">5.11</a>). Upstream of crossing 123770, coho salmon, cutthroat trout, rainbow trout, chinook salmon, bull trout, and dolly varden have previously been recorded <span class="citation">(MoE 2020b; Norris 2020)</span>. <span class="citation">A. Gottesfeld and Rabnett (2007)</span> report that although spawner abundance and location are unknown, chinook have been observed with John Brown Creek at 0.4km.</p>
 <p><br></p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="john-brown---123770---appendix.html#cb103-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb103-2"><a href="john-brown---123770---appendix.html#cb103-2" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb103-3"><a href="john-brown---123770---appendix.html#cb103-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb103-4"><a href="john-brown---123770---appendix.html#cb103-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="john-brown---123770---appendix.html#cb103-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb103-2"><a href="john-brown---123770---appendix.html#cb103-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb103-3"><a href="john-brown---123770---appendix.html#cb103-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb103-4"><a href="john-brown---123770---appendix.html#cb103-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-123770">Table 5.11: </span>Summary of derived upstream watershed statistics for PSCIS crossing 123770.
@@ -343,7 +343,7 @@ SE
 <p><br></p>
 <p>PSCIS stream crossing 123770 was ranked as a high priority for follow up by <span class="citation">Irvine (2018)</span>, <span class="citation">Irvine (2021)</span> and <span class="citation">Mazany-Wright et al. (2021)</span> because of significant amounts of habitat modelled as upstream of the crossing. A summary of habitat modelling outputs is presented in Table <a href="john-brown---123770---appendix.html#tab:tab-culvert-bcfp-123770">5.12</a>. A map of the watershed is provided in map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093M.102.pdf">093M.102</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="john-brown---123770---appendix.html#cb104-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="john-brown---123770---appendix.html#cb104-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -662,7 +662,7 @@ All Spawning Rearing (km)
 <h2>Stream Characteristics at Crossing<a href="john-brown---123770---appendix.html#stream-characteristics-at-crossing-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the time of the survey, PSCIS crossing 123770 was non-backwatered and ranked as a barrier to upstream fish passage according to the provincial protocol <span class="citation">(MoE 2011b)</span> (Table <a href="john-brown---123770---appendix.html#tab:tab-culvert-123770">5.13</a>). The crossing consisted on two pipes with baffles installed within the lower elevation pipe. There was a significant outlet drop and the baffled pipe was not embedded for its entire length. Water temperature was 10<span class="math inline">\(^\circ\)</span>C, pH was 7.2 and conductivity was 94uS/cm. The stream was also assessed at the location of a modelled crossing 1418m upstream from the confluence with the Bulkley River (PSCIS 198043) where a ford was located.</p>
 <p><br></p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="john-brown---123770---appendix.html#cb105-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="john-brown---123770---appendix.html#cb105-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-123770">Table 5.13: </span>Summary of fish passage assessment for PSCIS crossing 123770.
@@ -925,9 +925,9 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="john-brown---123770---appendix.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb106-2"><a href="john-brown---123770---appendix.html#cb106-2" aria-hidden="true" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb106-3"><a href="john-brown---123770---appendix.html#cb106-3" aria-hidden="true" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="john-brown---123770---appendix.html#cb106-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb106-2"><a href="john-brown---123770---appendix.html#cb106-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb106-3"><a href="john-brown---123770---appendix.html#cb106-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-1" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream<a href="john-brown---123770---appendix.html#stream-characteristics-downstream-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -959,11 +959,11 @@ Total cover amount was rated as moderate with undercut banks dominant. Cover was
 <p>There was 11.7km of habitat modelled upstream of crossing 123770 with areas surveyed rated as high value for salmonid rearing and spawning. Crossing 123770 was ranked as a high priority for proceeding to design for replacement. John Brown Creek is a large system with habitat suitable for numerous species includeing coho, steelhead and chinook salmon. Development of a plan to replace the crossing with a bridge may be considered as a prudent step to eliminating an outlet drop, reducing flow velocities at the highway crossing and mitigating risks of a blow out to the baffle induced partial embedding currently in place in the south pipe of the crossing.</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="john-brown---123770---appendix.html#cb107-1" aria-hidden="true" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb107-2"><a href="john-brown---123770---appendix.html#cb107-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb107-3"><a href="john-brown---123770---appendix.html#cb107-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb107-4"><a href="john-brown---123770---appendix.html#cb107-4" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb107-5"><a href="john-brown---123770---appendix.html#cb107-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="john-brown---123770---appendix.html#cb107-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb107-2"><a href="john-brown---123770---appendix.html#cb107-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb107-3"><a href="john-brown---123770---appendix.html#cb107-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb107-4"><a href="john-brown---123770---appendix.html#cb107-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb107-5"><a href="john-brown---123770---appendix.html#cb107-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-123770">Table 5.14: </span>Summary of habitat details for PSCIS crossing 123770.
@@ -1090,7 +1090,7 @@ high
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="john-brown---123770---appendix.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fpr_table_fish_site</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="john-brown---123770---appendix.html#cb108-1" tabindex="-1"></a><span class="fu">fpr_table_fish_site</span>()</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-fish-site-123770">Table 5.15: </span>Fish sampling site summary for 123770.
@@ -1241,7 +1241,7 @@ Open
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="john-brown---123770---appendix.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fpr_table_fish_density</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="john-brown---123770---appendix.html#cb109-1" tabindex="-1"></a><span class="fu">fpr_table_fish_density</span>()</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-fish-dens-123770">Table 5.16: </span>Fish sampling density results summary for 123770.
@@ -1579,9 +1579,9 @@ TRUE
 </tfoot>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="john-brown---123770---appendix.html#cb110-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Densites of fish (fish/100m2) captured upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb110-2"><a href="john-brown---123770---appendix.html#cb110-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb110-3"><a href="john-brown---123770---appendix.html#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fpr_plot_fish_box</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="john-brown---123770---appendix.html#cb110-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Densites of fish (fish/100m2) captured upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb110-2"><a href="john-brown---123770---appendix.html#cb110-2" tabindex="-1"></a></span>
+<span id="cb110-3"><a href="john-brown---123770---appendix.html#cb110-3" tabindex="-1"></a><span class="fu">fpr_plot_fish_box</span>() </span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:plot-fish-box-123770"></span>
 <img src="Skeena2021_files/figure-html/plot-fish-box-123770-1.png" alt="Densites of fish (fish/100m2) captured upstream of PSCIS crossing 123770." width="100%" />
 <p class="caption">
@@ -1589,13 +1589,13 @@ Figure 5.15: Densites of fish (fish/100m2) captured upstream of PSCIS crossing 1
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="john-brown---123770---appendix.html#cb111-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb111-2"><a href="john-brown---123770---appendix.html#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-3"><a href="john-brown---123770---appendix.html#cb111-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb111-4"><a href="john-brown---123770---appendix.html#cb111-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-5"><a href="john-brown---123770---appendix.html#cb111-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-6"><a href="john-brown---123770---appendix.html#cb111-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="john-brown---123770---appendix.html#cb112-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="john-brown---123770---appendix.html#cb111-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb111-2"><a href="john-brown---123770---appendix.html#cb111-2" tabindex="-1"></a></span>
+<span id="cb111-3"><a href="john-brown---123770---appendix.html#cb111-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb111-4"><a href="john-brown---123770---appendix.html#cb111-4" tabindex="-1"></a></span>
+<span id="cb111-5"><a href="john-brown---123770---appendix.html#cb111-5" tabindex="-1"></a></span>
+<span id="cb111-6"><a href="john-brown---123770---appendix.html#cb111-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="john-brown---123770---appendix.html#cb112-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123770-01"></span>
 <img src="Skeena2021_files/figure-html/photo-123770-01-1.png" alt="Typical habitat downstream of PSCIS crossing 123770." width="100%" />
 <p class="caption">
@@ -1603,10 +1603,10 @@ Figure 5.16: Typical habitat downstream of PSCIS crossing 123770.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="john-brown---123770---appendix.html#cb113-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb113-2"><a href="john-brown---123770---appendix.html#cb113-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-3"><a href="john-brown---123770---appendix.html#cb113-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="john-brown---123770---appendix.html#cb114-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="john-brown---123770---appendix.html#cb113-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb113-2"><a href="john-brown---123770---appendix.html#cb113-2" tabindex="-1"></a></span>
+<span id="cb113-3"><a href="john-brown---123770---appendix.html#cb113-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="john-brown---123770---appendix.html#cb114-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123770-02"></span>
 <img src="Skeena2021_files/figure-html/photo-123770-02-1.png" alt="Typical habitat downstream of PSCIS crossing 123770." width="100%" />
 <p class="caption">
@@ -1614,15 +1614,15 @@ Figure 5.17: Typical habitat downstream of PSCIS crossing 123770.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="john-brown---123770---appendix.html#cb115-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb115-2"><a href="john-brown---123770---appendix.html#cb115-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-3"><a href="john-brown---123770---appendix.html#cb115-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb115-4"><a href="john-brown---123770---appendix.html#cb115-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb115-5"><a href="john-brown---123770---appendix.html#cb115-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="john-brown---123770---appendix.html#cb116-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb116-2"><a href="john-brown---123770---appendix.html#cb116-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-3"><a href="john-brown---123770---appendix.html#cb116-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="john-brown---123770---appendix.html#cb117-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="john-brown---123770---appendix.html#cb115-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb115-2"><a href="john-brown---123770---appendix.html#cb115-2" tabindex="-1"></a></span>
+<span id="cb115-3"><a href="john-brown---123770---appendix.html#cb115-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb115-4"><a href="john-brown---123770---appendix.html#cb115-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb115-5"><a href="john-brown---123770---appendix.html#cb115-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="john-brown---123770---appendix.html#cb116-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb116-2"><a href="john-brown---123770---appendix.html#cb116-2" tabindex="-1"></a></span>
+<span id="cb116-3"><a href="john-brown---123770---appendix.html#cb116-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="john-brown---123770---appendix.html#cb117-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123770-03"></span>
 <img src="Skeena2021_files/figure-html/photo-123770-03-1.png" alt="Typical habitat upstream of PSCIS crossing 123770." width="100%" />
 <p class="caption">
@@ -1630,25 +1630,25 @@ Figure 5.18: Typical habitat upstream of PSCIS crossing 123770.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="john-brown---123770---appendix.html#cb118-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb118-2"><a href="john-brown---123770---appendix.html#cb118-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb118-3"><a href="john-brown---123770---appendix.html#cb118-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="john-brown---123770---appendix.html#cb119-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="john-brown---123770---appendix.html#cb118-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb118-2"><a href="john-brown---123770---appendix.html#cb118-2" tabindex="-1"></a></span>
+<span id="cb118-3"><a href="john-brown---123770---appendix.html#cb118-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="john-brown---123770---appendix.html#cb119-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123770-04"></span>
 <img src="Skeena2021_files/figure-html/photo-123770-04-1.png" alt="Typical habitat upstream of PSCIS crossing 123770." width="100%" />
 <p class="caption">
 Figure 5.19: Typical habitat upstream of PSCIS crossing 123770.
 </p>
 </div>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="john-brown---123770---appendix.html#cb120-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb120-2"><a href="john-brown---123770---appendix.html#cb120-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb120-3"><a href="john-brown---123770---appendix.html#cb120-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb120-4"><a href="john-brown---123770---appendix.html#cb120-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb120-5"><a href="john-brown---123770---appendix.html#cb120-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="john-brown---123770---appendix.html#cb121-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
-<span id="cb121-2"><a href="john-brown---123770---appendix.html#cb121-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb121-3"><a href="john-brown---123770---appendix.html#cb121-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="john-brown---123770---appendix.html#cb122-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="john-brown---123770---appendix.html#cb120-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb120-2"><a href="john-brown---123770---appendix.html#cb120-2" tabindex="-1"></a></span>
+<span id="cb120-3"><a href="john-brown---123770---appendix.html#cb120-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb120-4"><a href="john-brown---123770---appendix.html#cb120-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb120-5"><a href="john-brown---123770---appendix.html#cb120-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="john-brown---123770---appendix.html#cb121-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
+<span id="cb121-2"><a href="john-brown---123770---appendix.html#cb121-2" tabindex="-1"></a></span>
+<span id="cb121-3"><a href="john-brown---123770---appendix.html#cb121-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="john-brown---123770---appendix.html#cb122-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123770-05"></span>
 <img src="Skeena2021_files/figure-html/photo-123770-05-1.png" alt="Typical habitat upstream of PSCIS crossing 123770." width="100%" />
 <p class="caption">
@@ -1656,29 +1656,29 @@ Figure 5.20: Typical habitat upstream of PSCIS crossing 123770.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="john-brown---123770---appendix.html#cb123-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
-<span id="cb123-2"><a href="john-brown---123770---appendix.html#cb123-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb123-3"><a href="john-brown---123770---appendix.html#cb123-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="john-brown---123770---appendix.html#cb124-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="john-brown---123770---appendix.html#cb123-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
+<span id="cb123-2"><a href="john-brown---123770---appendix.html#cb123-2" tabindex="-1"></a></span>
+<span id="cb123-3"><a href="john-brown---123770---appendix.html#cb123-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="john-brown---123770---appendix.html#cb124-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123770-06"></span>
 <img src="Skeena2021_files/figure-html/photo-123770-06-1.png" alt="Typical habitat upstream of PSCIS crossing 123770." width="100%" />
 <p class="caption">
 Figure 5.21: Typical habitat upstream of PSCIS crossing 123770.
 </p>
 </div>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="john-brown---123770---appendix.html#cb125-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb125-2"><a href="john-brown---123770---appendix.html#cb125-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb125-3"><a href="john-brown---123770---appendix.html#cb125-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb125-4"><a href="john-brown---123770---appendix.html#cb125-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb125-5"><a href="john-brown---123770---appendix.html#cb125-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="john-brown---123770---appendix.html#cb125-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb125-2"><a href="john-brown---123770---appendix.html#cb125-2" tabindex="-1"></a></span>
+<span id="cb125-3"><a href="john-brown---123770---appendix.html#cb125-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb125-4"><a href="john-brown---123770---appendix.html#cb125-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb125-5"><a href="john-brown---123770---appendix.html#cb125-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="john-brown---123770---appendix.html#cb126-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb126-2"><a href="john-brown---123770---appendix.html#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb126-3"><a href="john-brown---123770---appendix.html#cb126-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="john-brown---123770---appendix.html#cb127-1" aria-hidden="true" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">124420</span></span>
-<span id="cb127-2"><a href="john-brown---123770---appendix.html#cb127-2" aria-hidden="true" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">124421</span></span>
-<span id="cb127-3"><a href="john-brown---123770---appendix.html#cb127-3" aria-hidden="true" tabindex="-1"></a>my_site3 <span class="ot">&lt;-</span> <span class="dv">124422</span></span>
-<span id="cb127-4"><a href="john-brown---123770---appendix.html#cb127-4" aria-hidden="true" tabindex="-1"></a>my_site4 <span class="ot">&lt;-</span> <span class="dv">124424</span></span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="john-brown---123770---appendix.html#cb126-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb126-2"><a href="john-brown---123770---appendix.html#cb126-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb126-3"><a href="john-brown---123770---appendix.html#cb126-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="john-brown---123770---appendix.html#cb127-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">124420</span></span>
+<span id="cb127-2"><a href="john-brown---123770---appendix.html#cb127-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">124421</span></span>
+<span id="cb127-3"><a href="john-brown---123770---appendix.html#cb127-3" tabindex="-1"></a>my_site3 <span class="ot">&lt;-</span> <span class="dv">124422</span></span>
+<span id="cb127-4"><a href="john-brown---123770---appendix.html#cb127-4" tabindex="-1"></a>my_site4 <span class="ot">&lt;-</span> <span class="dv">124424</span></span></code></pre></div>
 </div>
 </div>
             </section>
@@ -1747,7 +1747,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

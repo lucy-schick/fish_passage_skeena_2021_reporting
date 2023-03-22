@@ -1,3 +1,8 @@
+# fish_passage_skeena_2021_reporting 0.1.4
+
+  * 20230321
+  * clean up Thompson Creek, add detail and lidar as per https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/issues/18
+
 # fish_passage_skeena_2021_reporting 0.1.3
 
   * bump to fpr v1.1.0.  

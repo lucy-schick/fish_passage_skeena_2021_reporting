@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>McBride Creek - 198000 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021</title>
   <meta name="description" content="Wet-zuhn-kwa" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="McBride Creek - 198000 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   <meta property="og:type" content="book" />
@@ -52,7 +52,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
@@ -228,7 +228,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="ailport-creek---197976-197975---appendix.html"><a href="ailport-creek---197976-197975---appendix.html"><i class="fa fa-check"></i>Ailport Creek - 197976 &amp; 197975 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="mcbride-creek---198000---appendix.html"><a href="mcbride-creek---198000---appendix.html"><i class="fa fa-check"></i>McBride Creek - 198000 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="cesford-creek---198048-198049---appendix.html"><a href="cesford-creek---198048-198049---appendix.html"><i class="fa fa-check"></i>Cesford Creek - 198048 &amp; 198049 - Appendix</a></li>
-<li class="chapter" data-level="" data-path="thompson-creek---198066-123377---appendix.html"><a href="thompson-creek---198066-123377---appendix.html"><i class="fa fa-check"></i>Thompson Creek - 198066 &amp; 123377 - Appendix</a></li>
+<li class="chapter" data-level="" data-path="thompson-creek---198066-123377-123375---appendix.html"><a href="thompson-creek---198066-123377-123375---appendix.html"><i class="fa fa-check"></i>Thompson Creek - 198066 &amp; 123377 &amp; 123375 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="chapter" data-level="" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i>Session Info</a></li>
 <li class="chapter" data-level="" data-path="attachment-1---maps.html"><a href="attachment-1---maps.html"><i class="fa fa-check"></i><strong>Attachment 1 - Maps</strong></a></li>
@@ -266,10 +266,10 @@ div.csl-indent {
 <h2>Background<a href="mcbride-creek---198000---appendix.html#background-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At crossing 198000, McBride Creek is a fourth order stream with a watershed area upstream of the crossing of approximately 83.5km<sup>2</sup>. The elevation of the watershed ranges from a maximum of 1597m to -1270m near the crossing (Table <a href="mcbride-creek---198000---appendix.html#tab:tab-wshd-198000">5.64</a>). Upstream of crossing 198000, longnose sucker, white sucker, largescale sucker, peamouth chub, leopard dace, redside shiner, burbot, lake whitefish, cutthroat trout, coho salmon, rainbow trout, mountain whitefish, dolly varden, lake trout, and prickly sculpin have previously been recorded <span class="citation">(MoE 2020b; Norris 2020)</span>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="mcbride-creek---198000---appendix.html#cb328-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb328-2"><a href="mcbride-creek---198000---appendix.html#cb328-2" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb328-3"><a href="mcbride-creek---198000---appendix.html#cb328-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb328-4"><a href="mcbride-creek---198000---appendix.html#cb328-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="mcbride-creek---198000---appendix.html#cb328-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb328-2"><a href="mcbride-creek---198000---appendix.html#cb328-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb328-3"><a href="mcbride-creek---198000---appendix.html#cb328-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb328-4"><a href="mcbride-creek---198000---appendix.html#cb328-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-198000">Table 5.64: </span>Summary of derived upstream watershed statistics for PSCIS crossing 198000.
@@ -341,7 +341,7 @@ SSW
 <p><br></p>
 <p>PSCIS stream crossing 198000 was ranked as a high priority for follow up by <span class="citation">Irvine (2021)</span> because of the large amount of potential habitat upstream of the crossing. A summary of habitat modelling outputs is presented in Table <a href="mcbride-creek---198000---appendix.html#tab:tab-culvert-bcfp-198000">5.65</a>. A map of the watershed is provided in map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.102.pdf">093L.102</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="mcbride-creek---198000---appendix.html#cb329-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="mcbride-creek---198000---appendix.html#cb329-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -660,7 +660,7 @@ All Spawning Rearing (km)
 <h2>Stream Characteristics at Crossing<a href="mcbride-creek---198000---appendix.html#stream-characteristics-at-crossing-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the time of the survey, PSCIS crossing 198000 was un-embedded, non-backwatered and ranked as a potential barrier to upstream fish passage according to the provincial protocol <a href="Table%20<a href="mcbride-creek---198000---appendix.html#tab:tab-culvert-198000">5.66</a>"><span class="citation">MoE (2011b)</span></a>. Water temperature was 12<span class="math inline">\(^\circ\)</span>C, pH was 7.3 and conductivity was 366uS/cm. Surveys were conducted with a remotely piloted aircraft immediately upstream and downstream of the crossing with resulting images stitched into an orthomosaic and 3-dimensional model presented in Figures <a href="mcbride-creek---198000---appendix.html#fig:ortho-caption-mcbride">5.78</a> - <a href="mcbride-creek---198000---appendix.html#fig:model-caption-mcbride">5.79</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="mcbride-creek---198000---appendix.html#cb330-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="mcbride-creek---198000---appendix.html#cb330-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-198000">Table 5.66: </span>Summary of fish passage assessment for PSCIS crossing 198000.
@@ -924,16 +924,16 @@ Fix Span / Diameter
 </table></li>
 </ul>
 <p><br></p>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="mcbride-creek---198000---appendix.html#cb331-1" aria-hidden="true" tabindex="-1"></a>model_url <span class="ot">&lt;-</span> <span class="st">&#39;&lt;iframe src=&quot;https://www.mapsmadeeasy.com/maps/public/009dbfef7a924182933029a5927ceb98&quot; scrolling=&quot;no&quot; title=&quot;Maps Made Easy&quot; width=&quot;100%&quot; height=&quot;600&quot; frameBorder =&quot;0&quot;&gt;&lt;/iframe&gt;&#39;</span></span>
-<span id="cb331-2"><a href="mcbride-creek---198000---appendix.html#cb331-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb331-3"><a href="mcbride-creek---198000---appendix.html#cb331-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">asis_output</span>(model_url)</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="mcbride-creek---198000---appendix.html#cb331-1" tabindex="-1"></a>model_url <span class="ot">&lt;-</span> <span class="st">&#39;&lt;iframe src=&quot;https://www.mapsmadeeasy.com/maps/public/009dbfef7a924182933029a5927ceb98&quot; scrolling=&quot;no&quot; title=&quot;Maps Made Easy&quot; width=&quot;100%&quot; height=&quot;600&quot; frameBorder =&quot;0&quot;&gt;&lt;/iframe&gt;&#39;</span></span>
+<span id="cb331-2"><a href="mcbride-creek---198000---appendix.html#cb331-2" tabindex="-1"></a></span>
+<span id="cb331-3"><a href="mcbride-creek---198000---appendix.html#cb331-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">asis_output</span>(model_url)</span></code></pre></div>
 <iframe src="https://www.mapsmadeeasy.com/maps/public/009dbfef7a924182933029a5927ceb98" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder="0">
 </iframe>
-<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="mcbride-creek---198000---appendix.html#cb332-1" aria-hidden="true" tabindex="-1"></a>my_photo <span class="ot">=</span> <span class="st">&#39;fig/pixel.png&#39;</span></span>
-<span id="cb332-2"><a href="mcbride-creek---198000---appendix.html#cb332-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb332-3"><a href="mcbride-creek---198000---appendix.html#cb332-3" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Orthomosaic of habitat immediately upstream and downstream of McBride Creek. To zoom press &quot;shift&quot; and scroll.&#39;</span>)</span>
-<span id="cb332-4"><a href="mcbride-creek---198000---appendix.html#cb332-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb332-5"><a href="mcbride-creek---198000---appendix.html#cb332-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo, <span class="at">dpi =</span> <span class="cn">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="mcbride-creek---198000---appendix.html#cb332-1" tabindex="-1"></a>my_photo <span class="ot">=</span> <span class="st">&#39;fig/pixel.png&#39;</span></span>
+<span id="cb332-2"><a href="mcbride-creek---198000---appendix.html#cb332-2" tabindex="-1"></a></span>
+<span id="cb332-3"><a href="mcbride-creek---198000---appendix.html#cb332-3" tabindex="-1"></a>my_caption <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Orthomosaic of habitat immediately upstream and downstream of McBride Creek. To zoom press &quot;shift&quot; and scroll.&#39;</span>)</span>
+<span id="cb332-4"><a href="mcbride-creek---198000---appendix.html#cb332-4" tabindex="-1"></a></span>
+<span id="cb332-5"><a href="mcbride-creek---198000---appendix.html#cb332-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo, <span class="at">dpi =</span> <span class="cn">NA</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:ortho-caption-mcbride"></span>
 <img src="fig/pixel.png" alt="Orthomosaic of habitat immediately upstream and downstream of McBride Creek. To zoom press &quot;shift&quot; and scroll." width="0.01%" />
 <p class="caption">
@@ -941,25 +941,25 @@ Figure 5.78: Orthomosaic of habitat immediately upstream and downstream of McBri
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="mcbride-creek---198000---appendix.html#cb333-1" aria-hidden="true" tabindex="-1"></a>model_url <span class="ot">&lt;-</span> <span class="st">&#39;&lt;iframe src=&quot;https://www.mapsmadeeasy.com/maps/public_3D/009dbfef7a924182933029a5927ceb98&quot; scrolling=&quot;no&quot; title=&quot;Maps Made Easy&quot; width=&quot;100%&quot; height=&quot;600&quot; frameBorder =&quot;0&quot;&gt;&lt;/iframe&gt;&#39;</span></span>
-<span id="cb333-2"><a href="mcbride-creek---198000---appendix.html#cb333-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb333-3"><a href="mcbride-creek---198000---appendix.html#cb333-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">asis_output</span>(model_url)</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="mcbride-creek---198000---appendix.html#cb333-1" tabindex="-1"></a>model_url <span class="ot">&lt;-</span> <span class="st">&#39;&lt;iframe src=&quot;https://www.mapsmadeeasy.com/maps/public_3D/009dbfef7a924182933029a5927ceb98&quot; scrolling=&quot;no&quot; title=&quot;Maps Made Easy&quot; width=&quot;100%&quot; height=&quot;600&quot; frameBorder =&quot;0&quot;&gt;&lt;/iframe&gt;&#39;</span></span>
+<span id="cb333-2"><a href="mcbride-creek---198000---appendix.html#cb333-2" tabindex="-1"></a></span>
+<span id="cb333-3"><a href="mcbride-creek---198000---appendix.html#cb333-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">asis_output</span>(model_url)</span></code></pre></div>
 <iframe src="https://www.mapsmadeeasy.com/maps/public_3D/009dbfef7a924182933029a5927ceb98" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder="0">
 </iframe>
-<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="mcbride-creek---198000---appendix.html#cb334-1" aria-hidden="true" tabindex="-1"></a>my_photo <span class="ot">=</span> <span class="st">&#39;fig/pixel.png&#39;</span></span>
-<span id="cb334-2"><a href="mcbride-creek---198000---appendix.html#cb334-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb334-3"><a href="mcbride-creek---198000---appendix.html#cb334-3" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;3D model of habitat immediately upstream and downstream of McBride Creek. To zoom press &quot;shift&quot; and scroll.&#39;</span>)</span>
-<span id="cb334-4"><a href="mcbride-creek---198000---appendix.html#cb334-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb334-5"><a href="mcbride-creek---198000---appendix.html#cb334-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo, <span class="at">dpi =</span> <span class="cn">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="mcbride-creek---198000---appendix.html#cb334-1" tabindex="-1"></a>my_photo <span class="ot">=</span> <span class="st">&#39;fig/pixel.png&#39;</span></span>
+<span id="cb334-2"><a href="mcbride-creek---198000---appendix.html#cb334-2" tabindex="-1"></a></span>
+<span id="cb334-3"><a href="mcbride-creek---198000---appendix.html#cb334-3" tabindex="-1"></a>my_caption <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;3D model of habitat immediately upstream and downstream of McBride Creek. To zoom press &quot;shift&quot; and scroll.&#39;</span>)</span>
+<span id="cb334-4"><a href="mcbride-creek---198000---appendix.html#cb334-4" tabindex="-1"></a></span>
+<span id="cb334-5"><a href="mcbride-creek---198000---appendix.html#cb334-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo, <span class="at">dpi =</span> <span class="cn">NA</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:model-caption-mcbride"></span>
 <img src="fig/pixel.png" alt="3D model of habitat immediately upstream and downstream of McBride Creek. To zoom press &quot;shift&quot; and scroll." width="0.01%" />
 <p class="caption">
 Figure 5.79: 3D model of habitat immediately upstream and downstream of McBride Creek. To zoom press “shift” and scroll.
 </p>
 </div>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="mcbride-creek---198000---appendix.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb335-2"><a href="mcbride-creek---198000---appendix.html#cb335-2" aria-hidden="true" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb335-3"><a href="mcbride-creek---198000---appendix.html#cb335-3" aria-hidden="true" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="mcbride-creek---198000---appendix.html#cb335-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb335-2"><a href="mcbride-creek---198000---appendix.html#cb335-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb335-3"><a href="mcbride-creek---198000---appendix.html#cb335-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-6" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream<a href="mcbride-creek---198000---appendix.html#stream-characteristics-downstream-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -973,7 +973,7 @@ Figure 5.79: 3D model of habitat immediately upstream and downstream of McBride 
 <div id="structure-remediation-and-cost-estimate-9" class="section level2 unnumbered hasAnchor">
 <h2>Structure Remediation and Cost Estimate<a href="mcbride-creek---198000---appendix.html#structure-remediation-and-cost-estimate-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Should restoration/maintenance activities proceed at the site, replacement of PSCIS crossing 198000 with a bridge (14m span) is recommended.</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="mcbride-creek---198000---appendix.html#cb336-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The cost of the work is estimated at \$`r format(my_cost_estimate() %&gt;% pull(cost_est_1000s) * 1000, big.mark = &#39;,&#39;)` for a cost benefit of `r as.character(my_cost_estimate() %&gt;% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %&gt;% pull(cost_area_net))`m^2^/\$1000. </span></span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="mcbride-creek---198000---appendix.html#cb336-1" tabindex="-1"></a><span class="co"># The cost of the work is estimated at \$`r format(my_cost_estimate() %&gt;% pull(cost_est_1000s) * 1000, big.mark = &#39;,&#39;)` for a cost benefit of `r as.character(my_cost_estimate() %&gt;% pull(cost_net))` linear m/\$1000 and `r as.character(my_cost_estimate() %&gt;% pull(cost_area_net))`m^2^/\$1000. </span></span></code></pre></div>
 <p><br></p>
 </div>
 <div id="conclusion-11" class="section level2 unnumbered hasAnchor">
@@ -981,11 +981,11 @@ Figure 5.79: 3D model of habitat immediately upstream and downstream of McBride 
 <p>There was 198000 is 20.1km of habitat upstream of crossing rated as high value for salmonid rearing and spawning. Crossing 198000 was ranked as a moderate priority for proceeding to design for replacement.</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="mcbride-creek---198000---appendix.html#cb337-1" aria-hidden="true" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb337-2"><a href="mcbride-creek---198000---appendix.html#cb337-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb337-3"><a href="mcbride-creek---198000---appendix.html#cb337-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb337-4"><a href="mcbride-creek---198000---appendix.html#cb337-4" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb337-5"><a href="mcbride-creek---198000---appendix.html#cb337-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="mcbride-creek---198000---appendix.html#cb337-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb337-2"><a href="mcbride-creek---198000---appendix.html#cb337-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb337-3"><a href="mcbride-creek---198000---appendix.html#cb337-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb337-4"><a href="mcbride-creek---198000---appendix.html#cb337-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb337-5"><a href="mcbride-creek---198000---appendix.html#cb337-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-198000">Table 5.67: </span>Summary of habitat details for PSCIS crossing 198000.
@@ -1083,13 +1083,13 @@ high
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="mcbride-creek---198000---appendix.html#cb338-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb338-2"><a href="mcbride-creek---198000---appendix.html#cb338-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb338-3"><a href="mcbride-creek---198000---appendix.html#cb338-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb338-4"><a href="mcbride-creek---198000---appendix.html#cb338-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb338-5"><a href="mcbride-creek---198000---appendix.html#cb338-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb338-6"><a href="mcbride-creek---198000---appendix.html#cb338-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="mcbride-creek---198000---appendix.html#cb339-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="mcbride-creek---198000---appendix.html#cb338-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb338-2"><a href="mcbride-creek---198000---appendix.html#cb338-2" tabindex="-1"></a></span>
+<span id="cb338-3"><a href="mcbride-creek---198000---appendix.html#cb338-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb338-4"><a href="mcbride-creek---198000---appendix.html#cb338-4" tabindex="-1"></a></span>
+<span id="cb338-5"><a href="mcbride-creek---198000---appendix.html#cb338-5" tabindex="-1"></a></span>
+<span id="cb338-6"><a href="mcbride-creek---198000---appendix.html#cb338-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="mcbride-creek---198000---appendix.html#cb339-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198000-01"></span>
 <img src="Skeena2021_files/figure-html/photo-198000-01-1.png" alt="Typical habitat downstream of PSCIS crossing 198000." width="100%" />
 <p class="caption">
@@ -1097,10 +1097,10 @@ Figure 5.80: Typical habitat downstream of PSCIS crossing 198000.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="mcbride-creek---198000---appendix.html#cb340-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb340-2"><a href="mcbride-creek---198000---appendix.html#cb340-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb340-3"><a href="mcbride-creek---198000---appendix.html#cb340-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="mcbride-creek---198000---appendix.html#cb341-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="mcbride-creek---198000---appendix.html#cb340-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb340-2"><a href="mcbride-creek---198000---appendix.html#cb340-2" tabindex="-1"></a></span>
+<span id="cb340-3"><a href="mcbride-creek---198000---appendix.html#cb340-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="mcbride-creek---198000---appendix.html#cb341-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198000-02"></span>
 <img src="Skeena2021_files/figure-html/photo-198000-02-1.png" alt="Typical habitat downstream of PSCIS crossing 198000." width="100%" />
 <p class="caption">
@@ -1108,15 +1108,15 @@ Figure 5.81: Typical habitat downstream of PSCIS crossing 198000.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="mcbride-creek---198000---appendix.html#cb342-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb342-2"><a href="mcbride-creek---198000---appendix.html#cb342-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb342-3"><a href="mcbride-creek---198000---appendix.html#cb342-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb342-4"><a href="mcbride-creek---198000---appendix.html#cb342-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb342-5"><a href="mcbride-creek---198000---appendix.html#cb342-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="mcbride-creek---198000---appendix.html#cb343-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb343-2"><a href="mcbride-creek---198000---appendix.html#cb343-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb343-3"><a href="mcbride-creek---198000---appendix.html#cb343-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="mcbride-creek---198000---appendix.html#cb344-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="mcbride-creek---198000---appendix.html#cb342-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb342-2"><a href="mcbride-creek---198000---appendix.html#cb342-2" tabindex="-1"></a></span>
+<span id="cb342-3"><a href="mcbride-creek---198000---appendix.html#cb342-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb342-4"><a href="mcbride-creek---198000---appendix.html#cb342-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb342-5"><a href="mcbride-creek---198000---appendix.html#cb342-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="mcbride-creek---198000---appendix.html#cb343-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb343-2"><a href="mcbride-creek---198000---appendix.html#cb343-2" tabindex="-1"></a></span>
+<span id="cb343-3"><a href="mcbride-creek---198000---appendix.html#cb343-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="mcbride-creek---198000---appendix.html#cb344-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198000-03"></span>
 <img src="Skeena2021_files/figure-html/photo-198000-03-1.png" alt="Typical habitat upstream of PSCIS crossing 198000." width="100%" />
 <p class="caption">
@@ -1124,28 +1124,28 @@ Figure 5.82: Typical habitat upstream of PSCIS crossing 198000.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="mcbride-creek---198000---appendix.html#cb345-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb345-2"><a href="mcbride-creek---198000---appendix.html#cb345-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb345-3"><a href="mcbride-creek---198000---appendix.html#cb345-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="mcbride-creek---198000---appendix.html#cb346-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="mcbride-creek---198000---appendix.html#cb345-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb345-2"><a href="mcbride-creek---198000---appendix.html#cb345-2" tabindex="-1"></a></span>
+<span id="cb345-3"><a href="mcbride-creek---198000---appendix.html#cb345-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="mcbride-creek---198000---appendix.html#cb346-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198000-04"></span>
 <img src="Skeena2021_files/figure-html/photo-198000-04-1.png" alt="Typical habitat upstream of PSCIS crossing 198000." width="100%" />
 <p class="caption">
 Figure 5.83: Typical habitat upstream of PSCIS crossing 198000.
 </p>
 </div>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="mcbride-creek---198000---appendix.html#cb347-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb347-2"><a href="mcbride-creek---198000---appendix.html#cb347-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb347-3"><a href="mcbride-creek---198000---appendix.html#cb347-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb347-4"><a href="mcbride-creek---198000---appendix.html#cb347-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb347-5"><a href="mcbride-creek---198000---appendix.html#cb347-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="mcbride-creek---198000---appendix.html#cb347-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb347-2"><a href="mcbride-creek---198000---appendix.html#cb347-2" tabindex="-1"></a></span>
+<span id="cb347-3"><a href="mcbride-creek---198000---appendix.html#cb347-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb347-4"><a href="mcbride-creek---198000---appendix.html#cb347-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb347-5"><a href="mcbride-creek---198000---appendix.html#cb347-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="mcbride-creek---198000---appendix.html#cb348-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb348-2"><a href="mcbride-creek---198000---appendix.html#cb348-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb348-3"><a href="mcbride-creek---198000---appendix.html#cb348-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="mcbride-creek---198000---appendix.html#cb349-1" aria-hidden="true" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198048</span></span>
-<span id="cb349-2"><a href="mcbride-creek---198000---appendix.html#cb349-2" aria-hidden="true" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198049</span></span>
-<span id="cb349-3"><a href="mcbride-creek---198000---appendix.html#cb349-3" aria-hidden="true" tabindex="-1"></a>my_site3 <span class="ot">&lt;-</span> <span class="dv">198090</span></span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="mcbride-creek---198000---appendix.html#cb348-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb348-2"><a href="mcbride-creek---198000---appendix.html#cb348-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb348-3"><a href="mcbride-creek---198000---appendix.html#cb348-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="mcbride-creek---198000---appendix.html#cb349-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198048</span></span>
+<span id="cb349-2"><a href="mcbride-creek---198000---appendix.html#cb349-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198049</span></span>
+<span id="cb349-3"><a href="mcbride-creek---198000---appendix.html#cb349-3" tabindex="-1"></a>my_site3 <span class="ot">&lt;-</span> <span class="dv">198090</span></span></code></pre></div>
 </div>
 </div>
             </section>
@@ -1214,7 +1214,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

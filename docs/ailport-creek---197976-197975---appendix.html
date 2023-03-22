@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Ailport Creek - 197976 &amp; 197975 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021</title>
   <meta name="description" content="Wet-zuhn-kwa" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Ailport Creek - 197976 &amp; 197975 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   <meta property="og:type" content="book" />
@@ -52,7 +52,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
@@ -228,7 +228,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="ailport-creek---197976-197975---appendix.html"><a href="ailport-creek---197976-197975---appendix.html"><i class="fa fa-check"></i>Ailport Creek - 197976 &amp; 197975 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="mcbride-creek---198000---appendix.html"><a href="mcbride-creek---198000---appendix.html"><i class="fa fa-check"></i>McBride Creek - 198000 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="cesford-creek---198048-198049---appendix.html"><a href="cesford-creek---198048-198049---appendix.html"><i class="fa fa-check"></i>Cesford Creek - 198048 &amp; 198049 - Appendix</a></li>
-<li class="chapter" data-level="" data-path="thompson-creek---198066-123377---appendix.html"><a href="thompson-creek---198066-123377---appendix.html"><i class="fa fa-check"></i>Thompson Creek - 198066 &amp; 123377 - Appendix</a></li>
+<li class="chapter" data-level="" data-path="thompson-creek---198066-123377-123375---appendix.html"><a href="thompson-creek---198066-123377-123375---appendix.html"><i class="fa fa-check"></i>Thompson Creek - 198066 &amp; 123377 &amp; 123375 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="chapter" data-level="" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i>Session Info</a></li>
 <li class="chapter" data-level="" data-path="attachment-1---maps.html"><a href="attachment-1---maps.html"><i class="fa fa-check"></i><strong>Attachment 1 - Maps</strong></a></li>
@@ -276,10 +276,10 @@ div.csl-indent {
 <p><br></p>
 <p>PSCIS stream crossings on Ailport Creek were ranked as high priorities for follow up by <span class="citation">Irvine (2021)</span> and <span class="citation">Mazany-Wright et al. (2021)</span> because of significant amounts of habitat modelled as upstream of the crossing. A total of 42ha of lake and 374ha of wetland is modelled upstream with a summary of additional habitat modelling outputs presented in Tables <a href="ailport-creek---197976-197975---appendix.html#tab:tab-culvert-bcfp-197976">5.57</a> - <a href="ailport-creek---197976-197975---appendix.html#tab:tab-culvert-bcfp-197975">5.58</a>. A map of the watershed is provided in map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.115.pdf">093L.115</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="ailport-creek---197976-197975---appendix.html#cb301-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb301-2"><a href="ailport-creek---197976-197975---appendix.html#cb301-2" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb301-3"><a href="ailport-creek---197976-197975---appendix.html#cb301-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb301-4"><a href="ailport-creek---197976-197975---appendix.html#cb301-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="ailport-creek---197976-197975---appendix.html#cb301-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb301-2"><a href="ailport-creek---197976-197975---appendix.html#cb301-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb301-3"><a href="ailport-creek---197976-197975---appendix.html#cb301-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb301-4"><a href="ailport-creek---197976-197975---appendix.html#cb301-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-197976">Table 5.56: </span>Summary of derived upstream watershed statistics for PSCIS crossing 197976.
@@ -349,7 +349,7 @@ SSW
 </tfoot>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="ailport-creek---197976-197975---appendix.html#cb302-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="ailport-creek---197976-197975---appendix.html#cb302-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -663,7 +663,7 @@ All Spawning Rearing (km)
 </table>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="ailport-creek---197976-197975---appendix.html#cb303-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">site =</span> my_site2, <span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="ailport-creek---197976-197975---appendix.html#cb303-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">site =</span> my_site2, <span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -982,7 +982,7 @@ All Spawning Rearing (km)
 <h2>Stream Characteristics at Crossing<a href="ailport-creek---197976-197975---appendix.html#stream-characteristics-at-crossing-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the time of the survey, PSCIS crossing 197976 was 50% backwatered, un-embedded and ranked as a barrier to upstream fish passage according to the provincial protocol <span class="citation">(MoE 2011b)</span> (Table <a href="ailport-creek---197976-197975---appendix.html#tab:tab-culvert-197976">5.59</a>). A juvenile fish (~140 cm) was noted as easily swimming upstream through the culvert during the survey. PSCIS crossing 197976 was not backwatered, not embedded and ranked as a barrier to upstream fish passage according to the provincial protocol (Table <a href="ailport-creek---197976-197975---appendix.html#tab:tab-culvert-197975">5.60</a>). Water temperature was 11<span class="math inline">\(^\circ\)</span>C, pH was 7 and conductivity was 248uS/cm.</p>
 <p><br></p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="ailport-creek---197976-197975---appendix.html#cb304-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="ailport-creek---197976-197975---appendix.html#cb304-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-197976">Table 5.59: </span>Summary of fish passage assessment for PSCIS crossing 197976.
@@ -1141,7 +1141,7 @@ Highway
 Outlet Drop (m)
 </td>
 <td style="text-align:left;">
-0
+–
 </td>
 </tr>
 <tr>
@@ -1246,7 +1246,7 @@ Fix Span / Diameter
 </table></li>
 </ul>
 <p><br></p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="ailport-creek---197976-197975---appendix.html#cb305-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>(<span class="at">site =</span> my_site2, <span class="at">site_photo_id =</span> my_site2)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="ailport-creek---197976-197975---appendix.html#cb305-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>(<span class="at">site =</span> my_site2, <span class="at">site_photo_id =</span> my_site2)</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-197975">Table 5.60: </span>Summary of fish passage assessment for PSCIS crossing 197975.
@@ -1509,22 +1509,22 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="ailport-creek---197976-197975---appendix.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb306-2"><a href="ailport-creek---197976-197975---appendix.html#cb306-2" aria-hidden="true" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site2 <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb306-3"><a href="ailport-creek---197976-197975---appendix.html#cb306-3" aria-hidden="true" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="ailport-creek---197976-197975---appendix.html#cb306-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb306-2"><a href="ailport-creek---197976-197975---appendix.html#cb306-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site2 <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb306-3"><a href="ailport-creek---197976-197975---appendix.html#cb306-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-of-197976" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream of 197976<a href="ailport-creek---197976-197975---appendix.html#stream-characteristics-downstream-of-197976" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed downstream from crossing 197976 for 575m
 (Figures <a href="ailport-creek---197976-197975---appendix.html#fig:photo-197976-01">5.72</a> - <a href="ailport-creek---197976-197975---appendix.html#fig:photo-197976-02">5.73</a>).
-The dominant substrate was cobbles with gravels sub-dominant., The average channel width was 7.7m, the average wetted width was 3.5m, and the average gradient was 1%., Total cover amount was rated as moderate with deep pools dominant. Cover was also present as small woody debris, undercut banks, overhanging vegetation, and instream vegetation.
+The dominant substrate was cobbles with gravels sub-dominant.The average channel width was 7.7m, the average wetted width was 3.5m, and the average gradient was 1%.Total cover amount was rated as moderate with deep pools dominant. Cover was also present as small woody debris, undercut banks, overhanging vegetation, and instream vegetation.
 Although side channels continued to flow throughout the area surveyed, approximately 160m downstream of the crossing the main channel was dewatered below the location of a beaver dam. Areas of riparian and bank degradation from cattle trampling were noted throughout the area surveyed and there was fencing spanning the channel. Large deposits of substrate and clumped large woody debris piles were observed within widened channel areas indicating disturbance and high flow events. There were abundant gravels presetn suitable for spawning resident and anadromous salmonids. Habitat was rated as high value for salmonid rearing and spawning with numerous fish observed and numerous deep pools to 0.95m deep.</p>
 </div>
 <div id="stream-characteristics-upstream-of-197976-and-downstream-of-197975" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Upstream of 197976 and downstream of 197975<a href="ailport-creek---197976-197975---appendix.html#stream-characteristics-upstream-of-197976-and-downstream-of-197975" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed upstream from crossing 197976 for 345m
 (Figures <a href="ailport-creek---197976-197975---appendix.html#fig:photo-197976-03">5.74</a> - <a href="ailport-creek---197976-197975---appendix.html#fig:photo-197976-04">5.75</a>).
-Total cover amount was rated as moderate with deep pools dominant. Cover was also present as small woody debris, undercut banks, and overhanging vegetation., The dominant substrate was cobbles with gravels sub-dominant., The average channel width was 8.1m, the average wetted width was 4.2m, and the average gradient was 2.2%.
+Total cover amount was rated as moderate with deep pools dominant. Cover was also present as small woody debris, undercut banks, and overhanging vegetation.The dominant substrate was cobbles with gravels sub-dominant.The average channel width was 8.1m, the average wetted width was 4.2m, and the average gradient was 2.2%.
 Fish were observed throughout the area surveyed and extensive algae growth was present on stream substrates. Large woody debris was rare and riparian/bank damage due to livestock was minimal and located at what appeared to be watering sites. Fencing was located across the stream in multiple locations. Patches of gravels suitable for spawning were present.
 Habitat value was rated as medium as the surveyed area was considered an important migration corridor containing suitable spawning habitat and having moderate rearing potential.</p>
 </div>
@@ -1532,7 +1532,7 @@ Habitat value was rated as medium as the surveyed area was considered an importa
 <h2><span class="header-section-number">5.4</span> Stream Characteristics Upstream of 197975<a href="ailport-creek---197976-197975---appendix.html#stream-characteristics-upstream-of-197975" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed upstream from crossing 197975 for 550m
 (Figures <a href="ailport-creek---197976-197975---appendix.html#fig:photo-197976-05">5.76</a> - <a href="ailport-creek---197976-197975---appendix.html#fig:photo-197976-06">5.77</a>).
-The average channel width was 7.7m, the average wetted width was 3.5m, and the average gradient was 3%., Total cover amount was rated as moderate with deep pools dominant. Cover was also present as small woody debris, boulders, undercut banks, and overhanging vegetation., The dominant substrate was cobbles with gravels sub-dominant.
+Total cover amount was rated as moderate with deep pools dominant. Cover was also present as small woody debris, boulders, undercut banks, and overhanging vegetation.The average channel width was 7.7m, the average wetted width was 3.5m, and the average gradient was 3%.The dominant substrate was cobbles with gravels sub-dominant.
 Immediately upstream of the crossing for ~80m, extensive anthropogenic damage was noted due to dredging of the channel. Heavy cattle grazing was also observed on the left bank. Juvenile salmonids were observed occasionally throughout the area surveyed. Fencing was located across the stream approximately 250m upstream of the culvert. Patches of gravels suitable for spawning were present.
 Habitat value was rated as medium as the surveyed area was considered an important migration corridor containing suitable spawning habitat and having moderate rearing potential.</p>
 </div>
@@ -1551,12 +1551,12 @@ Habitat value was rated as medium as the surveyed area was considered an importa
 <p>There was 24.7km of habitat modelled upstream of crossing 197975 rated as medium value for salmonid rearing and spawning. Crossing 197976 was ranked as a moderate priority for proceeding to design for replacement as it appears to pass fish during most flows. Crossing 197975 was ranked as a moderate priority for proceeding to design for replacement as it appears to likely present a more serious impediment to upstream passage and because implementation of the works can be considered cost effective and logistically less complicated than works on a major highway. As Ailport Creek appears to be a high value fish stream with significant impacts due to culvert maintenance (dredging), adjacent land use (cattle trampled banks and grazed/removed riparian vegetation) and high flow events (potentially beaver dam failure related), it is recommended that a plan be developed to work with adjacent landowners and tenure holders to exclude cattle from the riparian area, implement stream restoration actions and explore possibilities related to progressive beaver management in the watershed.</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="ailport-creek---197976-197975---appendix.html#cb307-1" aria-hidden="true" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb307-2"><a href="ailport-creek---197976-197975---appendix.html#cb307-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site <span class="sc">|</span></span>
-<span id="cb307-3"><a href="ailport-creek---197976-197975---appendix.html#cb307-3" aria-hidden="true" tabindex="-1"></a>           Site  <span class="sc">==</span> my_site2) <span class="sc">%&gt;%</span> </span>
-<span id="cb307-4"><a href="ailport-creek---197976-197975---appendix.html#cb307-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb307-5"><a href="ailport-creek---197976-197975---appendix.html#cb307-5" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb307-6"><a href="ailport-creek---197976-197975---appendix.html#cb307-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="ailport-creek---197976-197975---appendix.html#cb307-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb307-2"><a href="ailport-creek---197976-197975---appendix.html#cb307-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site <span class="sc">|</span></span>
+<span id="cb307-3"><a href="ailport-creek---197976-197975---appendix.html#cb307-3" tabindex="-1"></a>           Site  <span class="sc">==</span> my_site2) <span class="sc">%&gt;%</span> </span>
+<span id="cb307-4"><a href="ailport-creek---197976-197975---appendix.html#cb307-4" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb307-5"><a href="ailport-creek---197976-197975---appendix.html#cb307-5" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb307-6"><a href="ailport-creek---197976-197975---appendix.html#cb307-6" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-197976">Table 5.61: </span>Summary of habitat details for PSCIS crossing 197976.
@@ -1683,7 +1683,7 @@ medium
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="ailport-creek---197976-197975---appendix.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fpr_table_fish_site</span>(<span class="at">sit =</span> my_site2)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="ailport-creek---197976-197975---appendix.html#cb308-1" tabindex="-1"></a><span class="fu">fpr_table_fish_site</span>(<span class="at">sit =</span> my_site2)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-fish-site-197976">Table 5.62: </span>Fish sampling site summary for 197975.
@@ -1794,7 +1794,7 @@ Open
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="ailport-creek---197976-197975---appendix.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fpr_table_fish_density</span>(<span class="at">sit =</span> my_site2)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="ailport-creek---197976-197975---appendix.html#cb309-1" tabindex="-1"></a><span class="fu">fpr_table_fish_density</span>(<span class="at">sit =</span> my_site2)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-fish-dens-197976">Table 5.63: </span>Fish sampling density results summary for 197975.
@@ -2152,9 +2152,9 @@ FALSE
 </tfoot>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="ailport-creek---197976-197975---appendix.html#cb310-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb310-2"><a href="ailport-creek---197976-197975---appendix.html#cb310-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb310-3"><a href="ailport-creek---197976-197975---appendix.html#cb310-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fpr_plot_fish_box</span>(<span class="at">sit =</span> my_site2) </span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="ailport-creek---197976-197975---appendix.html#cb310-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb310-2"><a href="ailport-creek---197976-197975---appendix.html#cb310-2" tabindex="-1"></a></span>
+<span id="cb310-3"><a href="ailport-creek---197976-197975---appendix.html#cb310-3" tabindex="-1"></a><span class="fu">fpr_plot_fish_box</span>(<span class="at">sit =</span> my_site2) </span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:plot-fish-box-197976"></span>
 <img src="Skeena2021_files/figure-html/plot-fish-box-197976-1.png" alt="Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing 197975." width="100%" />
 <p class="caption">
@@ -2162,13 +2162,13 @@ Figure 5.71: Densites of fish (fish/100m2) capture upstream and downstream of PS
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="ailport-creek---197976-197975---appendix.html#cb311-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb311-2"><a href="ailport-creek---197976-197975---appendix.html#cb311-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb311-3"><a href="ailport-creek---197976-197975---appendix.html#cb311-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb311-4"><a href="ailport-creek---197976-197975---appendix.html#cb311-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb311-5"><a href="ailport-creek---197976-197975---appendix.html#cb311-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb311-6"><a href="ailport-creek---197976-197975---appendix.html#cb311-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="ailport-creek---197976-197975---appendix.html#cb312-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="ailport-creek---197976-197975---appendix.html#cb311-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb311-2"><a href="ailport-creek---197976-197975---appendix.html#cb311-2" tabindex="-1"></a></span>
+<span id="cb311-3"><a href="ailport-creek---197976-197975---appendix.html#cb311-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb311-4"><a href="ailport-creek---197976-197975---appendix.html#cb311-4" tabindex="-1"></a></span>
+<span id="cb311-5"><a href="ailport-creek---197976-197975---appendix.html#cb311-5" tabindex="-1"></a></span>
+<span id="cb311-6"><a href="ailport-creek---197976-197975---appendix.html#cb311-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="ailport-creek---197976-197975---appendix.html#cb312-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197976-01"></span>
 <img src="data/photos/197976/KP_TC_01539_d1_k_.JPG" alt="Typical habitat downstream of PSCIS crossing 197976." width="100%" />
 <p class="caption">
@@ -2176,10 +2176,10 @@ Figure 5.72: Typical habitat downstream of PSCIS crossing 197976.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="ailport-creek---197976-197975---appendix.html#cb313-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb313-2"><a href="ailport-creek---197976-197975---appendix.html#cb313-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb313-3"><a href="ailport-creek---197976-197975---appendix.html#cb313-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="ailport-creek---197976-197975---appendix.html#cb314-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="ailport-creek---197976-197975---appendix.html#cb313-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb313-2"><a href="ailport-creek---197976-197975---appendix.html#cb313-2" tabindex="-1"></a></span>
+<span id="cb313-3"><a href="ailport-creek---197976-197975---appendix.html#cb313-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="ailport-creek---197976-197975---appendix.html#cb314-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197976-02"></span>
 <img src="data/photos/197976/KP_TC_01569_d2_k_.JPG" alt="Typical habitat downstream of PSCIS crossing 197976." width="100%" />
 <p class="caption">
@@ -2187,15 +2187,15 @@ Figure 5.73: Typical habitat downstream of PSCIS crossing 197976.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="ailport-creek---197976-197975---appendix.html#cb315-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb315-2"><a href="ailport-creek---197976-197975---appendix.html#cb315-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb315-3"><a href="ailport-creek---197976-197975---appendix.html#cb315-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb315-4"><a href="ailport-creek---197976-197975---appendix.html#cb315-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb315-5"><a href="ailport-creek---197976-197975---appendix.html#cb315-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="ailport-creek---197976-197975---appendix.html#cb316-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb316-2"><a href="ailport-creek---197976-197975---appendix.html#cb316-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb316-3"><a href="ailport-creek---197976-197975---appendix.html#cb316-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="ailport-creek---197976-197975---appendix.html#cb317-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="ailport-creek---197976-197975---appendix.html#cb315-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb315-2"><a href="ailport-creek---197976-197975---appendix.html#cb315-2" tabindex="-1"></a></span>
+<span id="cb315-3"><a href="ailport-creek---197976-197975---appendix.html#cb315-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb315-4"><a href="ailport-creek---197976-197975---appendix.html#cb315-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb315-5"><a href="ailport-creek---197976-197975---appendix.html#cb315-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="ailport-creek---197976-197975---appendix.html#cb316-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb316-2"><a href="ailport-creek---197976-197975---appendix.html#cb316-2" tabindex="-1"></a></span>
+<span id="cb316-3"><a href="ailport-creek---197976-197975---appendix.html#cb316-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="ailport-creek---197976-197975---appendix.html#cb317-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197976-03"></span>
 <img src="data/photos/197976/KP_TC_01589_u1_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 197976." width="100%" />
 <p class="caption">
@@ -2203,25 +2203,25 @@ Figure 5.74: Typical habitat upstream of PSCIS crossing 197976.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="ailport-creek---197976-197975---appendix.html#cb318-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb318-2"><a href="ailport-creek---197976-197975---appendix.html#cb318-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb318-3"><a href="ailport-creek---197976-197975---appendix.html#cb318-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="ailport-creek---197976-197975---appendix.html#cb319-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="ailport-creek---197976-197975---appendix.html#cb318-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb318-2"><a href="ailport-creek---197976-197975---appendix.html#cb318-2" tabindex="-1"></a></span>
+<span id="cb318-3"><a href="ailport-creek---197976-197975---appendix.html#cb318-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="ailport-creek---197976-197975---appendix.html#cb319-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197976-04"></span>
 <img src="data/photos/197976/KP_TC_01592_u2_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 197976." width="100%" />
 <p class="caption">
 Figure 5.75: Typical habitat upstream of PSCIS crossing 197976.
 </p>
 </div>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="ailport-creek---197976-197975---appendix.html#cb320-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb320-2"><a href="ailport-creek---197976-197975---appendix.html#cb320-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb320-3"><a href="ailport-creek---197976-197975---appendix.html#cb320-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb320-4"><a href="ailport-creek---197976-197975---appendix.html#cb320-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb320-5"><a href="ailport-creek---197976-197975---appendix.html#cb320-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="ailport-creek---197976-197975---appendix.html#cb321-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb321-2"><a href="ailport-creek---197976-197975---appendix.html#cb321-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb321-3"><a href="ailport-creek---197976-197975---appendix.html#cb321-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="ailport-creek---197976-197975---appendix.html#cb322-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="ailport-creek---197976-197975---appendix.html#cb320-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb320-2"><a href="ailport-creek---197976-197975---appendix.html#cb320-2" tabindex="-1"></a></span>
+<span id="cb320-3"><a href="ailport-creek---197976-197975---appendix.html#cb320-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb320-4"><a href="ailport-creek---197976-197975---appendix.html#cb320-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb320-5"><a href="ailport-creek---197976-197975---appendix.html#cb320-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="ailport-creek---197976-197975---appendix.html#cb321-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb321-2"><a href="ailport-creek---197976-197975---appendix.html#cb321-2" tabindex="-1"></a></span>
+<span id="cb321-3"><a href="ailport-creek---197976-197975---appendix.html#cb321-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="ailport-creek---197976-197975---appendix.html#cb322-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197976-05"></span>
 <img src="data/photos/197975/KP_TC_01653_u1_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 197975." width="100%" />
 <p class="caption">
@@ -2229,26 +2229,26 @@ Figure 5.76: Typical habitat upstream of PSCIS crossing 197975.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="ailport-creek---197976-197975---appendix.html#cb323-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb323-2"><a href="ailport-creek---197976-197975---appendix.html#cb323-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb323-3"><a href="ailport-creek---197976-197975---appendix.html#cb323-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="ailport-creek---197976-197975---appendix.html#cb324-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="ailport-creek---197976-197975---appendix.html#cb323-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb323-2"><a href="ailport-creek---197976-197975---appendix.html#cb323-2" tabindex="-1"></a></span>
+<span id="cb323-3"><a href="ailport-creek---197976-197975---appendix.html#cb323-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="ailport-creek---197976-197975---appendix.html#cb324-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197976-06"></span>
 <img src="data/photos/197975/KP_TC_01665_u2_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 197975." width="100%" />
 <p class="caption">
 Figure 5.77: Typical habitat upstream of PSCIS crossing 197975.
 </p>
 </div>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="ailport-creek---197976-197975---appendix.html#cb325-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb325-2"><a href="ailport-creek---197976-197975---appendix.html#cb325-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb325-3"><a href="ailport-creek---197976-197975---appendix.html#cb325-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb325-4"><a href="ailport-creek---197976-197975---appendix.html#cb325-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb325-5"><a href="ailport-creek---197976-197975---appendix.html#cb325-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="ailport-creek---197976-197975---appendix.html#cb325-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb325-2"><a href="ailport-creek---197976-197975---appendix.html#cb325-2" tabindex="-1"></a></span>
+<span id="cb325-3"><a href="ailport-creek---197976-197975---appendix.html#cb325-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb325-4"><a href="ailport-creek---197976-197975---appendix.html#cb325-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb325-5"><a href="ailport-creek---197976-197975---appendix.html#cb325-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="ailport-creek---197976-197975---appendix.html#cb326-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb326-2"><a href="ailport-creek---197976-197975---appendix.html#cb326-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb326-3"><a href="ailport-creek---197976-197975---appendix.html#cb326-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="ailport-creek---197976-197975---appendix.html#cb327-1" aria-hidden="true" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198000</span></span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="ailport-creek---197976-197975---appendix.html#cb326-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb326-2"><a href="ailport-creek---197976-197975---appendix.html#cb326-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb326-3"><a href="ailport-creek---197976-197975---appendix.html#cb326-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="ailport-creek---197976-197975---appendix.html#cb327-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198000</span></span></code></pre></div>
 </div>
 </div>
             </section>
@@ -2317,7 +2317,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

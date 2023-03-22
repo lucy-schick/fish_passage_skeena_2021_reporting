@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Toboggan Creek - 57944 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021</title>
   <meta name="description" content="Wet-zuhn-kwa" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Toboggan Creek - 57944 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   <meta property="og:type" content="book" />
@@ -52,7 +52,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
 <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
@@ -228,7 +228,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="ailport-creek---197976-197975---appendix.html"><a href="ailport-creek---197976-197975---appendix.html"><i class="fa fa-check"></i>Ailport Creek - 197976 &amp; 197975 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="mcbride-creek---198000---appendix.html"><a href="mcbride-creek---198000---appendix.html"><i class="fa fa-check"></i>McBride Creek - 198000 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="cesford-creek---198048-198049---appendix.html"><a href="cesford-creek---198048-198049---appendix.html"><i class="fa fa-check"></i>Cesford Creek - 198048 &amp; 198049 - Appendix</a></li>
-<li class="chapter" data-level="" data-path="thompson-creek---198066-123377---appendix.html"><a href="thompson-creek---198066-123377---appendix.html"><i class="fa fa-check"></i>Thompson Creek - 198066 &amp; 123377 - Appendix</a></li>
+<li class="chapter" data-level="" data-path="thompson-creek---198066-123377-123375---appendix.html"><a href="thompson-creek---198066-123377-123375---appendix.html"><i class="fa fa-check"></i>Thompson Creek - 198066 &amp; 123377 &amp; 123375 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="chapter" data-level="" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i>Session Info</a></li>
 <li class="chapter" data-level="" data-path="attachment-1---maps.html"><a href="attachment-1---maps.html"><i class="fa fa-check"></i><strong>Attachment 1 - Maps</strong></a></li>
@@ -266,10 +266,10 @@ div.csl-indent {
 <h2>Background<a href="toboggan-creek---57944---appendix.html#background-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At crossing 57944, Toboggan Creek is a fifth order stream with a watershed area upstream of the crossing of approximately 119.9km<sup>2</sup>. The elevation of the watershed ranges from a maximum of 2586m to 412m near the crossing (Table <a href="toboggan-creek---57944---appendix.html#tab:tab-wshd-57944">5.1</a>). Upstream of crossing 57944, longnose sucker, cutthroat trout, pink salmon, coho salmon, rainbow trout, steelhead, kokanee, sockeye salmon, chinook salmon, mountain whitefish, dolly varden, sculpin (general), and lamprey (general) have previously been recorded <span class="citation">(MoE 2020b; Norris 2020)</span>. There is a wealth of information available for Toboggan Creek with numerous references available through the <a href="https://data.skeenasalmon.info/dataset?q=Toboggan">Skeena Salmon Data Centre</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="toboggan-creek---57944---appendix.html#cb52-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb52-2"><a href="toboggan-creek---57944---appendix.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb52-3"><a href="toboggan-creek---57944---appendix.html#cb52-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb52-4"><a href="toboggan-creek---57944---appendix.html#cb52-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="toboggan-creek---57944---appendix.html#cb52-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="toboggan-creek---57944---appendix.html#cb52-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb52-3"><a href="toboggan-creek---57944---appendix.html#cb52-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb52-4"><a href="toboggan-creek---57944---appendix.html#cb52-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-57944">Table 5.1: </span>Summary of derived upstream watershed statistics for PSCIS crossing 57944.
@@ -352,7 +352,7 @@ as cited in <span class="citation">Office of Wet’suwet’en (2016)</span>, <sp
 <p><br></p>
 <p>PSCIS stream crossing 57944 was ranked as a high priority for follow up by <span class="citation">Wilson and Rabnett (2007)</span>, <span class="citation">Irvine (2018)</span>, <span class="citation">Irvine (2021)</span> and <span class="citation">Mazany-Wright et al. (2021)</span> because of significant amounts of habitat modelled as upstream of the crossing. A summary of habitat modelling outputs is presented in Table <a href="toboggan-creek---57944---appendix.html#tab:tab-culvert-bcfp-57944">5.2</a>. A map of the watershed is provided in map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.122.pdf">093L.122</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="toboggan-creek---57944---appendix.html#cb53-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="toboggan-creek---57944---appendix.html#cb53-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -671,7 +671,7 @@ All Spawning Rearing (km)
 <h2>Stream Characteristics at Crossing<a href="toboggan-creek---57944---appendix.html#stream-characteristics-at-crossing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the time of the survey, PSCIS crossing 57944 was un-embedded, non-backwatered and ranked as a barrier barrier to upstream fish passage according to the provincial protocol <span class="citation">(MoE 2011b)</span> (Table <a href="toboggan-creek---57944---appendix.html#tab:tab-culvert-57944">5.3</a>). Water temperature was 8<span class="math inline">\(^\circ\)</span>C, pH was 8.2 and conductivity was 74uS/cm.</p>
 <p><br></p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="toboggan-creek---57944---appendix.html#cb54-1" aria-hidden="true" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="toboggan-creek---57944---appendix.html#cb54-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-57944">Table 5.3: </span>Summary of fish passage assessment for PSCIS crossing 57944.
@@ -934,9 +934,9 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="toboggan-creek---57944---appendix.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb55-2"><a href="toboggan-creek---57944---appendix.html#cb55-2" aria-hidden="true" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb55-3"><a href="toboggan-creek---57944---appendix.html#cb55-3" aria-hidden="true" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="toboggan-creek---57944---appendix.html#cb55-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb55-2"><a href="toboggan-creek---57944---appendix.html#cb55-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb55-3"><a href="toboggan-creek---57944---appendix.html#cb55-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream<a href="toboggan-creek---57944---appendix.html#stream-characteristics-downstream" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -962,11 +962,11 @@ Total cover amount was rated as moderate with large woody debris dominant. Cover
 <p>There was 52.4km of habitat modelled upstream of crossing 57944 with areas survyed rated as high value for salmonid rearing and spawning. Crossing 57944 was ranked as a high priority for proceeding to design for replacement. Toboggan Creek represents an extremely important system for the Bulkley River system in terms of fisheries values, it’s function for outreach within the community as well as it’s contribution to stock enhancement and assessment. Development of a plan to replace the crossing with a bridge may be considered as a prudent step to mitigating risks of a blow out of the backwatering works currently in place downstream and a return to conditions similiar to those observed historically when a significant outlet drop was present (Figures <a href="toboggan-creek---57944---appendix.html#fig:photo-57944-07">5.7</a> - <a href="toboggan-creek---57944---appendix.html#fig:photo-57944-08">5.8</a>).</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="toboggan-creek---57944---appendix.html#cb56-1" aria-hidden="true" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb56-2"><a href="toboggan-creek---57944---appendix.html#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb56-3"><a href="toboggan-creek---57944---appendix.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb56-4"><a href="toboggan-creek---57944---appendix.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb56-5"><a href="toboggan-creek---57944---appendix.html#cb56-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="toboggan-creek---57944---appendix.html#cb56-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="toboggan-creek---57944---appendix.html#cb56-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb56-3"><a href="toboggan-creek---57944---appendix.html#cb56-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb56-4"><a href="toboggan-creek---57944---appendix.html#cb56-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb56-5"><a href="toboggan-creek---57944---appendix.html#cb56-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-57944">Table 5.4: </span>Summary of habitat details for PSCIS crossing 57944.
@@ -1093,13 +1093,13 @@ high
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="toboggan-creek---57944---appendix.html#cb57-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb57-2"><a href="toboggan-creek---57944---appendix.html#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-3"><a href="toboggan-creek---57944---appendix.html#cb57-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb57-4"><a href="toboggan-creek---57944---appendix.html#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-5"><a href="toboggan-creek---57944---appendix.html#cb57-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-6"><a href="toboggan-creek---57944---appendix.html#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="toboggan-creek---57944---appendix.html#cb58-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="toboggan-creek---57944---appendix.html#cb57-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb57-2"><a href="toboggan-creek---57944---appendix.html#cb57-2" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="toboggan-creek---57944---appendix.html#cb57-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb57-4"><a href="toboggan-creek---57944---appendix.html#cb57-4" tabindex="-1"></a></span>
+<span id="cb57-5"><a href="toboggan-creek---57944---appendix.html#cb57-5" tabindex="-1"></a></span>
+<span id="cb57-6"><a href="toboggan-creek---57944---appendix.html#cb57-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="toboggan-creek---57944---appendix.html#cb58-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-57944-01"></span>
 <img src="Skeena2021_files/figure-html/photo-57944-01-1.png" alt="Typical habitat downstream of PSCIS crossing 57944." width="100%" />
 <p class="caption">
@@ -1107,10 +1107,10 @@ Figure 5.1: Typical habitat downstream of PSCIS crossing 57944.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="toboggan-creek---57944---appendix.html#cb59-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb59-2"><a href="toboggan-creek---57944---appendix.html#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-3"><a href="toboggan-creek---57944---appendix.html#cb59-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="toboggan-creek---57944---appendix.html#cb60-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="toboggan-creek---57944---appendix.html#cb59-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb59-2"><a href="toboggan-creek---57944---appendix.html#cb59-2" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="toboggan-creek---57944---appendix.html#cb59-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="toboggan-creek---57944---appendix.html#cb60-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-57944-02"></span>
 <img src="Skeena2021_files/figure-html/photo-57944-02-1.png" alt="Typical habitat downstream of PSCIS crossing 57944." width="100%" />
 <p class="caption">
@@ -1118,15 +1118,15 @@ Figure 5.2: Typical habitat downstream of PSCIS crossing 57944.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="toboggan-creek---57944---appendix.html#cb61-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb61-2"><a href="toboggan-creek---57944---appendix.html#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-3"><a href="toboggan-creek---57944---appendix.html#cb61-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb61-4"><a href="toboggan-creek---57944---appendix.html#cb61-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb61-5"><a href="toboggan-creek---57944---appendix.html#cb61-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="toboggan-creek---57944---appendix.html#cb62-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb62-2"><a href="toboggan-creek---57944---appendix.html#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-3"><a href="toboggan-creek---57944---appendix.html#cb62-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="toboggan-creek---57944---appendix.html#cb63-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="toboggan-creek---57944---appendix.html#cb61-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb61-2"><a href="toboggan-creek---57944---appendix.html#cb61-2" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="toboggan-creek---57944---appendix.html#cb61-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb61-4"><a href="toboggan-creek---57944---appendix.html#cb61-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb61-5"><a href="toboggan-creek---57944---appendix.html#cb61-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="toboggan-creek---57944---appendix.html#cb62-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb62-2"><a href="toboggan-creek---57944---appendix.html#cb62-2" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="toboggan-creek---57944---appendix.html#cb62-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="toboggan-creek---57944---appendix.html#cb63-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-57944-03"></span>
 <img src="Skeena2021_files/figure-html/photo-57944-03-1.png" alt="Typical habitat upstream of PSCIS crossing 57944." width="100%" />
 <p class="caption">
@@ -1134,26 +1134,26 @@ Figure 5.3: Typical habitat upstream of PSCIS crossing 57944.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="toboggan-creek---57944---appendix.html#cb64-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb64-2"><a href="toboggan-creek---57944---appendix.html#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-3"><a href="toboggan-creek---57944---appendix.html#cb64-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="toboggan-creek---57944---appendix.html#cb65-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="toboggan-creek---57944---appendix.html#cb64-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb64-2"><a href="toboggan-creek---57944---appendix.html#cb64-2" tabindex="-1"></a></span>
+<span id="cb64-3"><a href="toboggan-creek---57944---appendix.html#cb64-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="toboggan-creek---57944---appendix.html#cb65-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-57944-04"></span>
 <img src="Skeena2021_files/figure-html/photo-57944-04-1.png" alt="Typical habitat upstream of PSCIS crossing 57944." width="100%" />
 <p class="caption">
 Figure 5.4: Typical habitat upstream of PSCIS crossing 57944.
 </p>
 </div>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="toboggan-creek---57944---appendix.html#cb66-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb66-2"><a href="toboggan-creek---57944---appendix.html#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-3"><a href="toboggan-creek---57944---appendix.html#cb66-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb66-4"><a href="toboggan-creek---57944---appendix.html#cb66-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb66-5"><a href="toboggan-creek---57944---appendix.html#cb66-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="toboggan-creek---57944---appendix.html#cb66-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb66-2"><a href="toboggan-creek---57944---appendix.html#cb66-2" tabindex="-1"></a></span>
+<span id="cb66-3"><a href="toboggan-creek---57944---appendix.html#cb66-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb66-4"><a href="toboggan-creek---57944---appendix.html#cb66-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb66-5"><a href="toboggan-creek---57944---appendix.html#cb66-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="toboggan-creek---57944---appendix.html#cb67-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
-<span id="cb67-2"><a href="toboggan-creek---57944---appendix.html#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-3"><a href="toboggan-creek---57944---appendix.html#cb67-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="toboggan-creek---57944---appendix.html#cb68-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="toboggan-creek---57944---appendix.html#cb67-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
+<span id="cb67-2"><a href="toboggan-creek---57944---appendix.html#cb67-2" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="toboggan-creek---57944---appendix.html#cb67-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="toboggan-creek---57944---appendix.html#cb68-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-57944-05"></span>
 <img src="Skeena2021_files/figure-html/photo-57944-05-1.png" alt="Typical habitat upstream of PSCIS crossing 57944." width="100%" />
 <p class="caption">
@@ -1161,26 +1161,26 @@ Figure 5.5: Typical habitat upstream of PSCIS crossing 57944.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="toboggan-creek---57944---appendix.html#cb69-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
-<span id="cb69-2"><a href="toboggan-creek---57944---appendix.html#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="toboggan-creek---57944---appendix.html#cb69-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="toboggan-creek---57944---appendix.html#cb70-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="toboggan-creek---57944---appendix.html#cb69-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
+<span id="cb69-2"><a href="toboggan-creek---57944---appendix.html#cb69-2" tabindex="-1"></a></span>
+<span id="cb69-3"><a href="toboggan-creek---57944---appendix.html#cb69-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="toboggan-creek---57944---appendix.html#cb70-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-57944-06"></span>
 <img src="Skeena2021_files/figure-html/photo-57944-06-1.png" alt="Typical habitat upstream of PSCIS crossing 57944." width="100%" />
 <p class="caption">
 Figure 5.6: Typical habitat upstream of PSCIS crossing 57944.
 </p>
 </div>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="toboggan-creek---57944---appendix.html#cb71-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb71-2"><a href="toboggan-creek---57944---appendix.html#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-3"><a href="toboggan-creek---57944---appendix.html#cb71-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb71-4"><a href="toboggan-creek---57944---appendix.html#cb71-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb71-5"><a href="toboggan-creek---57944---appendix.html#cb71-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="toboggan-creek---57944---appendix.html#cb71-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb71-2"><a href="toboggan-creek---57944---appendix.html#cb71-2" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="toboggan-creek---57944---appendix.html#cb71-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb71-4"><a href="toboggan-creek---57944---appendix.html#cb71-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb71-5"><a href="toboggan-creek---57944---appendix.html#cb71-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <p><br></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="toboggan-creek---57944---appendix.html#cb72-1" aria-hidden="true" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_2012a_&#39;</span>)</span>
-<span id="cb72-2"><a href="toboggan-creek---57944---appendix.html#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-3"><a href="toboggan-creek---57944---appendix.html#cb72-3" aria-hidden="true" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Outlet of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2012. Photo from PSCIS.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="toboggan-creek---57944---appendix.html#cb73-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="toboggan-creek---57944---appendix.html#cb72-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_2012a_&#39;</span>)</span>
+<span id="cb72-2"><a href="toboggan-creek---57944---appendix.html#cb72-2" tabindex="-1"></a></span>
+<span id="cb72-3"><a href="toboggan-creek---57944---appendix.html#cb72-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Outlet of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2012. Photo from PSCIS.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="toboggan-creek---57944---appendix.html#cb73-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-57944-07"></span>
 <img src="Skeena2021_files/figure-html/photo-57944-07-1.png" alt="Outlet of PSCIS crossing 57944 in 2012. Photo from PSCIS." width="100%" />
 <p class="caption">
@@ -1188,27 +1188,27 @@ Figure 5.7: Outlet of PSCIS crossing 57944 in 2012. Photo from PSCIS.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="toboggan-creek---57944---appendix.html#cb74-1" aria-hidden="true" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_2012b_&#39;</span>)</span>
-<span id="cb74-2"><a href="toboggan-creek---57944---appendix.html#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-3"><a href="toboggan-creek---57944---appendix.html#cb74-3" aria-hidden="true" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Inlet of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2012. Photo from PSCIS.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="toboggan-creek---57944---appendix.html#cb75-1" aria-hidden="true" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="toboggan-creek---57944---appendix.html#cb74-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_2012b_&#39;</span>)</span>
+<span id="cb74-2"><a href="toboggan-creek---57944---appendix.html#cb74-2" tabindex="-1"></a></span>
+<span id="cb74-3"><a href="toboggan-creek---57944---appendix.html#cb74-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Inlet of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2012. Photo from PSCIS.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="toboggan-creek---57944---appendix.html#cb75-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-57944-08"></span>
 <img src="Skeena2021_files/figure-html/photo-57944-08-1.png" alt="Inlet of PSCIS crossing 57944 in 2012. Photo from PSCIS." width="100%" />
 <p class="caption">
 Figure 5.8: Inlet of PSCIS crossing 57944 in 2012. Photo from PSCIS.
 </p>
 </div>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="toboggan-creek---57944---appendix.html#cb76-1" aria-hidden="true" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb76-2"><a href="toboggan-creek---57944---appendix.html#cb76-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-3"><a href="toboggan-creek---57944---appendix.html#cb76-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb76-4"><a href="toboggan-creek---57944---appendix.html#cb76-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb76-5"><a href="toboggan-creek---57944---appendix.html#cb76-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="toboggan-creek---57944---appendix.html#cb76-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb76-2"><a href="toboggan-creek---57944---appendix.html#cb76-2" tabindex="-1"></a></span>
+<span id="cb76-3"><a href="toboggan-creek---57944---appendix.html#cb76-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb76-4"><a href="toboggan-creek---57944---appendix.html#cb76-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb76-5"><a href="toboggan-creek---57944---appendix.html#cb76-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="toboggan-creek---57944---appendix.html#cb77-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb77-2"><a href="toboggan-creek---57944---appendix.html#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb77-3"><a href="toboggan-creek---57944---appendix.html#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="toboggan-creek---57944---appendix.html#cb78-1" aria-hidden="true" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">123544</span></span>
-<span id="cb78-2"><a href="toboggan-creek---57944---appendix.html#cb78-2" aria-hidden="true" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">58151</span></span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="toboggan-creek---57944---appendix.html#cb77-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb77-2"><a href="toboggan-creek---57944---appendix.html#cb77-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb77-3"><a href="toboggan-creek---57944---appendix.html#cb77-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="toboggan-creek---57944---appendix.html#cb78-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">123544</span></span>
+<span id="cb78-2"><a href="toboggan-creek---57944---appendix.html#cb78-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">58151</span></span></code></pre></div>
 </div>
 </div>
             </section>
@@ -1277,7 +1277,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
