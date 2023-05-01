@@ -16,10 +16,6 @@ source('scripts/tables.R')
 ```{r  load-data-123770}
 my_site <- 123770
 my_site2 <- 198043
-
-
-
-
 ```
 
 `r fpr::fpr_appendix_title()`
@@ -34,7 +30,7 @@ PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info
 ## Background {-}
 
 
-At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to 375m near the crossing (Table \@ref(tab:tab-wshd-123770)). Upstream of crossing `r as.character(my_site)`, coho salmon, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. @gottesfeld_rabnett2007SkeenaFish report that although spawner abundance and location are unknown, chinook have been observed with John Brown Creek at 0.4km.
+At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to 375m near the crossing (Table \@ref(tab:tab-wshd-123770)). Upstream of crossing `r as.character(my_site)`, coho salmon, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. @gottesfeld_rabnett2007SkeenaFish reported that although spawner abundance and location are unknown, chinook have been observed in John Brown Creek at 0.4km.
 
 <br>
 
@@ -51,7 +47,7 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 <br>
 
-@wilson_rabnett2007FishPassage and @mccarthy_fernando20152015Inventory report that the culvert on John Brown at Highway 16 has received efforts to facilitate backwatering including rock lines to establish backwater pools downstream of the culvert.  
+@wilson_rabnett2007FishPassage and @mccarthy_fernando20152015Inventory report that the culvert on John Brown Creek at Highway 16 has received efforts to facilitate backwatering including rock lines to establish backwater pools downstream of the culvert. In 1997, the Ministry of Transportation (MoT) worked in partnership with Fisheries and Oceans Canada, the Ministry of Environment, Lands and Parks, Habitat Conservation Trust Fund, and non-governmental organizations (Gitanyow Fisheries Authorities and the Steelhead Society of BC) to identify and resolve fish passage issues at John Brown Creek. A site assessment indicated that the one meter outlet drop and high culvert velocity was blocking the upstream migration of fish. In 2000, MoT designed and implemented baffles to slow velocity and facilitate fish passage through the culvert. In addition, backwatering was done by constructing a tailwater pool and riffle sequence at the outlet. To reduce the height of the culvert from the stream, riprap was placed downstream of the culvert outlet. Post-remediation monitoring was carried out in 2001 during the spring freshet. Competition between the resident bulltrout and Dolly Varden fish species was observed upstream of the culvert [@sweetingRestorationFish].   
 
 <br>
 
