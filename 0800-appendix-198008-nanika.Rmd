@@ -34,7 +34,7 @@ At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a
 watershed area upstream of the crossing of approximately
 `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from
 a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to
-`r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table
+`r fpr::fpr_my_wshd(col = 'elev_site')`m at the crossing (Table
 \@ref(tab:tab-wshd-198008)). Upstream of crossing `r as.character(my_site)`, dolly varden have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs].
 
 <br>
