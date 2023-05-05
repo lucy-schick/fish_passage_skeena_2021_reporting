@@ -60,7 +60,8 @@ wshds <- readwritesqlite::rws_read_table("wshds", conn = conn) %>%
     aspect = case_when(
       stream_crossing_id == 124420 ~ 'NNE',
       T ~ aspect)
-  )
+  ) %>%
+  mutate(across(contains('elev'), ~ replace(., . < 0, NA)))
 
 photo_metadata <- readwritesqlite::rws_read_table("photo_metadata", conn = conn)
 # fiss_sum <- readwritesqlite::rws_read_table("fiss_sum", conn = conn)

@@ -16,9 +16,6 @@ source('scripts/tables.R')
 ```{r  load-data-197960}
 my_site <- 197960
 my_site2 <- 123775
-
-
-
 ```
 
 `r fpr::fpr_appendix_title()`
@@ -72,7 +69,7 @@ fpr::fpr_table_bcfp(scroll = gitbook_on)
 
 ## Stream Characteristics at Crossing {-}
 
-At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` barrier to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-197960)). Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. 
+At the time of the survey, PSCIS crossing `r as.character(my_site)` was un-embedded, non-backwatered and ranked as a `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` to upstream fish passage according to the provincial protocol [@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-197960)). Water temperature was `r fpr::fpr_my_habitat_info(col_pull = 'temperature_c')`$^\circ$C, pH was `r fpr::fpr_my_habitat_info(col_pull = 'p_h')` and conductivity was `r fpr::fpr_my_habitat_info(col_pull = 'conductivity_m_s_cm')`uS/cm. 
 
 
 <br>
@@ -118,6 +115,15 @@ my_priority <-  my_priority_info()
 `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197960-03) - \\@ref(fig:photo-197960-04)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-197960-d02))."))`
 `r fpr_my_cover_sentence(loc = 'us')` The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = "bed_material_subdominant")` subdominant. The first 50 - 100m upstream of crossing channel and banks were noted as armoured with riprap. Abundant gravels suitable for resident and anadromous salmonids were noted throughout. The habitat was rated as `r fpr::fpr_my_priority_info(loc = 'us')` value as an important migration corridor containing suitable spawning habitat and having moderate rearing potential.
 
+## Stream Characteristics Downstream of `r as.character(my_site2)`{-}
+
+`r fpr_my_survey_dist(loc = 'ds', sit = my_site2)`.
+The average channel width was `r fpr::fpr_my_habitat_info(sit = my_site2, loc = 'ds', col_pull = 'avg_channel_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(sit = my_site2, loc = 'ds', col_pull = 'average_gradient_percent')`%. The channel was poorly defined, indicating flows were intermittently only. The habitat was rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'ds')` value for salmonid rearing and spawning. 
+
+## Stream Characteristics Upstream of `r as.character(my_site2)`{-}
+
+`r fpr_my_survey_dist(loc = 'us', sit = my_site2)`.
+`r fpr_my_cover_sentence(sit = my_site2, loc = 'us')` The average channel width was `r fpr::fpr_my_habitat_info(sit = my_site2, loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(sit = my_site2, loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(sit = my_site2, loc = 'us', col_pull = 'average_gradient_percent')`%.  The dominant substrate was `r fpr::fpr_my_habitat_info(sit = my_site2, loc = 'us', col_pull = "bed_material_dominant")` with `r fpr::fpr_my_habitat_info(sit = my_site2, loc = 'us', col_pull = "bed_material_subdominant")` subdominant. Water in channel was most likely from the previous rainfall. Beaver activity was present, the water level was extremely low and there was no flow. Witset maintenance actively traps beavers to prevent flood events as of 2017. The habitat was rated as `r fpr::fpr_my_priority_info(sit = my_site2, loc = 'us')` value for salmonid rearing and spawning. 
 
 ## Fish Sampling {-}
 
@@ -139,7 +145,7 @@ There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km 
 
 <br>
 
-Crossing `r as.character(my_site)` was ranked as a low priority for remediation at the time of reporting due to low habitat value within the channel connecting Witset Lake to Corya Creek. Beaver control activities within the watershed to reduce the risk of flooding in the Moricetown  likely impacts flow patterns (shorter freshet and flashier flows following precipitation) and the subsequent habitat quality in Witset Creek. A watershed level plan to hold more water on the landscape upstream of the highway and increase the capacity of PSCIS crossing `r as.character(my_site)` to pass higher flow events could be considered in the long term to increase the overall health of the watershed and improve the potential for connectivity between Corya Creek and Witset Lake. 
+Crossing `r as.character(my_site)` was ranked as a low priority for remediation at the time of reporting due to low habitat value within the channel connecting Witset Lake to Corya Creek, upstream and downstream of crossing `r as.character(my_site2)`. Beaver control activities within the watershed to reduce the risk of flooding in the Moricetown  likely impacts flow patterns (shorter freshet and flashier flows following precipitation) and the subsequent habitat quality in Witset Creek. A watershed level plan to hold more water on the landscape upstream of the highway and increase the capacity of PSCIS crossing `r as.character(my_site)` to pass higher flow events could be considered in the long term to increase the overall health of the watershed and improve the potential for connectivity between Corya Creek and Witset Lake. 
 
 
 

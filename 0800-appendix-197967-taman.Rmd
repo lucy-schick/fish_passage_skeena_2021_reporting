@@ -34,7 +34,7 @@ PSCIS crossing `r as.character(my_site)` is located on the Upper Bulkley River a
 ## Background {-}
 
 
-At crossing `r as.character(my_site)`, the Upper Bulkey River is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to 375m near the crossing (Table \@ref(tab:tab-wshd-197967)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded upstream [@moe2020KnownBC; @norris2020bcfishobs]. 
+At crossing `r as.character(my_site)`, the Upper Bulkey River is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to 375m near the crossing (Table \@ref(tab:tab-wshd-197967)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. 
 
 <br>
 

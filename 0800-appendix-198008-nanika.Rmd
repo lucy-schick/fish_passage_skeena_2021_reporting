@@ -23,7 +23,7 @@ my_site <- 198008
 ## Site Location {.unnumbered}
 
 PSCIS crossing `r as.character(my_site)` is located on
-`r fpr::fpr_my_pscis_info()`, on a spur. The site was located approximately 2km upstream from the confluence with the Nanika River, which flows north west for approximately 10km before draining into Morice Lake. 
+`r fpr::fpr_my_pscis_info()`, on a spur road. The site was located approximately 2km upstream from the confluence with the Nanika River, which flows north west for approximately 10km before draining into Morice Lake. This crossing is the responsibility of Canfor Corporation.
 
 <br>
 
@@ -34,9 +34,8 @@ At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a
 watershed area upstream of the crossing of approximately
 `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from
 a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to
-`r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table
-\@ref(tab:tab-wshd-198008)). At the time of reporting, there was no fisheries information for areas upstream of crossing
-`r as.character(my_site)`.
+`r fpr::fpr_my_wshd(col = 'elev_site')`m at the crossing (Table
+\@ref(tab:tab-wshd-198008)). Upstream of crossing `r as.character(my_site)`, dolly varden have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs].
 
 <br>
 
@@ -48,6 +47,10 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
 
 ```
 
+
+<br>
+
+The Nanika River is the largest tributary within the Morice watershed, with a total watershed area of 895km^2^. The only notable sockeye run in the Morice watershed is the Morice-Nanika sockeye. The Babine watershed sockeye stock makes up 91% of the Skeena watershed escapement, while the Morice-Nanika stock makes up only 1% to 2% on average. This makes the Morice-Nanika stock vulnerable to over harvesting. Sockeye escapement numbers averaged 50,000 in the 1950's, but numbers have generally been in decline since then and remained low through to 2001. The low nutrient levels in Morice Lake, low spawner recruitment, climate conditions that cause flooding, redd dewatering and freezing, predation, and the availability of quality spawning habitat during high escapement years are thought to be the factors influencing production and possibly contributing to the decline of Morice-Nanika sockeye. The Nanika River also provides the most important rearing habitat for rainbow trout in the Morice watershed [@tamblyn_croft2003PlanConserve].  
 
 <br>
 
@@ -70,8 +73,7 @@ fpr::fpr_table_bcfp(scroll = gitbook_on)
 At the time of the survey, PSCIS crossing `r as.character(my_site)` was
 un-embedded, non-backwatered and ranked as a
 `r fpr::fpr_my_pscis_info(col_pull = barrier_result) %>% stringr::str_to_lower()` to upstream fish passage according to the provincial protocol
-[@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-198008)). There
-was low flow through the culvert at the time of survey. Water temperature was
+[@moe2011Fieldassessment] (Table \@ref(tab:tab-culvert-198008)). Water temperature was
 `r fpr::fpr_my_habitat_info(loc = "ds", col_pull = 'temperature_c')`$^\circ$C,
 pH was `r fpr::fpr_my_habitat_info(loc = "ds", col_pull = 'p_h')` and
 conductivity was
@@ -95,16 +97,16 @@ hab_site %>% filter(site == my_site & location == 'us') %>% pull(comments)
 ## Stream Characteristics Downstream {.unnumbered}
 
 `r fpr_my_survey_dist(loc = 'ds')`
-<!-- `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198008-01) - \\@ref(fig:photo-198008-02)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198008-d01))."))` -->
-`r fpr_my_habitat_paragraph(loc = 'ds')` This was a small stream with low, consistent flows and shallow pools. There were few undercut banks but abundant overhanging vegetation. Gravels were present throughout with fines near the bottom half of the survey and more cobbles near the top. The gradient was steeper in the top half of the survey and decreased further downstream. A few functional large woody debris created drops up to 0.6m high. Overall, the
+`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198008-01) - \\@ref(fig:photo-198008-02)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198008-d01))."))`
+`r fpr_my_habitat_paragraph(loc = 'ds')` This was a small stream with low, consistent flows and shallow pools. There were few undercut banks but abundant overhanging vegetation. Gravels were present throughout with fines near the bottom half of the survey and more cobbles near the top. The gradient was steeper in the top half of the survey and decreased further downstream. A few functional large woody debris clusters created drops up to 0.6m high. Overall, the
 habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for
 salmonid rearing and spawning. 
 
 ## Stream Characteristics Upstream {.unnumbered}
 
 `r fpr_my_survey_dist(loc = 'us')`
-<!-- `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198008-03) - \\@ref(fig:photo-198008-06)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198008-d02))."))` -->
-`r fpr_my_habitat_paragraph(loc = 'us')` There were multiple channels. The non-dominant channel was most likely surveyed here. The bottom 100m is low gradient, with patches of gravel and good flow for the time of year. Dolly Varden are known to be present upstream. There are no lakes upstream, indicating the stream is passable to Dolly Varden. The habitat was rated as
+`r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198008-03) - \\@ref(fig:photo-198008-06)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-198008-d02))."))`
+`r fpr_my_habitat_paragraph(loc = 'us')` There were multiple channels. The non-dominant channel was most likely surveyed here. The bottom 100m was low gradient, with patches of gravel and good flow for the time of year. Dolly Varden are known to be present upstream. There are no lakes upstream, indicating the stream was passable to Dolly Varden. The habitat was rated as
 `r fpr::fpr_my_priority_info(loc = 'us')` value as an important
 migration corridor containing suitable spawning habitat and having
 moderate rearing potential.
@@ -127,12 +129,12 @@ m^2^/\$1000.
 ## Conclusion {.unnumbered}
 
 There was
-`r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of
+1km of
 habitat modelled upstream of crossing `r as.character(my_site)` with
 areas surveyed rated as
 `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)`
 value for salmonid rearing and spawning. `r as.character(my_site)` was ranked as a
-`r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement.
+`r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. Electrofishing upstream and downstream of the culvert is recommended to provide insight into fish community composition and density. Due to low historical numbers of sockeye salmon in the Nanika watershed, it would be important to find out if they are using this tributary for spawning and/or rearing. 
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
@@ -145,4 +147,110 @@ tab_hab_summary %>%
   fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, '.'),
                  scroll = F) 
 
+```
+
+<br>
+
+```{r photo-198008-01-prep, eval=T}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_d1_')
+
+my_caption1 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-198008-01, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo1)
+```
+
+<br>
+
+```{r photo-198008-02-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_d2_')
+
+my_caption2 = paste0('Typical habitat downstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-198008-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo2)
+
+```
+
+<br>
+
+```{r photo-198008-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+
+```{r photo-198008-03-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u1_')
+
+my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-198008-03, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo1)
+```
+
+<br>
+
+```{r photo-198008-04-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u2_')
+
+my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-198008-04, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo2)
+```
+
+```{r photo-198008-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+
+```{r photo-198008-05-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u3_')
+
+my_caption1 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-198008-05, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo1)
+```
+
+
+
+<br>
+
+```{r photo-198008-06-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u4_')
+
+my_caption2 = paste0('Typical habitat upstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-198008-06, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo2)
+
+```
+
+```{r photo-198008-d03, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
 ```
