@@ -63,7 +63,7 @@ wshds <- readwritesqlite::rws_read_table("wshds", conn = conn) %>%
   ) %>%
   mutate(across(contains('elev'), ~ replace(., . < 0, NA)))  %>%
   # watershed incorrect so remove for now
-  filter(Site != 198016)
+  filter(stream_crossing_id != 198016)
 
 photo_metadata <- readwritesqlite::rws_read_table("photo_metadata", conn = conn)
 # fiss_sum <- readwritesqlite::rws_read_table("fiss_sum", conn = conn)
