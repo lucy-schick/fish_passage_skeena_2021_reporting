@@ -284,8 +284,7 @@ As collaborative decision making was ongoing at the time of reporting, site prio
 
 tab_overview %>% 
   select(-Tenure) %>%
-  table_phase2_overview(caption_text = 'Overview of habitat confirmation sites. Coho rearing model used for habitat estimates (total length of stream segments <7.5% gradient)', 
-                        scroll = gitbook_on)
+  table_phase2_overview(caption_text = 'Overview of habitat confirmation sites. Default value for habitat estimates is from coho rearing model (total length of stream segments <5.5% gradient) however please see comments for exceptions.', scroll = gitbook_on)
 
 ```
 
@@ -303,7 +302,7 @@ fpr::fpr_table_cv_summary(dat = pscis_phase2) %>%
 
 ```{r cost-est-phase-2}
 tab_cost_est_phase2_report %>% 
-  fpr::fpr_kable(caption_text = 'Cost benefit analysis for Phase 2 assessments. Coho rearing model used (total length of stream segments <7.5% gradient)', 
+  fpr::fpr_kable(caption_text = 'Cost benefit analysis for Phase 2 assessments. Default value for habitat estimates is from coho rearing model (total length of stream segments <5.5% gradient) however please see comments for exceptions.)', 
                  scroll = gitbook_on)
 
 ```
