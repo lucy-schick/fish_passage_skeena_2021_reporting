@@ -235,11 +235,11 @@ Although PSCIS culvert `r as.character(my_site)` on the private Udder View Dairy
 
 <br>
 
-There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site2)` on Walcott Road rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. Crossing `r as.character(my_site2)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. Electrofishing above and below crossing 123377 and tagging with Passive Integrated Transponders (PIT tags) to gather baseline data before designing a potential replacement of the structure is recommended as this will help track the movement of fish in the system over time and to give an indication of whether anadromous species are able to ascend through the agricultural area adjacent to the Bulkley River floodplain.
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site2)` on Walcott Road rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning with the crossing ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. Electrofishing above and below crossing 123377 and tagging with Passive Integrated Transponders (PIT tags) to gather baseline data before designing a potential replacement of the structure is recommended as this will help track the movement of fish in the system over time and to give an indication of whether anadromous species are able to ascend through the agricultural area adjacent to the Bulkley River floodplain.
 
 <br>
 
-Culvert `r as.character(my_site3)` on Highway 16 was ranked as a `r fpr::fpr_my_priority_info(sit = my_site3, col_pull = priority)` priority due to low flow, its low habitat value and the fact that the main flow of Thompson Creek is actually through the open bottom structure at crossing 123376. Review of lidar imagery indicates extensive excavation of ditches draining areas east of the highway adjacent to `r as.character(my_site3)` to accommodate the Thompson Creek ranch
+Culvert `r as.character(my_site3)` on Highway 16 was ranked as a `r fpr::fpr_my_priority_info(sit = my_site3, col_pull = priority)` priority due to low flow, its low habitat value and the fact that the main flow of Thompson Creek is actually through the open bottom structure at crossing 123376. Field assessments indicate that it the stream is unlikley to provide any fish habitat due to annual dewatering, extensive cattle damage and a lack of scoured streambed.  Review of lidar imagery indicates extensive excavation of ditches draining areas east of the highway adjacent to `r as.character(my_site3)` to accommodate the Thompson Creek ranch and this may provide most of the flow for this small tributary. Again it is noted that this steam is not mapped correctly in the freshwater atlas at this location and the main channel of Thompson Creek flows to the east and north of this crossing and passes under the highway through the open bottomed crossing located at PSCIS crossing 1233376.
 
 <br>
 
@@ -247,7 +247,7 @@ It is recommended that a detailed habitat confirmation be assessed upstream and 
 
 <br>
 
-Restoration suggestions by @tamblyn_jessop2000DetailedFish can still be considered relevant for Thompson Creek and include working with landowners to limit cattle access to the riparian zone, re-establishing riparian vegetation, improving cattle crossings and fish passage at roads. 
+Restoration suggestions by @tamblyn_jessop2000DetailedFish can still be considered relevant for all areas of the Thompson Creek watershed and include working with landowners to limit cattle access to the riparian zone, re-establishing riparian vegetation, improving cattle crossings and fish passage at roads. 
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
