@@ -104,7 +104,7 @@ Survey notes indicate signs of high powerful flows, including clumped large wood
 
 ## Fish Sampling {-}
 
-Electrofishing was conducted with results summarised in Tables \@ref(tab:tab-fish-site-197962) - \@ref(tab:tab-fish-dens-197962) and Figure \@ref(fig:plot-fish-box-197962).  
+Multipass electrofishing was conducted at three sites upstream of the crossing and three sites downstream. Results are summarised in Tables \@ref(tab:tab-fish-site-197962) - \@ref(tab:tab-fish-dens-197962) and Figure \@ref(fig:plot-fish-box-197962). Photos are provided in `r if(gitbook_on){knitr::asis_output("Figures \\@ref(fig:photo-197962-05) - \\@ref(fig:photo-197962-06).")}else(knitr::asis_output("Figure \\@ref(fig:photo-197962-d03)."))`
 
 ## Structure Remediation and Cost {-}
 
@@ -163,6 +163,41 @@ fpr_plot_fish_box(sit = my_site)
 
 
 <br>
+
+```{r photo-197962-05-prep, eval=T}
+my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = 'ds_ef1_')
+
+my_caption1 = paste0('Closed electrofishing site downstream of PSCIS crossing ', my_site, '.')
+
+```
+
+```{r photo-197962-05, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+<br>
+
+```{r photo-197962-06-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(str_to_pull = 'us_ef1_')
+
+my_caption2 = paste0('Closed electrofishing site upstream of PSCIS crossing ', my_site, '.')
+```
+
+```{r photo-197962-06, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo2))
+
+```
+
+<br>
+
+```{r photo-197962-d03, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
 
 
 
