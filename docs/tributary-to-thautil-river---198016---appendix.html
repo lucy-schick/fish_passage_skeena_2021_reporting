@@ -219,6 +219,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="john-brown-creek---123770---appendix.html"><a href="john-brown-creek---123770---appendix.html"><i class="fa fa-check"></i>John Brown Creek - 123770 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="station-creek---124420-124421-124422---appendix.html"><a href="station-creek---124420-124421-124422---appendix.html"><i class="fa fa-check"></i>Station Creek - 124420 &amp; 124421 &amp; 124422 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="owen-creek---197370---appendix.html"><a href="owen-creek---197370---appendix.html"><i class="fa fa-check"></i>Owen Creek - 197370 - Appendix</a></li>
+<li class="chapter" data-level="" data-path="tributary-to-owen-creek---197378---appendix.html"><a href="tributary-to-owen-creek---197378---appendix.html"><i class="fa fa-check"></i>Tributary to Owen Creek - 197378 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="richfield-creek---197662---appendix.html"><a href="richfield-creek---197662---appendix.html"><i class="fa fa-check"></i>Richfield Creek - 197662 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="tributary-to-maxan-creek---197909---appendix.html"><a href="tributary-to-maxan-creek---197909---appendix.html"><i class="fa fa-check"></i>Tributary to Maxan Creek - 197909 - Appendix</a></li>
 <li class="chapter" data-level="" data-path="robert-hatch-creek---197912---appendix.html"><a href="robert-hatch-creek---197912---appendix.html"><i class="fa fa-check"></i>Robert Hatch Creek - 197912 - Appendix</a></li>
@@ -259,39 +260,39 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="tributary-to-thautil-river---198016---appendix" class="section level1 unnumbered hasAnchor">
 <h1>Tributary to Thautil River - 198016 - Appendix<a href="tributary-to-thautil-river---198016---appendix.html#tributary-to-thautil-river---198016---appendix" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="site-location-13" class="section level2 unnumbered hasAnchor">
-<h2>Site Location<a href="tributary-to-thautil-river---198016---appendix.html#site-location-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="site-location-14" class="section level2 unnumbered hasAnchor">
+<h2>Site Location<a href="tributary-to-thautil-river---198016---appendix.html#site-location-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>PSCIS crossing 198016 is located on
 Tributary to Thautil River, on Chisholm FSR. There are no other crossings on this tributary. Crossing 198016 is located approximately 700m upstream from the confluence with Thautil River and is the responsibility of West Fraser Timber Company.</p>
 <p><br></p>
 </div>
-<div id="background-14" class="section level2 unnumbered hasAnchor">
-<h2>Background<a href="tributary-to-thautil-river---198016---appendix.html#background-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-1" tabindex="-1"></a><span class="co">#At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a</span></span>
-<span id="cb372-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-2" tabindex="-1"></a><span class="co"># `r fpr::fpr_my_bcfishpass() %&gt;% english::ordinal()` order stream with a</span></span>
-<span id="cb372-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-3" tabindex="-1"></a><span class="co"># watershed area upstream of the crossing of approximately</span></span>
-<span id="cb372-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-4" tabindex="-1"></a><span class="co"># `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from</span></span>
-<span id="cb372-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-5" tabindex="-1"></a><span class="co"># a maximum of `r fpr::fpr_my_wshd(col = &#39;elev_max&#39;)`m to</span></span>
-<span id="cb372-6"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-6" tabindex="-1"></a><span class="co"># `r fpr::fpr_my_wshd(col = &#39;elev_min&#39;)`m near the crossing (Table</span></span>
-<span id="cb372-7"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-7" tabindex="-1"></a><span class="co"># \@ref(tab:tab-wshd-198016)). At the time of reporting, there was no fisheries information for areas upstream of crossing</span></span>
-<span id="cb372-8"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-8" tabindex="-1"></a><span class="co"># `r as.character(my_site)`.</span></span>
-<span id="cb372-9"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-9" tabindex="-1"></a></span>
-<span id="cb372-10"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-10" tabindex="-1"></a></span>
-<span id="cb372-11"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-11" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb372-12"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-12" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb372-13"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-13" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb372-14"><a href="tributary-to-thautil-river---198016---appendix.html#cb372-14" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div id="background-15" class="section level2 unnumbered hasAnchor">
+<h2>Background<a href="tributary-to-thautil-river---198016---appendix.html#background-15" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-1" tabindex="-1"></a><span class="co">#At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a</span></span>
+<span id="cb399-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-2" tabindex="-1"></a><span class="co"># `r fpr::fpr_my_bcfishpass() %&gt;% english::ordinal()` order stream with a</span></span>
+<span id="cb399-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-3" tabindex="-1"></a><span class="co"># watershed area upstream of the crossing of approximately</span></span>
+<span id="cb399-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-4" tabindex="-1"></a><span class="co"># `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from</span></span>
+<span id="cb399-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-5" tabindex="-1"></a><span class="co"># a maximum of `r fpr::fpr_my_wshd(col = &#39;elev_max&#39;)`m to</span></span>
+<span id="cb399-6"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-6" tabindex="-1"></a><span class="co"># `r fpr::fpr_my_wshd(col = &#39;elev_min&#39;)`m near the crossing (Table</span></span>
+<span id="cb399-7"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-7" tabindex="-1"></a><span class="co"># \@ref(tab:tab-wshd-198016)). At the time of reporting, there was no fisheries information for areas upstream of crossing</span></span>
+<span id="cb399-8"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-8" tabindex="-1"></a><span class="co"># `r as.character(my_site)`.</span></span>
+<span id="cb399-9"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-9" tabindex="-1"></a></span>
+<span id="cb399-10"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-10" tabindex="-1"></a></span>
+<span id="cb399-11"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-11" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb399-12"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-12" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb399-13"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-13" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb399-14"><a href="tributary-to-thautil-river---198016---appendix.html#cb399-14" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <p>Downstream of Morice Lake, the largest tributary (535km<sup>2</sup>) is formed by Thautil River and Gosnell Creek. Thautil River maintains relatively high flows throughout the year until the freeze up occurs, typically in November <span class="citation">(G. Tamblyn and Croft 2003)</span>. In a stream inventory study of the Thautil watershed conducted by <span class="citation">David Bustard and Associates Ltd. (1997)</span> in 1996, it was concluded that steelhead, bull trout, and dolly varden were the three predominant species found in the Thautil River. Steelhead and bull trout were utilizing larger channels with an average gradient less than 6%. Dolly varden were the predominant species in smaller tributaries, and were found in streams with a gradient of up to 13%.</p>
 <p><br></p>
 <p>PSCIS stream crossing 198016 was ranked as a moderate
-priority for follow up by the Society for Ecosystem Restoration in Northern BC based on <code>bcfishpass</code> modelling outputs. A summary of habitat modelling outputs is presented in Table <a href="tributary-to-thautil-river---198016---appendix.html#tab:tab-culvert-bcfp-198016">5.72</a>. A map of the watershed is provided in
+priority for follow up by the Society for Ecosystem Restoration in Northern BC based on <code>bcfishpass</code> modelling outputs. A summary of habitat modelling outputs is presented in Table <a href="tributary-to-thautil-river---198016---appendix.html#tab:tab-culvert-bcfp-198016">5.76</a>. A map of the watershed is provided in
 map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.107.pdf">093L.107</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb373-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb400-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
-<span id="tab:tab-culvert-bcfp-198016">Table 5.72: </span>Summary of fish habitat modelling for PSCIS crossing 198016.
+<span id="tab:tab-culvert-bcfp-198016">Table 5.76: </span>Summary of fish habitat modelling for PSCIS crossing 198016.
 </caption>
 <thead>
 <tr>
@@ -602,19 +603,19 @@ All Spawning Rearing (km)
 </div>
 <p><br></p>
 </div>
-<div id="stream-characteristics-at-crossing-12" class="section level2 unnumbered hasAnchor">
-<h2>Stream Characteristics at Crossing<a href="tributary-to-thautil-river---198016---appendix.html#stream-characteristics-at-crossing-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stream-characteristics-at-crossing-13" class="section level2 unnumbered hasAnchor">
+<h2>Stream Characteristics at Crossing<a href="tributary-to-thautil-river---198016---appendix.html#stream-characteristics-at-crossing-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the time of the survey, PSCIS crossing 198016 was
 un-embedded, non-backwatered and ranked as a
 barrier to upstream fish passage according to the provincial protocol
-<span class="citation">(MoE 2011b)</span> (Table <a href="tributary-to-thautil-river---198016---appendix.html#tab:tab-culvert-198016">5.73</a>). There
+<span class="citation">(MoE 2011b)</span> (Table <a href="tributary-to-thautil-river---198016---appendix.html#tab:tab-culvert-198016">5.77</a>). There
 was low flow through the culvert at the time of survey. It was noted that the boulders found at the outlet could present a barrier to upstream fish migration, depending on life stage and stream flow conditions. Water temperature was 8<span class="math inline">\(^\circ\)</span>C,
 pH was 8.1 and conductivity was 155uS/cm.</p>
 <p><br></p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb374-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb401-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:tab-culvert-198016">Table 5.73: </span>Summary of fish passage assessment for PSCIS crossing 198016.
+<span id="tab:tab-culvert-198016">Table 5.77: </span>Summary of fish passage assessment for PSCIS crossing 198016.
 </caption>
 <thead>
 <tr>
@@ -874,28 +875,28 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb375-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb375-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb375-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb375-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb375-3" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span></code></pre></div>
+<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb402-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb402-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb402-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb402-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb402-3" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span></code></pre></div>
 </div>
-<div id="stream-characteristics-downstream-8" class="section level2 unnumbered hasAnchor">
-<h2>Stream Characteristics Downstream<a href="tributary-to-thautil-river---198016---appendix.html#stream-characteristics-downstream-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stream-characteristics-downstream-9" class="section level2 unnumbered hasAnchor">
+<h2>Stream Characteristics Downstream<a href="tributary-to-thautil-river---198016---appendix.html#stream-characteristics-downstream-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed downstream from crossing 198016 for 700m
-(Figures <a href="tributary-to-thautil-river---198016---appendix.html#fig:photo-198016-01">5.90</a> - <a href="tributary-to-thautil-river---198016---appendix.html#fig:photo-198016-02">5.91</a>).
-The dominant substrate was cobbles with gravels sub-dominant.The average channel width was 2m, the average wetted width was 1.2m, and the average gradient was 9%.Total cover amount was rated as moderate with large woody debris dominant. Cover was also present as small woody debris, undercut banks, and overhanging vegetation. Fish were sighted downstream during the assessment. There was abundant and functional large woody debris, creating cover and deep pools. The gradient increased near the confluence, with large woody debris jams up to 1m in height forming pools approximately 0.45m deep. There appeared to be abundant rearing habitat with suitable overwintering areas. There were patches of gravel found throughout the length surveyed, but the gradient was always greater than 5%, which is not ideal for spawning. Overall, the
+(Figures <a href="tributary-to-thautil-river---198016---appendix.html#fig:photo-198016-01">5.98</a> - <a href="tributary-to-thautil-river---198016---appendix.html#fig:photo-198016-02">5.99</a>).
+Total cover amount was rated as moderate with large woody debris dominant. Cover was also present as small woody debris, undercut banks, and overhanging vegetation.The dominant substrate was cobbles with gravels sub-dominant.The average channel width was 2m, the average wetted width was 1.2m, and the average gradient was 9%. Fish were sighted downstream during the assessment. There was abundant and functional large woody debris, creating cover and deep pools. The gradient increased near the confluence, with large woody debris jams up to 1m in height forming pools approximately 0.45m deep. There appeared to be abundant rearing habitat with suitable overwintering areas. There were patches of gravel found throughout the length surveyed, but the gradient was always greater than 5%, which is not ideal for spawning. Overall, the
 habitat was rated as medium value for
 salmonid rearing and spawning.</p>
 </div>
-<div id="stream-characteristics-upstream-6" class="section level2 unnumbered hasAnchor">
-<h2>Stream Characteristics Upstream<a href="tributary-to-thautil-river---198016---appendix.html#stream-characteristics-upstream-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stream-characteristics-upstream-7" class="section level2 unnumbered hasAnchor">
+<h2>Stream Characteristics Upstream<a href="tributary-to-thautil-river---198016---appendix.html#stream-characteristics-upstream-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed upstream from crossing 198016 for 625m
-(Figures <a href="tributary-to-thautil-river---198016---appendix.html#fig:photo-198016-03">5.92</a> - <a href="tributary-to-thautil-river---198016---appendix.html#fig:photo-198016-06">5.95</a>).
-The dominant substrate was gravels with cobbles sub-dominant.Total cover amount was rated as moderate with undercut banks dominant. Cover was also present as small woody debris, large woody debris, deep pools, and overhanging vegetation.The average channel width was 1.9m, the average wetted width was 1.5m, and the average gradient was 7%. There were sporadic pools and abundant, deep undercut banks. Abundant gravels were present suitable for spawning. Few large and small woody debris steps up to 70cm in height were present. The riparian vegetation consisted primarily of mature spruce trees. The habitat was rated as
+(Figures <a href="tributary-to-thautil-river---198016---appendix.html#fig:photo-198016-03">5.100</a> - <a href="tributary-to-thautil-river---198016---appendix.html#fig:photo-198016-06">5.103</a>).
+The average channel width was 1.9m, the average wetted width was 1.5m, and the average gradient was 7%.The dominant substrate was gravels with cobbles sub-dominant.Total cover amount was rated as moderate with undercut banks dominant. Cover was also present as small woody debris, large woody debris, deep pools, and overhanging vegetation. There were sporadic pools and abundant, deep undercut banks. Abundant gravels were present suitable for spawning. Few large and small woody debris steps up to 70cm in height were present. The riparian vegetation consisted primarily of mature spruce trees. The habitat was rated as
 medium value for salmonid rearing and spawning.</p>
 <p><br></p>
 </div>
-<div id="structure-remediation-and-cost-estimate-11" class="section level2 unnumbered hasAnchor">
-<h2>Structure Remediation and Cost Estimate<a href="tributary-to-thautil-river---198016---appendix.html#structure-remediation-and-cost-estimate-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="structure-remediation-and-cost-estimate-12" class="section level2 unnumbered hasAnchor">
+<h2>Structure Remediation and Cost Estimate<a href="tributary-to-thautil-river---198016---appendix.html#structure-remediation-and-cost-estimate-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Should restoration/maintenance activities proceed, replacement of PSCIS
 crossing 198016 with a streambed simulation (embedded pipe)
 (3m
@@ -906,19 +907,19 @@ m/$1000 and 57
 m<sup>2</sup>/$1000.</p>
 <p><br></p>
 </div>
-<div id="conclusion-13" class="section level2 unnumbered hasAnchor">
-<h2>Conclusion<a href="tributary-to-thautil-river---198016---appendix.html#conclusion-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="conclusion-14" class="section level2 unnumbered hasAnchor">
+<h2>Conclusion<a href="tributary-to-thautil-river---198016---appendix.html#conclusion-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Although modelling indicated the stream did not likley contain high value rearing and spawning habitat for anadromous species (due to smaller size and steeper gradients) it was estimated (by measuring in QGIS) that there was approximately 1.2km of habitat upstream of the FSR that is likely fish bearing (less than 12%). Areas surveyed were rated as medium value for salmonid rearing and spawning. Crossing 198016 was ranked as a moderate priority for proceeding to design for replacement. The stream was confirmed as fish bearing during the site visit. Electrofishing upstream and downstream of the culvert is recommended in order to determine species present and associated densities. PIT tagging of fish captured upstream and downstream could also be considered for building an understanding of how the culvert may impact local fish populations as well as provide baseline monitoring should replacement of the crossing occur.</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb376-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb376-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb376-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb376-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb376-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb376-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb376-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb376-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb376-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb403-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb403-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb403-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb403-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb403-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb403-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb403-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb403-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb403-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:tab-habitat-summary-198016">Table 5.74: </span>Summary of habitat details for PSCIS crossing 198016.
+<span id="tab:tab-habitat-summary-198016">Table 5.78: </span>Summary of habitat details for PSCIS crossing 198016.
 </caption>
 <thead>
 <tr>
@@ -1013,92 +1014,92 @@ medium
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb377-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb377-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb377-2" tabindex="-1"></a></span>
-<span id="cb377-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb377-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb378-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb404-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb404-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb404-2" tabindex="-1"></a></span>
+<span id="cb404-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb404-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb405-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198016-01"></span>
 <img src="data/photos/198016/KP_TC_00494_d1_k_.JPG" alt="Typical habitat downstream of PSCIS crossing 198016." width="100%" />
 <p class="caption">
-Figure 5.90: Typical habitat downstream of PSCIS crossing 198016.
+Figure 5.98: Typical habitat downstream of PSCIS crossing 198016.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb379-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb379-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb379-2" tabindex="-1"></a></span>
-<span id="cb379-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb379-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb380-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb406-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb406-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb406-2" tabindex="-1"></a></span>
+<span id="cb406-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb406-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb407-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198016-02"></span>
 <img src="data/photos/198016/KP_TC_00548_d2_k_.JPG" alt="Typical habitat downstream of PSCIS crossing 198016." width="100%" />
 <p class="caption">
-Figure 5.91: Typical habitat downstream of PSCIS crossing 198016.
+Figure 5.99: Typical habitat downstream of PSCIS crossing 198016.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb381-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb381-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb381-2" tabindex="-1"></a></span>
-<span id="cb381-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb381-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb381-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb381-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb381-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb381-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb382-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb382-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb382-2" tabindex="-1"></a></span>
-<span id="cb382-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb382-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb383-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb408-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb408-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb408-2" tabindex="-1"></a></span>
+<span id="cb408-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb408-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb408-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb408-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb408-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb408-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb409-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb409-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb409-2" tabindex="-1"></a></span>
+<span id="cb409-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb409-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb410-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198016-03"></span>
 <img src="data/photos/198016/AI_IMG_5702_u1_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198016." width="100%" />
 <p class="caption">
-Figure 5.92: Typical habitat upstream of PSCIS crossing 198016.
+Figure 5.100: Typical habitat upstream of PSCIS crossing 198016.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb384-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb384-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb384-2" tabindex="-1"></a></span>
-<span id="cb384-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb384-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb385-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb411-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb411-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb411-2" tabindex="-1"></a></span>
+<span id="cb411-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb411-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb412-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198016-04"></span>
 <img src="data/photos/198016/AI_IMG_5704_u2_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198016." width="100%" />
 <p class="caption">
-Figure 5.93: Typical habitat upstream of PSCIS crossing 198016.
+Figure 5.101: Typical habitat upstream of PSCIS crossing 198016.
 </p>
 </div>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb386-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb386-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb386-2" tabindex="-1"></a></span>
-<span id="cb386-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb386-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb386-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb386-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb386-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb386-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb387-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
-<span id="cb387-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb387-2" tabindex="-1"></a></span>
-<span id="cb387-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb387-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb388-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb413-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb413-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb413-2" tabindex="-1"></a></span>
+<span id="cb413-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb413-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb413-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb413-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb413-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb413-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb414-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
+<span id="cb414-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb414-2" tabindex="-1"></a></span>
+<span id="cb414-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb414-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb415-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198016-05"></span>
 <img src="data/photos/198016/AI_IMG_5706_u3_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198016." width="100%" />
 <p class="caption">
-Figure 5.94: Typical habitat upstream of PSCIS crossing 198016.
+Figure 5.102: Typical habitat upstream of PSCIS crossing 198016.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb389-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
-<span id="cb389-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb389-2" tabindex="-1"></a></span>
-<span id="cb389-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb389-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb390-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb416-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
+<span id="cb416-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb416-2" tabindex="-1"></a></span>
+<span id="cb416-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb416-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb417-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198016-06"></span>
 <img src="data/photos/198016/AI_IMG_5708_u4_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198016." width="100%" />
 <p class="caption">
-Figure 5.95: Typical habitat upstream of PSCIS crossing 198016.
+Figure 5.103: Typical habitat upstream of PSCIS crossing 198016.
 </p>
 </div>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb391-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb391-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb391-2" tabindex="-1"></a></span>
-<span id="cb391-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb391-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb391-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb391-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb391-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb391-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb418-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb418-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb418-2" tabindex="-1"></a></span>
+<span id="cb418-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb418-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb418-4"><a href="tributary-to-thautil-river---198016---appendix.html#cb418-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb418-5"><a href="tributary-to-thautil-river---198016---appendix.html#cb418-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb392-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb392-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb392-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb392-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb392-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb393-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198048</span></span>
-<span id="cb393-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb393-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198049</span></span>
-<span id="cb393-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb393-3" tabindex="-1"></a>my_site3 <span class="ot">&lt;-</span> <span class="dv">198090</span></span></code></pre></div>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb419-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb419-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb419-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb419-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb419-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="tributary-to-thautil-river---198016---appendix.html#cb420-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198048</span></span>
+<span id="cb420-2"><a href="tributary-to-thautil-river---198016---appendix.html#cb420-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198049</span></span>
+<span id="cb420-3"><a href="tributary-to-thautil-river---198016---appendix.html#cb420-3" tabindex="-1"></a>my_site3 <span class="ot">&lt;-</span> <span class="dv">198090</span></span></code></pre></div>
 </div>
 </div>
             </section>

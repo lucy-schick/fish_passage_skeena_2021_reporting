@@ -85,6 +85,16 @@ fig:photo-124420-09
 fig:photo-124420-10
 fig:ortho-caption-owen
 fig:model-caption-owen
+tab:tab-wshd-197378
+tab:tab-culvert-bcfp-197378
+tab:tab-culvert-197378
+tab:tab-habitat-summary-197378
+fig:photo-197378-01
+fig:photo-197378-02
+fig:photo-197378-03
+fig:photo-197378-04
+fig:photo-197378-05
+fig:photo-197378-06
 tab:tab-wshd-197662
 tab:tab-culvert-bcfp-197662
 tab:tab-culvert-197662
@@ -138,6 +148,8 @@ tab:tab-habitat-summary-197962
 tab:tab-fish-site-197962
 tab:tab-fish-dens-197962
 fig:plot-fish-box-197962
+fig:photo-197962-05
+fig:photo-197962-06
 fig:photo-197962-01
 fig:photo-197962-02
 fig:photo-197962-03
