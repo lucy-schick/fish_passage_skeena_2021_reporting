@@ -23,6 +23,8 @@ output:
   bookdown::gitbook:
           includes:
             in_header: header.html
+params:
+ repo_url: 'https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/'
 nocite: |
   @busch_etal2013LandscapeLevelModel, 
   @woll_etal2017SalmonEcological,
@@ -67,6 +69,7 @@ options(knitr.kable.NAN = '--')
 
 source('scripts/packages.R')
 source('scripts/functions_project_specific.R')
+source('scripts/tables_2023.R')
 source('scripts/tables.R')
 
 ```
