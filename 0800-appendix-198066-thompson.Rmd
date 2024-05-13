@@ -48,6 +48,10 @@ Landowners that resided adjacent to the stream and Walcott Road reported that th
 
 In addition to surveys conducted at the three subject culverts in 2021, Thompson creek was re-visited in 2022 with a survey conducted within the wetted channel in a downstream direction from the replaced bridge (crossing 123378) on the BC Hydro powerline to where the stream directs to the south and the agricultural fields begin.  Surveyors also walked the north edge of the field towards the Bulkley River for approximately 250m then circled back south through the shrub dominated areas to the hay fields to scope for evidence that a defined historic channel was located in this area. Although some low lying areas were observed, no defined channel was located which is not surprising since this area is all within the floodplain of the Bulkley River, so channels/wetland complexes would historically be present in this area and shift throughout the floodplain based on beaver activity and flows in both Thompson Creek and side channels of the Bulkley River.
 
+<br>
+
+Following recommendations from the 2022 survey, crossing `r as.character(my_site2)` was revisited September 14, 2023 and electrofishing was conducted above and below the crossing to gather baseline data. Fish were tagged with Passive Integrated Transponders (PIT tags) to help track movement within the system over time, and to give an indication of whether anadromous species are able to ascend through the agricultural area adjacent to the Bulkley River floodplain. Results from this survey are included in this report. 
+
 
 <br>
 
@@ -142,7 +146,7 @@ The stream was surveyed downstream from the private road for `r fpr::fpr_my_prio
 ## Stream Characteristics Upstream of `r as.character(my_site)` and downstream of `r as.character(my_site2)` {-}
 
 
-The stream was initially surveyed in 2021 from immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198066-03) - \\@ref(fig:photo-198066-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-198066-d02))"))`. Within the area surveyed, total cover amount was rated as moderate with `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198066)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%. The eastern channel was primarily dry when surveyed in 2021, with fines substrates, and a poorly defined channel due to the wetland type character of the area. In addition to the eastern channel which was oriented in an east-west direction, the western channel, oriented north-south just upstream of the crossing, was also surveyed for 200m   At the time of the survey, this western channel contained the majority of flow for the watershed and was comprised of a 4 foot wide channel with reed canary grass on either side, fine substrate and no complexity. The landowner reports that this channel was excavated within the hay field in order to prevent inundation of the field by water from Thompson Creek.   During field assessments in 2021 it was also noted that there was significant clearing of mature cottonwood forest adjacent to the side channel of the Bulkley River south of culvert 198066 on the private farm road. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning as the area was considered an important corridor but had lower rearing values due to the lack of complexity in the excavated main flowing drainage. 
+The stream was initially surveyed in 2021 from immediately upstream from `r as.character(my_site)` for approximately `r fpr::fpr_my_priority_info(col_pull = 'length_surveyed')`m `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-198066-03) - \\@ref(fig:photo-198066-04))")} else(knitr::asis_output("(Figure \\@ref(fig:photo-198066-d02))"))`. Within the area surveyed, total cover amount was rated as moderate with `r fpr::fpr_my_habitat_cover(loc = 'us', cover_type = 'dominant')` dominant. Cover was also present as `r fpr::fpr_my_habitat_cover(loc = 'us',cover_type = 'sub-dominant')` (Table \@ref(tab:tab-habitat-summary-198066)). The average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m')`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m')`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent')`%. The eastern channel was primarily dry when surveyed in 2021, with fines substrates, and a poorly defined channel due to the wetland type character of the area. In addition to the eastern channel which was oriented in an east-west direction, the western channel, oriented north-south just upstream of the crossing, was also surveyed for 200m.   At the time of the survey, this western channel contained the majority of flow for the watershed and was comprised of a 4 foot wide channel with reed canary grass on either side, fine substrate and no complexity. The landowner reports that this channel was excavated within the hay field in order to prevent inundation of the field by water from Thompson Creek.   During field assessments in 2021 it was also noted that there was significant clearing of mature cottonwood forest adjacent to the side channel of the Bulkley River south of culvert 198066 on the private farm road. Habitat value was rated as `r fpr::fpr_my_priority_info()` value for resident salmonid rearing and spawning as the area was considered an important corridor but had lower rearing values due to the lack of complexity in the excavated main flowing drainage. 
 
 <br>
 
@@ -150,7 +154,7 @@ This site was revisited in 2022. Surveyors walked downstream from the bridge (cr
 
 <br>
 
-The section downstream of `r as.character(my_site2)` was surveyed for approximately `r fpr::fpr_my_priority_info(sit = my_site2, loc = "ds", col_pull = 'length_surveyed')`m. `r fpr_my_habitat_paragraph(loc = 'ds', sit = my_site2)`. There were abundant quantities of deep pools throughout the area surveyed with periodic small and large woody debris jams present up to 1.3m in height. Numerous juvenile fish were observed throughout the area surveyed. There was one site noted with significant bank erosion, a small walking trail bridge and a water intake observed. Overall the habitat was considered complex and ranked as `r fpr::fpr_my_priority_info(loc = 'ds', sit = my_site2)` value with good flow and abundant fish present. The landowner adjacent to the stream on the downstream side of Walcott Road noted that there is another bridge located on his land downstream of the area surveyed.
+The section downstream of `r as.character(my_site2)` was surveyed for approximately `r fpr::fpr_my_priority_info(sit = my_site2, loc = "ds", col_pull = 'length_surveyed')`m. `r fpr_my_habitat_paragraph(loc = 'ds', sit = my_site2)` There were abundant quantities of deep pools throughout the area surveyed with periodic small and large woody debris jams present up to 1.3m in height. Numerous juvenile fish were observed throughout the area surveyed. There was one site noted with significant bank erosion, a small walking trail bridge and a water intake observed. Overall the habitat was considered complex and ranked as `r fpr::fpr_my_priority_info(loc = 'ds', sit = my_site2)` value with good flow and abundant fish present. The landowner adjacent to the stream on the downstream side of Walcott Road noted that there is another bridge located on his land downstream of the area surveyed.
 
 <br>
 
@@ -189,16 +193,16 @@ knitr::include_graphics(my_photo, dpi = NA)
 
 ## Stream Characteristics Upstream of `r as.character(my_site2)` and downstream of `r as.character(my_site3)` {-}
 
-The stream was surveyed upstream of `r as.character(my_site2)` for approximately `r fpr::fpr_my_priority_info(sit = my_site2, loc = "us", col_pull = 'length_surveyed')`m. `r fpr_my_habitat_paragraph(loc = 'us', sit = my_site2)`.  There were frequent deep pools up to 80cm and abundant large woody debris and gravels. There was a narrow strip of mature cottonwood riparian immediately upstream of Walcott Road with the channel hard to locate upstream of confluence with the mainstem that flows under the open bottom structure due to low flows and the presence of reed canary grass and willow dominated vegetation.
-
+The stream was surveyed upstream of `r as.character(my_site2)` for approximately `r fpr::fpr_my_priority_info(sit = my_site2, loc = "us", col_pull = 'length_surveyed')`m. `r fpr_my_habitat_paragraph(loc = 'us', sit = my_site2)`  There were frequent deep pools up to 80cm and abundant large woody debris and gravels. There was a narrow strip of mature cottonwood riparian immediately upstream of Walcott Road with the channel hard to locate upstream of confluence with the mainstem that flows under the open bottom structure due to low flows and the presence of reed canary grass and willow dominated vegetation.
 
 <br>
 
-PSCIS crossing 123376 on Highway 16 was assessed by @gollner_etal2013FishPassage in 2013. This is an open bottom structure (pipe arch) located approximately 600m upstream of Walcott Road and 925m north of PSCIS crossing 123375 on Highway 16.  As noted, the majority of discharge within the Thompson Creek watershed flows through this crosssing with the freshwater atlas not capturing the connectivity between this area and the mainstem mapped to the east of the Highway closed bottom structure (PSCIS 123375 and MojTi ID 2076608).  This open bottom structure appears to have been installed within the last 15 years and was considered passable to all life stages at the time of both the 2013 and 2021 surveys. The structure was 7m in diameter and 24m in length.  The site at crossing 123376 was revisited in 2021, with photos shown in `r if(gitbook_on){knitr::asis_output("Figures \\@ref(fig:photo-123377-03) - \\@ref(fig:photo-123377-04).")}else(knitr::asis_output("Figure \\@ref(fig:photo-123377-d02)."))` A digital elevation model of the area surrounding crossings 123377 and 123376 is presented in Figure \@ref(fig:fig-dem-198066-walcott). Note that this imagery was taken from the LiDAR BC open data portal [here](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/lidarbc) and there was no lidar available for areas of the Thompson Creek watershed located south east of crossing 123380 on Highway 16. Review of this lidar imagery for areas between Walcott Road to areas upstream of highway 16 show extensive anthropogenic excavations upstream of 123375 likely draining large areas of low lying wetlands to accommodate agricultural fields.
+PSCIS crossing 123376 on Highway 16 was assessed by @gollner_etal2013FishPassage in 2013. This is an open bottom structure (pipe arch) located approximately 600m upstream of Walcott Road and 925m north of PSCIS crossing 123375 on Highway 16.  As noted, the majority of discharge within the Thompson Creek watershed flows through this crossing with the freshwater atlas not capturing the connectivity between this area and the mainstem mapped to the east of the Highway closed bottom structure (PSCIS 123375 and MojTi ID 2076608).  This open bottom structure appears to have been installed within the last 15 years and was considered passable to all life stages at the time of both the 2013 and 2021 surveys. The structure was 7m in diameter and 24m in length.  The site at crossing 123376 was revisited in 2021, with photos shown in `r if(gitbook_on){knitr::asis_output("Figures \\@ref(fig:photo-123376-01) - \\@ref(fig:photo-123376-02).")}else(knitr::asis_output("Figure \\@ref(fig:photo-123376-d01)."))` A digital elevation model of the area surrounding crossings 123377 and 123376 is presented in Figure \@ref(fig:fig-dem-198066-walcott). Note that this imagery was taken from the LiDAR BC open data portal [here](https://www2.gov.bc.ca/gov/content/data/geographic-data-services/lidarbc) and there was no lidar available for areas of the Thompson Creek watershed located south east of crossing 123380 on Highway 16. Review of this lidar imagery for areas between Walcott Road to areas upstream of highway 16 show extensive anthropogenic excavations upstream of 123375 likely draining large areas of low lying wetlands to accommodate agricultural fields.
 
 <br>
 
 Crossing `r as.character(my_site3)` located further upstream on the highway was surveyed in a downstream direction for `r fpr::fpr_my_priority_info(sit = my_site3, loc = "ds", col_pull = 'length_surveyed')`m. the average channel width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_channel_width_m', sit = my_site3)`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'avg_wetted_width_m', sit = my_site3)`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'ds', col_pull = 'average_gradient_percent', sit = my_site3)`%.  The stream flow was low, and the vegetation was predominantly grass, shrubs and young deciduous trees. Substrate was predominantly fines. Habitat value was rated as low at the time of the survey there was no habitat present suitable for rearing or spawning.
+
 <br>
 
 Multiple ditch lines transect the area upstream of crossing 123376 on Highway 16 beginning approximately 175m to the west of bridge crossing 123379 and ending just upstream of 123375. Crossings 123381 and 123380 located 500m upstream of highway crossing 123375 were not accessible by surveyors because they were on private land and blocked behind gates however, these sites likely do not have significant influence on connectivity in the watershed because the main body of the stream flows to the north through open bottom crossing 123376. Located approximately 3.5km upstream of 123380 and 3km below the outlet of Fishpan Lake, PSCIS crossing 123382 was also visited `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-123382-01) - \\@ref(fig:photo-123382-02)).")}else(knitr::asis_output("(Figure \\@ref(fig:photo-123382-d01))."))` There was minimal flow with much of the riparian vegetation removed and clear evidence of cattle trampled banks upstream and downstream. There was private land on both sides of the road. 
@@ -214,7 +218,14 @@ knitr::include_graphics("fig/lidar_123377_thompson_walcott_us.png")
 
 This section was surveyed upstream of `r as.character(my_site3)` for approximately `r fpr::fpr_my_priority_info(sit = my_site3, loc = "us", col_pull = 'length_surveyed')`m. The dominant substrate in this area was fines, the average channel width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_channel_width_m', sit = my_site3)`m, the average wetted width was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'avg_wetted_width_m', sit = my_site3)`m and the average gradient was `r fpr::fpr_my_habitat_info(loc = 'us', col_pull = 'average_gradient_percent', sit = my_site3)`%. The habitat value was ranked as low as there was very little flow and because the stream was heavily impacted by cattle. 
 
+<br>
 
+## Fish Sampling {.unnumbered}
+
+Following recommendations from the 2022 survey, crossing `r as.character(my_site2)` was revisited on September 14, 2023 and electrofishing was conducted with results summarised in Tables \@ref(tab:tab-fish-site-123377) - \@ref(tab:tab-fish-dens-123377) and Figure
+\@ref(fig:plot-fish-box-123377). A total of `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site2, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream, and `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site2, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured downstream. Species caught included coho, rainbow trout, and dolly varden `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-123377-03) - \\@ref(fig:photo-123377-04)).")}else(knitr::asis_output("(Figures \\@ref(fig:photo-123377-d02))."))` All fish captured with a fork length greater than 60mm were tagged with Passive Integrated Transponders (PIT tags) with data stored [here](`r paste0(params$repo_url, "blob/main/data/2023/habitat_confirmations.xls")`).
+
+<br>
 
 ## Structure Remediation and Cost Estimate {-}
 
@@ -222,8 +233,7 @@ Should restoration/maintenance activities proceed, replacement of PSCIS crossing
 
 <br>
 
-Should restoration/maintenance activities proceed, replacement of PSCIS crossing `r as.character(my_site2)` on Walcott Road with a bridge (`r fpr::fpr_my_pscis_info(site = my_site2, col_pull = recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(fpr::fpr_my_cost_estimate(site = my_site2), big.mark = ',')` for a cost benefit of `r fpr::fpr_my_cost_estimate(site = my_site2, col_pull = cost_net)` linear m/\$1000 and `r fpr::fpr_my_cost_estimate(site = my_site2, col_pull = cost_area_net)` m^2^/\$1000. 
-
+Should restoration/maintenance activities proceed, replacement of PSCIS crossing `r as.character(my_site2)` on Walcott Road with a bridge (`r fpr::fpr_my_pscis_info(site = my_site2, col_pull = recommended_diameter_or_span_meters)`m span) is recommended. The cost of the work is estimated at \$`r format(fpr::fpr_my_cost_estimate(site = my_site2), big.mark = ',')` for a cost benefit of `r fpr::fpr_my_cost_estimate(site = my_site2, col_pull = cost_net)` linear m/\$1000 and `r fpr::fpr_my_cost_estimate(site = my_site2, col_pull = cost_area_net)` m^2^/\$1000.
 
 <br>
 
@@ -231,15 +241,15 @@ At the time of reporting, remediation of replacement of PSCIS crossing `r as.cha
 
 ## Conclusion {-}
 
-Although PSCIS culvert `r as.character(my_site)` on the private Udder View Dairy farm road ranks as a potential barrier according to the conservative provincial metric is was considered passable to all life stages and species at the time of surveying in 2021.  Additionally, although velocities within the pipe may prevent passage at some times of year it is recommended that options to remove the culvert completely be explored before replacement is considered.  As review of lidar data indicates there is appropriate elevation relief for the stream to travel naturally in a northern direction where the Thompson Creek valley meets the Bulkley River floodplain (as has been reported as historically occurring), it seems feasible that regulators, First Nations and other organizations could work with the landowner to develop a plan to redirect some or all stream discharge to the north and infill the drainage ditches east of the culvert. It is also recommended that as part of that plan, agricultural area could be removed from sections of the Bulkley River floodplain to allow for retention of water within wetland complexes and the regeneration of riparian shrub and forest communities adjacent to Thompson Creek and the Bukley River.  The feasibility of providing financial incentives for the landowner to reduce the area of agriculture and increase wetland assets on the property could be explored. Regardless, for now, hardening of the road/culvert infrastructure at PSCIS culvert `r as.character(my_site)` and the anthropogenic drainage network upstream of the private road should not be pursued as this section of stream at the time of the survey was not in a healthy state and this will not be addressed through those actions.  Investigation of fish presence upstream near Walcott Road (discussed in more detail below) would give a good indication of whether the situation on the floodplain is preventing anadromous species such as coho from access further up in the watershed. 
+Although PSCIS culvert `r as.character(my_site)` on the private Udder View Dairy farm road ranks as a potential barrier according to the conservative provincial metric is was considered passable to all life stages and species at the time of surveying in 2021.  Additionally, although velocities within the pipe may prevent passage at some times of year it is recommended that options to remove the culvert completely be explored before replacement is considered.  As review of lidar data indicates there is appropriate elevation relief for the stream to travel naturally in a northern direction where the Thompson Creek valley meets the Bulkley River floodplain (as has been reported as historically occurring), it seems feasible that regulators, First Nations and other organizations could work with the landowner to develop a plan to redirect some or all stream discharge to the north and infill the drainage ditches east of the culvert. It is also recommended that as part of that plan, agricultural area could be removed from sections of the Bulkley River floodplain to allow for retention of water within wetland complexes and the regeneration of riparian shrub and forest communities adjacent to Thompson Creek and the Bukley River.  The feasibility of providing financial incentives for the landowner to reduce the area of agriculture and increase wetland assets on the property could be explored. Regardless, for now, hardening of the road/culvert infrastructure at PSCIS culvert `r as.character(my_site)` and the anthropogenic drainage network upstream of the private road should not be pursued as this section of stream at the time of the survey was not in a healthy state and this will not be addressed through those actions.  Investigation of fish presence upstream near Walcott Road (discussed in more detail below) would give a good indication of whether the situation on the floodplain is preventing anadromous species such as coho from accessing further up in the watershed. 
 
 <br>
 
-There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site2)` on Walcott Road rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning with the crossing ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. Electrofishing above and below crossing 123377 and tagging with Passive Integrated Transponders (PIT tags) to gather baseline data before designing a potential replacement of the structure is recommended as this will help track the movement of fish in the system over time and to give an indication of whether anadromous species are able to ascend through the agricultural area adjacent to the Bulkley River floodplain.
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site2)` on Walcott Road rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning with the crossing ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. Electrofishing above and below crossing 123377 and tagging with Passive Integrated Transponders (PIT tags) to gather baseline data before designing a potential replacement of the structure is recommended as this will help track the movement of fish in the system over time and to give an indication of whether anadromous species are able to ascend through the agricultural area adjacent to the Bulkley River floodplain. Following these recommendations, crossing `r as.character(my_site2)` was revisited for electrofishing and pit tagging on September 14, 2023. Coho, rainbow trout, and dolly varden were captured both upstream and downstream of the crossing. As all fish over 60mm were tagged with PIT tags their health and movement can be tracked over time with results available to inform effectiveness monitoring should restoration actions be completed.
 
 <br>
 
-Culvert `r as.character(my_site3)` on Highway 16 was ranked as a `r fpr::fpr_my_priority_info(sit = my_site3, col_pull = priority)` priority due to low flow, its low habitat value and the fact that the main flow of Thompson Creek is actually through the open bottom structure at crossing 123376. Field assessments indicate that it the stream is unlikley to provide any fish habitat due to annual dewatering, extensive cattle damage and a lack of scoured streambed.  Review of lidar imagery indicates extensive excavation of ditches draining areas east of the highway adjacent to `r as.character(my_site3)` to accommodate the Thompson Creek ranch and this may provide most of the flow for this small tributary. Again it is noted that this steam is not mapped correctly in the freshwater atlas at this location and the main channel of Thompson Creek flows to the east and north of this crossing and passes under the highway through the open bottomed crossing located at PSCIS crossing 1233376.
+Culvert `r as.character(my_site3)` on Highway 16 was ranked as a `r fpr::fpr_my_priority_info(sit = my_site3, col_pull = priority)` priority due to low flow, its low habitat value and the fact that the main flow of Thompson Creek is actually through the open bottom structure at crossing 123376. Field assessments indicate that the stream is unlikley to provide any fish habitat due to annual dewatering, extensive cattle damage and a lack of scoured streambed.  Review of lidar imagery indicates extensive excavation of ditches draining areas east of the highway adjacent to `r as.character(my_site3)` to accommodate the Thompson Creek ranch and this may provide most of the flow for this small tributary. Again it is noted that this steam is not mapped correctly in the freshwater atlas at this location and the main channel of Thompson Creek flows to the east and north of this crossing and passes under the highway through the open bottomed crossing located at PSCIS crossing 1233376.
 
 <br>
 
@@ -259,12 +269,35 @@ tab_hab_summary %>%
            Site == my_site2 |
            Site == my_site3) %>% 
   # select(-Site) %>% 
-  fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, my_site2, ' and ', my_site3, '.'),
+  fpr::fpr_kable(caption_text = paste0('Summary of habitat details for PSCIS crossing ', my_site, ', ', my_site2, ' and ', my_site3, '.'),
                  scroll = F) 
 
 ```
 
+<br>
 
+```{r tab-fish-site-123377, eval=T}
+fpr_table_fish_site(dat = tab_fish_sites_sum_2023, sit = my_site2)
+
+```
+
+<br>
+
+```{r tab-fish-dens-123377, eval=T}
+fpr_table_fish_density(dat = fish_abund_2023, sit = my_site2)
+
+```
+
+`r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
+
+```{r plot-fish-box-123377, fig.cap= my_caption, eval=T}
+my_caption <- paste0('Densites of fish (fish/100m2) captured upstream and downstream of PSCIS crossing ', my_site2, '.')
+
+fpr_plot_fish_box(dat = fish_abund_2023, sit = my_site2) 
+
+```
+
+<br>
 
 ```{r photo-198066-03-prep}
 my_photo1 = fpr::fpr_photo_pull_by_str(str_to_pull = '_u1_')
@@ -275,8 +308,6 @@ my_caption1 = paste0('Small drop (50cm high) located ~20m upstream of PSCIS cros
 ```{r photo-198066-03, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
 grid::grid.raster(jpeg::readJPEG(my_photo1))
 ```
-
-
 
 <br>
 
@@ -302,7 +333,6 @@ knitr::include_graphics(my_photo2)
 
 <br>
 <br>
-
 
 
 ```{r photo-198066-01-prep, eval=T}
@@ -416,29 +446,63 @@ knitr::include_graphics(my_photo2)
 <br>
 
 ```{r photo-123377-03-prep}
-my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_obs_')
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site2, dir_photos = "data/photos/2023/", str_to_pull = 'fish1')
 
-my_caption1 = paste0('Open bottom structure on Highway 16 (PSCIS crossing 123376).')
+my_caption1 = paste0('Coho caught downstream of crossing ', my_site2, '.')
 ```
 
 ```{r photo-123377-03, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
-grid::grid.raster(jpeg::readJPEG(my_photo1))
+knitr::include_graphics(my_photo1)
 ```
 
 <br>
 
 ```{r photo-123377-04-prep}
+my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site2, dir_photos = "data/photos/2023/", str_to_pull = 'fish2')
+
+my_caption2 = paste0('Coho caught updstream of crossing ', my_site2, '.')
+
+```
+
+```{r photo-123377-04, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+knitr::include_graphics(my_photo2)
+```
+
+```{r photo-123377-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+
+my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
+
+knitr::include_graphics(my_photo1)
+knitr::include_graphics("fig/pixel.png")
+knitr::include_graphics(my_photo2)
+```
+
+<br>
+
+```{r photo-123376-01-prep}
+my_photo1 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_obs_')
+
+my_caption1 = paste0('Open bottom structure on Highway 16 (PSCIS crossing 123376).')
+```
+
+```{r photo-123376-01, fig.cap= my_caption1, out.width = photo_width, eval=gitbook_on}
+grid::grid.raster(jpeg::readJPEG(my_photo1))
+```
+
+<br>
+
+```{r photo-123376-02-prep}
 my_photo2 = fpr::fpr_photo_pull_by_str(site = my_site2, str_to_pull = '_u1_')
 
 my_caption2 = paste0('Habitat immediately upstream of PSCIS crossing 123376.')
 
 ```
 
-```{r photo-123377-04, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
+```{r photo-123376-02, fig.cap= my_caption2, out.width = photo_width, eval=gitbook_on}
 grid::grid.raster(jpeg::readJPEG(my_photo2))
 ```
 
-```{r photo-123377-d02, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
+```{r photo-123376-d01, fig.cap = my_caption, fig.show="hold", out.width= c("49.5%","1%","49.5%"), eval=identical(gitbook_on, FALSE)}
 
 my_caption <- paste0('Left: ', my_caption1, ' Right: ', my_caption2)
 
