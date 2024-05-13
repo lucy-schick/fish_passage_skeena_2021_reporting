@@ -1,3 +1,9 @@
+# fish_passage_skeena_2021_reporting 0.1.6
+
+* 20240513
+* Updated site memos for Thompson Creek (123377) with fish sampling data and photos from 2023
+* add NEWS.md to the report with `news_to_appendix()` function
+
 # fish_passage_skeena_2021_reporting 0.1.5
 
 * 20230501
