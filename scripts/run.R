@@ -46,6 +46,11 @@ source('scripts/02_prep_reporting/0190-build-html-map-tables.R')
 source('scripts/02_prep_reporting/0180-photos-extract-metadata.R')
 
 {
+  library("tidyverse")
+  source('scripts/functions.R')
+  news_to_appendix()
+
+
   # These files are included in the gitbook version already so we move them out of the build
   files_to_move <- list.files(pattern = ".Rmd$") %>%
     stringr::str_subset(., '2300', negate = F) #move the attachments out
