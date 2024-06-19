@@ -18,6 +18,12 @@ preview_chapter('index.Rmd')
 ##you also need to make new html tables to link to in the leaflet map  use 0355-tables-reporting-html.R
 ########################################################################################
 
+#######################################################################################
+## move the file over from the 2023 repo, you must have the 2023 Skeena repo cloned to your computer.
+fs::file_copy("~/Projects/repo/fish_passage_skeena_2023_reporting/data/habitat_confirmations.xls",
+              "data/2023/habitat_confirmations.xls", overwrite = TRUE)
+#######################################################################################
+
 
 
 ##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
