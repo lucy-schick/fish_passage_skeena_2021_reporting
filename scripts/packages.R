@@ -11,7 +11,6 @@ pkgs_cran <- c(
   'janitor',
   'leafem',
   'leaflet',
-  'kableExtra',
   'httr',
   'RPostgres',
   'RPostgreSQL',
@@ -33,14 +32,11 @@ pkgs_cran <- c(
   'english',
   'leaflet.extras',
   'ggdark',
-  'fwapgr',
-  'citr',
   'pdftools',
-  'pacman',
   'chron',
   'leafpop',
   'exifr',
-  'fpr'  #personal package available on github - see below
+  'pagedown'
   # rgl,
   # geojsonsf,
   # bit64 ##to make integer column type for pg
@@ -51,10 +47,9 @@ pkgs_cran <- c(
 pkgs_gh <- c(
   "poissonconsulting/fwapgr",
   'poissonconsulting/poisspatial',
-  "crsh/citr",
-  'rstudio/pagedown',
   "poissonconsulting/fishbc",
-  "newgraphenvironment/fpr"
+  "newgraphenvironment/fpr",
+  "haozhu233/kableExtra@a9c509a" ## 2024 update, this prevents black text in dark mode
 )
 
 pkgs_all <- c(pkgs_cran,
