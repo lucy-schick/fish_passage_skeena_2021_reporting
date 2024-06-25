@@ -22,7 +22,9 @@ my_site <- 197378
 ## Site Location {.unnumbered}
 
 PSCIS crossing `r as.character(my_site)` is located on
-`r fpr::fpr_my_pscis_info()`, on `r fpr_my_pscis_info(col_pull = road_name)` road. The site was located approximately 1km upstream from the confluence with Owen Creek, which drains the nearby Owen Lake. The road at this location is owned by YLP Woodlands GP Ltd.
+`r fpr::fpr_my_pscis_info()`, on `r fpr_my_pscis_info(col_pull = road_name)` road. The site was located approximately 1km upstream from the confluence with Owen Creek, which drains the nearby Owen Lake. Information sourced from the provincial [Forest Tenure Road Section Lines](https://catalogue.data.gov.bc.ca/dataset/forest-tenure-road-section-lines) spatial layer indicates
+YLP Woodlands GP Ltd. [@moe2024ForestTenure] is a road tenure holder at the crossing location. YLP Woodlands GP Ltd. is
+part of the Yinka Dene Economic Development Limited Partnership (YLP) which is the corporate business arm of the Wet’suwet’en First Nation.
 
 <br>
 
@@ -38,7 +40,9 @@ a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to
 
 <br>
 
-Following the recommendations from the 2022 survey to perform fish sampling, crossing `r as.character(my_site)` was revisited September 13, 2023 and electrofishing was conducted above and below the crossing to gather baseline data. Fish were tagged with Passive Integrated Transponders (PIT tags) to help track movement within the system over time. Results from this survey are included in this report.
+Following the recommendations from the 2022 survey (provided in an initial release of this report) to perform fish sampling, 
+crossing `r as.character(my_site)` was revisited September 13, 2023 and electrofishing was conducted above and below the 
+crossing to gather baseline fisheries data. Results from the sampling have been incorporated into this now updated version of this report.
 
 <br>
 
@@ -109,8 +113,9 @@ habitat was rated as `r fpr::fpr_my_priority_info(loc = 'ds')` value for salmoni
 
 ## Fish Sampling {.unnumbered}
 
-Following recommendations from the 2022 survey, crossing `r as.character(my_site)` was revisited on September 13, 2023 and electrofishing was conducted with results summarised in Tables \@ref(tab:tab-fish-site-197378) - \@ref(tab:tab-fish-dens-197378) and Figure
-\@ref(fig:plot-fish-box-197378). A total of `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured upstream, and `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` fish were captured downstream, all were rainbow trout `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197378-03) - \\@ref(fig:photo-197378-04)).")}else(knitr::asis_output("(Figures \\@ref(fig:photo-197378-d02))."))` All fish captured with a fork length greater than 60mm were tagged with Passive Integrated Transponders (PIT tags) with data stored [here](`r paste0(params$repo_url, "blob/main/data/2023/habitat_confirmations.xls")`).
+As noted above - following recommendations from the 2022 survey, crossing `r as.character(my_site)` was revisited on September 13, 2023 and electrofishing was conducted upstream and downstream of `r fpr_my_pscis_info(col_pull = road_name)`.
+Results are summarised in Tables \@ref(tab:tab-fish-site-197378) - \@ref(tab:tab-fish-dens-197378) and Figure
+\@ref(fig:plot-fish-box-197378). A total of `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_us')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` rainbow trout were captured upstream, and `r tab_fish_summary_2023 %>% filter(site_id == paste0(my_site, '_ds')) %>% group_by(site_id) %>% janitor::adorn_totals() %>% filter(site_id == 'Total') %>% pull(count_fish)` rainbow trout were captured downstream `r if(gitbook_on){knitr::asis_output("(Figures \\@ref(fig:photo-197378-03) - \\@ref(fig:photo-197378-04)).")}else(knitr::asis_output("(Figures \\@ref(fig:photo-197378-d02))."))` All fish captured with a fork length greater than 60mm were tagged with Passive Integrated Transponders (PIT tags) with data stored [here](`r paste0(params$repo_url, "blob/main/data/2023/habitat_confirmations.xls")`).
 
 <br>
 
@@ -129,9 +134,16 @@ m^2^/\$1000.
 
 ## Conclusion {.unnumbered}
 
-There was
-`r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` with
-areas surveyed rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing and spawning. The pipe was in very rough condition and had collapsed in the middle effecting how water flows into the pipe. `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. Historical data indicates multiple resident fish present upstream within this relatively small system but sampling using electrofishing could be utilized to scope for coho use of the system. 
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` modelled as highing high intrinsic value for steelhead based on gradient and width.  Areas surveyed
+were rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing 
+with large areas of wetland present. The culvert pipe was noted as in very poor condition with the structure near complete
+collapse. Although fish sampling within small areas upstream and downstream of the crossing in 2023 resulted in the capture 
+of rainbow trout only, other species such as coho utilizing the mainstem of Owen Creek may have accessed this area historically.  
+
+<br>
+
+The Office of Wet'suwet'en has initiated watershed level Nation led recovery/restoration planning for the greater Bii Wenii Kwa (Owen Creek) watershed which includes restoration of this site as a project priority consideration. As the Yinka Dene Economic Development Limited Partnership is noted as a road tenure holder at the location of the site, there could be opportunities for 
+collaboration between the two groups related to restoration or removal of the crossing. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
 
 `r if(gitbook_on){knitr::asis_output("<br>")} else knitr::asis_output("\\pagebreak")`
 
