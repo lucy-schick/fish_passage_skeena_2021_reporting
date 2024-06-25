@@ -1,3 +1,10 @@
+# fish_passage_skeena_2021_reporting 0.1.7 (20240625)
+
+- bump cost estimates to 30k/m minimum
+- add Changelog
+- UPdate 197378 - Trib to Owen (Klate Lake Road) with fish sampling data
+
+
 # fish_passage_skeena_2021_reporting 0.1.6
 
 * 20240513
