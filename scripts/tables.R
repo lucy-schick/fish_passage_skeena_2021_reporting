@@ -36,7 +36,7 @@ pscis_all_prep <- pscis_list %>%
 
 ##this is our new db made from 0282-extract-bcfishpass2-crossing-corrections.R and 0290
 conn <- readwritesqlite::rws_connect("data/bcfishpass.sqlite")
-rws_list_tables(conn)
+readwritesqlite::rws_list_tables(conn)
 bcfishpass_phase2 <- readwritesqlite::rws_read_table("bcfishpass", conn = conn) %>%
   filter(stream_crossing_id %in% (pscis_phase2 %>% pull(pscis_crossing_id)))
 bcfishpass <- readwritesqlite::rws_read_table("bcfishpass", conn = conn) %>%

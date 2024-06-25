@@ -630,13 +630,14 @@ rd_cost_mult <- pscis_rd %>%
                                          1,
                                        T ~ 2)) %>%
   # mutate(road_type_mult = road_class_mult * road_surface_mult) %>%
-  mutate(cost_m_1000s_bridge = road_surface_mult * road_class_mult * 20,  #changed from 12.5 due to inflation
-         cost_embed_cv = road_surface_mult * road_class_mult * 40) %>%
+  mutate(cost_m_1000s_bridge = road_surface_mult * road_class_mult * 30,  #changed from 12.5 due to inflation
+         cost_embed_cv = road_surface_mult * road_class_mult * 100) %>%
   # mutate(cost_1000s_for_10m_bridge = 10 * cost_m_1000s_bridge) %>%
   distinct( .keep_all = T) %>%
   tidyr::drop_na() %>%
   arrange(cost_m_1000s_bridge, my_road_class)
 
+rws_drop_table("rd_cost_mult", conn = conn)
 rws_write(rd_cost_mult, exists = F, delete = TRUE,
           conn = conn, x_name = "rd_cost_mult")
 rws_list_tables(conn)

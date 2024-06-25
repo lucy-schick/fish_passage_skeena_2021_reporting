@@ -89,12 +89,13 @@ tab:tab-wshd-197378
 tab:tab-culvert-bcfp-197378
 tab:tab-culvert-197378
 tab:tab-habitat-summary-197378
+tab:tab-fish-site-197378
+tab:tab-fish-dens-197378
+fig:plot-fish-box-197378
 fig:photo-197378-01
 fig:photo-197378-02
 fig:photo-197378-03
 fig:photo-197378-04
-fig:photo-197378-05
-fig:photo-197378-06
 tab:tab-wshd-197662
 tab:tab-culvert-bcfp-197662
 tab:tab-culvert-197662
@@ -242,6 +243,9 @@ fig:ortho-caption-198066
 fig:model-caption-198066
 fig:fig-dem-198066-walcott
 tab:tab-habitat-summary-198066
+tab:tab-fish-site-123377
+tab:tab-fish-dens-123377
+fig:plot-fish-box-123377
 fig:photo-198066-03
 fig:photo-198066-04
 fig:photo-198066-01
@@ -252,6 +256,8 @@ fig:photo-123377-01
 fig:photo-123377-02
 fig:photo-123377-03
 fig:photo-123377-04
+fig:photo-123376-01
+fig:photo-123376-02
 fig:photo-123382-01
 fig:photo-123382-02
 intro
@@ -288,6 +294,6 @@ phase-3
 phase-4
 recommendations
 aerial-imagery
-fish-sampling-2
+fish-sampling-3
 riparian-fenceing
 stream-characteristics-upstream-of-197975

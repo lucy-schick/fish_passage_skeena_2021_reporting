@@ -1,37 +1,6 @@
 ##this is for as we work through
 preview_chapter('0100-intro.Rmd')
-preview_chapter('0200-background.Rmd')
-preview_chapter('0300-method.Rmd')
-preview_chapter('0400-results.Rmd')
-bookdown::preview_chapter('test.Rmd')
-preview_chapter('0800-appendix-123544-mcdowell.Rmd')
-preview_chapter('0800-appendix-197962-peacock.Rmd')
-preview_chapter('2200-Attachment_1_Maps.Rmd')
-preview_chapter('index.Rmd')
 
-#######################################################################################
-##change your VErsion #
-#######################################################################################
-
-#######################################################################################
-##if you have changed your bcfishpass model outputs by saving to sqlite with 0282-extract-bcfishpass2...
-##you also need to make new html tables to link to in the leaflet map  use 0355-tables-reporting-html.R
-########################################################################################
-
-
-
-##this is how we clean up our bib file.  We need to find a way to add together the packages.bib file with the book.bib file first though.
-# citr::tidy_bib_file(
-#   rmd_file = "Elk-River-Fish-Passage-2020.Rmd",
-#   messy_bibliography = 'book.bib',
-#   file = 'book_tidy.bib')
-
-##we also need to change all the date header to year in the bib file so that it can be run by our pdf maker
-##i did this by hand last time but would be good to automate!!!
-
-##  make the site
-# source('R/photos-extract-metadata.R') ##if you added new photos
-# source('R/0355-tables-reporting-html.R')  #if you changed the modelling outputs
 
 
 #################################################################################################
@@ -44,11 +13,17 @@ source('scripts/02_prep_reporting/0190-build-html-map-tables.R')
 
 # if you need to update after renameing photos to keep and add to map....
 source('scripts/02_prep_reporting/0180-photos-extract-metadata.R')
+## move the file over from the 2023 repo, you must have the 2023 Skeena repo cloned to your computer.
+# only needs to be done if the file changed
+fs::file_copy("~/Projects/repo/fish_passage_skeena_2023_reporting/data/habitat_confirmations.xls",
+              "data/2023/habitat_confirmations.xls", overwrite = TRUE)
 
 {
+  source('scripts/functions.R')
+  news_to_appendix()
   # These files are included in the gitbook version already so we move them out of the build
-  files_to_move <- list.files(pattern = ".Rmd$") %>%
-    stringr::str_subset(., '2300', negate = F) #move the attachments out
+  files_to_move <- list.files(pattern = ".Rmd$") |>
+    stringr::str_subset('2300', negate = F) #move the attachments out
   files_destination <- paste0('hold/', files_to_move)
 
   ##move the files
@@ -88,13 +63,13 @@ filename_html <- 'Skeena2021'
 
   # print to pdf
   pagedown::chrome_print(
-    paste0(getwd(), '/', filename_html, '.html'),
-    output = paste0(getwd(),'/docs/', filename_html, '.pdf'),
-    timeout = 180
+    paste0(filename_html, '.html'),
+    output = paste0('docs/', filename_html, '.pdf'),
+    timeout = 180,
   )
 
   # reduce the size
-  tools::compactPDF(paste0(getwd(), "/docs/", filename_html, ".pdf"),
+  tools::compactPDF(paste0("docs/", filename_html, ".pdf"),
                     gs_quality = 'screen',
                     ##this was on the windows machine
                     # gs_cmd = "C:/Program Files/gs/gs9.56.1/bin/gswin64.exe"
@@ -102,7 +77,7 @@ filename_html <- 'Skeena2021'
                     )
 
   # get rid of the html as its too big and not needed
-  file.remove(paste0(getwd(), '/', filename_html, '.html'))
+  file.remove(paste0(filename_html, '.html'))
 
 }
 
