@@ -25,4 +25,4 @@ Skeena2021.html
 *.kml
 data/photos/**/*.pdf
 !fig/*.JPG
-
+Skeena2021_files/*

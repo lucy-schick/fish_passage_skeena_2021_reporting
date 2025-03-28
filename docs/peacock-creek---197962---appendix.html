@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Peacock Creek - 197962 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021</title>
-  <meta name="description" content="Wet-zuhn-kwa" />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Peacock Creek - 197962 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Wet-zuhn-kwa" />
+  <meta property="og:description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
   <meta name="github-repo" content="NewGraphEnvironment/fish_passage_skeena_2021_reporting" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Peacock Creek - 197962 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   
-  <meta name="twitter:description" content="Wet-zuhn-kwa" />
+  <meta name="twitter:description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
   
 
 
@@ -52,6 +52,8 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
@@ -115,7 +117,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -444,6 +446,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="attachment-1---maps.html"><a href="attachment-1---maps.html"><i class="fa fa-check"></i><strong>Attachment 1 - Maps</strong></a></li>
 <li class="chapter" data-level="" data-path="attachment-2---habitat-assessment-data.html"><a href="attachment-2---habitat-assessment-data.html"><i class="fa fa-check"></i><strong>Attachment 2 - Habitat Assessment Data</strong></a></li>
 <li class="chapter" data-level="" data-path="attachment-3---richfield-fencing-report.html"><a href="attachment-3---richfield-fencing-report.html"><i class="fa fa-check"></i><strong>Attachment 3 - Richfield Fencing Report</strong></a></li>
+<li class="chapter" data-level="" data-path="attachment-4---engineering-design-for-pscis-crossing-197378-on-klate-lake-road.html"><a href="attachment-4---engineering-design-for-pscis-crossing-197378-on-klate-lake-road.html"><i class="fa fa-check"></i><strong>Attachment 4 - Engineering Design for PSCIS Crossing 197378 on Klate Lake Road</strong></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting" target="blank">Scripts and Data</a></li>
 
@@ -479,10 +482,10 @@ div.csl-indent {
 <p><br></p>
 <p><span class="citation">McCarthy and Fernando (2015)</span> and <span class="citation">Smith (2018)</span> reported that a large concrete weir and spillway that were built in the 1990s were not functioning correctly and that the crossing was a high priority fish barrier. <span class="citation">Gaboury and Smith (2016)</span> conducted a site survey in 2015 and produced design options to remediate passage. There were no records of crossing 197962 within PSCIS before the 2021 assessment data was loaded in. The site was prioritized for follow up because of significant amounts of habitat modelled as upstream of the crossing (Table <a href="peacock-creek---197962---appendix.html#tab:tab-culvert-bcfp-197962">5.52</a>). A map of the watershed is provided in map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.109.pdf">093L.109</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="peacock-creek---197962---appendix.html#cb278-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb278-2"><a href="peacock-creek---197962---appendix.html#cb278-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb278-3"><a href="peacock-creek---197962---appendix.html#cb278-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb278-4"><a href="peacock-creek---197962---appendix.html#cb278-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="peacock-creek---197962---appendix.html#cb279-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb279-2"><a href="peacock-creek---197962---appendix.html#cb279-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb279-3"><a href="peacock-creek---197962---appendix.html#cb279-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb279-4"><a href="peacock-creek---197962---appendix.html#cb279-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-197962">Table 5.51: </span>Summary of derived upstream watershed statistics for PSCIS crossing 197962.
@@ -552,7 +555,7 @@ E
 </tfoot>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="peacock-creek---197962---appendix.html#cb279-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="peacock-creek---197962---appendix.html#cb280-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -871,7 +874,7 @@ All Spawning Rearing (km)
 <h2>Stream Characteristics at Crossing<a href="peacock-creek---197962---appendix.html#stream-characteristics-at-crossing-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the time of the survey, PSCIS crossing 197962 was un-backwatered, un-embedded and ranked as a barrier to upstream fish passage according to the provincial protocol <span class="citation">(MoE 2011b)</span> (Table <a href="peacock-creek---197962---appendix.html#tab:tab-culvert-197962">5.53</a>). Water temperature was 8<span class="math inline">\(^\circ\)</span>C, pH was 8.2 and conductivity was 222uS/cm.</p>
 <p><br></p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="peacock-creek---197962---appendix.html#cb280-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="peacock-creek---197962---appendix.html#cb281-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-197962">Table 5.53: </span>Summary of fish passage assessment for PSCIS crossing 197962.
@@ -1134,28 +1137,28 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="peacock-creek---197962---appendix.html#cb281-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb281-2"><a href="peacock-creek---197962---appendix.html#cb281-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb281-3"><a href="peacock-creek---197962---appendix.html#cb281-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="peacock-creek---197962---appendix.html#cb282-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb282-2"><a href="peacock-creek---197962---appendix.html#cb282-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb282-3"><a href="peacock-creek---197962---appendix.html#cb282-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-5" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream<a href="peacock-creek---197962---appendix.html#stream-characteristics-downstream-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed downstream from crossing 197962 for 600m
-(Figures <a href="peacock-creek---197962---appendix.html#fig:photo-197962-01">5.68</a> - <a href="peacock-creek---197962---appendix.html#fig:photo-197962-02">5.69</a>).
-The dominant substrate was cobbles with boulders sub-dominant.The average channel width was 8.1m, the average wetted width was 4.2m, and the average gradient was 2.6%.Total cover amount was rated as moderate with undercut banks dominant. Cover was also present as small woody debris, large woody debris, boulders, deep pools, and overhanging vegetation.
+(Figures <a href="peacock-creek---197962---appendix.html#fig:photo-197962-01">5.69</a> - <a href="peacock-creek---197962---appendix.html#fig:photo-197962-02">5.70</a>).
+Total cover amount was rated as moderate with undercut banks dominant. Cover was also present as small woody debris, large woody debris, boulders, deep pools, and overhanging vegetation.The dominant substrate was cobbles with boulders sub-dominant.The average channel width was 8.1m, the average wetted width was 4.2m, and the average gradient was 2.6%.
 Multiple areas of side channels and small braided sections were noted with intermittent sections of aggraded cobbles / gravels moved in high flows. There were pockets of gravel present suitable for spawning resident and anadromous salmonids.<br />
 The complex habitat was rated as high value for salmonid rearing and spawning.</p>
 </div>
 <div id="stream-characteristics-upstream-4" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Upstream<a href="peacock-creek---197962---appendix.html#stream-characteristics-upstream-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed upstream from crossing 197962 for 750m
-(Figures <a href="peacock-creek---197962---appendix.html#fig:photo-197962-03">5.70</a> - <a href="peacock-creek---197962---appendix.html#fig:photo-197962-04">5.71</a>).
-The dominant substrate was cobbles with boulders sub-dominant.The average channel width was 6.9m, the average wetted width was 3.6m, and the average gradient was 2.8%.Total cover amount was rated as moderate with boulders dominant. Cover was also present as small woody debris, large woody debris, undercut banks, and deep pools.
+(Figures <a href="peacock-creek---197962---appendix.html#fig:photo-197962-03">5.71</a> - <a href="peacock-creek---197962---appendix.html#fig:photo-197962-04">5.72</a>).
+The average channel width was 6.9m, the average wetted width was 3.6m, and the average gradient was 2.8%.The dominant substrate was cobbles with boulders sub-dominant.Total cover amount was rated as moderate with boulders dominant. Cover was also present as small woody debris, large woody debris, undercut banks, and deep pools.
 Survey notes indicate signs of high powerful flows, including clumped large woody debris. Patches of gravels suitable for spawning were present. Habitat value was rated as high as the surveyed area was considered an important migration corridor containing suitable spawning habitat and having high rearing potential.</p>
 </div>
 <div id="fish-sampling-6" class="section level2 unnumbered hasAnchor">
 <h2>Fish Sampling<a href="peacock-creek---197962---appendix.html#fish-sampling-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Multipass electrofishing was conducted at three sites upstream of the crossing and three sites downstream. Results are summarised in Tables <a href="peacock-creek---197962---appendix.html#tab:tab-fish-site-197962">5.55</a> - <a href="peacock-creek---197962---appendix.html#tab:tab-fish-dens-197962">5.56</a> and Figure <a href="peacock-creek---197962---appendix.html#fig:plot-fish-box-197962">5.65</a>. Photos are provided in Figures <a href="peacock-creek---197962---appendix.html#fig:photo-197962-05">5.66</a> - <a href="peacock-creek---197962---appendix.html#fig:photo-197962-06">5.67</a>.</p>
+<p>Multipass electrofishing was conducted at three sites upstream of the crossing and three sites downstream. Results are summarised in Tables <a href="peacock-creek---197962---appendix.html#tab:tab-fish-site-197962">5.55</a> - <a href="peacock-creek---197962---appendix.html#tab:tab-fish-dens-197962">5.56</a> and Figure <a href="peacock-creek---197962---appendix.html#fig:plot-fish-box-197962">5.66</a>. Photos are provided in Figures <a href="peacock-creek---197962---appendix.html#fig:photo-197962-05">5.67</a> - <a href="peacock-creek---197962---appendix.html#fig:photo-197962-06">5.68</a>.</p>
 </div>
 <div id="structure-remediation-and-cost" class="section level2 unnumbered hasAnchor">
 <h2>Structure Remediation and Cost<a href="peacock-creek---197962---appendix.html#structure-remediation-and-cost" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1167,11 +1170,11 @@ Survey notes indicate signs of high powerful flows, including clumped large wood
 <p>Access was restored to an estimated 4.8km of habitat modelled upstream of crossing 197962 due to the replacement of the culvert with a clear span bridge. Although numerous dolly varden and several rainbow trout were captured upstream, coho salmon were captured downstream only before the site restoration indicating that 197962 was a complete barrier to upstream fish passage. The completion of three multi-pass closed electrofishing sites both upstream and downstream of the crossing can provide baseline data for future effectiveness monitoring at the site to track changes in fish population structure resulting from the works.</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="peacock-creek---197962---appendix.html#cb282-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb282-2"><a href="peacock-creek---197962---appendix.html#cb282-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb282-3"><a href="peacock-creek---197962---appendix.html#cb282-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb282-4"><a href="peacock-creek---197962---appendix.html#cb282-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb282-5"><a href="peacock-creek---197962---appendix.html#cb282-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="peacock-creek---197962---appendix.html#cb283-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb283-2"><a href="peacock-creek---197962---appendix.html#cb283-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb283-3"><a href="peacock-creek---197962---appendix.html#cb283-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb283-4"><a href="peacock-creek---197962---appendix.html#cb283-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb283-5"><a href="peacock-creek---197962---appendix.html#cb283-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-197962">Table 5.54: </span>Summary of habitat details for PSCIS crossing 197962.
@@ -1269,7 +1272,7 @@ high
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="peacock-creek---197962---appendix.html#cb283-1" tabindex="-1"></a><span class="fu">fpr_table_fish_site</span>(<span class="at">sit =</span> my_site)</span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="peacock-creek---197962---appendix.html#cb284-1" tabindex="-1"></a><span class="fu">fpr_table_fish_site</span>(<span class="at">sit =</span> my_site)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-fish-site-197962">Table 5.55: </span>Fish sampling site summary for 197962.
@@ -1420,7 +1423,7 @@ Closed
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="peacock-creek---197962---appendix.html#cb284-1" tabindex="-1"></a><span class="fu">fpr_table_fish_density</span>(<span class="at">sit =</span> my_site)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="peacock-creek---197962---appendix.html#cb285-1" tabindex="-1"></a><span class="fu">fpr_table_fish_density</span>(<span class="at">sit =</span> my_site)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-fish-dens-197962">Table 5.56: </span>Fish sampling density results summary for 197962.
@@ -2138,105 +2141,105 @@ TRUE
 </tfoot>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="peacock-creek---197962---appendix.html#cb285-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb285-2"><a href="peacock-creek---197962---appendix.html#cb285-2" tabindex="-1"></a></span>
-<span id="cb285-3"><a href="peacock-creek---197962---appendix.html#cb285-3" tabindex="-1"></a><span class="fu">fpr_plot_fish_box</span>(<span class="at">sit =</span> my_site) </span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="peacock-creek---197962---appendix.html#cb286-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb286-2"><a href="peacock-creek---197962---appendix.html#cb286-2" tabindex="-1"></a></span>
+<span id="cb286-3"><a href="peacock-creek---197962---appendix.html#cb286-3" tabindex="-1"></a><span class="fu">fpr_plot_fish_box</span>(<span class="at">sit =</span> my_site) </span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:plot-fish-box-197962"></span>
 <img src="Skeena2021_files/figure-html/plot-fish-box-197962-1.png" alt="Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing 197962." width="100%" />
 <p class="caption">
-Figure 5.65: Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing 197962.
+Figure 5.66: Densites of fish (fish/100m2) capture upstream and downstream of PSCIS crossing 197962.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="peacock-creek---197962---appendix.html#cb286-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;ds_ef1_&#39;</span>)</span>
-<span id="cb286-2"><a href="peacock-creek---197962---appendix.html#cb286-2" tabindex="-1"></a></span>
-<span id="cb286-3"><a href="peacock-creek---197962---appendix.html#cb286-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Closed electrofishing site downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="peacock-creek---197962---appendix.html#cb287-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="peacock-creek---197962---appendix.html#cb287-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;ds_ef1_&#39;</span>)</span>
+<span id="cb287-2"><a href="peacock-creek---197962---appendix.html#cb287-2" tabindex="-1"></a></span>
+<span id="cb287-3"><a href="peacock-creek---197962---appendix.html#cb287-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Closed electrofishing site downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="peacock-creek---197962---appendix.html#cb288-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197962-05"></span>
 <img src="Skeena2021_files/figure-html/photo-197962-05-1.png" alt="Closed electrofishing site downstream of PSCIS crossing 197962." width="100%" />
 <p class="caption">
-Figure 5.66: Closed electrofishing site downstream of PSCIS crossing 197962.
+Figure 5.67: Closed electrofishing site downstream of PSCIS crossing 197962.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="peacock-creek---197962---appendix.html#cb288-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;us_ef1_&#39;</span>)</span>
-<span id="cb288-2"><a href="peacock-creek---197962---appendix.html#cb288-2" tabindex="-1"></a></span>
-<span id="cb288-3"><a href="peacock-creek---197962---appendix.html#cb288-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Closed electrofishing site upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="peacock-creek---197962---appendix.html#cb289-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="peacock-creek---197962---appendix.html#cb289-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;us_ef1_&#39;</span>)</span>
+<span id="cb289-2"><a href="peacock-creek---197962---appendix.html#cb289-2" tabindex="-1"></a></span>
+<span id="cb289-3"><a href="peacock-creek---197962---appendix.html#cb289-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Closed electrofishing site upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="peacock-creek---197962---appendix.html#cb290-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197962-06"></span>
 <img src="Skeena2021_files/figure-html/photo-197962-06-1.png" alt="Closed electrofishing site upstream of PSCIS crossing 197962." width="100%" />
 <p class="caption">
-Figure 5.67: Closed electrofishing site upstream of PSCIS crossing 197962.
+Figure 5.68: Closed electrofishing site upstream of PSCIS crossing 197962.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="peacock-creek---197962---appendix.html#cb290-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb290-2"><a href="peacock-creek---197962---appendix.html#cb290-2" tabindex="-1"></a></span>
-<span id="cb290-3"><a href="peacock-creek---197962---appendix.html#cb290-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb290-4"><a href="peacock-creek---197962---appendix.html#cb290-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb290-5"><a href="peacock-creek---197962---appendix.html#cb290-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="peacock-creek---197962---appendix.html#cb291-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="peacock-creek---197962---appendix.html#cb291-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
 <span id="cb291-2"><a href="peacock-creek---197962---appendix.html#cb291-2" tabindex="-1"></a></span>
-<span id="cb291-3"><a href="peacock-creek---197962---appendix.html#cb291-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb291-4"><a href="peacock-creek---197962---appendix.html#cb291-4" tabindex="-1"></a></span>
-<span id="cb291-5"><a href="peacock-creek---197962---appendix.html#cb291-5" tabindex="-1"></a></span>
-<span id="cb291-6"><a href="peacock-creek---197962---appendix.html#cb291-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="peacock-creek---197962---appendix.html#cb292-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<span id="cb291-3"><a href="peacock-creek---197962---appendix.html#cb291-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb291-4"><a href="peacock-creek---197962---appendix.html#cb291-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb291-5"><a href="peacock-creek---197962---appendix.html#cb291-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="peacock-creek---197962---appendix.html#cb292-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb292-2"><a href="peacock-creek---197962---appendix.html#cb292-2" tabindex="-1"></a></span>
+<span id="cb292-3"><a href="peacock-creek---197962---appendix.html#cb292-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb292-4"><a href="peacock-creek---197962---appendix.html#cb292-4" tabindex="-1"></a></span>
+<span id="cb292-5"><a href="peacock-creek---197962---appendix.html#cb292-5" tabindex="-1"></a></span>
+<span id="cb292-6"><a href="peacock-creek---197962---appendix.html#cb292-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="peacock-creek---197962---appendix.html#cb293-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197962-01"></span>
 <img src="data/photos/197962/KP_TC_01469_d1_k_.JPG" alt="Habitat downstream of PSCIS crossing 197962." width="100%" />
-<p class="caption">
-Figure 5.68: Habitat downstream of PSCIS crossing 197962.
-</p>
-</div>
-<p><br></p>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="peacock-creek---197962---appendix.html#cb293-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb293-2"><a href="peacock-creek---197962---appendix.html#cb293-2" tabindex="-1"></a></span>
-<span id="cb293-3"><a href="peacock-creek---197962---appendix.html#cb293-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="peacock-creek---197962---appendix.html#cb294-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-197962-02"></span>
-<img src="data/photos/197962/KP_TC_01497_d2_k_.JPG" alt="Habitat downstream of PSCIS crossing 197962." width="100%" />
 <p class="caption">
 Figure 5.69: Habitat downstream of PSCIS crossing 197962.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="peacock-creek---197962---appendix.html#cb295-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb295-2"><a href="peacock-creek---197962---appendix.html#cb295-2" tabindex="-1"></a></span>
-<span id="cb295-3"><a href="peacock-creek---197962---appendix.html#cb295-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb295-4"><a href="peacock-creek---197962---appendix.html#cb295-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb295-5"><a href="peacock-creek---197962---appendix.html#cb295-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="peacock-creek---197962---appendix.html#cb296-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb296-2"><a href="peacock-creek---197962---appendix.html#cb296-2" tabindex="-1"></a></span>
-<span id="cb296-3"><a href="peacock-creek---197962---appendix.html#cb296-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="peacock-creek---197962---appendix.html#cb297-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-197962-03"></span>
-<img src="data/photos/197962/KP_TC_01401_u1_k_.JPG" alt="Habitat upstream of PSCIS crossing 197962." width="100%" />
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="peacock-creek---197962---appendix.html#cb294-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb294-2"><a href="peacock-creek---197962---appendix.html#cb294-2" tabindex="-1"></a></span>
+<span id="cb294-3"><a href="peacock-creek---197962---appendix.html#cb294-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="peacock-creek---197962---appendix.html#cb295-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-197962-02"></span>
+<img src="data/photos/197962/KP_TC_01497_d2_k_.JPG" alt="Habitat downstream of PSCIS crossing 197962." width="100%" />
 <p class="caption">
-Figure 5.70: Habitat upstream of PSCIS crossing 197962.
+Figure 5.70: Habitat downstream of PSCIS crossing 197962.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="peacock-creek---197962---appendix.html#cb298-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb298-2"><a href="peacock-creek---197962---appendix.html#cb298-2" tabindex="-1"></a></span>
-<span id="cb298-3"><a href="peacock-creek---197962---appendix.html#cb298-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="peacock-creek---197962---appendix.html#cb299-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-197962-04"></span>
-<img src="data/photos/197962/KP_TC_01427_u2_k_.JPG" alt="Habitat upstream of PSCIS crossing 197962." width="100%" />
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="peacock-creek---197962---appendix.html#cb296-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb296-2"><a href="peacock-creek---197962---appendix.html#cb296-2" tabindex="-1"></a></span>
+<span id="cb296-3"><a href="peacock-creek---197962---appendix.html#cb296-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb296-4"><a href="peacock-creek---197962---appendix.html#cb296-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb296-5"><a href="peacock-creek---197962---appendix.html#cb296-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="peacock-creek---197962---appendix.html#cb297-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb297-2"><a href="peacock-creek---197962---appendix.html#cb297-2" tabindex="-1"></a></span>
+<span id="cb297-3"><a href="peacock-creek---197962---appendix.html#cb297-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="peacock-creek---197962---appendix.html#cb298-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-197962-03"></span>
+<img src="data/photos/197962/KP_TC_01401_u1_k_.JPG" alt="Habitat upstream of PSCIS crossing 197962." width="100%" />
 <p class="caption">
 Figure 5.71: Habitat upstream of PSCIS crossing 197962.
 </p>
 </div>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="peacock-creek---197962---appendix.html#cb300-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb300-2"><a href="peacock-creek---197962---appendix.html#cb300-2" tabindex="-1"></a></span>
-<span id="cb300-3"><a href="peacock-creek---197962---appendix.html#cb300-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb300-4"><a href="peacock-creek---197962---appendix.html#cb300-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb300-5"><a href="peacock-creek---197962---appendix.html#cb300-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="peacock-creek---197962---appendix.html#cb299-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb299-2"><a href="peacock-creek---197962---appendix.html#cb299-2" tabindex="-1"></a></span>
+<span id="cb299-3"><a href="peacock-creek---197962---appendix.html#cb299-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="peacock-creek---197962---appendix.html#cb300-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-197962-04"></span>
+<img src="data/photos/197962/KP_TC_01427_u2_k_.JPG" alt="Habitat upstream of PSCIS crossing 197962." width="100%" />
+<p class="caption">
+Figure 5.72: Habitat upstream of PSCIS crossing 197962.
+</p>
+</div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="peacock-creek---197962---appendix.html#cb301-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb301-2"><a href="peacock-creek---197962---appendix.html#cb301-2" tabindex="-1"></a></span>
+<span id="cb301-3"><a href="peacock-creek---197962---appendix.html#cb301-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb301-4"><a href="peacock-creek---197962---appendix.html#cb301-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb301-5"><a href="peacock-creek---197962---appendix.html#cb301-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="peacock-creek---197962---appendix.html#cb301-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb301-2"><a href="peacock-creek---197962---appendix.html#cb301-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb301-3"><a href="peacock-creek---197962---appendix.html#cb301-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="peacock-creek---197962---appendix.html#cb302-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">197967</span></span>
-<span id="cb302-2"><a href="peacock-creek---197962---appendix.html#cb302-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198043</span></span></code></pre></div>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="peacock-creek---197962---appendix.html#cb302-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb302-2"><a href="peacock-creek---197962---appendix.html#cb302-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb302-3"><a href="peacock-creek---197962---appendix.html#cb302-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="peacock-creek---197962---appendix.html#cb303-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">197967</span></span>
+<span id="cb303-2"><a href="peacock-creek---197962---appendix.html#cb303-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198043</span></span></code></pre></div>
 </div>
 </div>
             </section>
@@ -2271,7 +2274,7 @@ gitbook.start({
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
-"theme": "night",
+"theme": "white",
 "family": "sans",
 "size": 2
 },
