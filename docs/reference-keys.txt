@@ -85,6 +85,7 @@ fig:photo-124420-09
 fig:photo-124420-10
 fig:ortho-caption-owen
 fig:model-caption-owen
+fig:map-197378
 tab:tab-wshd-197378
 tab:tab-culvert-bcfp-197378
 tab:tab-culvert-197378
