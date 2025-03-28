@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Taman Creek - 197967 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021</title>
-  <meta name="description" content="Wet-zuhn-kwa" />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Taman Creek - 197967 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Wet-zuhn-kwa" />
+  <meta property="og:description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
   <meta name="github-repo" content="NewGraphEnvironment/fish_passage_skeena_2021_reporting" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Taman Creek - 197967 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   
-  <meta name="twitter:description" content="Wet-zuhn-kwa" />
+  <meta name="twitter:description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
   
 
 
@@ -52,6 +52,8 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
@@ -115,7 +117,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -444,6 +446,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="attachment-1---maps.html"><a href="attachment-1---maps.html"><i class="fa fa-check"></i><strong>Attachment 1 - Maps</strong></a></li>
 <li class="chapter" data-level="" data-path="attachment-2---habitat-assessment-data.html"><a href="attachment-2---habitat-assessment-data.html"><i class="fa fa-check"></i><strong>Attachment 2 - Habitat Assessment Data</strong></a></li>
 <li class="chapter" data-level="" data-path="attachment-3---richfield-fencing-report.html"><a href="attachment-3---richfield-fencing-report.html"><i class="fa fa-check"></i><strong>Attachment 3 - Richfield Fencing Report</strong></a></li>
+<li class="chapter" data-level="" data-path="attachment-4---engineering-design-for-pscis-crossing-197378-on-klate-lake-road.html"><a href="attachment-4---engineering-design-for-pscis-crossing-197378-on-klate-lake-road.html"><i class="fa fa-check"></i><strong>Attachment 4 - Engineering Design for PSCIS Crossing 197378 on Klate Lake Road</strong></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting" target="blank">Scripts and Data</a></li>
 
@@ -475,10 +478,10 @@ div.csl-indent {
 <h2>Background<a href="taman-creek---197967---appendix.html#background-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At crossing 197967, the Upper Bulkey River is a fifth order stream with a watershed area upstream of the crossing of approximately 93.8km<sup>2</sup>. The elevation of the watershed ranges from a maximum of 1373m to 375m near the crossing (Table <a href="taman-creek---197967---appendix.html#tab:tab-wshd-197967">5.57</a>). Upstream of crossing 197967, longnose sucker, largescale sucker, lake chub, brassy minnow, northern pikeminnow, longnose dace, redside shiner, and rainbow trout have previously been recorded <span class="citation">(MoE 2020b; Norris 2020)</span>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="taman-creek---197967---appendix.html#cb303-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb303-2"><a href="taman-creek---197967---appendix.html#cb303-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb303-3"><a href="taman-creek---197967---appendix.html#cb303-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb303-4"><a href="taman-creek---197967---appendix.html#cb303-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="taman-creek---197967---appendix.html#cb304-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb304-2"><a href="taman-creek---197967---appendix.html#cb304-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb304-3"><a href="taman-creek---197967---appendix.html#cb304-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb304-4"><a href="taman-creek---197967---appendix.html#cb304-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-197967">Table 5.57: </span>Summary of derived upstream watershed statistics for PSCIS crossing 197967.
@@ -554,7 +557,7 @@ S
 <p><br></p>
 <p>PSCIS stream crossing 197967 was ranked as a high priority for follow up by <span class="citation">Mazany-Wright et al. (2021)</span> because of significant amounts of habitat modelled as upstream of the crossing and because gathering of habitat confirmation information was considered as potentially beneficial for informing prioritization of the site should remediation plans stall. A total of 172ha of lake and 695ha of wetland is modelled upstream and a summary of habitat modelling outputs is presented in Table <a href="taman-creek---197967---appendix.html#tab:tab-culvert-bcfp-197967">5.58</a>. A map of the watershed is provided in map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.115.pdf">093L.115</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="taman-creek---197967---appendix.html#cb304-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="taman-creek---197967---appendix.html#cb305-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -873,7 +876,7 @@ All Spawning Rearing (km)
 <h2>Stream Characteristics at Crossing<a href="taman-creek---197967---appendix.html#stream-characteristics-at-crossing-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the time of the survey, PSCIS crossing 197967 was non-backwatered and ranked as a barrier to upstream fish passage according to the provincial protocol <span class="citation">(MoE 2011b)</span> (Table <a href="taman-creek---197967---appendix.html#tab:tab-culvert-197967">5.59</a>). Water temperature was 12<span class="math inline">\(^\circ\)</span>C, pH was 7.2 and conductivity was 359uS/cm. A beaver dam was noted just upstream of the culvert inlet (~1.5m high).</p>
 <p><br></p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="taman-creek---197967---appendix.html#cb305-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="taman-creek---197967---appendix.html#cb306-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-197967">Table 5.59: </span>Summary of fish passage assessment for PSCIS crossing 197967.
@@ -1136,20 +1139,20 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="taman-creek---197967---appendix.html#cb306-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb306-2"><a href="taman-creek---197967---appendix.html#cb306-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us2&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb306-3"><a href="taman-creek---197967---appendix.html#cb306-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="taman-creek---197967---appendix.html#cb307-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb307-2"><a href="taman-creek---197967---appendix.html#cb307-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us2&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb307-3"><a href="taman-creek---197967---appendix.html#cb307-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-6" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream<a href="taman-creek---197967---appendix.html#stream-characteristics-downstream-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed downstream from crossing 197967 for 375m to the bridge (PSCIS 197966) located on Ross Lake Cutoff Rd
-(Figures <a href="taman-creek---197967---appendix.html#fig:photo-197967-01">5.72</a> - <a href="taman-creek---197967---appendix.html#fig:photo-197967-02">5.73</a>).
+(Figures <a href="taman-creek---197967---appendix.html#fig:photo-197967-01">5.73</a> - <a href="taman-creek---197967---appendix.html#fig:photo-197967-02">5.74</a>).
 The dominant substrate was cobbles with fines sub-dominant.Total cover amount was rated as trace with overhanging vegetation dominant. Cover was also present as deep pools and instream vegetation.The average channel width was 5.7m, the average wetted width was 3.1m, and the average gradient was 2.5%.
 The site was noted as having significant amounts of thick red colored algae for the majority of survey. Flow was very low with uncommon pools. Fence material was noted in or across channel in two locations and and riparian vegetation had been removed where an agricultural field and fence line were close. Although considered an important migration corridor, the habitat was rated as medium value for salmonid rearing and spawning due to limited complexity resulting from adjacent agricultural activities.</p>
 <p><br></p>
 <p>PSCIS crossing 197964 is located on the CN Railway approximately 1.7km downstream of the highway. Although the crossing was assessed as a potential barrier according to the provincial protocol it was 100% backwatered at the time of the assessment and appeared passable to all species and life stages at the time of assessment (Table <a href="taman-creek---197967---appendix.html#tab:tab-culvert-197964">5.60</a>).</p>
 <p><br></p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="taman-creek---197967---appendix.html#cb307-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>(<span class="at">dat =</span> pscis_phase1, <span class="at">site =</span> <span class="dv">1805529</span>, <span class="at">site_photo_id =</span> <span class="dv">1805529</span>, <span class="at">col_filter =</span> my_crossing_reference)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="taman-creek---197967---appendix.html#cb308-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>(<span class="at">dat =</span> pscis_phase1, <span class="at">site =</span> <span class="dv">1805529</span>, <span class="at">site_photo_id =</span> <span class="dv">1805529</span>, <span class="at">col_filter =</span> my_crossing_reference)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-197964">Table 5.60: </span>Summary of fish passage assessment for PSCIS crossing 1805529.
@@ -1416,12 +1419,12 @@ Fix Span / Diameter
 <div id="stream-characteristics-upstream-5" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Upstream<a href="taman-creek---197967---appendix.html#stream-characteristics-upstream-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed upstream from crossing 197967 for 800m
-(Figures <a href="taman-creek---197967---appendix.html#fig:photo-197967-03">5.74</a> - <a href="taman-creek---197967---appendix.html#fig:photo-197967-04">5.75</a>).
-Total cover amount was rated as moderate with deep pools dominant. Cover was also present as large woody debris and overhanging vegetation.The dominant substrate was gravels with cobbles sub-dominant.The average channel width was 5.3m, the average wetted width was 2.3m, and the average gradient was 1.7%.
+(Figures <a href="taman-creek---197967---appendix.html#fig:photo-197967-03">5.75</a> - <a href="taman-creek---197967---appendix.html#fig:photo-197967-04">5.76</a>).
+Total cover amount was rated as moderate with deep pools dominant. Cover was also present as large woody debris and overhanging vegetation.The average channel width was 5.3m, the average wetted width was 2.3m, and the average gradient was 1.7%.The dominant substrate was gravels with cobbles sub-dominant.
 The first ~250m of channel upstream of the highway were noted as beaver influenced wetland with extensive dry sections at the time of the survey. Frequent pockets of gravels and small cobbles suitable for rainbow trout and coho salmon spawning were noted throughout the area surveyed. A canyon section of stream was located upstream of the crossing approximately 300m contained deep bedrock pools with small fish present and no large woody debris. One deep pool upstream of the canyon section contained likely 2-3 year old juveniles (coloring indicated rainbow trout, unverified). The habitat was rated as medium value as an important migration corridor containing suitable spawning habitat and having moderate rearing potential.</p>
 <p><br></p>
-<p>Taman Creek was surveyed for 400m above where it joins the Bulkley River mainstem upstream of PSCIS crossing 197967 (Figures <a href="taman-creek---197967---appendix.html#fig:photo-197967-05">5.76</a> - <a href="taman-creek---197967---appendix.html#fig:photo-197967-06">5.77</a>).
-The average channel width was 3.8m, the average wetted width was 2.2m, and the average gradient was 1.5%.Total cover amount was rated as moderate with deep pools dominant. Cover was also present as small woody debris, large woody debris, undercut banks, and overhanging vegetation.The dominant substrate was gravels with cobbles sub-dominant.
+<p>Taman Creek was surveyed for 400m above where it joins the Bulkley River mainstem upstream of PSCIS crossing 197967 (Figures <a href="taman-creek---197967---appendix.html#fig:photo-197967-05">5.77</a> - <a href="taman-creek---197967---appendix.html#fig:photo-197967-06">5.78</a>).
+The dominant substrate was gravels with cobbles sub-dominant.Total cover amount was rated as moderate with deep pools dominant. Cover was also present as small woody debris, large woody debris, undercut banks, and overhanging vegetation.The average channel width was 3.8m, the average wetted width was 2.2m, and the average gradient was 1.5%.
 The water in Taman Creek during the survey was noted as turbid with numerous samlonid fry present at the downstream end of the site. Algae was abundant throughout the system and eroding banks were common. Abundant gravels suitable for resident rainbow trout and coho salmon spawning were present and habitat was rated as medium value for salmon rearing and spawning.</p>
 <p><br></p>
 <p>The upper Bulkley River was surveyed at numerous crossings upstream of the highway with bridges noted at PSCIS crossings 197968, 197969, 197973 and 197971. Survey crews were not able to access crossing 1802047 from Highway 16 due to a gate and private land postings. This crossing is located between Broman Lake and Old Woman Lake with public access potentially possible by ATV from the powerline to the north. Modelled crossing 1802663 is located on the mainstem of Taman Creek 1.8km upstream of the confluence with the upper Bulkley River. Although this site was not assessed it was considered likely to be a ford due to its location on the powerline. Numerous other unassessed crossings are modelled as located upstream within the system on Taman Creek as well as the upper Bulkley River and their tributaries. As the effort required to assess all these crossings was likely significant with the majority of higher value gains most likely present in the lower reaches, field time was allocated elsewhere in the greater Bulkley River watershed.</p>
@@ -1435,11 +1438,11 @@ The water in Taman Creek during the survey was noted as turbid with numerous sam
 <h2>Conclusion<a href="taman-creek---197967---appendix.html#conclusion-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There was 51.9km of habitat modelled upstream of crossing 197967 rated as medium value for salmonid rearing and spawning. Crossing 197967 was ranked as a moderate priority for proceeding to design for replacement. At the time of reporting, the Ministry of transportation and Infrastructure were in the process of planning for crossing replacement. Of note, due to budgetary constraints, survey plans for the site call for horizontal drilling of a closed bottom structure under the highway with costs likley lower than those estimated for replacement with a clear span bridge. Should structure replacement proceed follow up monitoring is recomended to assess passability and utilization of the crossing by downstream fish populations including coho who have been recorded in the upper Bulkley River within 100m downstream of crossing 197967.</p>
 <p><br></p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="taman-creek---197967---appendix.html#cb308-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb308-2"><a href="taman-creek---197967---appendix.html#cb308-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb308-3"><a href="taman-creek---197967---appendix.html#cb308-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb308-4"><a href="taman-creek---197967---appendix.html#cb308-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb308-5"><a href="taman-creek---197967---appendix.html#cb308-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="taman-creek---197967---appendix.html#cb309-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb309-2"><a href="taman-creek---197967---appendix.html#cb309-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb309-3"><a href="taman-creek---197967---appendix.html#cb309-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb309-4"><a href="taman-creek---197967---appendix.html#cb309-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb309-5"><a href="taman-creek---197967---appendix.html#cb309-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-197967">Table 5.61: </span>Summary of habitat details for PSCIS crossing 197967.
@@ -1566,94 +1569,94 @@ medium
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="taman-creek---197967---appendix.html#cb309-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb309-2"><a href="taman-creek---197967---appendix.html#cb309-2" tabindex="-1"></a></span>
-<span id="cb309-3"><a href="taman-creek---197967---appendix.html#cb309-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb309-4"><a href="taman-creek---197967---appendix.html#cb309-4" tabindex="-1"></a></span>
-<span id="cb309-5"><a href="taman-creek---197967---appendix.html#cb309-5" tabindex="-1"></a></span>
-<span id="cb309-6"><a href="taman-creek---197967---appendix.html#cb309-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="taman-creek---197967---appendix.html#cb310-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="taman-creek---197967---appendix.html#cb310-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb310-2"><a href="taman-creek---197967---appendix.html#cb310-2" tabindex="-1"></a></span>
+<span id="cb310-3"><a href="taman-creek---197967---appendix.html#cb310-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb310-4"><a href="taman-creek---197967---appendix.html#cb310-4" tabindex="-1"></a></span>
+<span id="cb310-5"><a href="taman-creek---197967---appendix.html#cb310-5" tabindex="-1"></a></span>
+<span id="cb310-6"><a href="taman-creek---197967---appendix.html#cb310-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="taman-creek---197967---appendix.html#cb311-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197967-01"></span>
 <img src="Skeena2021_files/figure-html/photo-197967-01-1.png" alt="Habitat downstream of PSCIS crossing 197967." width="100%" />
-<p class="caption">
-Figure 5.72: Habitat downstream of PSCIS crossing 197967.
-</p>
-</div>
-<p><br></p>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="taman-creek---197967---appendix.html#cb311-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb311-2"><a href="taman-creek---197967---appendix.html#cb311-2" tabindex="-1"></a></span>
-<span id="cb311-3"><a href="taman-creek---197967---appendix.html#cb311-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="taman-creek---197967---appendix.html#cb312-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-197967-02"></span>
-<img src="Skeena2021_files/figure-html/photo-197967-02-1.png" alt="Habitat downstream of PSCIS crossing 197967." width="100%" />
 <p class="caption">
 Figure 5.73: Habitat downstream of PSCIS crossing 197967.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="taman-creek---197967---appendix.html#cb313-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb313-2"><a href="taman-creek---197967---appendix.html#cb313-2" tabindex="-1"></a></span>
-<span id="cb313-3"><a href="taman-creek---197967---appendix.html#cb313-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb313-4"><a href="taman-creek---197967---appendix.html#cb313-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb313-5"><a href="taman-creek---197967---appendix.html#cb313-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="taman-creek---197967---appendix.html#cb314-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb314-2"><a href="taman-creek---197967---appendix.html#cb314-2" tabindex="-1"></a></span>
-<span id="cb314-3"><a href="taman-creek---197967---appendix.html#cb314-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="taman-creek---197967---appendix.html#cb315-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-197967-03"></span>
-<img src="Skeena2021_files/figure-html/photo-197967-03-1.png" alt="Habitat upstream of PSCIS crossing 197967." width="100%" />
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="taman-creek---197967---appendix.html#cb312-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb312-2"><a href="taman-creek---197967---appendix.html#cb312-2" tabindex="-1"></a></span>
+<span id="cb312-3"><a href="taman-creek---197967---appendix.html#cb312-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="taman-creek---197967---appendix.html#cb313-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-197967-02"></span>
+<img src="Skeena2021_files/figure-html/photo-197967-02-1.png" alt="Habitat downstream of PSCIS crossing 197967." width="100%" />
 <p class="caption">
-Figure 5.74: Habitat upstream of PSCIS crossing 197967.
+Figure 5.74: Habitat downstream of PSCIS crossing 197967.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="taman-creek---197967---appendix.html#cb316-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb316-2"><a href="taman-creek---197967---appendix.html#cb316-2" tabindex="-1"></a></span>
-<span id="cb316-3"><a href="taman-creek---197967---appendix.html#cb316-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="taman-creek---197967---appendix.html#cb317-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-197967-04"></span>
-<img src="Skeena2021_files/figure-html/photo-197967-04-1.png" alt="Habitat upstream of PSCIS crossing 197967." width="100%" />
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="taman-creek---197967---appendix.html#cb314-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb314-2"><a href="taman-creek---197967---appendix.html#cb314-2" tabindex="-1"></a></span>
+<span id="cb314-3"><a href="taman-creek---197967---appendix.html#cb314-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb314-4"><a href="taman-creek---197967---appendix.html#cb314-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb314-5"><a href="taman-creek---197967---appendix.html#cb314-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="taman-creek---197967---appendix.html#cb315-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb315-2"><a href="taman-creek---197967---appendix.html#cb315-2" tabindex="-1"></a></span>
+<span id="cb315-3"><a href="taman-creek---197967---appendix.html#cb315-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="taman-creek---197967---appendix.html#cb316-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-197967-03"></span>
+<img src="Skeena2021_files/figure-html/photo-197967-03-1.png" alt="Habitat upstream of PSCIS crossing 197967." width="100%" />
 <p class="caption">
 Figure 5.75: Habitat upstream of PSCIS crossing 197967.
 </p>
 </div>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="taman-creek---197967---appendix.html#cb318-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb318-2"><a href="taman-creek---197967---appendix.html#cb318-2" tabindex="-1"></a></span>
-<span id="cb318-3"><a href="taman-creek---197967---appendix.html#cb318-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb318-4"><a href="taman-creek---197967---appendix.html#cb318-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb318-5"><a href="taman-creek---197967---appendix.html#cb318-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="taman-creek---197967---appendix.html#cb319-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
-<span id="cb319-2"><a href="taman-creek---197967---appendix.html#cb319-2" tabindex="-1"></a></span>
-<span id="cb319-3"><a href="taman-creek---197967---appendix.html#cb319-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="taman-creek---197967---appendix.html#cb320-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-197967-05"></span>
-<img src="Skeena2021_files/figure-html/photo-197967-05-1.png" alt="Habitat upstream of PSCIS crossing 197967." width="100%" />
+<p><br></p>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="taman-creek---197967---appendix.html#cb317-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb317-2"><a href="taman-creek---197967---appendix.html#cb317-2" tabindex="-1"></a></span>
+<span id="cb317-3"><a href="taman-creek---197967---appendix.html#cb317-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="taman-creek---197967---appendix.html#cb318-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-197967-04"></span>
+<img src="Skeena2021_files/figure-html/photo-197967-04-1.png" alt="Habitat upstream of PSCIS crossing 197967." width="100%" />
 <p class="caption">
 Figure 5.76: Habitat upstream of PSCIS crossing 197967.
 </p>
 </div>
-<p><br></p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="taman-creek---197967---appendix.html#cb321-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
-<span id="cb321-2"><a href="taman-creek---197967---appendix.html#cb321-2" tabindex="-1"></a></span>
-<span id="cb321-3"><a href="taman-creek---197967---appendix.html#cb321-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="taman-creek---197967---appendix.html#cb322-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-197967-06"></span>
-<img src="Skeena2021_files/figure-html/photo-197967-06-1.png" alt="Habitat upstream of PSCIS crossing 197967." width="100%" />
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="taman-creek---197967---appendix.html#cb319-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb319-2"><a href="taman-creek---197967---appendix.html#cb319-2" tabindex="-1"></a></span>
+<span id="cb319-3"><a href="taman-creek---197967---appendix.html#cb319-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb319-4"><a href="taman-creek---197967---appendix.html#cb319-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb319-5"><a href="taman-creek---197967---appendix.html#cb319-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="taman-creek---197967---appendix.html#cb320-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
+<span id="cb320-2"><a href="taman-creek---197967---appendix.html#cb320-2" tabindex="-1"></a></span>
+<span id="cb320-3"><a href="taman-creek---197967---appendix.html#cb320-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="taman-creek---197967---appendix.html#cb321-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo1))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-197967-05"></span>
+<img src="Skeena2021_files/figure-html/photo-197967-05-1.png" alt="Habitat upstream of PSCIS crossing 197967." width="100%" />
 <p class="caption">
 Figure 5.77: Habitat upstream of PSCIS crossing 197967.
 </p>
 </div>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="taman-creek---197967---appendix.html#cb323-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb323-2"><a href="taman-creek---197967---appendix.html#cb323-2" tabindex="-1"></a></span>
-<span id="cb323-3"><a href="taman-creek---197967---appendix.html#cb323-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb323-4"><a href="taman-creek---197967---appendix.html#cb323-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb323-5"><a href="taman-creek---197967---appendix.html#cb323-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="taman-creek---197967---appendix.html#cb322-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
+<span id="cb322-2"><a href="taman-creek---197967---appendix.html#cb322-2" tabindex="-1"></a></span>
+<span id="cb322-3"><a href="taman-creek---197967---appendix.html#cb322-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="taman-creek---197967---appendix.html#cb323-1" tabindex="-1"></a>grid<span class="sc">::</span><span class="fu">grid.raster</span>(jpeg<span class="sc">::</span><span class="fu">readJPEG</span>(my_photo2))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-197967-06"></span>
+<img src="Skeena2021_files/figure-html/photo-197967-06-1.png" alt="Habitat upstream of PSCIS crossing 197967." width="100%" />
+<p class="caption">
+Figure 5.78: Habitat upstream of PSCIS crossing 197967.
+</p>
+</div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="taman-creek---197967---appendix.html#cb324-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb324-2"><a href="taman-creek---197967---appendix.html#cb324-2" tabindex="-1"></a></span>
+<span id="cb324-3"><a href="taman-creek---197967---appendix.html#cb324-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb324-4"><a href="taman-creek---197967---appendix.html#cb324-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb324-5"><a href="taman-creek---197967---appendix.html#cb324-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="taman-creek---197967---appendix.html#cb324-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb324-2"><a href="taman-creek---197967---appendix.html#cb324-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb324-3"><a href="taman-creek---197967---appendix.html#cb324-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="taman-creek---197967---appendix.html#cb325-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">197976</span></span>
-<span id="cb325-2"><a href="taman-creek---197967---appendix.html#cb325-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">197975</span></span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="taman-creek---197967---appendix.html#cb325-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb325-2"><a href="taman-creek---197967---appendix.html#cb325-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb325-3"><a href="taman-creek---197967---appendix.html#cb325-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="taman-creek---197967---appendix.html#cb326-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">197976</span></span>
+<span id="cb326-2"><a href="taman-creek---197967---appendix.html#cb326-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">197975</span></span></code></pre></div>
 </div>
 </div>
             </section>
@@ -1688,7 +1691,7 @@ gitbook.start({
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
-"theme": "night",
+"theme": "white",
 "family": "sans",
 "size": 2
 },

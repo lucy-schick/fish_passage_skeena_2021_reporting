@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Tributary to Nanika River - 198008 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021</title>
-  <meta name="description" content="Wet-zuhn-kwa" />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Tributary to Nanika River - 198008 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Wet-zuhn-kwa" />
+  <meta property="og:description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
   <meta name="github-repo" content="NewGraphEnvironment/fish_passage_skeena_2021_reporting" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Tributary to Nanika River - 198008 - Appendix | Bulkley River and Morice River Watershed Groups Fish Passage Restoration Planning 2021" />
   
-  <meta name="twitter:description" content="Wet-zuhn-kwa" />
+  <meta name="twitter:description" content="Restoring Fish Passage in the Skeena River Watershed - 2021" />
   
 
 
@@ -52,6 +52,8 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
 <script src="libs/leaflet-1.3.1/leaflet.js"></script>
@@ -115,7 +117,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -444,6 +446,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="attachment-1---maps.html"><a href="attachment-1---maps.html"><i class="fa fa-check"></i><strong>Attachment 1 - Maps</strong></a></li>
 <li class="chapter" data-level="" data-path="attachment-2---habitat-assessment-data.html"><a href="attachment-2---habitat-assessment-data.html"><i class="fa fa-check"></i><strong>Attachment 2 - Habitat Assessment Data</strong></a></li>
 <li class="chapter" data-level="" data-path="attachment-3---richfield-fencing-report.html"><a href="attachment-3---richfield-fencing-report.html"><i class="fa fa-check"></i><strong>Attachment 3 - Richfield Fencing Report</strong></a></li>
+<li class="chapter" data-level="" data-path="attachment-4---engineering-design-for-pscis-crossing-197378-on-klate-lake-road.html"><a href="attachment-4---engineering-design-for-pscis-crossing-197378-on-klate-lake-road.html"><i class="fa fa-check"></i><strong>Attachment 4 - Engineering Design for PSCIS Crossing 197378 on Klate Lake Road</strong></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting" target="blank">Scripts and Data</a></li>
 
@@ -482,10 +485,10 @@ a maximum of 1605m to
 912m at the crossing (Table
 <a href="tributary-to-nanika-river---198008---appendix.html#tab:tab-wshd-198008">5.74</a>). Upstream of crossing 198008, dolly varden have previously been recorded <span class="citation">(MoE 2020b; Norris 2020)</span>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb375-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb375-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb375-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb375-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb375-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb375-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb375-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb376-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb376-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb376-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb376-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb376-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb376-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb376-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-198008">Table 5.74: </span>Summary of derived upstream watershed statistics for PSCIS crossing 198008.
@@ -563,7 +566,7 @@ priority for follow up by the Society for Ecosystem Restoration in Northern BC. 
 map attachment
 <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.102.pdf">093L.102</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb376-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb377-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -889,7 +892,7 @@ pH was 7.8 and
 conductivity was
 258uS/cm.</p>
 <p><br></p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb377-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb378-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-198008">Table 5.76: </span>Summary of fish passage assessment for PSCIS crossing 198008.
@@ -1152,23 +1155,23 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb378-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb378-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb378-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb378-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb378-3" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb379-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb379-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb379-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb379-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb379-3" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-8" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream<a href="tributary-to-nanika-river---198008---appendix.html#stream-characteristics-downstream-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed downstream from crossing 198008 for 400m
-(Figures <a href="tributary-to-nanika-river---198008---appendix.html#fig:photo-198008-01">5.91</a> - <a href="tributary-to-nanika-river---198008---appendix.html#fig:photo-198008-02">5.92</a>).
-The dominant substrate was gravels with fines sub-dominant.The average channel width was 2.3m, the average wetted width was 1.3m, and the average gradient was 5.2%.Total cover amount was rated as abundant with overhanging vegetation dominant. Cover was also present as small woody debris, large woody debris, and undercut banks. This was a small stream with low, consistent flows and shallow pools. There were few undercut banks but abundant overhanging vegetation. Gravels were present throughout with fines near the bottom half of the survey and more cobbles near the top. The gradient was steeper in the top half of the survey and decreased further downstream. A few functional large woody debris clusters created drops up to 0.6m high. Overall, the
+(Figures <a href="tributary-to-nanika-river---198008---appendix.html#fig:photo-198008-01">5.92</a> - <a href="tributary-to-nanika-river---198008---appendix.html#fig:photo-198008-02">5.93</a>).
+The average channel width was 2.3m, the average wetted width was 1.3m, and the average gradient was 5.2%.Total cover amount was rated as abundant with overhanging vegetation dominant. Cover was also present as small woody debris, large woody debris, and undercut banks.The dominant substrate was gravels with fines sub-dominant. This was a small stream with low, consistent flows and shallow pools. There were few undercut banks but abundant overhanging vegetation. Gravels were present throughout with fines near the bottom half of the survey and more cobbles near the top. The gradient was steeper in the top half of the survey and decreased further downstream. A few functional large woody debris clusters created drops up to 0.6m high. Overall, the
 habitat was rated as medium value for
 salmonid rearing and spawning.</p>
 </div>
 <div id="stream-characteristics-upstream-6" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Upstream<a href="tributary-to-nanika-river---198008---appendix.html#stream-characteristics-upstream-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed upstream from crossing 198008 for 800m
-(Figures <a href="tributary-to-nanika-river---198008---appendix.html#fig:photo-198008-03">5.93</a> - <a href="tributary-to-nanika-river---198008---appendix.html#fig:photo-198008-06">5.96</a>).
-The dominant substrate was gravels with cobbles sub-dominant.Total cover amount was rated as abundant with undercut banks dominant. Cover was also present as small woody debris, large woody debris, and overhanging vegetation.The average channel width was 2m, the average wetted width was 0.9m, and the average gradient was 7.5%. There were multiple channels. The non-dominant channel was most likely surveyed here. The bottom 100m was low gradient, with patches of gravel and good flow for the time of year. Dolly Varden are known to be present upstream. There are no lakes upstream, indicating the stream was passable to Dolly Varden. The habitat was rated as
+(Figures <a href="tributary-to-nanika-river---198008---appendix.html#fig:photo-198008-03">5.94</a> - <a href="tributary-to-nanika-river---198008---appendix.html#fig:photo-198008-06">5.97</a>).
+The average channel width was 2m, the average wetted width was 0.9m, and the average gradient was 7.5%.The dominant substrate was gravels with cobbles sub-dominant.Total cover amount was rated as abundant with undercut banks dominant. Cover was also present as small woody debris, large woody debris, and overhanging vegetation. There were multiple channels. The non-dominant channel was most likely surveyed here. The bottom 100m was low gradient, with patches of gravel and good flow for the time of year. Dolly Varden are known to be present upstream. There are no lakes upstream, indicating the stream was passable to Dolly Varden. The habitat was rated as
 medium value as an important
 migration corridor containing suitable spawning habitat and having
 moderate rearing potential.</p>
@@ -1197,11 +1200,11 @@ value for salmonid rearing and spawning. 198008 was ranked as a
 moderate priority for proceeding to design for replacement. Electrofishing upstream and downstream of the culvert is recommended to provide insight into fish community composition and density. Due to low historical numbers of sockeye salmon in the Nanika watershed, it would be important to find out if they are using this tributary for spawning and/or rearing.</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb379-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb379-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb379-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb379-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb379-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb379-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb379-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb379-5"><a href="tributary-to-nanika-river---198008---appendix.html#cb379-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb380-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb380-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb380-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb380-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb380-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb380-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb380-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb380-5"><a href="tributary-to-nanika-river---198008---appendix.html#cb380-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-198008">Table 5.77: </span>Summary of habitat details for PSCIS crossing 198008.
@@ -1299,90 +1302,90 @@ medium
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb380-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb380-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb380-2" tabindex="-1"></a></span>
-<span id="cb380-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb380-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb381-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb381-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb381-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb381-2" tabindex="-1"></a></span>
+<span id="cb381-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb381-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb382-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-198008-01"></span>
 <img src="data/photos/198008/KP_TC_01217_d1_k_.JPG" alt="Typical habitat downstream of PSCIS crossing 198008." width="100%" />
-<p class="caption">
-Figure 5.91: Typical habitat downstream of PSCIS crossing 198008.
-</p>
-</div>
-<p><br></p>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb382-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb382-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb382-2" tabindex="-1"></a></span>
-<span id="cb382-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb382-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb383-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-198008-02"></span>
-<img src="data/photos/198008/KP_TC_01246_d2_k_.JPG" alt="Typical habitat downstream of PSCIS crossing 198008." width="100%" />
 <p class="caption">
 Figure 5.92: Typical habitat downstream of PSCIS crossing 198008.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb384-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb384-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb384-2" tabindex="-1"></a></span>
-<span id="cb384-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb384-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb384-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb384-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb384-5"><a href="tributary-to-nanika-river---198008---appendix.html#cb384-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb385-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb385-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb385-2" tabindex="-1"></a></span>
-<span id="cb385-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb385-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb386-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-198008-03"></span>
-<img src="data/photos/198008/AI_IMG_6078_u1_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198008." width="100%" />
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb383-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb383-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb383-2" tabindex="-1"></a></span>
+<span id="cb383-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb383-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb384-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-198008-02"></span>
+<img src="data/photos/198008/KP_TC_01246_d2_k_.JPG" alt="Typical habitat downstream of PSCIS crossing 198008." width="100%" />
 <p class="caption">
-Figure 5.93: Typical habitat upstream of PSCIS crossing 198008.
+Figure 5.93: Typical habitat downstream of PSCIS crossing 198008.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb387-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb387-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb387-2" tabindex="-1"></a></span>
-<span id="cb387-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb387-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb388-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-198008-04"></span>
-<img src="data/photos/198008/AI_IMG_6090_u2_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198008." width="100%" />
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb385-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb385-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb385-2" tabindex="-1"></a></span>
+<span id="cb385-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb385-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb385-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb385-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb385-5"><a href="tributary-to-nanika-river---198008---appendix.html#cb385-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb386-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb386-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb386-2" tabindex="-1"></a></span>
+<span id="cb386-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb386-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb387-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-198008-03"></span>
+<img src="data/photos/198008/AI_IMG_6078_u1_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198008." width="100%" />
 <p class="caption">
 Figure 5.94: Typical habitat upstream of PSCIS crossing 198008.
 </p>
 </div>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb389-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb389-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb389-2" tabindex="-1"></a></span>
-<span id="cb389-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb389-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb389-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb389-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb389-5"><a href="tributary-to-nanika-river---198008---appendix.html#cb389-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb390-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
-<span id="cb390-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb390-2" tabindex="-1"></a></span>
-<span id="cb390-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb390-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb391-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-198008-05"></span>
-<img src="data/photos/198008/AI_IMG_6096_u3_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198008." width="100%" />
+<p><br></p>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb388-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb388-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb388-2" tabindex="-1"></a></span>
+<span id="cb388-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb388-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb389-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-198008-04"></span>
+<img src="data/photos/198008/AI_IMG_6090_u2_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198008." width="100%" />
 <p class="caption">
 Figure 5.95: Typical habitat upstream of PSCIS crossing 198008.
 </p>
 </div>
-<p><br></p>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb392-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
-<span id="cb392-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb392-2" tabindex="-1"></a></span>
-<span id="cb392-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb392-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb393-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:photo-198008-06"></span>
-<img src="data/photos/198008/AI_IMG_6098_u4_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198008." width="100%" />
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb390-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb390-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb390-2" tabindex="-1"></a></span>
+<span id="cb390-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb390-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb390-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb390-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb390-5"><a href="tributary-to-nanika-river---198008---appendix.html#cb390-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb391-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u3_&#39;</span>)</span>
+<span id="cb391-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb391-2" tabindex="-1"></a></span>
+<span id="cb391-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb391-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb392-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-198008-05"></span>
+<img src="data/photos/198008/AI_IMG_6096_u3_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198008." width="100%" />
 <p class="caption">
 Figure 5.96: Typical habitat upstream of PSCIS crossing 198008.
 </p>
 </div>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb394-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb394-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb394-2" tabindex="-1"></a></span>
-<span id="cb394-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb394-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb394-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb394-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb394-5"><a href="tributary-to-nanika-river---198008---appendix.html#cb394-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb393-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u4_&#39;</span>)</span>
+<span id="cb393-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb393-2" tabindex="-1"></a></span>
+<span id="cb393-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb393-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb394-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:photo-198008-06"></span>
+<img src="data/photos/198008/AI_IMG_6098_u4_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 198008." width="100%" />
+<p class="caption">
+Figure 5.97: Typical habitat upstream of PSCIS crossing 198008.
+</p>
+</div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb395-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb395-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb395-2" tabindex="-1"></a></span>
+<span id="cb395-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb395-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb395-4"><a href="tributary-to-nanika-river---198008---appendix.html#cb395-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb395-5"><a href="tributary-to-nanika-river---198008---appendix.html#cb395-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb395-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb395-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb395-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb395-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb395-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb396-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198016</span></span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb396-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb396-2"><a href="tributary-to-nanika-river---198008---appendix.html#cb396-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb396-3"><a href="tributary-to-nanika-river---198008---appendix.html#cb396-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="tributary-to-nanika-river---198008---appendix.html#cb397-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">198016</span></span></code></pre></div>
 </div>
 </div>
             </section>
@@ -1417,7 +1420,7 @@ gitbook.start({
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
-"theme": "night",
+"theme": "white",
 "family": "sans",
 "size": 2
 },

@@ -4,7 +4,7 @@
 ## copy select 2023 photo directories from shared server to repo so we can include in report. photo file name changes
 ## occurring on shared server only
 
-source("scripts/packages.R")
+# source("scripts/packages.R")
 
 year = "2023"
 
@@ -252,17 +252,17 @@ tab_fish_sites_sum_2023 <- tab_fish_sites_sum
 ## copy select 2023 photo directories from shared server to repo so we can include in report. photo file name changes
 # make list of directories to transfer
 
-
-dir_2023_photos_stub = "~/Library/CloudStorage/OneDrive-Personal/Projects/2023_data/skeena/photos/"
-dir_2023_photos <- c("123377")
-
-dir_repo_photos_stub = "data/2023/photos/"
-
-# create the directory
-fs::dir_create(dir_repo_photos_stub)
-
-# copy the directories with purrr::map
-purrr::map(dir_2023_photos,
-           ~fs::dir_copy(paste0(dir_2023_photos_stub, .x),
-                         paste0(dir_repo_photos_stub, .x),
-                         overwrite = TRUE))
+# UPDATE - 2025 - turned this off and changed location of photos since they were moved (and bc it reaches outside the repo on build)
+# dir_2023_photos_stub = "~/Library/CloudStorage/OneDrive-Personal/Projects/archive/2023_data/skeena/photos/"
+# dir_2023_photos <- c("123377")
+#
+# dir_repo_photos_stub = "data/2023/photos/"
+#
+# # create the directory
+# fs::dir_create(dir_repo_photos_stub)
+#
+# # copy the directories with purrr::map
+# purrr::map(dir_2023_photos,
+#            ~fs::dir_copy(paste0(dir_2023_photos_stub, .x),
+#                          paste0(dir_repo_photos_stub, .x),
+#                          overwrite = TRUE))

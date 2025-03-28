@@ -36,7 +36,8 @@ pkgs_cran <- c(
   'chron',
   'leafpop',
   'exifr',
-  'pagedown'
+  'pagedown',
+  'kableExtra'
   # rgl,
   # geojsonsf,
   # bit64 ##to make integer column type for pg
@@ -48,8 +49,8 @@ pkgs_gh <- c(
   "poissonconsulting/fwapgr",
   'poissonconsulting/poisspatial',
   "poissonconsulting/fishbc",
-  "newgraphenvironment/fpr",
-  "haozhu233/kableExtra@a9c509a" ## 2024 update, this prevents black text in dark mode
+  "newgraphenvironment/fpr"
+  # "haozhu233/kableExtra@a9c509a" ## 2024 update, this prevents black text in dark mode
 )
 
 pkgs_all <- c(pkgs_cran,

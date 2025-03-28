@@ -16,7 +16,7 @@ author: |
 
 date: |
  |
- | Version 0.1.7 `r format(Sys.Date(), "%Y-%m-%d")`
+ | Version 0.1.8 `r format(Sys.Date(), "%Y-%m-%d")`
 toc-title: Table of Contents
 site: bookdown::bookdown_site
 output: 
@@ -38,11 +38,11 @@ nocite: |
   @rosenfeld_etal2000Habitatfactorsa
 
 documentclass: book
-bibliography: [book.bib, references.bib, packages.bib]
+bibliography: [references.bib, packages.bib] 
 biblio-style: apalike
 link-citations: no
 github-repo: NewGraphEnvironment/fish_passage_skeena_2021_reporting
-description: "Wet-zuhn-kwa"
+description: "Restoring Fish Passage in the Skeena River Watershed - 2021"
 
 
 ---
