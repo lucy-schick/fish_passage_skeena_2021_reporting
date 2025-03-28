@@ -23,7 +23,6 @@ fs::file_copy("~/Projects/repo/fish_passage_skeena_2023_reporting/data/habitat_c
   staticimports::import()
   source('scripts/staticimports.R')
   my_news_to_appendix()
-  # news_to_appendix()
   # These files are included in the gitbook version already so we move them out of the build
   files_to_move <- list.files(pattern = ".Rmd$") |>
     stringr::str_subset('2300', negate = F) #move the attachments out
