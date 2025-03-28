@@ -22,13 +22,61 @@ my_site <- 197378
 ## Site Location {.unnumbered}
 
 PSCIS crossing `r as.character(my_site)` is located on
-`r fpr::fpr_my_pscis_info()`, on `r fpr_my_pscis_info(col_pull = road_name)` road. The site was located approximately 1km upstream from the confluence with Owen Creek, which drains the nearby Owen Lake. Information sourced from the provincial [Forest Tenure Road Section Lines](https://catalogue.data.gov.bc.ca/dataset/forest-tenure-road-section-lines) spatial layer indicates
-YLP Woodlands GP Ltd. [@moe2024ForestTenure] is a road tenure holder at the crossing location. YLP Woodlands GP Ltd. is
+`r fpr::fpr_my_pscis_info()`, on `r fpr_my_pscis_info(col_pull = road_name)` road - approximately 1km upstream from the confluence with Owen Creek, which drains the nearby Owen Lake. Information sourced from the provincial [Forest Tenure Road Section Lines](https://catalogue.data.gov.bc.ca/dataset/forest-tenure-road-section-lines) spatial layer indicates
+YLP Woodlands GP Ltd. is a road tenure holder at the crossing location [@moe2024ForestTenure]. YLP Woodlands GP Ltd. is
 part of the Yinka Dene Economic Development Limited Partnership (YLP) which is the corporate business arm of the Wet’suwet’en First Nation.
 
 <br>
 
 ## Background {.unnumbered}
+
+PSCIS crossing `r as.character(my_site)` on `r fpr_my_pscis_info(col_pull = road_name)` road is located in the Bi Wini house territory, in the house of Keexwinits (House in the Middle of Many) that belongs to the Gitdumden (Bear/Wolf) clan within Wet’suwet’en territory [@bcparks2010NadinaMountain]. Felix George 7 First 
+Nation Reserve lands are located on the east side of Owen Lake near the site. A provincial recreation site is also located near the site on the northern tip of Owen Lake 
+
+<br>
+
+This memo has been updated to reflect ongoing activities related to the restoration of fish passage at the site. 
+The culvert on Klate Lake Road has been earmarked for replacement through the Bii Wenii Kwa Restoration/Recovery Plan which is 
+a collaboration between the Wet'suwet'en Treaty Society, Fisheries and Oceans Canada, BC Ministry of Forests, and Water, 
+Land and Resource Stewardship, Morice Water Monitoring Trust, and Northwest Research and Monitoring. The plan aims to 
+improve watershed health and support both resident and anadromous fish while helping the Wet’suwet’en, and Federal and 
+Provincial governments address habitat risks by enhancing and restoring fish habitat, consolidating existing data, 
+prioritizing restoration work, and providing monitoring recommendations [@morgan2024biiwenii].
+
+<br>
+
+Klate Lake Road provides access to Nadina Mountain Park.  The park was established through a partnership between BC Parks 
+and the Office of the Wet’suwet’en as part of the Morice Land and Resource Management Plan. It is one of seven protected 
+areas resulting from government-to-government agreements. The park protects important cultural, spiritual, and ecological 
+values, including habitat for mountain goats and rare plant communities. Recreational use is non-motorized and includes 
+hiking, hunting, and wildlife viewing. Management priorities focus on conserving ecological integrity and Wet’suwet’en 
+heritage while allowing low-impact education and recreation. Nadina means "standing up alone" in the Wet’suwet’en language 
+[@bcparks2010NadinaMountain; @ilmb2007MoriceLand; @bcparks2025NadinaMountain].  
+
+<br>
+
+Klate Lake Road accesses a challenging trail that climbs the northeast slope of Nadina Mountain into the provincial park.  
+The trail begins at an elevation of 867m and reaches alpine at 1686m, where the route becomes unmarked. From there, hikers 
+choose their own path to the 2125m summit. A second, longer route to the alpine begins at Nadina Mountain Lodge on Owen 
+Lake, passing Klate and Base Lakes, but this route is documented as overgrown and difficult due to lack of recent maintenance. 
+The Berkey-Howe Union Spire is a free-standing granite pillar located at the head of the large cirque on the north-east 
+exposure of the peak [@bcparks2025NadinaMountain]. 
+
+<br>
+
+Following the recommendations from the 2022 survey (provided in an initial release of this report), 
+crossing `r as.character(my_site)` was revisited September 13, 2023 with electrofishing conducted above and below the 
+crossing to gather baseline fisheries data. Results from the sampling have been incorporated into updated versions 
+of this report.
+
+<br>
+
+In 2024, an engineering design was commissioned by SERNbc to replace the culvert with a bridge. The design was completed
+in 2025 by Pacific North Coast Consulting Services. Proposed works include the replacement of
+the existing 1.0m wide round culvert with a 12m free span bridge. The engineering design and associated background information
+is included as an attachment to this report and linked [here](https://github.com/NewGraphEnvironment/fish_passage_skeena_2021_reporting/blob/master/data/inputs_raw/Owen Creek Trib - BRIDGE GA DESIGN SEALED IFC.pdf).
+
+<br>
 
 At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a
 `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a
@@ -38,13 +86,12 @@ a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to
 `r fpr::fpr_my_wshd(col = 'elev_site')`m at the crossing (Table
 \@ref(tab:tab-wshd-197378)). A total of `r fpr::fpr_my_bcfishpass(col_pull = total_lakereservoir_ha)`ha of lake and `r fpr::fpr_my_bcfishpass(col_pull = total_wetland_ha)`ha of wetland is modelled upstream. Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. The nearby Owen Lake is approximately 300ha in size. Historical records of fish in this lake include rainbow trout, burbot, coho, sucker, dolly varden, lake trout, and whitefish. 
 
-<br>
+```{r map-197378, fig.cap=my_caption}
+my_caption <- "Map showing PSCIS crossing 197378 on Klate Lake / Nadina Mountain Road."
+knitr::include_graphics("data/inputs_raw/klate_lake_road_trib_to_owen_197378.jpeg")
+```
 
-Following the recommendations from the 2022 survey (provided in an initial release of this report) to perform fish sampling, 
-crossing `r as.character(my_site)` was revisited September 13, 2023 and electrofishing was conducted above and below the 
-crossing to gather baseline fisheries data. Results from the sampling have been incorporated into this now updated version of this report.
 
-<br>
 
 In addition to providing access to forestry areas under the tenure of Yinka Dene Economic Development Limited Partnership (YLP), Klate Lake Road also accesses Nadina Mountain Provincial Park, which features the [Nadina Mountain Trail](https://www.trailforks.com/trails/nadina-mountain-trail/) leading to scenic alpine spires. This presents an excellent opportunity for community engagement, as connecting people to the land can foster stewardship and advocacy for the stream, enhancing future restoration efforts.
 
@@ -142,7 +189,8 @@ In 2024, a replacement design was completed by Pacific North Coast Consulting Se
 
 ## Conclusion {.unnumbered}
 
-There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing `r as.character(my_site)` modelled as highing high intrinsic value for steelhead based on gradient and width.  Areas surveyed
+There was `r fpr::fpr_my_priority_info(col_pull= upstream_habitat_length_km)`km of habitat modelled upstream of crossing 
+`r as.character(my_site)` modelled as highing high intrinsic value for steelhead based on gradient and width.  Areas surveyed
 were rated as `r fpr::fpr_my_priority_info(sit = my_site, loc = 'us', col_pull = hab_value)` value for salmonid rearing 
 with large areas of wetland present. The culvert pipe was noted as in very poor condition with the structure near complete
 collapse. Although fish sampling within small areas upstream and downstream of the crossing in 2023 resulted in the capture 
@@ -150,7 +198,14 @@ of rainbow trout only, other species such as coho utilizing the mainstem of Owen
 
 <br>
 
-The Office of Wet'suwet'en has initiated watershed-level Nation-led recovery and restoration planning for the greater Bii Wenii Kwa (Owen Creek) watershed, which includes restoration of this site as a project priority. As the Yinka Dene Economic Development Limited Partnership is noted as the road tenure holder at the location of the site, there may be opportunities for collaboration between the two groups on the restoration or removal of the crossing. Additionally, Klate Lake Road provides access to Nadina Mountain Provincial Park, which features the [Nadina Mountain Trail](https://www.trailforks.com/trails/nadina-mountain-trail/) leading to scenic alpine spires. This recreational trail presents an opportunity to connect people to the land and foster community engagement and stewardship that can further support restoration efforts. Crossing `r as.character(my_site)` was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement.
+The Office of Wet'suwet'en has initiated watershed level Nation led recovery/restoration planning for the greater Bii Wenii Kwa (Owen Creek) 
+watershed which includes restoration of this site as a project priority consideration. As the Yinka Dene Economic Development Limited Partnership 
+is noted as a road tenure holder at the location of the site, there could be opportunities for 
+collaboration between the two groups related to restoration or removal of the crossing. Crossing `r as.character(my_site)` 
+was ranked as a `r fpr::fpr_my_priority_info(col_pull = priority)` priority for proceeding to design for replacement. 
+In 2024, an engineering design was commissioned by SERNbc to replace the culvert with a bridge. The design was completed
+in 2025 by Pacific North Coast Consulting Services. Proposed works include the replacement of
+the existing 1.0m wide round culvert with a 12m free span bridge.
 
 
 <br>
