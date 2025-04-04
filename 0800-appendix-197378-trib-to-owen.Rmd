@@ -93,10 +93,6 @@ knitr::include_graphics("data/inputs_raw/klate_lake_road_trib_to_owen_197378.jpe
 
 
 
-In addition to providing access to forestry areas under the tenure of Yinka Dene Economic Development Limited Partnership (YLP), Klate Lake Road also accesses Nadina Mountain Provincial Park, which features the [Nadina Mountain Trail](https://www.trailforks.com/trails/nadina-mountain-trail/) leading to scenic alpine spires. This presents an excellent opportunity for community engagement, as connecting people to the land can foster stewardship and advocacy for the stream, enhancing future restoration efforts.
-
-<br>
-
 ```{r tab-wshd-197378, eval = T}
 fpr::fpr_table_wshd_sum(site_id = my_site) %>% 
   fpr::fpr_kable(caption_text = paste0('Summary of derived upstream watershed statistics for PSCIS crossing ', my_site, '.'),
