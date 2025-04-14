@@ -1,6 +1,6 @@
 ##this is for as we work through
 preview_chapter('0100-intro.Rmd')
-
+preview_chapter('0200-background.Rmd')
 
 
 #################################################################################################
