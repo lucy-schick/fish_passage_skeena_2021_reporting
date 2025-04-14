@@ -522,18 +522,18 @@ watershed area upstream of the crossing of approximately
 a maximum of 2073m to
 758m at the crossing (Table
 <a href="tributary-to-owen-creek---197378---appendix.html#tab:tab-wshd-197378">5.23</a>). A total of 3ha of lake and 48ha of wetland is modelled upstream. Upstream of crossing 197378, longnose dace, rainbow trout, mountain whitefish, and dolly varden have previously been recorded <span class="citation">(MoE 2020b; Norris 2020)</span>. The nearby Owen Lake is approximately 300ha in size. Historical records of fish in this lake include rainbow trout, burbot, coho, sucker, dolly varden, lake trout, and whitefish.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb173-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="st">&quot;Map showing PSCIS crossing 197378 on Klate Lake / Nadina Mountain Road.&quot;</span></span>
-<span id="cb173-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb173-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;data/inputs_raw/klate_lake_road_trib_to_owen_197378.jpeg&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb176-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="st">&quot;Map showing PSCIS crossing 197378 on Klate Lake / Nadina Mountain Road.&quot;</span></span>
+<span id="cb176-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb176-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;data/inputs_raw/klate_lake_road_trib_to_owen_197378.jpeg&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:map-197378"></span>
 <img src="data/inputs_raw/klate_lake_road_trib_to_owen_197378.jpeg" alt="Map showing PSCIS crossing 197378 on Klate Lake / Nadina Mountain Road." width="100%" />
 <p class="caption">
 Figure 5.36: Map showing PSCIS crossing 197378 on Klate Lake / Nadina Mountain Road.
 </p>
 </div>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb174-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb174-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb174-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb174-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb174-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb174-4"><a href="tributary-to-owen-creek---197378---appendix.html#cb174-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb177-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb177-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb177-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb177-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb177-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb177-4"><a href="tributary-to-owen-creek---197378---appendix.html#cb177-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-197378">Table 5.23: </span>Summary of derived upstream watershed statistics for PSCIS crossing 197378.
@@ -608,7 +608,7 @@ ENE
 map attachment
 <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.104.pdf">093L.104</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb175-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb178-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -934,7 +934,7 @@ pH was 7.6 and
 conductivity was
 84uS/cm.</p>
 <p><br></p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb176-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb179-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-197378">Table 5.25: </span>Summary of fish passage assessment for PSCIS crossing 197378.
@@ -1197,22 +1197,22 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb177-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb177-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb177-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb177-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb177-3" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb180-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb180-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb180-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb180-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb180-3" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;us&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-2" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream<a href="tributary-to-owen-creek---197378---appendix.html#stream-characteristics-downstream-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed downstream from crossing 197378 for 450m
 (Figure <a href="tributary-to-owen-creek---197378---appendix.html#fig:photo-197378-01">5.38</a>).
-The dominant substrate was gravels with fines sub-dominant.Total cover amount was rated as abundant with overhanging vegetation dominant. Cover was also present as small woody debris and undercut banks.The average channel width was 2.4m, the average wetted width was 1.9m, and the average gradient was 2.5%. There was a high percentage of crown closure, with riparian shrubs but a thin, coniferous forest further upland. There was an numerous pockets of gravels suitable for rainbow and dolly varden spawning. The stream appeared to have stable flows with no notable erosion. Overall, the
+Total cover amount was rated as abundant with overhanging vegetation dominant. Cover was also present as small woody debris and undercut banks.The dominant substrate was gravels with fines sub-dominant.The average channel width was 2.4m, the average wetted width was 1.9m, and the average gradient was 2.5%. There was a high percentage of crown closure, with riparian shrubs but a thin, coniferous forest further upland. There was an numerous pockets of gravels suitable for rainbow and dolly varden spawning. The stream appeared to have stable flows with no notable erosion. Overall, the
 habitat was rated as medium value for salmonid rearing and spawning.</p>
 </div>
 <div id="stream-characteristics-upstream-2" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Upstream<a href="tributary-to-owen-creek---197378---appendix.html#stream-characteristics-upstream-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The stream was surveyed upstream from crossing 197378 for 665m
 (Figure <a href="tributary-to-owen-creek---197378---appendix.html#fig:photo-197378-02">5.39</a>).
-The average channel width was 1.8m, the average wetted width was 1.5m, and the average gradient was 3%.The dominant substrate was gravels with fines sub-dominant.Total cover amount was rated as abundant with undercut banks dominant. Cover was also present as small woody debris, large woody debris, overhanging vegetation, and instream vegetation. This was a small stream containing multiple beaver influenced wetland areas with dams. The stream was comprised of two seperate channels mapped as converging approximatley 100m upstream of the crossing. The dominant channel was the stream mapped as furthest north in the freshwater atlas. It was surveyed in an upstream direction to the location of a beaver influenced wetland. Several pockets of gravel suitable for resident rainbow and dolly varden spawning were present. Surveyors noted “nice runs” and good flow volume. The habitat was rated as medium value with moderate rearing potential. Surveyors visited the southern channel at a point approximately 350m upstream of the FSR but the stream channel at this location was very small with fine sediment substrate.</p>
+The dominant substrate was gravels with fines sub-dominant.Total cover amount was rated as abundant with undercut banks dominant. Cover was also present as small woody debris, large woody debris, overhanging vegetation, and instream vegetation.The average channel width was 1.8m, the average wetted width was 1.5m, and the average gradient was 3%. This was a small stream containing multiple beaver influenced wetland areas with dams. The stream was comprised of two seperate channels mapped as converging approximatley 100m upstream of the crossing. The dominant channel was the stream mapped as furthest north in the freshwater atlas. It was surveyed in an upstream direction to the location of a beaver influenced wetland. Several pockets of gravel suitable for resident rainbow and dolly varden spawning were present. Surveyors noted “nice runs” and good flow volume. The habitat was rated as medium value with moderate rearing potential. Surveyors visited the southern channel at a point approximately 350m upstream of the FSR but the stream channel at this location was very small with fine sediment substrate.</p>
 <p><br></p>
 </div>
 <div id="fish-sampling-2" class="section level2 unnumbered hasAnchor">
@@ -1253,11 +1253,11 @@ in 2025 by Pacific North Coast Consulting Services. Proposed works include the r
 the existing 1.0m wide round culvert with a 12m free span bridge.</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb178-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb178-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb178-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb178-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb178-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb178-4"><a href="tributary-to-owen-creek---197378---appendix.html#cb178-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb178-5"><a href="tributary-to-owen-creek---197378---appendix.html#cb178-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb181-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb181-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb181-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb181-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb181-3" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb181-4"><a href="tributary-to-owen-creek---197378---appendix.html#cb181-4" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb181-5"><a href="tributary-to-owen-creek---197378---appendix.html#cb181-5" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-197378">Table 5.26: </span>Summary of habitat details for PSCIS crossing 197378.
@@ -1355,7 +1355,7 @@ medium
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb179-1" tabindex="-1"></a><span class="fu">fpr_table_fish_site</span>(<span class="at">dat =</span> tab_fish_sites_sum_2023, <span class="at">sit =</span> my_site)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb182-1" tabindex="-1"></a><span class="fu">fpr_table_fish_site</span>(<span class="at">dat =</span> tab_fish_sites_sum_2023, <span class="at">sit =</span> my_site)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-fish-site-197378">Table 5.27: </span>Fish sampling site summary for 197378.
@@ -1426,7 +1426,7 @@ Open
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb180-1" tabindex="-1"></a><span class="fu">fpr_table_fish_density</span>(<span class="at">dat =</span> fish_abund_2023, <span class="at">sit =</span> my_site)</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb183-1" tabindex="-1"></a><span class="fu">fpr_table_fish_density</span>(<span class="at">dat =</span> fish_abund_2023, <span class="at">sit =</span> my_site)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-fish-dens-197378">Table 5.28: </span>Fish sampling density results summary for 197378.
@@ -1544,9 +1544,9 @@ FALSE
 </tfoot>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb181-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Densites of fish (fish/100m2) captured upstream and downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2023.&#39;</span>)</span>
-<span id="cb181-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb181-2" tabindex="-1"></a></span>
-<span id="cb181-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb181-3" tabindex="-1"></a><span class="fu">fpr_plot_fish_box</span>(<span class="at">dat =</span> fish_abund_2023, <span class="at">sit =</span> my_site) </span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb184-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Densites of fish (fish/100m2) captured upstream and downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2023.&#39;</span>)</span>
+<span id="cb184-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb184-2" tabindex="-1"></a></span>
+<span id="cb184-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb184-3" tabindex="-1"></a><span class="fu">fpr_plot_fish_box</span>(<span class="at">dat =</span> fish_abund_2023, <span class="at">sit =</span> my_site) </span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:plot-fish-box-197378"></span>
 <img src="Skeena2021_files/figure-html/plot-fish-box-197378-1.png" alt="Densites of fish (fish/100m2) captured upstream and downstream of PSCIS crossing 197378 in 2023." width="100%" />
 <p class="caption">
@@ -1554,10 +1554,10 @@ Figure 5.37: Densites of fish (fish/100m2) captured upstream and downstream of P
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb182-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb182-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb182-2" tabindex="-1"></a></span>
-<span id="cb182-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb182-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb183-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb185-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb185-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb185-2" tabindex="-1"></a></span>
+<span id="cb185-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb185-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb186-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197378-01"></span>
 <img src="data/photos/197378/KP_TC_00985_d2_k_.JPG" alt="Typical habitat downstream of PSCIS crossing 197378." width="100%" />
 <p class="caption">
@@ -1565,25 +1565,25 @@ Figure 5.38: Typical habitat downstream of PSCIS crossing 197378.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb184-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb184-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb184-2" tabindex="-1"></a></span>
-<span id="cb184-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb184-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb185-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb187-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb187-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb187-2" tabindex="-1"></a></span>
+<span id="cb187-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb187-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb188-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197378-02"></span>
 <img src="data/photos/197378/AI_IMG_6001_u1_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 197378." width="100%" />
 <p class="caption">
 Figure 5.39: Typical habitat upstream of PSCIS crossing 197378.
 </p>
 </div>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb186-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb186-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb186-2" tabindex="-1"></a></span>
-<span id="cb186-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb186-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb186-4"><a href="tributary-to-owen-creek---197378---appendix.html#cb186-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb186-5"><a href="tributary-to-owen-creek---197378---appendix.html#cb186-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb187-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">dir_photos =</span> <span class="st">&quot;data/2023/photos/&quot;</span>, <span class="at">str_to_pull =</span> <span class="st">&#39;fish1&#39;</span>)</span>
-<span id="cb187-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb187-2" tabindex="-1"></a></span>
-<span id="cb187-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb187-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Rainbow trout captured downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2023.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb188-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb189-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb189-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb189-2" tabindex="-1"></a></span>
+<span id="cb189-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb189-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb189-4"><a href="tributary-to-owen-creek---197378---appendix.html#cb189-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb189-5"><a href="tributary-to-owen-creek---197378---appendix.html#cb189-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb190-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">dir_photos =</span> <span class="st">&quot;data/2023/photos/&quot;</span>, <span class="at">str_to_pull =</span> <span class="st">&#39;fish1&#39;</span>)</span>
+<span id="cb190-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb190-2" tabindex="-1"></a></span>
+<span id="cb190-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb190-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Rainbow trout captured downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2023.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb191-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197378-03"></span>
 <img src="data/2023/photos/197378/IMG_2238_fish1_k_.JPG" alt="Rainbow trout captured downstream of PSCIS crossing 197378 in 2023." width="100%" />
 <p class="caption">
@@ -1591,27 +1591,27 @@ Figure 5.40: Rainbow trout captured downstream of PSCIS crossing 197378 in 2023.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb189-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">dir_photos =</span> <span class="st">&quot;data/2023/photos/&quot;</span>, <span class="at">str_to_pull =</span> <span class="st">&#39;fish2&#39;</span>)</span>
-<span id="cb189-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb189-2" tabindex="-1"></a></span>
-<span id="cb189-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb189-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Rainbow trout captured upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2023.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb190-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb192-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">dir_photos =</span> <span class="st">&quot;data/2023/photos/&quot;</span>, <span class="at">str_to_pull =</span> <span class="st">&#39;fish2&#39;</span>)</span>
+<span id="cb192-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb192-2" tabindex="-1"></a></span>
+<span id="cb192-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb192-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Rainbow trout captured upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39; in 2023.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb193-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-197378-04"></span>
 <img src="data/2023/photos/197378/IMG_2248_fish2_k_.JPG" alt="Rainbow trout captured upstream of PSCIS crossing 197378 in 2023." width="100%" />
 <p class="caption">
 Figure 5.41: Rainbow trout captured upstream of PSCIS crossing 197378 in 2023.
 </p>
 </div>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb191-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb191-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb191-2" tabindex="-1"></a></span>
-<span id="cb191-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb191-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb191-4"><a href="tributary-to-owen-creek---197378---appendix.html#cb191-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb191-5"><a href="tributary-to-owen-creek---197378---appendix.html#cb191-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb194-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb194-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb194-2" tabindex="-1"></a></span>
+<span id="cb194-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb194-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb194-4"><a href="tributary-to-owen-creek---197378---appendix.html#cb194-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb194-5"><a href="tributary-to-owen-creek---197378---appendix.html#cb194-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb192-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb192-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb192-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb192-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb192-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb193-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">197662</span></span>
-<span id="cb193-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb193-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198043</span></span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb195-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb195-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb195-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb195-3"><a href="tributary-to-owen-creek---197378---appendix.html#cb195-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="tributary-to-owen-creek---197378---appendix.html#cb196-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">197662</span></span>
+<span id="cb196-2"><a href="tributary-to-owen-creek---197378---appendix.html#cb196-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198043</span></span></code></pre></div>
 </div>
 </div>
             </section>
