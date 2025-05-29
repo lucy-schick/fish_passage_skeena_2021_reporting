@@ -27,31 +27,53 @@ my_site4 <- 124424
 
 ## Site Location {-}
 
-PSCIS crossing `r as.character(my_site)` was located on `r fpr::fpr_my_pscis_info()` at Hazleton, BC. Station Creek is also known locally as Mission Creek.  PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`.  Crossing `r as.character(my_site)` was located `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. Crossing `r as.character(my_site)` is the responsibility of the Ministry of Transportation and Infrastructure.
+PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info()` in Hazelton, BC. Station Creek is also known locally as Mission Creek.  PSCIS crossing `r as.character(my_site)` is located on `r fpr_my_pscis_info(col_pull = road_name)`, approximately `r round(fpr::fpr_my_bcfishpass(col_pull = downstream_route_measure)*0.001, 1)`km upstream from the confluence with the Bulkley River. The crossing is the responsibility of the Ministry of Transportation and Infrastructure.
 
+<br>
+
+Approximately 1200m upstream of PSCIS crossing `r as.character(my_site)`, Waterfall Creek joins Station Creek. Waterfall Creek is mapped incorrectly in the BC freshwater atlas which documents it as a small drainage originating on the north side of Highway 16. In reality, the stream flows from an area south of town, through New Hazelton in a northern direction crossing under numerous road crossings and two CN railway crossings before joining with Station Creek (Figure \@ref(fig:fig-waterfall)).
+
+<br>
+
+PSCIS crossings `r as.character(my_site2)` and `r as.character(my_site3)` are located on Waterfall Creek. Crossing `r as.character(my_site2)` is located on `r fpr_my_pscis_info(site = my_site2, col_pull = road_name)`, approximately `r round(fpr::fpr_my_bcfishpass(site = my_site2, col_pull = downstream_route_measure)*0.001, 1)` km upstream from the confluence with Station Creek. The crossing is the responsibility of the Town of New Hazelton. Approximately, 120m upstream, crossing `r as.character(my_site3)` is located on `r fpr_my_pscis_info(site = my_site3, col_pull = road_name)`, and is the responsibility of Ministry of Transportation and Infrastructure.
+
+<br>
+
+
+```{r fig-waterfall, fig.cap = my_caption}
+
+my_caption = 'Map of Station Creek and Waterfall Creek. Pink line indicates the corrected streamline for Waterfall Creek.'
+
+knitr::include_graphics('fig/map_station_waterfall.jpeg')
+
+```
 
 <br>
 
 ## Background {-}
 
-
 At crossing `r as.character(my_site)`, `r fpr::fpr_my_pscis_info()` is a `r fpr::fpr_my_bcfishpass() %>% english::ordinal()` order stream with a watershed area upstream of the crossing of approximately `r fpr::fpr_my_wshd()`km^2^. The elevation of the watershed ranges from a maximum of `r fpr::fpr_my_wshd(col = 'elev_max')`m to `r fpr::fpr_my_wshd(col = 'elev_min')`m near the crossing (Table \@ref(tab:tab-wshd-124420)). Upstream of crossing `r as.character(my_site)`, `r fpr::fpr_my_fish_sp()` have previously been recorded [@moe2020KnownBC; @norris2020bcfishobs]. 
 
 <br>
 
-@wilson_rabnett2007FishPassage report that the crossing structure located on Highway 16 and Station Creek has been the subject of numerous assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authority reports that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation design options and  identified the natural limits of potential fish distribution to support rehabilitation efforts.  At the time of reporting, a design for remediation utilizing a retrofit of the existing structure to backwater the pipe was being drafted (Sean Wong, Environmental Programs Manager - Ministry of Transportation and Infrastructure pers. comm.).
+@wilson_rabnett2007FishPassage report that PSCIS crossing `r as.character(my_site)` located on Highway 16 and Station Creek has been the subject of numerous assessments  and  designs  with  respect  to  the rehabilitation of fish passage, and they rated this crossing as the highest priority for rehabilitation in the Bulkley River watershed.  Gitxsan Watershed Authority reports that Xsan Xsagiibil was a fishing site located at the mouth of Station Creek (Xsi Gwin Sagiiblax) [@wilson_rabnett2007FishPassage].  Identified as a high priority for additional assessments by @rabnett_williams2004Highway16, @skrconsultantsltd_2006FishPassage conducted a detailed inspection, offered rehabilitation design options and  identified the natural limits of potential fish distribution to support rehabilitation efforts.  At the time of reporting, a design for remediation utilizing a retrofit of the existing structure to backwater the pipe was being drafted (Sean Wong, Environmental Programs Manager - Ministry of Transportation and Infrastructure pers. comm.).
 
 <br>
 
 A trap and truck operation led by the Chicago Creek Community Environmental Enhancement Society moves coho from a fence set up near the confluence with the Bulkley River to upstream of Highway 16 on Waterfall Creek annually.  @houlden_etal2001ChicagoCreek report that the coho stocks in the system were wiped out in the late 1970s by the improper installation of PSCIS crossing `r as.character(my_site)`. The Waterfall Creek Stream Rehabilitation Project began in 1990 to reintroduce coho to the stream with surplus stocks transplanted from Toboggan Creek near Smithers. In 1993 the Hazelton Elementary Streamkeepers program was developed to assist with the project and in 1995 the Chicago Creek Community Environmental Enhancement Society was incorporated to develop a hatchery nearby. The hatchery no longer operates but operations were considered successful with coho runs between 65 - 297 fish documented between 1998 - 2001 Watershed restoration and enhancement efforts were coordinated with other groups working in the system [@houlden_etal2001ChicagoCreek; @houlden_donas2002ChicagoCreek].
 
+<br>
 
+Following stream morphology changes which occurred during a fall 2017 flood event causing the release and distribution of sediment loads, @newman_england2018MissionCreek conducted a fish habitat assessment from the confluence of Station Creek with the Bulkley River upstream to the Mile 48 Canadian National railway crossing to determine stream diversity, spawning gravel catchment areas, beaver dam activity and negative impacts present in or along the stream.  Beaver control activities on Station and Waterfall Creeks by CN Rail upstream of crossing `r as.character(my_site)` may have been the cause of the 2017 flood event (pers comm. Brenda Donas, Chicago Creek Restoration Society). 
 
 <br>
 
+PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,  @irvine2018AnalysisPriority and @mazany-wright_etal2021BulkleyRiver because of known high value spawning and rearing habitat upstream of the crossing. The crossing was reassessed in 2021 and a habitat confirmation was conducted, which also included crossings `r as.character(my_site2)` and `r as.character(my_site3)`. A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-124420). A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).
 
+<br>
 
-Following stream morphology changes which occurred during a fall 2017 flood event causing the release and distribution of sediment loads, @newman_england2018MissionCreek conducted a fish habitat assessment from the confluence of Station Creek with the Bulkley River upstream to the Mile 48 Canadian National railway crossing to determine stream diversity, spawning gravel catchment areas, beaver dam activity and negative impacts present in or along the stream.  Beaver control activities on Station and Waterfall Creeks by CN Rail upstream of crossing `r as.character(my_site)` may have been the cause of the 2017 flood event (pers comm. Brenda Donas, Chicago Creek Restoration Society). 
+Three additional crossings further upstream on Waterfall Creek—PSCIS 198117, 198116, and 198115—were assessed in 2022 by @irvine_etal2023BulkleyWatershed (Figure \@ref(fig:fig-waterfall)). Detailed assessments of these crossings, along with additional information regarding the Waterfall/Station system, are provided in [Bulkley Watershed Fish Passage Restoration Planning 2022](https://www.newgraphenvironment.com/fish_passage_bulkley_2022_reporting/).
+
 
 <br>
 
@@ -62,12 +84,6 @@ fpr::fpr_table_wshd_sum(site_id = my_site) %>%
            scroll = F)
 
 ```
-
-
-<br>
-
-PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,  @irvine2018AnalysisPriority and @mazany-wright_etal2021BulkleyRiver because of known high value spawning and rearing habitat upstream of the crossing.  A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-124420).   A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).  There are numerous stream crossings located on tributaries to Station Creek with crossing 124421 and 124422 also assessed in 2021.
-
 
 `r if(identical(gitbook_on, FALSE)){knitr::asis_output("\\pagebreak")}`
 
