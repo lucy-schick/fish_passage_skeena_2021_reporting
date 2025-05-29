@@ -1,9 +1,7 @@
 fig:overview-map
 fig:hydrology-plot
-fig:hydrology-stats1
-fig:hydrology-stats2
+fig:hydrology-plotb
 fig:hydrology-plot2
-fig:hydrology-stats3
 tab:fiss-species-table
 fig:fish-gantt-morice
 fig:fish-plot-grad

@@ -482,10 +482,10 @@ div.csl-indent {
 <p><br></p>
 <p>A habitat confirmation assessment downstream of 123544 PSCIS stream crossing 58159 (Woodmere Nursery private road) was assessed with by <span class="citation">Irvine (2021)</span> in 2020 and the reader is directed there for detailed background, habitat assessment and fish sampling information from 2020 surveys. 58151 was ranked as a moderate priority for follow up by <span class="citation">Irvine (2018)</span> due to significant quantities of upstream habitat suitable for salmonid rearing. A total of 54ha of lake and 18ha of wetland is modelled upstream with a summary of additional habitat modelling outputs presented in Table <a href="mcdowell-creek---123544-58151---appendix.html#tab:tab-culvert-bcfp-123544">5.6</a>. A map of the watershed is provided in map attachment <a href="https://hillcrestgeo.ca/outgoing/fishpassage/projects/bulkley/archive/2022-05-02/FishPassage_093L.118.pdf">093L.118</a>.</p>
 <p><br></p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb79-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
-<span id="cb79-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb79-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb79-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb79-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
-<span id="cb79-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb79-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb82-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_wshd_sum</span>(<span class="at">site_id =</span> my_site) <span class="sc">%&gt;%</span> </span>
+<span id="cb82-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb82-2" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of derived upstream watershed statistics for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb82-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb82-3" tabindex="-1"></a>           <span class="at">footnote_text =</span> <span class="st">&#39;Elev P60 = Elevation at which 60% of the watershed area is above&#39;</span>,</span>
+<span id="cb82-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb82-4" tabindex="-1"></a>           <span class="at">scroll =</span> F)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-wshd-123544">Table 5.5: </span>Summary of derived upstream watershed statistics for PSCIS crossing 123544.
@@ -555,7 +555,7 @@ SSW
 </tfoot>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb80-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb83-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -869,7 +869,7 @@ All Spawning Rearing (km)
 </table>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb81-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">site =</span> my_site2, <span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb84-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_bcfp</span>(<span class="at">site =</span> my_site2, <span class="at">scroll =</span> gitbook_on) </span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; ">
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
@@ -1190,7 +1190,7 @@ All Spawning Rearing (km)
 <p><br></p>
 <p>PSCIS crossing 58151 was not backwatered, not embedded and ranked as a barrier to upstream fish passage according to the provincial protocol (Table <a href="mcdowell-creek---123544-58151---appendix.html#tab:tab-culvert-58151">5.9</a>).</p>
 <p><br></p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb82-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb85-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>()</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-123544">Table 5.8: </span>Summary of fish passage assessment for PSCIS crossing 123544.
@@ -1454,7 +1454,7 @@ Fix Span / Diameter
 </table></li>
 </ul>
 <p><br></p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb83-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>(<span class="at">site =</span> my_site2, <span class="at">site_photo_id =</span> my_site2)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb86-1" tabindex="-1"></a>fpr<span class="sc">::</span><span class="fu">fpr_table_cv_summary_memo</span>(<span class="at">site =</span> my_site2, <span class="at">site_photo_id =</span> my_site2)</span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-culvert-58151">Table 5.9: </span>Summary of fish passage assessment for PSCIS crossing 58151.
@@ -1717,9 +1717,9 @@ Fix Span / Diameter
 </tfoot>
 </table></li>
 </ul>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb84-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
-<span id="cb84-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb84-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
-<span id="cb84-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb84-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb87-1" tabindex="-1"></a><span class="do">##this is useful to get some comments for the report</span></span>
+<span id="cb87-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb87-2" tabindex="-1"></a>hab_site <span class="sc">%&gt;%</span> <span class="fu">filter</span>(site <span class="sc">==</span> my_site <span class="sc">&amp;</span> location <span class="sc">==</span> <span class="st">&#39;ds&#39;</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(comments)</span>
+<span id="cb87-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb87-3" tabindex="-1"></a>my_priority <span class="ot">&lt;-</span>  <span class="fu">my_priority_info</span>()</span></code></pre></div>
 </div>
 <div id="stream-characteristics-downstream-of-123544" class="section level2 unnumbered hasAnchor">
 <h2>Stream Characteristics Downstream of 123544<a href="mcdowell-creek---123544-58151---appendix.html#stream-characteristics-downstream-of-123544" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1753,12 +1753,12 @@ The average channel width was 1.7m, and the average gradient was 2%. Total cover
 <p>There was 6.1km of habitat modelled upstream of crossing 58151 with areas surveyed rated as low value for salmonid rearing and spawning. Crossing 123544 was ranked as a low priority for proceeding to design due to low flows and highly impacted habitats upstream. Crossing 58151 was ranked as a low priority for proceeding to design for replacement. In the upper reaches of McDowell Creek, impacts are apparent due to adjacent land use (cattle trampled banks and grazed/removed riparian vegetation). It is recommended that a plan be developed to work with adjacent landowners and tenure holders to exclude cattle from the riparian area, implement stream restoration actions and explore possibilities related to progressive beaver management in the watershed.</p>
 <p><br></p>
 <p><br></p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb85-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
-<span id="cb85-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb85-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site <span class="sc">|</span></span>
-<span id="cb85-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb85-3" tabindex="-1"></a>           Site  <span class="sc">==</span> my_site2) <span class="sc">%&gt;%</span> </span>
-<span id="cb85-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb85-4" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
-<span id="cb85-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb85-5" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
-<span id="cb85-6"><a href="mcdowell-creek---123544-58151---appendix.html#cb85-6" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-1" tabindex="-1"></a>tab_hab_summary <span class="sc">%&gt;%</span> </span>
+<span id="cb88-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-2" tabindex="-1"></a>  <span class="fu">filter</span>(Site  <span class="sc">==</span> my_site <span class="sc">|</span></span>
+<span id="cb88-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-3" tabindex="-1"></a>           Site  <span class="sc">==</span> my_site2) <span class="sc">%&gt;%</span> </span>
+<span id="cb88-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-4" tabindex="-1"></a>  <span class="co"># select(-Site) %&gt;% </span></span>
+<span id="cb88-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-5" tabindex="-1"></a>  fpr<span class="sc">::</span><span class="fu">fpr_kable</span>(<span class="at">caption_text =</span> <span class="fu">paste0</span>(<span class="st">&#39;Summary of habitat details for PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>),</span>
+<span id="cb88-6"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-6" tabindex="-1"></a>                 <span class="at">scroll =</span> F) </span></code></pre></div>
 <table class="table table-condensed table-responsive" style="font-size: 11px; color: black; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-habitat-summary-123544">Table 5.10: </span>Summary of habitat details for PSCIS crossing 123544.
@@ -1914,13 +1914,13 @@ low
 </tbody>
 </table>
 <p><br></p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb86-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb86-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb86-2" tabindex="-1"></a></span>
-<span id="cb86-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb86-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
-<span id="cb86-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb86-4" tabindex="-1"></a></span>
-<span id="cb86-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb86-5" tabindex="-1"></a></span>
-<span id="cb86-6"><a href="mcdowell-creek---123544-58151---appendix.html#cb86-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb87-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb89-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb89-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb89-2" tabindex="-1"></a></span>
+<span id="cb89-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb89-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span>
+<span id="cb89-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb89-4" tabindex="-1"></a></span>
+<span id="cb89-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb89-5" tabindex="-1"></a></span>
+<span id="cb89-6"><a href="mcdowell-creek---123544-58151---appendix.html#cb89-6" tabindex="-1"></a><span class="co"># fpr::fpr_photo_flip(site_id = 1802488, str_to_pull = &#39;6257&#39;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb90-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123544-01"></span>
 <img src="data/photos/123544/AI_IMG_6429_d1_k_.JPG" alt="Habitat downstream of PSCIS crossing 123544." width="100%" />
 <p class="caption">
@@ -1928,10 +1928,10 @@ Figure 5.9: Habitat downstream of PSCIS crossing 123544.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb88-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-2" tabindex="-1"></a></span>
-<span id="cb88-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb88-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb89-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb91-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb91-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb91-2" tabindex="-1"></a></span>
+<span id="cb91-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb91-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb92-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123544-02"></span>
 <img src="data/photos/123544/AI_IMG_6431_d2_k_.JPG" alt="Habitat downstream of PSCIS crossing 123544." width="100%" />
 <p class="caption">
@@ -1939,15 +1939,15 @@ Figure 5.10: Habitat downstream of PSCIS crossing 123544.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb90-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb90-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb90-2" tabindex="-1"></a></span>
-<span id="cb90-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb90-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb90-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb90-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb90-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb90-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb91-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
-<span id="cb91-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb91-2" tabindex="-1"></a></span>
-<span id="cb91-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb91-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb92-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb93-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb93-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb93-2" tabindex="-1"></a></span>
+<span id="cb93-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb93-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb93-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb93-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb93-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb93-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb94-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_d1_&#39;</span>)</span>
+<span id="cb94-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb94-2" tabindex="-1"></a></span>
+<span id="cb94-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb94-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Habitat downstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb95-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123544-03"></span>
 <img src="data/photos/58151/KP_TC_01983_d1_k_.JPG" alt="Habitat downstream of PSCIS crossing 58151." width="100%" />
 <p class="caption">
@@ -1955,25 +1955,25 @@ Figure 5.11: Habitat downstream of PSCIS crossing 58151.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb93-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
-<span id="cb93-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb93-2" tabindex="-1"></a></span>
-<span id="cb93-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb93-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb94-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb96-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_d2_&#39;</span>)</span>
+<span id="cb96-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb96-2" tabindex="-1"></a></span>
+<span id="cb96-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb96-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb97-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123544-04"></span>
 <img src="data/photos/58151/KP_TC_01991_d2_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 123544." width="100%" />
 <p class="caption">
 Figure 5.12: Typical habitat upstream of PSCIS crossing 123544.
 </p>
 </div>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb95-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb95-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb95-2" tabindex="-1"></a></span>
-<span id="cb95-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb95-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb95-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb95-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb95-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb95-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb96-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
-<span id="cb96-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb96-2" tabindex="-1"></a></span>
-<span id="cb96-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb96-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb97-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb98-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb98-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb98-2" tabindex="-1"></a></span>
+<span id="cb98-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb98-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb98-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb98-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb98-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb98-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb99-1" tabindex="-1"></a>my_photo1 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u1_&#39;</span>)</span>
+<span id="cb99-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb99-2" tabindex="-1"></a></span>
+<span id="cb99-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb99-3" tabindex="-1"></a>my_caption1 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb100-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123544-05"></span>
 <img src="data/photos/58151/KP_TC_02005_u1_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 58151." width="100%" />
 <p class="caption">
@@ -1981,27 +1981,27 @@ Figure 5.13: Typical habitat upstream of PSCIS crossing 58151.
 </p>
 </div>
 <p><br></p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb98-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
-<span id="cb98-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb98-2" tabindex="-1"></a></span>
-<span id="cb98-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb98-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb99-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb101-1" tabindex="-1"></a>my_photo2 <span class="ot">=</span> fpr<span class="sc">::</span><span class="fu">fpr_photo_pull_by_str</span>(<span class="at">site =</span> my_site2, <span class="at">str_to_pull =</span> <span class="st">&#39;_u2_&#39;</span>)</span>
+<span id="cb101-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb101-2" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb101-3" tabindex="-1"></a>my_caption2 <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">&#39;Typical habitat upstream of PSCIS crossing &#39;</span>, my_site2, <span class="st">&#39;.&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb102-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:photo-123544-06"></span>
 <img src="data/photos/58151/KP_TC_02011_u2_k_.JPG" alt="Typical habitat upstream of PSCIS crossing 58151." width="100%" />
 <p class="caption">
 Figure 5.14: Typical habitat upstream of PSCIS crossing 58151.
 </p>
 </div>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb100-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
-<span id="cb100-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb100-2" tabindex="-1"></a></span>
-<span id="cb100-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb100-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
-<span id="cb100-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb100-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
-<span id="cb100-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb100-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb103-1" tabindex="-1"></a>my_caption <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&#39;Left: &#39;</span>, my_caption1, <span class="st">&#39; Right: &#39;</span>, my_caption2)</span>
+<span id="cb103-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb103-2" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb103-3" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo1)</span>
+<span id="cb103-4"><a href="mcdowell-creek---123544-58151---appendix.html#cb103-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;fig/pixel.png&quot;</span>)</span>
+<span id="cb103-5"><a href="mcdowell-creek---123544-58151---appendix.html#cb103-5" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(my_photo2)</span></code></pre></div>
 
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb101-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
-<span id="cb101-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb101-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
-<span id="cb101-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb101-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb102-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">123770</span></span>
-<span id="cb102-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb102-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198043</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb104-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span><span class="cn">FALSE</span>, <span class="at">message=</span><span class="cn">FALSE</span>, <span class="at">warning=</span><span class="cn">FALSE</span>)</span>
+<span id="cb104-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb104-2" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/packages.R&#39;</span>)</span>
+<span id="cb104-3"><a href="mcdowell-creek---123544-58151---appendix.html#cb104-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&#39;scripts/tables.R&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="mcdowell-creek---123544-58151---appendix.html#cb105-1" tabindex="-1"></a>my_site <span class="ot">&lt;-</span> <span class="dv">123770</span></span>
+<span id="cb105-2"><a href="mcdowell-creek---123544-58151---appendix.html#cb105-2" tabindex="-1"></a>my_site2 <span class="ot">&lt;-</span> <span class="dv">198043</span></span></code></pre></div>
 </div>
 </div>
             </section>
