@@ -31,7 +31,7 @@ PSCIS crossing `r as.character(my_site)` is located on `r fpr::fpr_my_pscis_info
 
 <br>
 
-Approximately 1200m upstream of PSCIS crossing `r as.character(my_site)`, Waterfall Creek joins Station Creek. Waterfall Creek is mapped incorrectly in the BC freshwater atlas which documents it as a small drainage originating on the north side of Highway 16. In reality, the stream flows from an area south of town, through New Hazelton in a northern direction crossing under numerous road crossings and two CN railway crossings before joining with Station Creek (Figure \@ref(fig:fig-waterfall)).
+Approximately 1200m upstream of PSCIS crossing `r as.character(my_site)`, Waterfall Creek joins Station Creek. Waterfall Creek is mapped incorrectly in the BC freshwater atlas which documents it as a small drainage originating on the north side of Highway 16. In reality, the stream flows from an area south of town, through New Hazelton in a northern direction, crossing under numerous road crossings and two CN railway crossings before joining with Station Creek (Figure \@ref(fig:fig-waterfall)). There is a waterfall that blocks upstream migration for all life stages and species, located approximately 1200m upstream of the easternmost Waterfall Creek/Highway 16 crossing (PSCIS 198116), on Waterfall Creek. 
 
 <br>
 
@@ -68,11 +68,11 @@ Following stream morphology changes which occurred during a fall 2017 flood even
 
 <br>
 
-PSCIS stream crossing `r as.character(my_site)` was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,  @irvine2018AnalysisPriority and @mazany-wright_etal2021BulkleyRiver because of known high value spawning and rearing habitat upstream of the crossing. The crossing was reassessed in 2021 and a habitat confirmation was conducted, which also included crossings `r as.character(my_site2)` and `r as.character(my_site3)`. A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-124420). A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).
+PSCIS crossing `r as.character(my_site)` located on Highway 16 and Station Creek was ranked as a high priority for follow up by @wilson_rabnett2007FishPassage, @mccarthy_fernando20152015Inventory,  @irvine2018AnalysisPriority and @mazany-wright_etal2021BulkleyRiver because of known high value spawning and rearing habitat upstream of the crossing. The crossing was reassessed in 2021 and a habitat confirmation was conducted, which also included crossings `r as.character(my_site2)` and `r as.character(my_site3)`. A summary of habitat modelling outputs is presented in Table \@ref(tab:tab-culvert-bcfp-124420). A map of the watershed is provided in map attachment [`r fpr::fpr_my_bcfishpass(col_pull = dbm_mof_50k_grid)`](`r fpr::fpr_my_mapsheet()`).
 
 <br>
 
-Three additional crossings further upstream on Waterfall Creek—PSCIS 198117, 198116, and 198115—were assessed in 2022 by @irvine_etal2023BulkleyWatershed (Figure \@ref(fig:fig-waterfall)). Detailed assessments of these crossings, along with additional information regarding the Waterfall/Station system, are provided in [Bulkley Watershed Fish Passage Restoration Planning 2022](https://www.newgraphenvironment.com/fish_passage_bulkley_2022_reporting/).
+Three additional crossings further upstream on Waterfall Creek—PSCIS 198117, 198116, and 198115—were assessed in 2022 by @irvine_etal2023BulkleyWatershed (Figure \@ref(fig:fig-waterfall)). In 2024, the stream was revisited and surveyed from the eastern Waterfall Creek/Highway 16 crossing (PSCIS 198116) upstream to the waterfall. Detailed assessments of these surveys, along with additional information regarding the Waterfall/Station system, are provided in [Bulkley Watershed Fish Passage Restoration Planning 2022](https://www.newgraphenvironment.com/fish_passage_bulkley_2022_reporting/).
 
 
 <br>
