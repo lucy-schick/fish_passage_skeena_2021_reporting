@@ -162,7 +162,7 @@ knitr::include_graphics(my_photo, dpi = NA)
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")}`
 
 ```{r model-124420, eval = identical(gitbook_on, TRUE)}
 model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/8f568e62bb7d47568e1f0a365022ef59" scrolling="no" title="Maps Made Easy" width="100%" height="600" frameBorder ="0"></iframe>'
@@ -170,7 +170,7 @@ model_url <- '<iframe src="https://www.mapsmadeeasy.com/maps/public_3D/8f568e62b
 knitr::asis_output(model_url)
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")}`
 
 ```{r model-caption-124420, fig.cap= my_caption, out.width = "0.01%", eval = identical(gitbook_on, TRUE)}
 my_photo = 'fig/pixel.png'
@@ -181,7 +181,7 @@ knitr::include_graphics(my_photo, dpi = NA)
 
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")}`
 
 ```{r uav-ortho-124423-prep, eval = gitbook_on}
 viewer_url <- '<iframe src="https://viewer.a11s.one/?cog=https://imagery-uav-bc.s3.amazonaws.com/skeena/bulkley/2024/124423_waterfall_cnrail/odm_orthophoto/odm_orthophoto.tif" scrolling="no" title="UAV Viewer" width="100%" height="600" frameBorder="0"></iframe>'
@@ -197,7 +197,7 @@ my_caption = paste0('Orthomosaic of where Waterfall Creek crosses Highway 16 (PS
 knitr::include_graphics(my_photo, dpi = NA)
 ```
 
-<br>
+`r if(gitbook_on){knitr::asis_output("<br>")}`
 
 ## Stream Characteristics Downstream of `r as.character(my_site)` {-}
 
